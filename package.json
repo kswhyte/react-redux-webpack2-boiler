@@ -10,7 +10,8 @@
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
     "check-node-modules": "nsp check",
-    "webpack": "webpack --config webpack.config.js",
+    "webpack": "webpack --config webpack.config.js --progress --watch",
+    "webpack-dev-server": "webpack-dev-server --open",
     "start": "npm-run-all check-node-modules webpack"
   },
   "author": "Wesley Duff",
@@ -51,6 +52,7 @@
     "style-loader": "0.13.1",
     "webpack": "^3.1.0",
     "webpack-dev-middleware": "1.8.4",
+    "webpack-dev-server": "^2.5.1",
     "webpack-hot-middleware": "2.13.0",
     "webpack-md5-hash": "0.0.5",
     "whatwg-fetch": "1.0.0"

@@ -8,7 +8,6 @@ module.exports = {
 
   output: {
     // options related to how webpack emits results
-
     path: path.resolve(__dirname, "app/public/js/bundle"), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
@@ -16,7 +15,7 @@ module.exports = {
     filename: "bundle.js", // string
     // the filename template for entry chunks
 
-    publicPath: "/assets/", // string
+    publicPath: 'app/public' // Required for webpack-dev-server", // string
     // the url to the output directory resolved relative to the HTML page
   },
 
@@ -73,7 +72,12 @@ module.exports = {
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
     }
   },
-
+  devServer: {
+    contentBase: [path.join(__dirname, "app"), path.join(__dirname, "app/public")],
+    compress: true,
+    port: 9000,
+    publicPath: "app/public"
+  },
   target: "web", // enum
   // the environment in which the bundle should run
   // changes chunk loading behavior and available modules
@@ -83,19 +87,6 @@ module.exports = {
 
   stats: "errors-only",
   // lets you precisely control what bundle information gets displayed
-
-  devServer: {
-    proxy: { // proxy URLs to backend development server
-      '/api': 'http://localhost:3000'
-    },
-    contentBase: path.join(__dirname, 'public'), // boolean | string | array, static file location
-    compress: true, // enable gzip compression
-    historyApiFallback: true, // true for index.html upon 404, object for multiple paths
-    hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
-    https: false, // true for self-signed, object for cert authority
-    noInfo: true, // only errors & warns on hot reload
-    // ...
-  },
 
   plugins: [
     new webpack.LoaderOptionsPlugin({
