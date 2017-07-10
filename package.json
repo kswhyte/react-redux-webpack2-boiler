@@ -10,13 +10,11 @@
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
     "check-node-modules": "nsp check",
-    "start": "npm-run-all check-node-modules"
+    "webpack": "webpack --config webpack.config.js",
+    "start": "npm-run-all check-node-modules webpack"
   },
   "author": "Wesley Duff",
   "license": "ISC",
-  "dependencies": {
-    "whatwg-fetch": "1.0.0"
-  },
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "6.17.0",
@@ -31,7 +29,7 @@
     "eslint": "3.8.1",
     "eslint-plugin-import": "2.0.1",
     "eslint-watch": "2.1.14",
-    "extract-text-webpack-plugin": "1.0.1",
+    "extract-text-webpack-plugin": "^2.1.2",
     "html-webpack-plugin": "2.22.0",
     "jest": "^20.0.4",
     "jsdom": "9.8.0",
@@ -44,11 +42,17 @@
     "nsp": "2.6.2",
     "numeral": "1.5.3",
     "open": "0.0.5",
+    "postcss": "^6.0.6",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-reporter": "^4.0.0",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
-    "webpack": "1.13.2",
+    "webpack": "^3.1.0",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "2.13.0",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-md5-hash": "0.0.5",
+    "whatwg-fetch": "1.0.0"
   }
 }

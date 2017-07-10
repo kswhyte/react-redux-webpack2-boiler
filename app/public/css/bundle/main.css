@@ -1,0 +1,23 @@
+/* components/Article.css */
+
+._1AD_d0bIjZ1yK37TXJt7cq {
+  font-size: 14px
+}
+
+._1AD_d0bIjZ1yK37TXJt7cq a {
+  color: #32c7ff;
+}
+
+._1AD_d0bIjZ1yK37TXJt7cq p {
+  color: rgb(0, 0, 0);
+  font-family: "FF DIN", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+@media (min-width: 601px) {
+
+  ._1AD_d0bIjZ1yK37TXJt7cq {
+    max-width: 30em
+  }
+}
