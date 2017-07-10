@@ -18,6 +18,8 @@ var _path2 = _interopRequireDefault(_path);
 
 var _app_config = require('./app_config');
 
+var _app_config2 = _interopRequireDefault(_app_config);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var environments = {
@@ -27,6 +29,7 @@ var environments = {
 };
 
 exports.default = function (environment) {
+  console.log('test- ', _app_config2.default);
   var _environment = null;
   //check environment
   switch (environment) {

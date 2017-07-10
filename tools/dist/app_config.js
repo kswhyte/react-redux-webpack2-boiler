@@ -11,5 +11,6 @@ var PORTS = {
   localhostPortNumber_uisvc: "9705"
 };
 
+exports.default = URI;
 exports.URI = URI;
 exports.PORTS = PORTS;
