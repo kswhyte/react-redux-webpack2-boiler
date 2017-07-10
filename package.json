@@ -1,0 +1,11 @@
+{
+  "name": "smartaccess_v2",
+  "version": "2.0.0",
+  "description": "Smart Access Version 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Wesley Duff",
+  "license": "ISC"
+}
