@@ -6,4 +6,4 @@ const PORTS = {
   localhostPortNumber_uisvc : "9705"
 };
 
-export {URI as default, PORTS}
+export {URI, PORTS}

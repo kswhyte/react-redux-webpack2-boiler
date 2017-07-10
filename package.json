@@ -4,8 +4,12 @@
   "description": "Smart Access Version 2",
   "main": "app.js",
   "scripts": {
-    "build_bable": "babel ./tools/setEnvironment.es --out-file ./tools/build_SetEnvironment.js",
-    "build": "node ./tools/setEnvironment"
+    "build_environment_babel": "babel ./tools/setEnvironment.es --out-file ./tools/dist/setEnvironment.js && babel ./tools/app_config.es --out-file ./tools/dist/app_config.js",
+    "build_environment": "node ./tools/dist/setEnvironment default",
+    "build-dev": "npm-run-all build_environment_babel \"build_environment -- dev\"",
+    "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
+    "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\""
+
   },
   "author": "Wesley Duff",
   "license": "ISC",
@@ -33,8 +37,9 @@
     "json-schema-faker": "0.3.6",
     "json-server": "0.8.22",
     "localtunnel": "1.8.1",
+    "make-runnable": "^1.3.6",
     "nock": "8.1.0",
-    "npm-run-all": "^3.1.1",
+    "npm-run-all": "3.1.1",
     "nsp": "2.6.2",
     "numeral": "1.5.3",
     "open": "0.0.5",
