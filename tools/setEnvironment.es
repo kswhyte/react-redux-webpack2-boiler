@@ -10,7 +10,7 @@ const environments = {
 }
 
 export default loadEnvironments = environment => {
-  const _environment = null;
+  let _environment = null;
   //check environment
   switch(environment){
     case 'dev':
@@ -59,4 +59,5 @@ export default loadEnvironments = environment => {
 
 } //END - export default environment
 
+require('make-runable');
 
