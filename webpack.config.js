@@ -28,7 +28,7 @@ module.exports = {
         test: /\.(es|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: [{
-          loader: 'babel-loader',
+          loaders: ['babel-loader', 'eslint-loader']
           options: { presets: ['es2015', 'es2016', 'es2017'] },
         }],
       },
@@ -44,7 +44,6 @@ module.exports = {
             ]
         })
       }
-
 
     ]
     /* Advanced module configuration (click to show) */
