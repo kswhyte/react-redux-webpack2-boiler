@@ -99,7 +99,7 @@ module.exports = {
             // ...other configs that used to directly on `modules.exports`
         }
     }),
-    new ExtractTextPlugin({ filename: '../../css/bundle/[name].css', disable: false, allChunks: true })
+    new ExtractTextPlugin({ filename: '../../css/bundle/core.css', disable: false, allChunks: true })
   ],
   // list of additional plugins
 

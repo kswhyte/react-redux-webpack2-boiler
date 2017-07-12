@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/assets/";
+/******/ 	__webpack_require__.p = "app/public";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -110,7 +110,6 @@ exports.PORTS = PORTS;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"article":"_1AD_d0bIjZ1yK37TXJt7cq"};
 
 /***/ })
 /******/ ]);
