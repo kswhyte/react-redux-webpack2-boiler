@@ -12,14 +12,15 @@
     "check-node-modules": "nsp check",
     "webpack": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
-    "start": "npm-run-all check-node-modules webpack-dev-server",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "eslint": "eslint --ext .es,.jsx app",
     "test": "jest --no-cache",
     "test:cover": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
-    "open:cover": "npm run test:cover && open ./coverage/lcov-report/index.html"
+    "open:cover": "npm run test:cover && open ./coverage/lcov-report/index.html",
+    "eslint": "eslint --ext .js --ext .es --ext .jsx --fix app",
+    "start": "npm-run-all check-node-modules webpack-dev-server"
   },
   "author": "Wesley Duff",
   "license": "ISC",
@@ -27,7 +28,7 @@
     "@kadira/storybook": "^2.21.0",
     "babel-cli": "^6.16.0",
     "babel-core": "6.17.0",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "6.0.3",
     "babel-loader": "6.2.5",
     "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "6.16.0",
@@ -37,7 +38,7 @@
     "cross-env": "3.1.3",
     "css-loader": "0.25.0",
     "enzyme": "^2.9.1",
-    "eslint": "3.8.1",
+    "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.0.1",
@@ -123,5 +124,8 @@
       ".js$": "../../node_modules/babel-jest"
     }
   },
-  "eslintIgnore": []
+  "eslintIgnore": [],
+  "eslintConfig": {
+    "extends": "node_modules/react-scripts/config/eslint.js"
+  }
 }
