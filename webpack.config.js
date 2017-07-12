@@ -82,7 +82,13 @@ module.exports = {
   // the environment in which the bundle should run
   // changes chunk loading behavior and available modules
 
-  externals: ["react"],
+  externals: {
+     'jsdom': 'window',
+     'cheerio': 'window',
+     'react/lib/ExecutionEnvironment': true,
+     'react/lib/ReactContext': 'window',
+     'react/addons': true,
+   },
   // Don't follow/bundle these modules, but request them at runtime from the environment
 
   stats: "errors-only",
