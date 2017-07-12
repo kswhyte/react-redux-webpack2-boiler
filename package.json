@@ -14,7 +14,9 @@
     "webpack-dev-server": "webpack-dev-server --open",
     "start": "npm-run-all check-node-modules webpack",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "eslint" : "eslint --ext .es,.jsx app",
+    "start": "npm-run-all check-node-modules webpack-dev-server"
   },
   "author": "Wesley Duff",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "@kadira/storybook": "^2.21.0",
     "babel-cli": "^6.16.0",
     "babel-core": "6.17.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "6.2.5",
     "babel-preset-env": "^1.6.0",
     "babel-preset-latest": "6.16.0",
@@ -33,6 +36,11 @@
     "enzyme": "^2.9.1",
     "eslint": "3.8.1",
     "eslint-plugin-import": "2.0.1",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "2.1.14",
     "expect": "^1.20.2",
     "extract-text-webpack-plugin": "^2.1.2",
@@ -107,5 +115,6 @@
       ".jsx$": "../../node_modules/babel-jest",
       ".js$": "../../node_modules/babel-jest"
     }
-  }
+  },
+  "eslintIgnore": []
 }

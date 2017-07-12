@@ -80,14 +80,13 @@ var _app2 = _interopRequireDefault(_app);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.dir(_app_config2.default);
+console.log('test -0');
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"article":"_1AD_d0bIjZ1yK37TXJt7cq"};
 
 /***/ })
 /******/ ]);

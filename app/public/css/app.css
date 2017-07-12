@@ -10,7 +10,7 @@
 }
 
 /* components/Article.css */
-.article {
+article {
   font-size: 14px;
   & a {
     color: var(--color-blue);

@@ -1,0 +1,39 @@
+/*# For all es-lint rules:
+# http://eslint.org/docs/rules/
+
+# For a great guide on configuring "React Code Style with ESLint + Babel + Webpack":
+# https://www.robinwieruch.de/react-eslint-webpack-babel/
+
+# use the following object to extend the ESLint rules from Airbnb Code Style, including...
+# eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y:
+# https://github.com/yannickcr/eslint-plugin-react#user-content-recommended-configuration*/
+{
+  "parser" : "babel-eslint",
+  "parserOptions" : {
+    "ecmaVersion": 6
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "max-len": [1, 120, 2, {ignoreComments: true}],
+    "prop-types": [2]
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}
+/*
+# use for to extending the ESLint rules from eslint-plugin-react:
+# https://github.com/yannickcr/eslint-plugin-react#user-content-recommended-configuration
+# {
+#   parser: "babel-eslint",
+#   "rules": {
+#     "max-len": [1, 120, 2, {ignoreComments: true}],
+#     "prop-types": [2],
+      "indent": ["error", 2],
+      "excludedFiles": "*.test.js",
+      "no-console": "off",
+      "quotes": [ 2, "single" ]
+#   },
+#   "extends": ["airbnb-base"]
+# }
+*/

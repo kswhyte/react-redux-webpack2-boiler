@@ -1,14 +1,14 @@
 /* components/Article.css */
 
-._1AD_d0bIjZ1yK37TXJt7cq {
+article {
   font-size: 14px
 }
 
-._1AD_d0bIjZ1yK37TXJt7cq a {
+article a {
   color: #32c7ff;
 }
 
-._1AD_d0bIjZ1yK37TXJt7cq p {
+article p {
   color: rgb(0, 0, 0);
   font-family: "FF DIN", sans-serif;
   font-weight: 300;
@@ -17,7 +17,7 @@
 
 @media (min-width: 601px) {
 
-  ._1AD_d0bIjZ1yK37TXJt7cq {
+  article {
     max-width: 30em
   }
 }

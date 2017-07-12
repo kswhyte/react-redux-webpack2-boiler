@@ -9,6 +9,11 @@ const environments = {
   prod :  `/${URI.baseUISVC_URI}` // Production
 }
 
+if(URI){
+
+}
+
+
 export default environment => {
   let _environment = null;
   //check environment
