@@ -80,7 +80,7 @@ var _app2 = _interopRequireDefault(_app);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.dir(_app_config2.default);
+console.log('test -0');
 
 /***/ }),
 /* 1 */

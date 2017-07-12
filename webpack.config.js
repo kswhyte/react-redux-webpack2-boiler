@@ -24,13 +24,25 @@ module.exports = {
 
     rules: [
       // rules for modules (configure loaders, parser options, etc.)
-      {
+       {
         test: /\.(es|jsx?)$/,
         exclude: [/node_modules/, /tools/],
-        use: [{
-          loader: 'babel-loader',
-          options: { presets: ['es2015', 'es2016', 'es2017'] },
-        }],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: { presets: ['es2015', 'es2016', 'es2017'] },
+          }
+        ],
+      },
+
+      {
+        test: /\.(es|jsx?)$/, // both .es and .jsx
+        loader: 'eslint-loader',
+        include: path.resolve(process.cwd(), 'app'),
+        enforce: 'pre',
+        options: {
+          fix: false,
+        },
       },
 
 
@@ -44,7 +56,6 @@ module.exports = {
             ]
         })
       }
-
 
     ]
     /* Advanced module configuration (click to show) */
