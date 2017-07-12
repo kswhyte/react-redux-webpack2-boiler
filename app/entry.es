@@ -1,4 +1,4 @@
-import URI from '../tools/dist/app_config'
-import styles from './public/css/app.css'
+import URI from '../tools/dist/app_config';
+import styles from './public/css/app.css';
 
-console.log('test -0')
+console.log('test -0');

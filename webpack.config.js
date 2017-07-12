@@ -37,12 +37,7 @@ module.exports = {
 
       {
         test: /\.(es|jsx?)$/, // both .es and .jsx
-        loader: 'eslint-loader',
-        include: path.resolve(process.cwd(), 'app'),
-        enforce: 'pre',
-        options: {
-          fix: false,
-        },
+        loader: 'eslint-loader'
       },
 
 
