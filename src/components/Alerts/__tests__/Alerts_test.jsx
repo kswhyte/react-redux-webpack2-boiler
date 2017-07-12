@@ -1,8 +1,11 @@
 import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+// import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Alerts from '../Alerts';
 
-import { specs, describe, it } from 'storybook-addon-specifications';
+// import { specs, describe, it } from 'storybook-addon-specifications';
+
+import {storiesOf, describe, it, specs
+} from "../../../../.storybook/facade";
 
 import {mount, shallow} from 'enzyme';
 import expect from 'expect';

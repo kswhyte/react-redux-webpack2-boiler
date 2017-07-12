@@ -12,11 +12,14 @@
     "check-node-modules": "nsp check",
     "webpack": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
-    "start": "npm-run-all check-node-modules webpack",
+    "start": "npm-run-all check-node-modules webpack-dev-server",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "eslint" : "eslint --ext .es,.jsx app",
-    "start": "npm-run-all check-node-modules webpack-dev-server"
+    "eslint": "eslint --ext .es,.jsx app",
+    "test": "jest --no-cache",
+    "test:cover": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch",
+    "open:cover": "npm run test:cover && open ./coverage/lcov-report/index.html"
   },
   "author": "Wesley Duff",
   "license": "ISC",
@@ -35,7 +38,6 @@
     "css-loader": "0.25.0",
     "enzyme": "^2.9.1",
     "eslint": "3.8.1",
-    "eslint-plugin-import": "2.0.1",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.0.1",
@@ -47,6 +49,7 @@
     "html-webpack-plugin": "2.22.0",
     "jasmine-enzyme": "^3.1.0",
     "jest": "^20.0.4",
+    "jest-enzyme": "^3.5.1",
     "jsdom": "9.8.0",
     "json-schema-faker": "0.3.6",
     "json-server": "0.8.22",
@@ -84,6 +87,10 @@
   },
   "jest": {
     "rootDir": "src/components",
+    "setupFiles": [
+      "../../.storybook/__conf__/config.js"
+    ],
+    "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js",
     "collectCoverageFrom": [

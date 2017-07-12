@@ -30,22 +30,17 @@ module.exports = {
             '.json',
             '.png'
         ],
-    alias: {
-        "hg3tracker": "@hg/three-ui/HgTracker/mockTracker",
-        "@hg/three-ui": "@hg/three-ui/src/components",
-        "@hg/search-ui": "@hg/search-ui/src/components"
-    }
   },
   plugins: [
     // your custom plugins
   ],
   externals: {
-        'jsdom': 'window',
-        'cheerio': 'window',
-        'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': 'window',
-        'react/addons': true,
-    },
+    'jsdom': 'window',
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': 'window',
+    'react/addons': true,
+  },
   module: {
     loaders: [
         {
@@ -72,6 +67,11 @@ module.exports = {
             query: {
                 "presets": ["es2015", "es2016", "es2017", "react"]
             }
+        },
+        {
+            test: /\.json?$/,
+            loaders: ['json'],
+            include: path.resolve(__dirname, '../'),
         },
         {
             test: /\.woff2$/,
