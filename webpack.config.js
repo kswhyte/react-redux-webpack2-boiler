@@ -35,11 +35,6 @@ module.exports = {
         ],
       },
 
-      {
-        test: /\.(es6|jsx?)$/, // both .es and .jsx
-        loader: 'eslint-loader'
-      },
-
 
        {
         test: /\.css$/,
