@@ -18,7 +18,7 @@ module.exports = {
     modulesDirectories: ['src', 'node_modules'],
     extensions: [
             '',
-            '.es',
+            '.es6',
             '.js',
             '.jsx',
             '.less',
@@ -52,7 +52,7 @@ module.exports = {
             loaders: [ 'style-loader', 'css-loader' ]
         },
         {
-            test: /\.(jsx|js|es)?$/,
+            test: /\.(jsx|js|es6)?$/,
             loader: "babel",
             include: path.resolve(__dirname, "../node_modules/@hg/"),
             query: {
@@ -61,11 +61,11 @@ module.exports = {
             }
         },
         {
-            test: /\.(jsx|js|es)?$/,
+            test: /\.(jsx|js|es6)?$/,
             loader: 'babel',
             exclude: /node_modules/,
             query: {
-                "presets": ["es2015", "es2016", "es2017", "react"]
+                "presets": ["latest", "react"]
             }
         },
         {
@@ -81,10 +81,6 @@ module.exports = {
         {
             test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
             loader: 'url-loader'
-        },
-        {
-            test: /\.scss$/,
-            loader: 'style!css!sass'
         }
     ],
   },
