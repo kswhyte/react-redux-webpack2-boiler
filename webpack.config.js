@@ -25,12 +25,12 @@ module.exports = {
     rules: [
       // rules for modules (configure loaders, parser options, etc.)
        {
-        test: /\.(es|jsx?)$/,
+        test: /\.(es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['es2015', 'es2016', 'es2017'] },
+            options: { presets: ['latest'] },
           }
         ],
       },
