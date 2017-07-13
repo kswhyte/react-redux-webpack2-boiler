@@ -2,9 +2,7 @@ assets/
 coverage/
 dist/
 node_modules/
-tests.webpack.js
-webpack.*
-app/public/js/bundle/*.js
+src/public/js/bundle/*.js
 postcss.config.js
 tools/*.es
 tools/dist/*.js

@@ -2,20 +2,20 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
-  entry: "./app/entry.es", // string | object | array
+  entry: "./src/entry.es6", // string | object | array
   // Here the application starts executing
   // and webpack starts bundling
 
   output: {
     // options related to how webpack emits results
-    path: path.resolve(__dirname, "app/public/js/bundle"), // string
+    path: path.resolve(__dirname, "src/public/js/bundle"), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
 
     filename: "bundle.js", // string
     // the filename template for entry chunks
 
-    publicPath: 'app/public' // Required for webpack-dev-server", // string
+    publicPath: 'src/public' // Required for webpack-dev-server", // string
     // the url to the output directory resolved relative to the HTML page
   },
 
@@ -36,7 +36,7 @@ module.exports = {
       },
 
       {
-        test: /\.(es|jsx?)$/, // both .es and .jsx
+        test: /\.(es6|jsx?)$/, // both .es and .jsx
         loader: 'eslint-loader'
       },
 
@@ -61,11 +61,11 @@ module.exports = {
 
     modules: [
       "node_modules",
-      path.resolve(__dirname, "app")
+      path.resolve(__dirname, "src")
     ],
     // directories where to look for modules
 
-    extensions: [".js", ".es", ".json", ".jsx", ".css"],
+    extensions: [".js", ".es6", ".json", ".jsx", ".css"],
     // extensions that are used
   },
 
@@ -79,10 +79,10 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: [path.join(__dirname, "app"), path.join(__dirname, "app/public")],
+    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
     compress: true,
     port: 9000,
-    publicPath: "app/public"
+    publicPath: "src/public"
   },
   target: "web", // enum
   // the environment in which the bundle should run
