@@ -1,6 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Alerts = (props) => {
+
+  Alerts.propTypes = {
+    alertType: PropTypes.string,
+    message: PropTypes.string,
+    closeAlert: PropTypes.string
+  };
+
     return (
         <div className="alerts">
 

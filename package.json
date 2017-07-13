@@ -4,7 +4,7 @@
   "description": "Smart Access Version 2",
   "main": "app.js",
   "scripts": {
-    "build_environment_babel": "babel ./tools/setEnvironment.es6 --out-file ./tools/dist/setEnvironment.js && babel ./tools/app_config.es6 --out-file ./tools/dist/app_config.js",
+    "build_environment_babel": "babel-node ./tools/setEnvironment.es6",
     "build_environment": "node ./tools/dist/setEnvironment default",
     "build-dev": "npm-run-all build_environment_babel \"build_environment -- dev\"",
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
@@ -18,6 +18,7 @@
     "test:cover": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && open ./coverage/lcov-report/index.html",
+    "lintWatch": "esw webpack.config.* src tools/buildScripts --ext .es6,.js,.jsx --color -w",
     "lint": "esw webpack.config.* src tools/buildScripts --ext .es6,.js,.jsx --color",
     "prestart": "babel-node tools/buildScripts/startMessage",
     "start": "npm-run-all check-node-modules lint webpack-dev-server"
@@ -80,7 +81,8 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "webpack": "^3.1.0"
+    "webpack": "^3.1.0",
+    "prop-types": "^15.5.10"
   },
   "jest": {
     "rootDir": "src/components",
@@ -119,9 +121,5 @@
       ".jsx$": "../../node_modules/babel-jest",
       ".js$": "../../node_modules/babel-jest"
     }
-  },
-  "eslintIgnore": [],
-  "eslintConfig": {
-    "extends": "node_modules/react-scripts/config/eslint.js"
   }
 }

@@ -7,7 +7,7 @@ import Alerts from '../Alerts';
 import {storiesOf, describe, it, specs
 } from "../../../../.storybook/facade";
 
-import {mount, shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 import expect from 'expect';
 
 const successAlert = {
