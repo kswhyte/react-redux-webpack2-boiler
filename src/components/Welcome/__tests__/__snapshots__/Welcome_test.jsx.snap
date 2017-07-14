@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome page main story 1`] = `
+<div
+  className="start-call-banner-block"
+>
+  <div>
+    <h4>
+      Welcome back, 
+      
+    </h4>
+    <h1
+      className="banner-header"
+    >
+      Booking Portal
+    </h1>
+  </div>
+</div>
+`;

@@ -18,7 +18,7 @@ module.exports = {
     modulesDirectories: ['src', 'node_modules'],
     extensions: [
             '',
-            '.es6',
+            '.es',
             '.js',
             '.jsx',
             '.less',
@@ -30,17 +30,22 @@ module.exports = {
             '.json',
             '.png'
         ],
+    alias: {
+        "hg3tracker": "@hg/three-ui/HgTracker/mockTracker",
+        "@hg/three-ui": "@hg/three-ui/src/components",
+        "@hg/search-ui": "@hg/search-ui/src/components"
+    }
   },
   plugins: [
     // your custom plugins
   ],
   externals: {
-    'jsdom': 'window',
-    'cheerio': 'window',
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': 'window',
-    'react/addons': true,
-  },
+      'jsdom': 'window',
+      'cheerio': 'window',
+      'react/addons': true, // important!!
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true
+    },
   module: {
     loaders: [
         {
@@ -52,7 +57,7 @@ module.exports = {
             loaders: [ 'style-loader', 'css-loader' ]
         },
         {
-            test: /\.(jsx|js|es6)?$/,
+            test: /\.(jsx|js|es)?$/,
             loader: "babel",
             include: path.resolve(__dirname, "../node_modules/@hg/"),
             query: {
@@ -61,17 +66,12 @@ module.exports = {
             }
         },
         {
-            test: /\.(jsx|js|es6)?$/,
+            test: /\.(jsx|js|es)?$/,
             loader: 'babel',
             exclude: /node_modules/,
             query: {
-                "presets": ["latest", "react"]
+                "presets": ["es2015", "es2016", "es2017", "react"]
             }
-        },
-        {
-            test: /\.json?$/,
-            loaders: ['json'],
-            include: path.resolve(__dirname, '../'),
         },
         {
             test: /\.woff2$/,
@@ -81,6 +81,10 @@ module.exports = {
         {
             test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
             loader: 'url-loader'
+        },
+        {
+            test: /\.scss$/,
+            loader: 'style!css!sass'
         }
     ],
   },
