@@ -15,7 +15,7 @@ const Alerts = (props) => {
             <div className={`alert alert-${props.alertType}`} role="alert">
             {props.message}<a onClick={props.closeAlert} className="close" aria-label="close">&times;</a>
             </div>
-
+            
         </div>
     );
 };
