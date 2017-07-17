@@ -9,6 +9,9 @@
   --line-height: 1.5;
 }
 
+body {
+  background-color:cornsilk;
+}
 /* components/Article.css */
 article {
   font-size: 14px;
