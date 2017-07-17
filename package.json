@@ -117,7 +117,7 @@
     ],
     "unmockedModulePathPatterns": ["<rootDir>/../../node_modules/@hg/"],
     "moduleNameMapper": {
-      "^@hg/three-ui": "../../node_modules/@hg/three-ui/src/components",
+      "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
       "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
     },

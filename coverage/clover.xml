@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1499960262590" clover="3.2.0">
-  <project timestamp="1499960262590" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1">
-      <file name="Alerts.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Alerts/Alerts.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-      </file>
+<coverage generated="1500307234219" clover="3.2.0">
+  <project timestamp="1500307234219" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3" elements="17" coveredelements="17" complexity="0" loc="8" ncloc="8" packages="3" files="3" classes="3">
+      <package name="Alerts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="Alerts.jsx" path="/Users/drobinson/Code/smart-access/src/components/Alerts/Alerts.jsx">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="8" count="8" type="stmt"/>
+          <line num="14" count="8" type="stmt"/>
+        </file>
+      </package>
+      <package name="HgStub">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <file name="HgStub.jsx" path="/Users/drobinson/Code/smart-access/src/components/HgStub/HgStub.jsx">
+          <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="6" type="stmt"/>
+        </file>
+      </package>
+      <package name="Welcome">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <file name="Welcome.jsx" path="/Users/drobinson/Code/smart-access/src/components/Welcome/Welcome.jsx">
+          <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="6" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+        </file>
+      </package>
     </metrics>
   </project>
 </coverage>
