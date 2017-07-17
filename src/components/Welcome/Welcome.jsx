@@ -29,8 +29,7 @@ const Welcome = (props) => {
     )
 }
 
-Welcome.PropTypes = {
-    agent: PropTypes.object,
+Welcome.propTypes = {
     createCall: PropTypes.func,
     showError: PropTypes.func,
     startCallTimeout: PropTypes.func

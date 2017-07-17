@@ -7,7 +7,7 @@ import Welcome from '../Welcome';
 import {storiesOf, describe, it, specs
 } from "../../../../.storybook/facade";
 
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import expect from 'expect';
 
 const createCall = () => {
