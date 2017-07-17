@@ -1,9 +1,7 @@
 {
-  "presets": ["latest", "react"],
-  "ignore": [],
-  "env": {
-    "production": {
-      "plugins": []
-    }
-  }
+  "presets": [
+    "latest",
+    "react"
+  ],
+  "plugins": ["transform-es2015-modules-commonjs", "transform-object-rest-spread", "transform-runtime"]
 }

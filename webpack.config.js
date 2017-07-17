@@ -21,18 +21,35 @@ module.exports = {
 
   module: {
     // configuration regarding modules
-
     rules: [
       // rules for modules (configure loaders, parser options, etc.)
        {
-        test: /\.(es6|jsx?)$/,
+            test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+            use: [
+              {loader: 'url-loader'}
+            ]
+        },
+      {
+        test: /\.woff2$/,
+        use: [
+          {loader: 'url?mimetype=application/font-woff2'}
+        ]
+      },
+
+       {
+        test: /\.(es|es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: [
           {
-            loader: 'babel-loader',
-            options: { presets: ['latest'] },
+            loader: 'babel-loader'
           }
         ],
+      },
+
+      {
+        test: /\.less$/,
+        exclude: [/node_modules/],
+        use: ["style-loader", "css-loader", "less-loader"]
       },
 
 
