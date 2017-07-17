@@ -21,53 +21,35 @@ module.exports = {
 
   module: {
     // configuration regarding modules
-    loaders: [
-        {
-            test: /\.less$/,
-            loaders: ["style", "css", "less"],
-        },
-        {
-            test: /\.css$/,
-            loaders: [ 'style-loader', 'css-loader' ]
-        },
-        {
-            test: /\.(jsx|js|es|es6)?$/,
-            loader: "babel",
-            include: path.resolve(__dirname, "../node_modules/@hg/"),
-            query: {
-                plugins: ["transform-runtime", "transform-object-rest-spread"],
-                presets: ["es2015", "es2016", "es2017", "react"]
-            }
-        },
-        {
-            test: /\.(jsx|js|es|es6)?$/,
-            loader: 'babel',
-            exclude: /node_modules/,
-            query: {
-                "presets": ["latest", "react"]
-            }
-        },
-        {
-            test: /\.woff2$/,
-            loader: 'url?mimetype=application/font-woff2',
-            include: path.resolve(__dirname, "../node_modules/@hg/")
-        },
-        {
-            test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
-            loader: 'url-loader'
-        }
-    ],
     rules: [
       // rules for modules (configure loaders, parser options, etc.)
        {
-        test: /\.(es6|jsx?)$/,
+            test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+            use: [
+              {loader: 'url-loader'}
+            ]
+        },
+      {
+        test: /\.woff2$/,
+        use: [
+          {loader: 'url?mimetype=application/font-woff2'}
+        ]
+      },
+
+       {
+        test: /\.(es|es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: [
           {
-            loader: 'babel-loader',
-            options: { presets: ['latest'] },
+            loader: 'babel-loader'
           }
         ],
+      },
+
+      {
+        test: /\.less$/,
+        exclude: [/node_modules/],
+        use: ["style-loader", "css-loader", "less-loader"]
       },
 
 

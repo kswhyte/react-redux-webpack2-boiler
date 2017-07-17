@@ -11,6 +11,7 @@
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
     "check-node-modules": "nsp check",
     "webpack": "webpack --config webpack.config.js --progress",
+    "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook",
@@ -36,6 +37,7 @@
     "babel-eslint": "6.0.3",
     "babel-loader": "6.2.5",
     "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "6.16.0",
     "babel-preset-node6": "^11.0.0",
     "babel-register": "6.16.3",
@@ -115,18 +117,17 @@
       "es6",
       "less"
     ],
-    "unmockedModulePathPatterns": ["<rootDir>/../../node_modules/@hg/"],
-    "moduleNameMapper": {
-      "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
-      "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
-      "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
-    },
     "unmockedModulePathPatterns": [
       "react",
       "redux",
       "enzyme",
       "react-addons-test-utils"
     ],
+    "moduleNameMapper": {
+      "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
+      "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
+      "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
+    },
     "testPathIgnorePatterns": [
       "spec.jsx"
     ],
