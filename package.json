@@ -11,6 +11,7 @@
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
     "check-node-modules": "nsp check",
     "webpack": "webpack --config webpack.config.js --progress",
+    "webpack-watch": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook",
@@ -76,6 +77,7 @@
     "webpack-dev-server": "^2.5.1",
     "webpack-hot-middleware": "2.13.0",
     "webpack-md5-hash": "0.0.5",
+    "webpack-sources": "^1.0.1",
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
