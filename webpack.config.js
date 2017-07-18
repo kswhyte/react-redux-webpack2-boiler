@@ -72,7 +72,7 @@ module.exports = {
     ],
     // directories where to look for modules
 
-    extensions: [".js", ".es6", ".json", ".jsx", ".css"],
+    extensions: [".js", ".es6", ".es", ".json", ".jsx", ".css"],
     // extensions that are used
   },
 

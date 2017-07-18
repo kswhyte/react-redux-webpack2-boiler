@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import Welcome from '../components/Welcome';
+import Body from "../components/Body";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Nav from '../components/Navigation';
 import { connect } from 'react-redux';
 
-class WelcomeContainer extends Component {
+class App extends Component {
 
     constructor(props){
         super(props);
@@ -14,7 +17,12 @@ class WelcomeContainer extends Component {
 
     render() {
         return (
-            <Welcome />
+          <div className="wrapper">
+            <Header />
+            <Nav />
+            <Body />
+            <Footer />
+          </div>
         )
     }
 }
@@ -30,4 +38,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(WelcomeContainer);
+export default connect(mapStateToProps)(App);
