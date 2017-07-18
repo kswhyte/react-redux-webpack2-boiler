@@ -14,7 +14,9 @@ const Body = (props) => {
 
     return (
         <div className="body-wrapper">
-            <h1>Body</h1>
+            <div className="card">
+              LOAD PAGES HERE
+            </div>
         </div>
     );
 };
