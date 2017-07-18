@@ -116,7 +116,8 @@ module.exports = {
     contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
     compress: true,
     port: 9000,
-    publicPath: "src/public"
+    publicPath: "src/public",
+    historyApiFallback: true
   },
   target: "web", // enum
   // the environment in which the bundle should run
