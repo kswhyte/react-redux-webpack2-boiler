@@ -1,24 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import './confirmPatientInfo'
+import './confirm-patient-info.css'
 
-const ConfirmPatientInfo = (props) => {
-
-  ConfirmPatientInfo.propTypes = {
-    title : PropTypes.string
-  };
-
-   const check = () => {
-    console.log(props)
-  }
-  check();
-
+const ConfirmPatientInfo = () => {
     return (
-        <div className="confirmPatientInfo-wrapper">
+        <div className="confirm-patient-info-block">
             <h1>ConfirmPatientInfo</h1>
         </div>
     );
 };
+
+ConfirmPatientInfo.propTypes = {};
 
 export default ConfirmPatientInfo;

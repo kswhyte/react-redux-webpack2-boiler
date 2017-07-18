@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Nav from '../components/Navigation';
-import { connect } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Welcome from '../components/Welcome';
-import Login from './LoginContainer';
-import SearchPatient from './SearchPatientContainer';
-import UserManagement from './UserManagementContainer';
 import NotFound from '../components/NotFound';
-import ConfirmPatientInfo from '../ConfirmPatientInfo';
+
+import LoginContainer from './LoginContainer';
+import SearchPatientContainer from './SearchPatientContainer';
+import UserManagementContainer from './UserManagementContainer';
+import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
+import SearchAndCalendarContainer from './SearchAndCalendarContainer';
+import ConfirmContainer from './ConfirmContainer';
 
 
 class App extends Component {
@@ -31,13 +35,14 @@ class App extends Component {
             <div className="router-wrapper">
                 <div className="card">
                     <Switch>
-                        <Route exact path="/" component={Welcome} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/patientsearch" component={SearchPatient} />
-                        <Route exact path="/users" component={UserManagement} />
-                        <Route exact path="/confirmpatientinfo" component={ConfirmPatientInfo} />
-
-                        <Route component={NotFound} />
+                        <Route exact path="/" component={ Welcome } />
+                        <Route exact path="/login" component={ LoginContainer } />
+                        <Route exact path="/patientsearch" component={ SearchPatientContainer } />
+                        <Route exact path="/users" component={ UserManagementContainer } />
+                        <Route exact path="/patientinfo" component={ ConfirmPatientInfoContainer } />
+                        <Route exact path="/searchandcalendar" component={ SearchAndCalendarContainer } />
+                        <Route exact path="/confirm" component={ ConfirmContainer } />
+                        <Route component={ NotFound } />
                     </Switch>
                 </div>
             </div>

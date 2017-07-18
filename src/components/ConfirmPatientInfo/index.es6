@@ -1,2 +1,2 @@
-import Component from './Header';
+import Component from './ConfirmPatientInfo';
 export default Component;
