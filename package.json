@@ -122,7 +122,8 @@
       "node",
       "es",
       "es6",
-      "less"
+      "less",
+      "css"
     ],
     "unmockedModulePathPatterns": [
       "react",
