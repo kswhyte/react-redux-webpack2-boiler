@@ -5,6 +5,9 @@ import Nav from '../components/Navigation';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Welcome from '../components/Welcome';
+import Login from './LoginContainer';
+import SearchPatient from './SearchPatientContainer';
+import UserManagement from './UserManagementContainer';
 import NotFound from '../components/NotFound';
 
 class App extends Component {
@@ -27,6 +30,9 @@ class App extends Component {
                 <div className="card">
                     <Switch>
                         <Route exact path="/" component={Welcome} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/patientsearch" component={SearchPatient} />
+                        <Route exact path="/users" component={UserManagement} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
