@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 const Navigation = (props) => {
 
   Navigation.propTypes = {
-    title : PropTypes.string
+    title : PropTypes.string,
+    children : PropTypes.object
   };
 
   const check = () => {

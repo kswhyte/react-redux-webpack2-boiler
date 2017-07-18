@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import Body from "../components/Body";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Nav from '../components/Navigation';
 import { connect } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Welcome from '../components/Welcome';
+import NotFound from '../components/NotFound';
 
 class App extends Component {
 
@@ -17,12 +19,21 @@ class App extends Component {
 
     render() {
         return (
+        <BrowserRouter>
           <div className="wrapper">
             <Header />
             <Nav />
-            <Body />
+            <div className="router-wrapper">
+                <div className="card">
+                    <Switch>
+                        <Route exact path="/" component={Welcome} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </div>
+            </div>
             <Footer />
           </div>
+        </BrowserRouter>
         )
     }
 }

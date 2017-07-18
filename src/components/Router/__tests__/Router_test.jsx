@@ -1,6 +1,6 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Body from '../Body';
+import Router from '../Router';
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
@@ -11,17 +11,17 @@ import {shallow} from 'enzyme';
 import expect from 'expect';
 
 
-const stories = storiesOf('Body', module);
+const stories = storiesOf('Router', module);
 
 stories.add('Story', () => {
-    const bodyStory = (
-      <Body/>);
+    const routerStory = (
+      <Router/>);
 
     specs(() => describe('Show a successful alert', () => {
-        it('Should render the Body component without crashing', () => {
-            let output = shallow(bodyStory);
+        it('Should render the Router component without crashing', () => {
+            let output = shallow(routerStory);
             expect(output.find('.body-wrapper').length).toEqual(1);
         });
     }));
-    return bodyStory;
+    return routerStory;
 });
