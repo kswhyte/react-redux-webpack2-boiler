@@ -24,7 +24,7 @@ const Router = (props) => {
                 <div className="card">
                     <Switch>
                         <Route exact path="/" component={Welcome} />
-                        <Route path="/confirmpatientinfo" component={ConfirmPatientInfo} />
+                        <Route exact path="/confirmpatientinfo" component={ConfirmPatientInfo} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>

@@ -9,6 +9,8 @@ import Login from './LoginContainer';
 import SearchPatient from './SearchPatientContainer';
 import UserManagement from './UserManagementContainer';
 import NotFound from '../components/NotFound';
+import ConfirmPatientInfo from '../ConfirmPatientInfo';
+
 
 class App extends Component {
 
@@ -33,6 +35,8 @@ class App extends Component {
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/patientsearch" component={SearchPatient} />
                         <Route exact path="/users" component={UserManagement} />
+                        <Route exact path="/confirmpatientinfo" component={ConfirmPatientInfo} />
+
                         <Route component={NotFound} />
                     </Switch>
                 </div>
