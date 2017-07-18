@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Welcome from '../Welcome';
+
 
 const Body = (props) => {
 
@@ -14,9 +17,11 @@ const Body = (props) => {
 
     return (
         <div className="body-wrapper">
-            <div className="card">
-              LOAD PAGES HERE
-            </div>
+            <BrowserRouter>
+                <div className="card">
+                    <Route exact path="/" component={Welcome} />
+                </div>
+            </BrowserRouter>
         </div>
     );
 };

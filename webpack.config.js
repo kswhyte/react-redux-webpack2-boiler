@@ -35,8 +35,7 @@ module.exports = {
           {loader: 'url?mimetype=application/font-woff2'}
         ]
       },
-
-       {
+      {
         test: /\.(es|es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: [
@@ -45,13 +44,19 @@ module.exports = {
           }
         ],
       },
-
+      {
+        test: /\.(es|es6|jsx?)$/,
+        include: [/node_modules\/@hg/],
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ]
+      },
       {
         test: /\.less$/,
-        exclude: [/node_modules/],
         use: ["style-loader", "css-loader", "less-loader"]
       },
-
       {
          test: /\.css$/,
         use: [
@@ -85,7 +90,9 @@ module.exports = {
   resolve: {
     // options for resolving module requests
     // (does not apply to resolving to loaders)
-
+    alias: {
+      "@hg/three-ui": "@hg/three-ui/src/components"
+    },
     modules: [
       "node_modules",
       path.resolve(__dirname, "src")
