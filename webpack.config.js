@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+const extractCSS = new ExtractTextPlugin('./src/public/css/bundle/[name]-one.css');
 module.exports = {
   entry: "./src/entry.es6", // string | object | array
   // Here the application starts executing
@@ -55,13 +56,7 @@ module.exports = {
 
        {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-                { loader: 'css-loader', query: { modules: true, sourceMaps: true } },
-                'postcss-loader'
-            ]
-        })
+        use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
       }
 
     ]
