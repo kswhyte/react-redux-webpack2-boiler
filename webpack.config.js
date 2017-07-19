@@ -35,8 +35,7 @@ module.exports = {
           {loader: 'url?mimetype=application/font-woff2'}
         ]
       },
-
-       {
+      {
         test: /\.(es|es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: [
@@ -45,13 +44,19 @@ module.exports = {
           }
         ],
       },
-
+      {
+        test: /\.(es|es6|jsx?)$/,
+        include: [/node_modules\/@hg/],
+        use: [
+          {
+            loader: 'babel-loader'
+          }
+        ]
+      },
       {
         test: /\.less$/,
-        exclude: [/node_modules/],
         use: ["style-loader", "css-loader", "less-loader"]
       },
-
       {
          test: /\.css$/,
         use: [
@@ -85,14 +90,16 @@ module.exports = {
   resolve: {
     // options for resolving module requests
     // (does not apply to resolving to loaders)
-
+    alias: {
+      "@hg/three-ui": "@hg/three-ui/src/components"
+    },
     modules: [
       "node_modules",
       path.resolve(__dirname, "src")
     ],
     // directories where to look for modules
 
-    extensions: [".js", ".es6", ".es", ".json", ".jsx", ".css"],
+    extensions: [".js", ".es6", ".es", ".json", ".jsx", ".css", ".less"],
     // extensions that are used
   },
 
@@ -109,7 +116,8 @@ module.exports = {
     contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
     compress: true,
     port: 9000,
-    publicPath: "src/public"
+    publicPath: "src/public",
+    historyApiFallback: true
   },
   target: "web", // enum
   // the environment in which the bundle should run
