@@ -15,9 +15,10 @@ const Header = (props) => {
   check();
 
     return (
-        <div className="header-wrapper">
+        <header className="header-wrapper">
             <h1>Header</h1>
-        </div>
+            <span>test</span>
+        </header>
     );
 };
 

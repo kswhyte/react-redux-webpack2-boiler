@@ -1,0 +1,9 @@
+body {
+  background-color:var(--color-blue);
+}
+
+header {
+  & span {
+    background-color:purple;
+  }
+}

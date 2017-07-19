@@ -57,32 +57,14 @@ module.exports = {
         test: /\.less$/,
         use: ["style-loader", "css-loader", "less-loader"]
       },
-      {
-         test: /\.css$/,
+     {
+        test: /\.css$/,
         use: [
           'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1} },
-          { loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => {
-                require("postcss-import")(),
-                require("postcss-url")(),
-                require('postcss-cssnext')(),
-                require('autoprefixer')(),
-                require('cssnano')(),
-                require("postcss-browser-reporter")(),
-                require("postcss-reporter")()
-              }
-            }
-          }
+          { loader: 'css-loader'},
+          { loader: 'postcss-loader'}
         ]
-      },
-/*
-       {
-        test: /\.css$/,
-        use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
-      }*/
+      }
 
     ]
     /* Advanced module configuration (click to show) */
