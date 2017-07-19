@@ -1,7 +1,4 @@
 {
-  "presets": [
-    "latest",
-    "react"
-  ],
+  "presets": ["latest", "react", "flow"],
   "plugins": ["transform-es2015-modules-commonjs", "transform-object-rest-spread", "transform-runtime"]
 }
