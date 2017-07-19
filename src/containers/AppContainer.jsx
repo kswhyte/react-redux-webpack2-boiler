@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -15,53 +15,50 @@ import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props){
-        super(props);
-    }
+  componentWillMount() {
+    // this.props.init();
+  }
 
-    componentWillMount() {
-        // this.props.init();
-    }
-
-    render() {
-        return (
-        <BrowserRouter>
-          <div className="wrapper">
-            <Header />
-            <Nav />
-            <div className="router-wrapper">
-                <div className="card">
-                    <Switch>
-                        <Route exact path="/" component={ Welcome } />
-                        <Route exact path="/login" component={ LoginContainer } />
-                        <Route exact path="/patientsearch" component={ SearchPatientContainer } />
-                        <Route exact path="/users" component={ UserManagementContainer } />
-                        <Route exact path="/patientinfo" component={ ConfirmPatientInfoContainer } />
-                        <Route exact path="/searchandcalendar" component={ SearchAndCalendarContainer } />
-                        <Route exact path="/confirm" component={ ConfirmContainer } />
-                        <Route component={ NotFound } />
-                    </Switch>
-                </div>
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="wrapper">
+          <Header />
+          <Nav />
+          <div className="router-wrapper">
+            <div className="card">
+              <Switch>
+                <Route exact path="/" component={Welcome} />
+                <Route exact path="/login" component={LoginContainer} />
+                <Route exact path="/patientsearch" component={SearchPatientContainer} />
+                <Route exact path="/users" component={UserManagementContainer} />
+                <Route exact path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route exact path="/searchandcalendar" component={SearchAndCalendarContainer} />
+                <Route exact path="/confirm" component={ConfirmContainer} />
+                <Route component={NotFound} />
+              </Switch>
             </div>
-            <Footer />
           </div>
-        </BrowserRouter>
-        )
-    }
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+  //Select the specific state items you would like here
+  const { test } = state;
 
-    //Select the specific state items you would like here
-    const { test } = state;
-
-    //return state items to be added as props to the container
-    return {
-        test
-    }
-}
+  //return state items to be added as props to the container
+  return {
+    test
+  };
+};
 
 export default connect(mapStateToProps)(App);

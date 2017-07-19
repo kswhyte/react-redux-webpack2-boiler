@@ -9,6 +9,7 @@
     "build-dev": "npm-run-all build_environment_babel \"build_environment -- dev\"",
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
+    "format": "prettier --write --single-quote --print-width=120 --tab-width=2 \"js/**/*.{js,jsx}\"",
     "check-node-modules": "nsp check",
     "webpack": "webpack --config webpack.config.js --progress",
     "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
@@ -72,6 +73,7 @@
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-reporter": "^4.0.0",
+    "prettier": "^1.5.3",
     "react-addons-perf": "^15.4.2",
     "react-addons-test-utils": "^15.5.1",
     "react-addons-update": "^15.5.1",
@@ -104,41 +106,19 @@
   },
   "jest": {
     "rootDir": "src/components",
-    "setupFiles": [
-      "../../.storybook/__conf__/config.js"
-    ],
+    "setupFiles": ["../../.storybook/__conf__/config.js"],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js",
-    "collectCoverageFrom": [
-      "src/components/*.{es6, js,jsx}",
-      "src/components/**/*.{es6, js,jsx}",
-      "!**/helpers/**"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "jsx",
-      "node",
-      "es",
-      "es6",
-      "less",
-      "css"
-    ],
-    "unmockedModulePathPatterns": [
-      "react",
-      "redux",
-      "enzyme",
-      "react-addons-test-utils"
-    ],
+    "collectCoverageFrom": ["src/components/*.{es6, js,jsx}", "src/components/**/*.{es6, js,jsx}", "!**/helpers/**"],
+    "moduleFileExtensions": ["js", "json", "jsx", "node", "es", "es6", "less", "css"],
+    "unmockedModulePathPatterns": ["react", "redux", "enzyme", "react-addons-test-utils"],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
       "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
     },
-    "testPathIgnorePatterns": [
-      "spec.jsx"
-    ],
+    "testPathIgnorePatterns": ["spec.jsx"],
     "transform": {
       ".es$": "../../node_modules/babel-jest",
       ".jsx$": "../../node_modules/babel-jest",
