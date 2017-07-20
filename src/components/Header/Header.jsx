@@ -16,7 +16,7 @@ const Header = (props) => {
 
     return (
         <div className="header-wrapper">
-            <h1>Header</h1>
+            <h1>Welcome</h1>
         </div>
     );
 };
