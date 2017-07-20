@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 const Body = (props) => {
 
   Body.propTypes = {
-    title : PropTypes.string
+    children : PropTypes.object
   };
 
   const check = () => {
@@ -13,11 +14,9 @@ const Body = (props) => {
   check();
 
     return (
-        <div className="body-wrapper">
-            <div className="card">
-              LOAD PAGES HERE
-            </div>
-        </div>
+      <div>
+        {props.children}
+      </div>
     );
 };
 

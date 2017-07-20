@@ -13,9 +13,9 @@ const Footer = (props) => {
   check();
 
     return (
-        <div className="footer-wrapper">
+        <footer className="footer-wrapper">
             <h1>Footer</h1>
-        </div>
+        </footer>
     );
 };
 

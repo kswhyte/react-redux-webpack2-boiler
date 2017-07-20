@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import HgRow from '@hg/three-ui/HgRow';
 import HgButton from '@hg/three-ui/HgButton';
 
-import './welcome.less';
+import './welcome.css';
 
 const Welcome = (props) => {
     return (

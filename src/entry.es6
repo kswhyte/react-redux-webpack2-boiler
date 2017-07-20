@@ -5,28 +5,23 @@ import App from './containers/App';
 import configureStore from './store/configureStore';
 import { AppContainer } from 'react-hot-loader'
 
-import './public/css/app.css';
-
 const store = configureStore();
 
-ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </AppContainer>,
-  document.querySelector('#main')
-)
+const render = Component => {
+    ReactDOM.render(
+        <AppContainer>
+          <Provider store={store}>
+            <Component />
+          </Provider>
+        </AppContainer>,
+      document.querySelector('#main')
+    )
+}
 
+
+render(App)
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const NextApp = require('./containers/App').default;
-    ReactDOM.render(
-      <AppContainer>
-        <NextApp/>
-      </AppContainer>,
-      document.getElementById('root')
-    );
-  });
+    console.log("Hot a re looooad");
+  module.hot.accept('./containers/App', () => { render(App) })
 }

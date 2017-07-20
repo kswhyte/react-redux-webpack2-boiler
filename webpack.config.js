@@ -44,45 +44,32 @@ module.exports = {
           {loader: 'url?mimetype=application/font-woff2'}
         ]
       },
-
-       {
+      {
         test: /\.(es|es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
         use: ['babel-loader'],
       },
-
       {
-        test: /\.less$/,
-        exclude: [/node_modules/],
-        use: ["style-loader", "css-loader", "less-loader"]
-      },
-
-      {
-         test: /\.css$/,
+        test: /\.(es|es6|jsx?)$/,
+        include: [/node_modules\/@hg/],
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1} },
-          { loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => {
-                require("postcss-import")(),
-                require("postcss-url")(),
-                require('postcss-cssnext')(),
-                require('autoprefixer')(),
-                require('cssnano')(),
-                require("postcss-browser-reporter")(),
-                require("postcss-reporter")()
-              }
-            }
+          {
+            loader: 'babel-loader'
           }
         ]
       },
-/*
-       {
+      {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "less-loader"]
+      },
+     {
         test: /\.css$/,
-        use: extractCSS.extract([ 'css-loader', 'postcss-loader' ])
-      }*/
+        use: [
+          'style-loader',
+          { loader: 'css-loader'},
+          { loader: 'postcss-loader'}
+        ]
+      }
 
     ]
     /* Advanced module configuration (click to show) */
@@ -90,14 +77,16 @@ module.exports = {
   resolve: {
     // options for resolving module requests
     // (does not apply to resolving to loaders)
-
+    alias: {
+      "@hg/three-ui": "@hg/three-ui/src/components"
+    },
     modules: [
       "node_modules",
       path.resolve(__dirname, "src")
     ],
     // directories where to look for modules
 
-    extensions: [".js", ".es6", ".es", ".json", ".jsx", ".css"],
+    extensions: [".js", ".es6", ".es", ".json", ".jsx", ".css", ".less"],
     // extensions that are used
   },
 
@@ -116,6 +105,7 @@ module.exports = {
     port: 9000,
     publicPath: "/static/",
     hot: true,
+    historyApiFallback: true
   },
   target: "web", // enum
   // the environment in which the bundle should run

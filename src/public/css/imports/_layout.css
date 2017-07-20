@@ -1,0 +1,18 @@
+body {
+  background-color:var(--pale-grey-two);
+}
+
+footer {
+  background-color:var(--white);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height:42px;
+}
+
+
+/* Main container for each page */
+.body-wrapper {
+  padding: 59px 80px;
+}

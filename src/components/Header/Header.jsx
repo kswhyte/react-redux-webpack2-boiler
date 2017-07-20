@@ -15,9 +15,14 @@ const Header = (props) => {
   check();
 
     return (
-        <div className="header-wrapper">
-            <h1>Welcome</h1>
-        </div>
+        <header>
+          <div>
+            <div>hg smartaccess</div>
+          </div>
+          <div>
+            <div>MR Metropolitan Region</div>
+          </div>
+        </header>
     );
 };
 
