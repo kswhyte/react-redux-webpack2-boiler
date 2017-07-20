@@ -1,22 +1,23 @@
 body {
-  background-color:var(--pale-grey-two);
+  background-color: var(--pale-grey-two);
+  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
 }
 
 footer {
-  background-color:var(--white);
+  background-color: var(--white);
   text-align: center;
   position: fixed;
   width: 100%;
   bottom: 0;
-  height:42px;
+  height: 42px;
 }
 
 header {
-  position:fixed;
-  top:0;
-  width:100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-
 
 /* Main container for each page */
 .body-wrapper {
