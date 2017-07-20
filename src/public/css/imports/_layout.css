@@ -11,8 +11,15 @@ footer {
   height:42px;
 }
 
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
 
 /* Main container for each page */
 .body-wrapper {
   padding: 59px 80px;
+  margin-top: 162px;
 }

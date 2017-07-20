@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -15,53 +16,85 @@ import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
+import { toggle_header } from '../actions/SessionActions';
+
+const proptypes = {
+  dispatch: PropTypes.func,
+  headerSize: PropTypes.string
+};
+
+// App.PropTypes = {
+//   dispatch: PropTypes.func.isRequired,
+//   headerSize: PropTypes.string
+// };
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleHeaderSize = 'full';
+    this.props = props;
+  }
 
-    constructor(props){
-        super(props);
-    }
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100 && this.toggleHeaderSize !== 'small') {
+        this.toggleHeaderSize = 'small';
+        console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 
-    componentWillMount() {
-        // this.props.init();
-    }
+        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+      } else if (window.scrollY < 100 && this.toggleHeaderSize !== 'full') {
+        this.toggleHeaderSize = 'full';
+        console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 
-    render() {
-        return (
-        <BrowserRouter>
-          <div className="wrapper">
-            <Header />
-            <section className="body-wrapper">
-              <Nav />
-              <div className="router-wrapper">
-                <Switch>
-                    <Route exact path="/" component={ Welcome } />
-                    <Route exact path="/login" component={ LoginContainer } />
-                    <Route exact path="/patientsearch" component={ SearchPatientContainer } />
-                    <Route exact path="/users" component={ UserManagementContainer } />
-                    <Route exact path="/patientinfo" component={ ConfirmPatientInfoContainer } />
-                    <Route exact path="/searchandcalendar" component={ SearchAndCalendarContainer } />
-                    <Route exact path="/confirm" component={ ConfirmContainer } />
-                    <Route component={ NotFound } />
-                </Switch>
-              </div>
-            </section>
-            <Footer />
-          </div>
-        </BrowserRouter>
-        )
-    }
+        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+      }
+    });
+  }
+
+  componentWillMount() {
+    // this.props.init();
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="wrapper">
+          <Header headerSize={this.props.headerSize} />
+          <section className="body-wrapper">
+            <Nav />
+            <div className="router-wrapper">
+              <Switch>
+                <Route exact path="/" component={Welcome} />
+                <Route exact path="/login" component={LoginContainer} />
+                <Route exact path="/patientsearch" component={SearchPatientContainer} />
+                <Route exact path="/users" component={UserManagementContainer} />
+                <Route exact path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route exact path="/searchandcalendar" component={SearchAndCalendarContainer} />
+                <Route exact path="/confirm" component={ConfirmContainer} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+          </section>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
+App.propTypes = proptypes;
 
-    //Select the specific state items you would like here
-    const { test } = state;
+const mapStateToProps = state => {
+  //Select the specific state items you would like here
+  const { test } = state;
+  const { headerSize } = state.Session;
+  console.log('test ---', headerSize);
 
-    //return state items to be added as props to the container
-    return {
-        test
-    }
-}
+  //return state items to be added as props to the container
+  return {
+    test,
+    headerSize
+  };
+};
 
 export default connect(mapStateToProps)(App);
