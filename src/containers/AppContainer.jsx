@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -18,98 +18,116 @@ import ConfirmContainer from './ConfirmContainer';
 
 import { toggle_header } from '../actions/SessionActions';
 
-const propTypes = {
-  dispatch: PropTypes.func.isRequired
-}
+const proptypes = {
+  dispatch: PropTypes.func,
+  headerSize: PropTypes.string
+};
+
+// App.PropTypes = {
+//   dispatch: PropTypes.func.isRequired,
+//   headerSize: PropTypes.string
+// };
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleHeaderSize = 'full';
+    this.props = props;
+  }
 
-    constructor(props){
-        super(props);
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100 && this.toggleHeaderSize !== 'small') {
+        this.toggleHeaderSize = 'small';
+        console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
+
+        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+      } else if (window.scrollY < 100 && this.toggleHeaderSize !== 'full') {
         this.toggleHeaderSize = 'full';
-        this.props = props;
-    }
+        console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 
-    componentDidMount() {
+        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+      }
+    });
+  }
 
-        window.addEventListener('scroll', () => {
+  componentWillMount() {
+    // this.props.init();
+  }
 
-          const { dispatch } = this.props;
-
-          if(window.scrollY > 100 && this.toggleHeaderSize !== 'small'){
-
-            this.toggleHeaderSize = 'small';
-            console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
-
-            dispatch(toggle_header(this.toggleHeaderSize));
-
-          } else if(window.scrollY < 100 && this.toggleHeaderSize !== 'full'){
-            this.toggleHeaderSize = 'full';
-            console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
-
-            dispatch(toggle_header(this.toggleHeaderSize));
-          }
-
-
-        })
-    }
-
-    componentWillMount() {
-        // this.props.init();
-    }
-
-    render() {
-        return (
-        <BrowserRouter>
-          <div className="wrapper">
-            <Header headerSize={this.props.headerSize} />
-            <section className="body-wrapper">
-              <Nav />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <div className="router-wrapper">
-                <Switch>
-                    <Route exact path="/" component={ Welcome } />
-                    <Route exact path="/login" component={ LoginContainer } />
-                    <Route exact path="/patientsearch" component={ SearchPatientContainer } />
-                    <Route exact path="/users" component={ UserManagementContainer } />
-                    <Route exact path="/patientinfo" component={ ConfirmPatientInfoContainer } />
-                    <Route exact path="/searchandcalendar" component={ SearchAndCalendarContainer } />
-                    <Route exact path="/confirm" component={ ConfirmContainer } />
-                    <Route component={ NotFound } />
-                </Switch>
-              </div>
-            </section>
-            <Footer />
-          </div>
-        </BrowserRouter>
-        )
-    }
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="wrapper">
+          <Header headerSize={this.props.headerSize} />
+          <section className="body-wrapper">
+            <Nav />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="router-wrapper">
+              <Switch>
+                <Route exact path="/" component={Welcome} />
+                <Route exact path="/login" component={LoginContainer} />
+                <Route exact path="/patientsearch" component={SearchPatientContainer} />
+                <Route exact path="/users" component={UserManagementContainer} />
+                <Route exact path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route exact path="/searchandcalendar" component={SearchAndCalendarContainer} />
+                <Route exact path="/confirm" component={ConfirmContainer} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+          </section>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-App.PropTypes = propTypes;
+App.propTypes = proptypes;
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+  //Select the specific state items you would like here
+  const { test } = state;
+  const { headerSize } = state.Session;
+  console.log('test ---', headerSize);
 
-    //Select the specific state items you would like here
-    const { test } = state;
-    const { headerSize } = state.Session;
-    console.log('test ---', headerSize);
-
-    //return state items to be added as props to the container
-    return {
-        test,
-        headerSize
-    }
-}
+  //return state items to be added as props to the container
+  return {
+    test,
+    headerSize
+  };
+};
 
 export default connect(mapStateToProps)(App);

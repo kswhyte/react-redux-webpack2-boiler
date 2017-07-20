@@ -26872,9 +26872,15 @@ var _SessionActions = __webpack_require__(411);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var propTypes = {
-  dispatch: _propTypes.PropTypes.func.isRequired
+var proptypes = {
+  dispatch: _propTypes.PropTypes.func,
+  headerSize: _propTypes.PropTypes.string
 };
+
+// App.PropTypes = {
+//   dispatch: PropTypes.func.isRequired,
+//   headerSize: PropTypes.string
+// };
 
 var App = function (_Component) {
   (0, _inherits3.default)(App, _Component);
@@ -26895,20 +26901,16 @@ var App = function (_Component) {
       var _this2 = this;
 
       window.addEventListener('scroll', function () {
-        var dispatch = _this2.props.dispatch;
-
-
         if (window.scrollY > 100 && _this2.toggleHeaderSize !== 'small') {
-
           _this2.toggleHeaderSize = 'small';
           console.log('toggle -full :  ' + _this2.toggleHeaderSize + ' : ' + window.scrollY);
 
-          dispatch((0, _SessionActions.toggle_header)(_this2.toggleHeaderSize));
+          _this2.props.dispatch((0, _SessionActions.toggle_header)(_this2.toggleHeaderSize));
         } else if (window.scrollY < 100 && _this2.toggleHeaderSize !== 'full') {
           _this2.toggleHeaderSize = 'full';
           console.log('toggle -full :  ' + _this2.toggleHeaderSize + ' : ' + window.scrollY);
 
-          dispatch((0, _SessionActions.toggle_header)(_this2.toggleHeaderSize));
+          _this2.props.dispatch((0, _SessionActions.toggle_header)(_this2.toggleHeaderSize));
         }
       });
     }
@@ -26931,6 +26933,28 @@ var App = function (_Component) {
             'section',
             { className: 'body-wrapper' },
             _react2.default.createElement(_Navigation2.default, null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
             _react2.default.createElement('br', null),
             _react2.default.createElement('br', null),
             _react2.default.createElement('br', null),
@@ -26967,10 +26991,9 @@ var App = function (_Component) {
   return App;
 }(_react.Component);
 
-App.PropTypes = propTypes;
+App.propTypes = proptypes;
 
 var mapStateToProps = function mapStateToProps(state) {
-
   //Select the specific state items you would like here
   var test = state.test;
   var headerSize = state.Session.headerSize;
@@ -30063,7 +30086,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "header>div{padding-left:93px;display:-webkit-box;display:-ms-flexbox;display:flex}header>div div{-ms-flex-item-align:center;align-self:center}header>div:first-of-type{background-color:#3e4759;height:81px}header>div:first-of-type.small{height:36px}header>div:last-of-type{background-color:#fff;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.5);box-shadow:0 2px 4px 0 rgba(0,0,0,.5);height:70px}", ""]);
+exports.push([module.i, "header>div{padding-left:93px;display:-webkit-box;display:-ms-flexbox;display:flex}header>div div{-ms-flex-item-align:center;align-self:center}header>div:first-of-type{background-color:#3e4759;height:81px;-webkit-transition:height 1.5s;transition:height 1.5s;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}header>div:first-of-type.small{height:36px}header>div:last-of-type{background-color:#fff;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.5);box-shadow:0 2px 4px 0 rgba(0,0,0,.5);height:70px}", ""]);
 
 // exports
 
@@ -31926,8 +31949,6 @@ var types = _interopRequireWildcard(_actionTypes);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var initialState = {};
-
 //value is small or full
 function toggle_header(headerSize) {
   return {
@@ -32045,7 +32066,7 @@ var _assign2 = _interopRequireDefault(_assign);
 
 var _actionTypes = __webpack_require__(161);
 
-var type = _interopRequireWildcard(_actionTypes);
+var types = _interopRequireWildcard(_actionTypes);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -32055,18 +32076,12 @@ exports.default = function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments[1];
 
-
   switch (action.type) {
-
-    case type.TOGGLE_HEADER:
-      console.log('TOGGLE HEADER IN REDUCER', action.headerSize);
-      var newState = (0, _assign2.default)({}, state, { headerSize: action.headerSize });
-      return newState;
-      break;
+    case types.TOGGLE_HEADER:
+      return (0, _assign2.default)({}, state, { headerSize: action.headerSize });
 
     default:
       return state;
-      break;
   }
 };
 
