@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -15,11 +16,42 @@ import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
+import { toggle_header } from '../actions/SessionActions';
+
+const propTypes = {
+  dispatch: PropTypes.func.isRequired
+}
 
 class App extends Component {
 
     constructor(props){
         super(props);
+        this.toggleHeaderSize = 'full';
+        this.props = props;
+    }
+
+    componentDidMount() {
+
+        window.addEventListener('scroll', () => {
+
+          const { dispatch } = this.props;
+
+          if(window.scrollY > 100 && this.toggleHeaderSize !== 'small'){
+
+            this.toggleHeaderSize = 'small';
+            console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
+
+            dispatch(toggle_header(this.toggleHeaderSize));
+
+          } else if(window.scrollY < 100 && this.toggleHeaderSize !== 'full'){
+            this.toggleHeaderSize = 'full';
+            console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
+
+            dispatch(toggle_header(this.toggleHeaderSize));
+          }
+
+
+        })
     }
 
     componentWillMount() {
@@ -30,9 +62,20 @@ class App extends Component {
         return (
         <BrowserRouter>
           <div className="wrapper">
-            <Header />
+            <Header headerSize={this.props.headerSize} />
             <section className="body-wrapper">
               <Nav />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
               <div className="router-wrapper">
                 <Switch>
                     <Route exact path="/" component={ Welcome } />
@@ -53,14 +96,19 @@ class App extends Component {
     }
 }
 
+App.PropTypes = propTypes;
+
 const mapStateToProps = (state) => {
 
     //Select the specific state items you would like here
     const { test } = state;
+    const { headerSize } = state.Session;
+    console.log('test ---', headerSize);
 
     //return state items to be added as props to the container
     return {
-        test
+        test,
+        headerSize
     }
 }
 

@@ -6,17 +6,12 @@ import './header.css'
 const Header = (props) => {
 
   Header.propTypes = {
-    title : PropTypes.string
+    headerSize : PropTypes.string
   };
-
-   const check = () => {
-    console.log(props)
-  }
-  check();
 
     return (
         <header>
-          <div>
+          <div className={props.headerSize === 'small'? 'small' : null}>
             <div>hg smartaccess</div>
           </div>
           <div>
