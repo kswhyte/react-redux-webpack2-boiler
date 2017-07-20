@@ -29939,16 +29939,24 @@ var Header = function Header(props) {
 
   return _react2.default.createElement(
     'header',
-    { className: 'header-wrapper' },
+    null,
     _react2.default.createElement(
       'div',
       null,
-      'hg smartaccess'
+      _react2.default.createElement(
+        'div',
+        null,
+        'hg smartaccess'
+      )
     ),
     _react2.default.createElement(
       'div',
       null,
-      'MR Metropolitan Region'
+      _react2.default.createElement(
+        'div',
+        null,
+        'MR Metropolitan Region'
+      )
     )
   );
 };
@@ -29990,7 +29998,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "header div {\n    height:81px;\n    padding-left:93px;\n}\nheader {\n    /* background-color: yellow; */\n}\nheader div:first-child {\n    background-color:#3e4759;\n}\nheader div:last-child {\n    background-color:#ffffff;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n}\n", ""]);
+exports.push([module.i, "header>div{padding-left:93px;display:-webkit-box;display:-ms-flexbox;display:flex}header>div div{-ms-flex-item-align:center;align-self:center}header>div:first-of-type{background-color:#3e4759;height:81px}header>div:first-of-type.small{height:36px}header>div:last-of-type{background-color:#fff;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.5);box-shadow:0 2px 4px 0 rgba(0,0,0,.5);height:70px}", ""]);
 
 // exports
 
@@ -30746,7 +30754,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "\n.start-call-banner-block {\n    padding: 10%;\n    .error-container {\n        width: 100%;\n        height: 100%;\n        text-align: center;\n        padding-top: 200px;\n        color: #e37342;\n    }\n}\n\n.new-session-button {\n    font-size: 1.5rem;\n    background: #25a2e1;\n    color: white;\n}", ""]);
+exports.push([module.i, ".start-call-banner-block{padding:10%;.error-container{width:100%;height:100%;text-align:center;padding-top:200px;color:#e37342}}.new-session-button{font-size:1.5rem;background:#25a2e1;color:#fff}", ""]);
 
 // exports
 
@@ -31836,7 +31844,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, ".confirm-wrapper {\n\n}\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 

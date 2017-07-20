@@ -11,7 +11,7 @@ module.exports = {
         require('postcss-cssnext')({
             browsers: ['last 2 versions', 'ie >= 9']
         }),
-       // require('cssnano')({zindex: false})
+        require('cssnano')({zindex: false})
             // end UglifyJSPlugin fix
     ]
 }

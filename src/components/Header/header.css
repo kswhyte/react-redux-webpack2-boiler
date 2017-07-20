@@ -1,18 +1,30 @@
 @import "imports/_helpers.css";
 header {
 
-    & div {
-      height:81px;
+    & > div {
       padding-left:93px;
+      display:flex;
+
+       & div {
+        align-self: center;
+      }
+
     }
     /*background-color: yellow;*/
 
-    & div:first-child {
+    & > div:first-of-type {
       background-color:var(--slate);
+      height:81px;
+
+      &.small {
+        height: 36px;
+      }
+
     }
 
-    & div:last-child {
+    & > div:last-of-type{
       background-color:var(--white);
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      height:70px;
     }
 }

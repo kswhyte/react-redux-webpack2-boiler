@@ -10,7 +10,7 @@
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
     "check-node-modules": "nsp check",
-    "build-core-css": "postcss -u postcss-import -u postcss-cssnext -o src/public/css/dist/core.css src/public/css/core.css",
+    "build-core-css": "postcss -u postcss-import -u postcss-cssnext -o src/public/css/dist/core_build.css src/public/css/core.css",
     "webpack": "webpack --config webpack.config.js --progress",
     "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
