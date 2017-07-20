@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Story 1`] = `
-<div
-  className="header-wrapper"
->
-  <h1>
-    Header
-  </h1>
-</div>
+<header>
+  <div>
+    <div>
+      hg smartaccess
+    </div>
+  </div>
+  <div>
+    <div>
+      MR Metropolitan Region
+    </div>
+  </div>
+</header>
 `;

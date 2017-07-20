@@ -31,8 +31,8 @@ const Welcome = (props) => {
 
 Welcome.propTypes = {
     createCall: PropTypes.func,
-    showError: PropTypes.func,
-    startCallTimeout: PropTypes.func
+    showError: PropTypes.bool,
+    startCallTimeout: PropTypes.bool
 }
 
 export default Welcome;

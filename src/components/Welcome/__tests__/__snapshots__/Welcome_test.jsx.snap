@@ -9,9 +9,7 @@ exports[`Welcome page main error story 1`] = `
       Welcome
     </h1>
     <hr />
-    <div>
-      
-    </div>
+    <div />
     <div
       className="error-container"
     >
@@ -32,9 +30,7 @@ exports[`Welcome page main story 1`] = `
       Welcome
     </h1>
     <hr />
-    <div>
-      
-    </div>
+    <div />
     <div
       className="error-container"
     />
@@ -51,9 +47,7 @@ exports[`Welcome page timeout error story 1`] = `
       Welcome
     </h1>
     <hr />
-    <div>
-      
-    </div>
+    <div />
     <div
       className="error-container"
     >

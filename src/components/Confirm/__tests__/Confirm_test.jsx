@@ -20,7 +20,7 @@ stories.add('Story', () => {
     specs(() => describe('Show a successful alert', () => {
         it('Should render the Confirm component without crashing', () => {
             let output = shallow(confirm);
-            expect(output.find('.confirmPatientInfo-wrapper').length).toEqual(1);
+            expect(output.find('.confirm-block').length).toEqual(1);
         });
     }));
     return confirm;

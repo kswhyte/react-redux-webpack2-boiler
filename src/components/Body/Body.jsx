@@ -14,7 +14,7 @@ const Body = (props) => {
   check();
 
     return (
-      <div>
+      <div className="body-wrapper">
         {props.children}
       </div>
     );

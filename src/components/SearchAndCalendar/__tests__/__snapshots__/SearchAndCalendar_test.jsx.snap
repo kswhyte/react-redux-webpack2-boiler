@@ -2,10 +2,10 @@
 
 exports[`Story 1`] = `
 <div
-  className="header-wrapper"
+  className="search-and-calendar-block"
 >
   <h1>
-    Header
+    SearchAndCalendar
   </h1>
 </div>
 `;

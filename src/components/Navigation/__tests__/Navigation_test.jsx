@@ -7,19 +7,25 @@ import Navigation from '../Navigation';
 import {storiesOf, describe, it, specs
 } from "../../../../.storybook/facade";
 
-import {shallow} from 'enzyme';
+import { StaticRouter } from 'react-router'
+
+import {mount} from 'enzyme';
 import expect from 'expect';
 
+const context = {};
 
 const stories = storiesOf('Navigation', module);
 
 stories.add('Story', () => {
     const navigationStory = (
-      <Navigation/>);
+        <StaticRouter context={context} >
+            <Navigation/>
+        </StaticRouter>
+    );
 
-    specs(() => describe('Show a successful alert', () => {
+    specs(() => describe('Show Navigation', () => {
         it('Should render the Navigation component without crashing', () => {
-            let output = shallow(navigationStory);
+            let output = mount(navigationStory);
             expect(output.find('.navigation-wrapper').length).toEqual(1);
         });
     }));
