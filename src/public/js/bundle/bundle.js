@@ -30190,7 +30190,7 @@ exports.default = _Welcome2.default;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(3);
@@ -30214,41 +30214,42 @@ __webpack_require__(376);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Welcome = function Welcome(props) {
-    return _react2.default.createElement(
+  return _react2.default.createElement(
+    'div',
+    { className: 'start-call-banner-block' },
+    _react2.default.createElement(
+      _HgRow2.default,
+      null,
+      _react2.default.createElement(
+        'h1',
+        null,
+        'Welcome'
+      ),
+      _react2.default.createElement('i', { className: 'fa fa-pencil', 'aria-hidden': 'true' }),
+      _react2.default.createElement('hr', null),
+      _react2.default.createElement(_HgButton2.default, { className: 'new-session-button', tabIndex: 1, onClick: props.createCall, text: 'Begin New Session' }),
+      _react2.default.createElement(
         'div',
-        { className: 'start-call-banner-block' },
-        _react2.default.createElement(
-            _HgRow2.default,
-            null,
-            _react2.default.createElement(
-                'h1',
-                null,
-                'Welcome'
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(_HgButton2.default, { className: 'new-session-button', tabIndex: 1, onClick: props.createCall, text: 'Begin New Session' }),
-            _react2.default.createElement(
-                'div',
-                { className: 'error-container' },
-                props.showError && _react2.default.createElement(
-                    'h3',
-                    null,
-                    'Something went wrong.'
-                ),
-                props.startCallTimeout && _react2.default.createElement(
-                    'h3',
-                    null,
-                    'Request timed out.'
-                )
-            )
+        { className: 'error-container' },
+        props.showError && _react2.default.createElement(
+          'h3',
+          null,
+          'Something went wrong.'
+        ),
+        props.startCallTimeout && _react2.default.createElement(
+          'h3',
+          null,
+          'Request timed out.'
         )
-    );
+      )
+    )
+  );
 };
 
 Welcome.propTypes = {
-    createCall: _propTypes2.default.func,
-    showError: _propTypes2.default.func,
-    startCallTimeout: _propTypes2.default.func
+  createCall: _propTypes2.default.func,
+  showError: _propTypes2.default.func,
+  startCallTimeout: _propTypes2.default.func
 };
 
 exports.default = Welcome;
