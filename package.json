@@ -11,6 +11,7 @@
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 \"js/**/*.{js,jsx}\"",
     "check-node-modules": "nsp check",
+    "build-core-css": "postcss -u postcss-import -u postcss-cssnext -o src/public/css/dist/core_build.css src/public/css/core.css",
     "webpack": "webpack --config webpack.config.js --progress",
     "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
@@ -23,7 +24,7 @@
     "lintWatch": "esw webpack.config.* src tools/buildScripts --ext .es6,.js,.jsx --color -w",
     "lint": "esw webpack.config.* src tools/buildScripts --ext .es6,.js,.jsx --color",
     "prestart": "babel-node tools/buildScripts/startMessage",
-    "start": "npm-run-all check-node-modules lint webpack webpack-dev-server"
+    "start": "npm-run-all check-node-modules lint build-core-css webpack webpack-dev-server"
   },
   "author": "Wesley Duff",
   "license": "ISC",
@@ -69,6 +70,7 @@
     "numeral": "1.5.3",
     "open": "0.0.5",
     "postcss": "^6.0.7",
+    "postcss-cli": "^4.1.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",

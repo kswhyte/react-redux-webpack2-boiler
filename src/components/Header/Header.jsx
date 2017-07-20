@@ -6,18 +6,18 @@ import './header.css'
 const Header = (props) => {
 
   Header.propTypes = {
-    title : PropTypes.string
+    headerSize : PropTypes.string
   };
 
-   const check = () => {
-    console.log(props)
-  }
-  check();
-
     return (
-        <div className="header-wrapper">
-            <h1>Header</h1>
-        </div>
+        <header>
+          <div className={props.headerSize === 'small'? 'small' : null}>
+            <div>hg smartaccess</div>
+          </div>
+          <div>
+            <div>MR Metropolitan Region</div>
+          </div>
+        </header>
     );
 };
 

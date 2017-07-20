@@ -1,6 +1,29 @@
-.header-wrapper {
-    width: 80%;
-    margin-left: 10%;
+@import "imports/_helpers.css";
+header {
+  & > div {
+    padding-left: 93px;
+    display: flex;
+
+    & div {
+      align-self: center;
+    }
+  }
+  /*background-color: yellow;*/
+
+  & > div:first-of-type {
     background-color: var(--slate);
-    /*background-color: yellow;*/
+    height: 81px;
+    transition: height 1.5s;
+    transition-timing-function: ease-in-out;
+
+    &.small {
+      height: 36px;
+    }
+  }
+
+  & > div:last-of-type {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    height: 70px;
+  }
 }
