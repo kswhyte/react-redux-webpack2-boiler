@@ -62,39 +62,6 @@ class App extends Component {
           <Header headerSize={this.props.headerSize} />
           <section className="body-wrapper">
             <Nav />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <div className="router-wrapper">
               <Switch>
                 <Route exact path="/" component={Welcome} />
