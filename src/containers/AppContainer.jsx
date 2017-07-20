@@ -31,21 +31,21 @@ class App extends Component {
         <BrowserRouter>
           <div className="wrapper">
             <Header />
-            <Nav />
-            <div className="router-wrapper">
-                <div className="card">
-                    <Switch>
-                        <Route exact path="/" component={ Welcome } />
-                        <Route exact path="/login" component={ LoginContainer } />
-                        <Route exact path="/patientsearch" component={ SearchPatientContainer } />
-                        <Route exact path="/users" component={ UserManagementContainer } />
-                        <Route exact path="/patientinfo" component={ ConfirmPatientInfoContainer } />
-                        <Route exact path="/searchandcalendar" component={ SearchAndCalendarContainer } />
-                        <Route exact path="/confirm" component={ ConfirmContainer } />
-                        <Route component={ NotFound } />
-                    </Switch>
-                </div>
-            </div>
+            <section className="body-wrapper">
+              <Nav />
+              <div className="router-wrapper">
+                <Switch>
+                    <Route exact path="/" component={ Welcome } />
+                    <Route exact path="/login" component={ LoginContainer } />
+                    <Route exact path="/patientsearch" component={ SearchPatientContainer } />
+                    <Route exact path="/users" component={ UserManagementContainer } />
+                    <Route exact path="/patientinfo" component={ ConfirmPatientInfoContainer } />
+                    <Route exact path="/searchandcalendar" component={ SearchAndCalendarContainer } />
+                    <Route exact path="/confirm" component={ ConfirmContainer } />
+                    <Route component={ NotFound } />
+                </Switch>
+              </div>
+            </section>
             <Footer />
           </div>
         </BrowserRouter>

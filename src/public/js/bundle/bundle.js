@@ -26873,13 +26873,13 @@ var App = function (_Component) {
                     'div',
                     { className: 'wrapper' },
                     _react2.default.createElement(_Header2.default, null),
-                    _react2.default.createElement(_Navigation2.default, null),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'router-wrapper' },
+                        'section',
+                        { className: 'body-wrapper' },
+                        _react2.default.createElement(_Navigation2.default, null),
                         _react2.default.createElement(
                             'div',
-                            { className: 'card' },
+                            { className: 'router-wrapper' },
                             _react2.default.createElement(
                                 _reactRouterDom.Switch,
                                 null,
@@ -29911,7 +29911,7 @@ exports.default = _Header2.default;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(3);
@@ -29928,29 +29928,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Header = function Header(props) {
 
-    Header.propTypes = {
-        title: _propTypes2.default.string
-    };
+  Header.propTypes = {
+    title: _propTypes2.default.string
+  };
 
-    var check = function check() {
-        console.log(props);
-    };
-    check();
+  var check = function check() {
+    console.log(props);
+  };
+  check();
 
-    return _react2.default.createElement(
-        'header',
-        { className: 'header-wrapper' },
-        _react2.default.createElement(
-            'h1',
-            null,
-            'Header'
-        ),
-        _react2.default.createElement(
-            'span',
-            null,
-            'test'
-        )
-    );
+  return _react2.default.createElement(
+    'header',
+    { className: 'header-wrapper' },
+    _react2.default.createElement(
+      'div',
+      null,
+      'hg smartaccess'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      'MR Metropolitan Region'
+    )
+  );
 };
 
 exports.default = Header;
@@ -29990,7 +29990,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "header {\n    width: 80%;\n    margin-left: 10%;\n    background-color: #3e4759;\n    /*background-color: yellow;*/\n}\n", ""]);
+exports.push([module.i, "header div {\n    height:81px;\n    padding-left:93px;\n}\nheader {\n    /* background-color: yellow; */\n}\nheader div:first-child {\n    background-color:#3e4759;\n}\nheader div:last-child {\n    background-color:#ffffff;\n    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);\n}\n", ""]);
 
 // exports
 
@@ -30047,7 +30047,7 @@ var Footer = function Footer(props) {
   check();
 
   return _react2.default.createElement(
-    'div',
+    'footer',
     { className: 'footer-wrapper' },
     _react2.default.createElement(
       'h1',

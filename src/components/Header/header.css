@@ -1,7 +1,18 @@
 @import "imports/_helpers.css";
 header {
-    width: 80%;
-    margin-left: 10%;
-    background-color: var(--slate);
+
+    & div {
+      height:81px;
+      padding-left:93px;
+    }
     /*background-color: yellow;*/
+
+    & div:first-child {
+      background-color:var(--slate);
+    }
+
+    & div:last-child {
+      background-color:var(--white);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
 }

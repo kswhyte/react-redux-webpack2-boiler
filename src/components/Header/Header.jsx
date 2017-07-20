@@ -16,8 +16,8 @@ const Header = (props) => {
 
     return (
         <header className="header-wrapper">
-            <h1>Header</h1>
-            <span>test</span>
+          <div>hg smartaccess</div>
+          <div>MR Metropolitan Region</div>
         </header>
     );
 };
