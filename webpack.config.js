@@ -15,14 +15,14 @@ module.exports = {
 
   output: {
     // options related to how webpack emits results
-    path: path.resolve(__dirname, "src/public/js/bundle/"), // string
+    path: path.resolve(__dirname, "dist"), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
 
     filename: "bundle.js", // string
     // the filename template for entry chunks
 
-    publicPath: 'src/public/' // Required for webpack-dev-server", // string
+    publicPath: '/js/' // Required for webpack-dev-server", // string
     // the url to the output directory resolved relative to the HTML page
   },
 
@@ -100,10 +100,10 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: [path.join(__dirname, "src"),path.join(__dirname, "src/public")],
+    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public"), path.join(__dirname, "dist")],
     compress: true,
     port: 9000,
-    publicPath: "src/public/",
+    publicPath: "/js/",
     hot: true,
     historyApiFallback: true
   },

@@ -2,7 +2,9 @@
 
 exports[`Story 1`] = `
 <header>
-  <div>
+  <div
+    className={null}
+  >
     <div>
       hg smartaccess
     </div>

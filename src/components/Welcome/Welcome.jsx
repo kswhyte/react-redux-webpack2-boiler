@@ -9,7 +9,7 @@ const Welcome = props => {
   return (
     <div className="start-call-banner-block">
       <HgRow>
-        <h1>Welcsgasdfome</h1>
+        <h1>Welcome</h1>
         <hr />
         <HgButton className="new-session-button" tabIndex={1} onClick={props.createCall} text="Begin New Session" />
         <div className="error-container">

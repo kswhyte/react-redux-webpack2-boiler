@@ -21,7 +21,9 @@ const render = Component => {
 
 render(App)
 
-if (module.hot) {
-    console.log("Hot a re looooad");
-  module.hot.accept('./containers/AppContainer', () => { render(App) })
+if(module.hot) {
+    module.hot.accept('./containers/AppContainer', () => {
+        const NextApp = require('./containers/AppContainer').default
+        render(NextApp)
+    })
 }
