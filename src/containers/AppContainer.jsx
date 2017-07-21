@@ -23,26 +23,22 @@ const proptypes = {
   headerSize: PropTypes.string
 };
 
-// App.PropTypes = {
-//   dispatch: PropTypes.func.isRequired,
-//   headerSize: PropTypes.string
-// };
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.toggleHeaderSize = 'full';
+    this.headerToggleTolerance = 60;
     this.props = props;
   }
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 100 && this.toggleHeaderSize !== 'small') {
+      if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
         this.toggleHeaderSize = 'small';
         console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 
         this.props.dispatch(toggle_header(this.toggleHeaderSize));
-      } else if (window.scrollY < 100 && this.toggleHeaderSize !== 'full') {
+      } else if (window.scrollY < this.headerToggleTolerance && this.toggleHeaderSize !== 'full') {
         this.toggleHeaderSize = 'full';
         console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 

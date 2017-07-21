@@ -1,5 +1,18 @@
 @import "imports/_helpers.css";
 header {
+  &.small + .body-wrapper {
+    margin-top: 185px;
+  }
+
+  & + .body-wrapper {
+    transition: margin-top 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &.small > div:first-of-type {
+    height: 36px;
+  }
+
   & > div {
     padding-left: 93px;
     display: flex;
@@ -8,7 +21,31 @@ header {
       align-self: center;
     }
   }
-  /*background-color: yellow;*/
+
+  & > div:first-of-type {
+    background-color: var(--slate);
+    height: 81px;
+    transition: height 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  & > div:last-of-type {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    height: 70px;
+  }
+}
+
+/*@import "imports/_helpers.css";
+header {
+  & > div {
+    padding-left: 93px;
+    display: flex;
+
+    & div {
+      align-self: center;
+    }
+  }
 
   & > div:first-of-type {
     background-color: var(--slate);
@@ -26,4 +63,4 @@ header {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     height: 70px;
   }
-}
+}*/
