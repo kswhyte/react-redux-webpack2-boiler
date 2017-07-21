@@ -11,7 +11,14 @@ const Header = props => {
   return (
     <header className={props.headerSize === 'small' ? 'small' : null}>
       <div>
-        <div>hg smartaccess</div>
+        <div className="logo-window">
+          <div className="logo-animation">
+            <div className="logo-full" />
+            <div className="logo-small" />
+          </div>
+        </div>
+        <i className="fa fa-tachometer fa-2" aria-hidden="true" />
+        <i className="fa fa-cog fa-2" aria-hidden="true" />
       </div>
       <div>
         <div>MR Metropolitan Region</div>

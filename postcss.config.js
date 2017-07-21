@@ -7,9 +7,6 @@ module.exports = {
         require('postcss-import')({
           path: [ path.join(__dirname, './src/public/css') ]
         }),
-        require('autoprefixer')({
-          browsers: ['last 2 versions', 'iOS >= 9', 'Safari 9']
-        }),
         require('postcss-url'),
         require('postcss-cssnext')({
             browsers: ['last 2 versions', 'ie >= 9', 'iOS >= 9']
