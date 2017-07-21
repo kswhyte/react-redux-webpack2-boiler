@@ -46,7 +46,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.toggleHeaderSize = 'full';
-    this.headerToggleTolerance = 60;
+    this.headerToggleTolerance = 50;
     this.props = props;
     this.handlers = createHandlers(this.props.dispatch);
   }

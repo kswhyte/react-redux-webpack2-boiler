@@ -1,7 +1,7 @@
 @import "imports/_helpers.css";
 header {
   &.small + .body-wrapper {
-    margin-top: 185px;
+    margin-top: 145px;
   }
 
   & + .body-wrapper {
