@@ -26891,6 +26891,7 @@ var App = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).call(this, props));
 
     _this.toggleHeaderSize = 'full';
+    _this.headerToggleTolerance = 60;
     _this.props = props;
     return _this;
   }
@@ -26901,12 +26902,12 @@ var App = function (_Component) {
       var _this2 = this;
 
       window.addEventListener('scroll', function () {
-        if (window.scrollY > 100 && _this2.toggleHeaderSize !== 'small') {
+        if (window.scrollY > _this2.headerToggleTolerance && _this2.toggleHeaderSize !== 'small') {
           _this2.toggleHeaderSize = 'small';
           console.log('toggle -full :  ' + _this2.toggleHeaderSize + ' : ' + window.scrollY);
 
           _this2.props.dispatch((0, _SessionActions.toggle_header)(_this2.toggleHeaderSize));
-        } else if (window.scrollY < 100 && _this2.toggleHeaderSize !== 'full') {
+        } else if (window.scrollY < _this2.headerToggleTolerance && _this2.toggleHeaderSize !== 'full') {
           _this2.toggleHeaderSize = 'full';
           console.log('toggle -full :  ' + _this2.toggleHeaderSize + ' : ' + window.scrollY);
 
@@ -26933,42 +26934,32 @@ var App = function (_Component) {
             'section',
             { className: 'body-wrapper' },
             _react2.default.createElement(_Navigation2.default, null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
             _react2.default.createElement(
               'div',
               { className: 'router-wrapper' },
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
               _react2.default.createElement(
                 _reactRouterDom.Switch,
                 null,
@@ -30020,17 +30011,16 @@ __webpack_require__(355);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header(props) {
-
   Header.propTypes = {
     headerSize: _propTypes2.default.string
   };
 
   return _react2.default.createElement(
     'header',
-    null,
+    { className: props.headerSize === 'small' ? 'small' : null },
     _react2.default.createElement(
       'div',
-      { className: props.headerSize === 'small' ? 'small' : null },
+      null,
       _react2.default.createElement(
         'div',
         null,
@@ -30086,7 +30076,7 @@ exports = module.exports = __webpack_require__(15)();
 
 
 // module
-exports.push([module.i, "header>div{padding-left:93px;display:-webkit-box;display:-ms-flexbox;display:flex}header>div div{-ms-flex-item-align:center;align-self:center}header>div:first-of-type{background-color:#3e4759;height:81px;-webkit-transition:height 1.5s;transition:height 1.5s;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}header>div:first-of-type.small{height:36px}header>div:last-of-type{background-color:#fff;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.5);box-shadow:0 2px 4px 0 rgba(0,0,0,.5);height:70px}", ""]);
+exports.push([module.i, "header.small+.body-wrapper{margin-top:185px;background-color:red}header+.body-wrapper{-webkit-transition:margin-top .5s;transition:margin-top .5s;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;background-color:#ff0}header.small>div:first-of-type{height:36px}header>div{padding-left:93px;display:-webkit-box;display:-ms-flexbox;display:flex}header>div div{-ms-flex-item-align:center;align-self:center}header>div:first-of-type{background-color:#3e4759;height:81px;-webkit-transition:height .5s;transition:height .5s;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}header>div:last-of-type{background-color:#fff;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.5);box-shadow:0 2px 4px 0 rgba(0,0,0,.5);height:70px}", ""]);
 
 // exports
 
@@ -30313,7 +30303,6 @@ var Welcome = function Welcome(props) {
         null,
         'Welcome'
       ),
-      _react2.default.createElement('i', { className: 'fa fa-pencil', 'aria-hidden': 'true' }),
       _react2.default.createElement('hr', null),
       _react2.default.createElement(_HgButton2.default, { className: 'new-session-button', tabIndex: 1, onClick: props.createCall, text: 'Begin New Session' }),
       _react2.default.createElement(
