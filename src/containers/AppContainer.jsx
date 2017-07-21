@@ -16,16 +16,23 @@ import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
-import { toggle_header } from '../actions/SessionActions';
 import sessionActions from '../actions/SessionActions';
+
+
+/// Replaces the dispatcher.es file for each container component.
 
 let createHandlers = function(dispatch) {
   let startSessionClick = function(node, data) {
     dispatch(sessionActions.startSessionClick(data))
   };
 
+  let toggleHeader = function(data) {
+    dispatch(sessionActions.toggle_header(data));
+  }
+
   return {
     startSessionClick,
+    toggleHeader
     // other handlers
   };
 }
@@ -50,12 +57,12 @@ class App extends Component {
         this.toggleHeaderSize = 'small';
         console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 
-        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+        this.handlers.toggleHeader(this.toggleHeaderSize);
       } else if (window.scrollY < this.headerToggleTolerance && this.toggleHeaderSize !== 'full') {
         this.toggleHeaderSize = 'full';
         console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
 
-        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+        this.handlers.toggleHeader(this.toggleHeaderSize);
       }
     });
   }

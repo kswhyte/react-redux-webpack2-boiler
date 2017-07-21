@@ -17,31 +17,36 @@ const actions = {
         type: types.START_SESSION,
         data
     }),
-    startSessionSuccess: () => ({
-        type: types.START_SUCCESS
+    startSessionSuccess: data => ({
+        type: types.START_SUCCESS,
+        data
     }),
-    startSessionFail: () => ({
-        type: types.START_FAIL
+    startSessionFail: err => ({
+        type: types.START_FAIL,
+        err
     }),
-    startSessionTimeout: () => ({
-        type: types.START_TIMEOUT
+    startSessionTimeout: err => ({
+        type: types.START_TIMEOUT,
+        err
     })
 };
 
 const thunks = {
     startSessionClick: () => {
         return (dispatch) => {
-            console.log("Session Started Maybe?");
+            console.log("Is dispatch here???", dispatch);
             //Will retrieve from User Management;
+            dispatch(actions.startSpinner());
+
             const agent = {
-                UserId: 1,
+                UserId: 4,
                 UserName: 'DRob',
                 FirstName: 'Danny',
                 LastName: 'Robinson',
             };
             const postModel = startSessionRequest(dispatch, agent);
-            dispatch(actions.startSpinner());
-            dispatch(actions.startSession(postModel.postModel));
+            console.log("What de pos' is?", postModel);
+             dispatch(actions.startSession(postModel.postModel));
             firePost(postModel);
         };
     }

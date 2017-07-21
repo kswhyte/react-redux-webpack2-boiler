@@ -14,7 +14,7 @@ const startSessionRequest = (dispatch, agent) => {
         ModifiedDate: createDate,
         UserId: agent.UserId,
         CreatedBy: agent.FirstName + agent.LastName,
-        ModifiedBy: agent.UserName + agent.LastName,
+        ModifiedBy: agent.UserName,
         CallNote: ''
     };
 
@@ -37,7 +37,7 @@ const startSessionRequest = (dispatch, agent) => {
 
         dispatch(actions.stopSpinner());
         dispatch(actions.startSessionSuccess(res.body));
-        window.routerHistory.push('/patientsearch/');
+        window.location.assign('/patientsearch/');
     };
 
     return {hostedUrlPath, postRoute, requestEnd, postModel};
