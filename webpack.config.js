@@ -1,5 +1,27 @@
 const path = require('path');
 const webpack = require('webpack');
+
+const isProdBuild = process.argv.indexOf('-p') !== -1;
+const isTestBuild = process.argv.indexOf('-t') !== -1;
+const isVerbose = process.argv.indexOf('-v') !== -1;
+
+const setEnvironment = (isProdBuild, isTestBuild) => {
+  if (isProdBuild) {
+    return '"production"';
+  }
+  if (isTestBuild) {
+    return '"test"';
+  }
+  return '"development"';
+};
+
+const envPlugin = new webpack.DefinePlugin({
+  __VERBOSE__: isVerbose,
+  __DEBUG__: JSON.stringify(!isProdBuild),
+  __RELEASE__: JSON.stringify(isProdBuild),
+  'process.env.NODE_ENV': setEnvironment(isProdBuild, isTestBuild)
+});
+
 module.exports = {
   entry: {
     app: [
@@ -120,7 +142,8 @@ module.exports = {
                 require('postcss-reporter')()
             ]
         }
-    })
+    }),
+    envPlugin
 
   ]
 }

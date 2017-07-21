@@ -12,7 +12,7 @@
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 \"js/**/*.{js,jsx}\"",
     "check-node-modules": "nsp check",
     "build-core-css": "postcss -u postcss-import -u postcss-cssnext -o src/public/css/dist/core_build.css src/public/css/core.css",
-    "webpack": "webpack --config webpack.config.js --progress",
+    "webpack": "webpack -d --config webpack.config.js --progress",
     "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server --open",
     "storybook": "start-storybook -p 6007",
