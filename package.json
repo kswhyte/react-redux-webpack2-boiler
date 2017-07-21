@@ -14,7 +14,7 @@
     "build-core-css": "postcss -u postcss-import -u postcss-cssnext -o src/public/css/dist/core_build.css src/public/css/core.css",
     "webpack": "webpack --config webpack.config.js --progress",
     "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
-    "webpack-dev-server": "webpack-dev-server --open",
+    "webpack-dev-server": "webpack-dev-server",
     "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook",
     "test": "jest --no-cache",
@@ -112,41 +112,19 @@
   },
   "jest": {
     "rootDir": "src/components",
-    "setupFiles": [
-      "../../.storybook/__conf__/config.js"
-    ],
+    "setupFiles": ["../../.storybook/__conf__/config.js"],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js",
-    "collectCoverageFrom": [
-      "src/components/*.{es6, js,jsx}",
-      "src/components/**/*.{es6, js,jsx}",
-      "!**/helpers/**"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "jsx",
-      "node",
-      "es",
-      "es6",
-      "less",
-      "css"
-    ],
-    "unmockedModulePathPatterns": [
-      "react",
-      "redux",
-      "enzyme",
-      "react-addons-test-utils"
-    ],
+    "collectCoverageFrom": ["src/components/*.{es6, js,jsx}", "src/components/**/*.{es6, js,jsx}", "!**/helpers/**"],
+    "moduleFileExtensions": ["js", "json", "jsx", "node", "es", "es6", "less", "css"],
+    "unmockedModulePathPatterns": ["react", "redux", "enzyme", "react-addons-test-utils"],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
       "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
     },
-    "testPathIgnorePatterns": [
-      "spec.jsx"
-    ],
+    "testPathIgnorePatterns": ["spec.jsx"],
     "transform": {
       ".es$": "../../node_modules/babel-jest",
       ".jsx$": "../../node_modules/babel-jest",

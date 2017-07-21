@@ -10,11 +10,24 @@ header {
   }
 
   &.small .logo-animation {
-    top: -63px;
+    top: -73px;
+  }
+
+  &.small .logo-window {
+    height: 36px;
   }
 
   &.small > div:first-of-type {
     height: 36px;
+  }
+
+  &.small > div:nth-child(1) a div {
+    opacity: 0;
+    bottom: -50px;
+    z-index: -1;
+  }
+  &.small > div:first-of-type > div:last-of-type a:link i.fa {
+    top: 10px;
   }
 
   & > div {
@@ -31,6 +44,25 @@ header {
     height: 81px;
     transition: height 0.5s;
     transition-timing-function: ease-in-out;
+
+    & > div:last-of-type {
+      color: var(--white);
+
+      & a:any-link {
+        text-declaration: none;
+        color: var(--white);
+        display: inline-block;
+        text-align: center;
+        padding-right: 55px;
+
+        & i {
+          font-size: 18px;
+          position: relative;
+          top: 0px;
+          transition: top 0.5s;
+        }
+      }
+    }
   }
 
   & > div:last-of-type {
@@ -39,16 +71,25 @@ header {
     height: 70px;
   }
 
+  & > div:nth-child(1) a div {
+    opacity: 1;
+    position: relative;
+    bottom: 0px;
+    z-index: 0;
+    transition: opacity 0.5s, bottom 0.5s, z-index 0.8s 1.2s;
+  }
+
   & .logo-window {
     position: relative;
-    width: 260px;
-    height: 55px;
+    height: 81px;
     overflow: hidden;
+    transition: height 0.5s;
+    transition-timing-function: ease-in-out;
   }
 
   & .logo-animation {
     position: absolute;
-    top: 5px;
+    top: 15px;
     left: 0px;
     transition: top 0.5s;
     transition-timing-function: ease-in-out;

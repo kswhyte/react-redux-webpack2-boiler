@@ -5,6 +5,43 @@
 }
 
 body {
-  font-family: 'courier';
+  font-family: Railway;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.text-small-o {
+  font-size: 12px;
+  font-family: Open Sans;
+}
+
+.text-medium-o {
+  font-size: 14px;
+  font-family: Open Sans;
+}
+
+.text-large-o {
+  font-size: 20px;
+  font-family: Open Sans;
+}
+
+.text-small-r {
+  font-size: 12px;
+  font-family: Railway;
+}
+
+.text-medium-r {
+  font-size: 14px;
+  font-family: Railway;
+}
+
+.text-large-r {
+  font-size: 20px;
   font-family: Railway;
 }
