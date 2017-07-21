@@ -16,7 +16,26 @@ import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
-import { toggle_header } from '../actions/SessionActions';
+import sessionActions from '../actions/SessionActions';
+
+
+/// Replaces the dispatcher.es file for each container component.
+
+let createHandlers = function(dispatch) {
+  let startSessionClick = function(node, data) {
+    dispatch(sessionActions.startSessionClick(data))
+  };
+
+  let toggleHeader = function(data) {
+    dispatch(sessionActions.toggle_header(data));
+  }
+
+  return {
+    startSessionClick,
+    toggleHeader
+    // other handlers
+  };
+}
 
 const proptypes = {
   dispatch: PropTypes.func,
@@ -29,20 +48,17 @@ class App extends Component {
     this.toggleHeaderSize = 'full';
     this.headerToggleTolerance = 50;
     this.props = props;
+    this.handlers = createHandlers(this.props.dispatch);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
       if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
         this.toggleHeaderSize = 'small';
-        console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
-
-        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+        this.handlers.toggleHeader(this.toggleHeaderSize);
       } else if (window.scrollY < this.headerToggleTolerance && this.toggleHeaderSize !== 'full') {
         this.toggleHeaderSize = 'full';
-        console.log(`toggle -full :  ${this.toggleHeaderSize} : ${window.scrollY}`);
-
-        this.props.dispatch(toggle_header(this.toggleHeaderSize));
+        this.handlers.toggleHeader(this.toggleHeaderSize);
       }
     });
   }
@@ -60,7 +76,7 @@ class App extends Component {
             <Nav />
             <div className="router-wrapper">
               <Switch>
-                <Route exact path="/" component={Welcome} />
+                <Route exact path="/" render={() => <Welcome startSessionClick={this.handlers.startSessionClick} />}  />
                 <Route exact path="/login" component={LoginContainer} />
                 <Route exact path="/patientsearch" component={SearchPatientContainer} />
                 <Route exact path="/users" component={UserManagementContainer} />
@@ -84,7 +100,6 @@ const mapStateToProps = state => {
   //Select the specific state items you would like here
   const { test } = state;
   const { headerSize } = state.Session;
-  console.log('test ---', headerSize);
 
   //return state items to be added as props to the container
   return {

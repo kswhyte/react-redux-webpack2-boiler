@@ -12,7 +12,7 @@
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 \"js/**/*.{js,jsx}\"",
     "check-node-modules": "nsp check",
     "build-core-css": "postcss -u postcss-import -u postcss-cssnext -o src/public/css/dist/core_build.css src/public/css/core.css",
-    "webpack": "webpack --config webpack.config.js --progress",
+    "webpack": "webpack -d --config webpack.config.js --progress",
     "webpack-Watch": "webpack --config webpack.config.js --progress --watch",
     "webpack-dev-server": "webpack-dev-server",
     "storybook": "start-storybook -p 6007",
@@ -99,6 +99,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-url": "^7.0.0",
     "prop-types": "^15.5.10",
@@ -107,24 +108,48 @@
     "react-redux": "^5.0.5",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "superagent": "^3.5.2",
     "webpack": "^3.1.0"
   },
   "jest": {
     "rootDir": "src/components",
-    "setupFiles": ["../../.storybook/__conf__/config.js"],
+    "setupFiles": [
+      "../../.storybook/__conf__/config.js"
+    ],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js",
-    "collectCoverageFrom": ["src/components/*.{es6, js,jsx}", "src/components/**/*.{es6, js,jsx}", "!**/helpers/**"],
-    "moduleFileExtensions": ["js", "json", "jsx", "node", "es", "es6", "less", "css"],
-    "unmockedModulePathPatterns": ["react", "redux", "enzyme", "react-addons-test-utils"],
+    "collectCoverageFrom": [
+      "src/components/*.{es6, js,jsx}",
+      "src/components/**/*.{es6, js,jsx}",
+      "!**/helpers/**"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "es",
+      "es6",
+      "less",
+      "css"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "redux",
+      "enzyme",
+      "react-addons-test-utils"
+    ],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
       "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
     },
-    "testPathIgnorePatterns": ["spec.jsx"],
+    "testPathIgnorePatterns": [
+      "spec.jsx"
+    ],
     "transform": {
       ".es$": "../../node_modules/babel-jest",
       ".jsx$": "../../node_modules/babel-jest",

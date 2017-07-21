@@ -1,5 +1,27 @@
 const path = require('path');
 const webpack = require('webpack');
+
+const isProdBuild = process.argv.indexOf('-p') !== -1;
+const isTestBuild = process.argv.indexOf('-t') !== -1;
+const isVerbose = process.argv.indexOf('-v') !== -1;
+
+const setEnvironment = (isProdBuild, isTestBuild) => {
+  if (isProdBuild) {
+    return '"production"';
+  }
+  if (isTestBuild) {
+    return '"test"';
+  }
+  return '"development"';
+};
+
+const envPlugin = new webpack.DefinePlugin({
+  __VERBOSE__: isVerbose,
+  __DEBUG__: JSON.stringify(!isProdBuild),
+  __RELEASE__: JSON.stringify(isProdBuild),
+  'process.env.NODE_ENV': setEnvironment(isProdBuild, isTestBuild)
+});
+
 module.exports = {
   entry: {
     app: [
@@ -15,7 +37,7 @@ module.exports = {
 
     filename: 'bundle.js',
 
-    publicPath: '/js/'
+    publicPath: '/dist/'
   },
 
   devtool: 'inline-source-map',
@@ -77,10 +99,10 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'src/public'), path.join(__dirname, 'dist')],
+    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
     compress: true,
     port: 9000,
-    publicPath: '/js/',
+    publicPath: "/dist/",
     hot: true,
     historyApiFallback: true
   },
@@ -105,14 +127,14 @@ module.exports = {
 
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
-      options: {
-        context: path.root,
-        postcss: [
-          // <---- postcss configs go here under LoadOptionsPlugin({ options: { ??? } })
-          require('postcss-cssnext'),
-          require('postcss-reporter')()
-        ]
-      }
-    })
+        options: {
+            context: path.root,
+            postcss: [ // <---- postcss configs go here under LoadOptionsPlugin({ options: { ??? } })
+                require('postcss-cssnext'),
+                require('postcss-reporter')()
+            ]
+        }
+    }),
+    envPlugin
   ]
 };

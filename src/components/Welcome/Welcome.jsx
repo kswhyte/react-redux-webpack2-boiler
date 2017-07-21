@@ -11,7 +11,7 @@ const Welcome = props => {
       <HgRow>
         <h1>Welcome</h1>
         <hr />
-        <HgButton className="new-session-button" tabIndex={1} onClick={props.createCall} text="Begin New Session" />
+        <HgButton className="new-session-button" tabIndex={1} onClick={props.startSessionClick} text="Begin New Session" />
         <div className="error-container">
           {props.showError && <h3>Something went wrong.</h3>}
           {props.startCallTimeout && <h3>Request timed out.</h3>}
@@ -22,7 +22,7 @@ const Welcome = props => {
 };
 
 Welcome.propTypes = {
-    createCall: PropTypes.func,
+    startSessionClick: PropTypes.func,
     showError: PropTypes.bool,
     startCallTimeout: PropTypes.bool
 };
