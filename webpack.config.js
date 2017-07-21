@@ -2,22 +2,31 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
-  entry: "./src/entry.es6", // string | object | array
+  entry: {
+    app: [
+      "react-hot-loader/patch",
+      "webpack-dev-server/client?http://localhost:9000",
+      "webpack/hot/only-dev-server",
+      "./src/entry.es6"
+    ]
+  }, // string | object | array
   // Here the application starts executing
   // and webpack starts bundling
 
   output: {
     // options related to how webpack emits results
-    path: path.resolve(__dirname, "src/public/js/bundle"), // string
+    path: path.resolve(__dirname, "dist"), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
 
     filename: "bundle.js", // string
     // the filename template for entry chunks
 
-    publicPath: 'src/public' // Required for webpack-dev-server", // string
+    publicPath: '/js/' // Required for webpack-dev-server", // string
     // the url to the output directory resolved relative to the HTML page
   },
+
+  devtool: 'inline-source-map',
 
   module: {
     // configuration regarding modules
@@ -38,11 +47,7 @@ module.exports = {
       {
         test: /\.(es|es6|jsx?)$/,
         exclude: [/node_modules/, /tools/],
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ],
+        use: ['babel-loader'],
       },
       {
         test: /\.(es|es6|jsx?)$/,
@@ -95,10 +100,11 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
+    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public"), path.join(__dirname, "dist")],
     compress: true,
     port: 9000,
-    publicPath: "src/public",
+    publicPath: "/js/",
+    hot: true,
     historyApiFallback: true
   },
   target: "web", // enum
@@ -118,6 +124,13 @@ module.exports = {
   // lets you precisely control what bundle information gets displayed
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // enable HMR globally
+
+    new webpack.NamedModulesPlugin(),
+    // prints more readable module names in the browser console on HMR updates
+
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
         options: {
             context: path.root,
@@ -128,7 +141,8 @@ module.exports = {
             // ...other configs that used to directly on `modules.exports`
         }
     }),
-    new ExtractTextPlugin({ filename: '../../css/bundle/core.css', disable: false, allChunks: true })
+    new ExtractTextPlugin({ filename: '../../css/bundle/core.css', disable: false, allChunks: true }),
+    // do not emit compiled assets that include errors
   ],
   // list of additional plugins
 

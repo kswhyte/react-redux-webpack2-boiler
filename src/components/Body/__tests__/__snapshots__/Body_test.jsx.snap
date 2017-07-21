@@ -3,9 +3,5 @@
 exports[`Story 1`] = `
 <div
   className="body-wrapper"
->
-  <h1>
-    Body
-  </h1>
-</div>
+/>
 `;

@@ -16,11 +16,11 @@ const stories = storiesOf('Header', module);
 stories.add('Story', () => {
     const headerStory = (
       <Header/>);
-      
+
     specs(() => describe('Show a successful alert', () => {
         it('Should render the Header component without crashing', () => {
             let output = shallow(headerStory);
-            expect(output.find('.header-wrapper').length).toEqual(1);
+            expect(output.find('header').length).toEqual(1);
         });
     }));
     return headerStory;

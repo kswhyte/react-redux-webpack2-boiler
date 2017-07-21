@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 const HgStub = (props) => {
     return (
         <div>
-            {props.children || ''}
+            {props.children || []}
         </div>
     );
 };
 
 HgStub.propTypes = {
-    children: PropTypes.string
+    children: PropTypes.array
 }
 
 export default HgStub;

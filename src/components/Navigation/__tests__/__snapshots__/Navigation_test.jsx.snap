@@ -7,5 +7,41 @@ exports[`Story 1`] = `
   <h1>
     Navigation
   </h1>
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Login
+  </a>
+  <a
+    href="/patientsearch"
+    onClick={[Function]}
+  >
+    Search for Patients
+  </a>
+  <a
+    href="/users"
+    onClick={[Function]}
+  >
+    User Management Page
+  </a>
+  <a
+    href="/patientinfo"
+    onClick={[Function]}
+  >
+    Confirm Patient Info
+  </a>
+  <a
+    href="/searchandcalendar"
+    onClick={[Function]}
+  >
+    Search and Calendar
+  </a>
+  <a
+    href="/confirm"
+    onClick={[Function]}
+  >
+    Confirm
+  </a>
 </div>
 `;
