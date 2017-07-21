@@ -17,6 +17,18 @@ import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
 import { toggle_header } from '../actions/SessionActions';
+import sessionActions from '../actions/SessionActions';
+
+let createHandlers = function(dispatch) {
+  let startSessionClick = function(node, data) {
+    dispatch(sessionActions.startSessionClick(data))
+  };
+
+  return {
+    startSessionClick,
+    // other handlers
+  };
+}
 
 const proptypes = {
   dispatch: PropTypes.func,
@@ -29,6 +41,7 @@ class App extends Component {
     this.toggleHeaderSize = 'full';
     this.headerToggleTolerance = 60;
     this.props = props;
+    this.handlers = createHandlers(this.props.dispatch);
   }
 
   componentDidMount() {
@@ -60,7 +73,7 @@ class App extends Component {
             <Nav />
             <div className="router-wrapper">
               <Switch>
-                <Route exact path="/" component={Welcome} />
+                <Route exact path="/" render={() => <Welcome startSessionClick={this.handlers.startSessionClick} />}  />
                 <Route exact path="/login" component={LoginContainer} />
                 <Route exact path="/patientsearch" component={SearchPatientContainer} />
                 <Route exact path="/users" component={UserManagementContainer} />

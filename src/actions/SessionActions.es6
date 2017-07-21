@@ -1,5 +1,6 @@
 import * as types from '../constants/actionTypes';
 import startSessionRequest from '../actionRequests/startSessionRequest';
+import firePost from '../../tools/firePost';
 
 const actions = {
     toggle_header: headerSize => ({
@@ -30,6 +31,7 @@ const actions = {
 const thunks = {
     startSessionClick: () => {
         return (dispatch) => {
+            console.log("Session Started Maybe?");
             //Will retrieve from User Management;
             const agent = {
                 UserId: 1,
