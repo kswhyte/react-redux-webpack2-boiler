@@ -23,5 +23,5 @@ render(App)
 
 if (module.hot) {
     console.log("Hot a re looooad");
-  module.hot.accept('./containers/App', () => { render(App) })
+  module.hot.accept('./containers/AppContainer', () => { render(App) })
 }
