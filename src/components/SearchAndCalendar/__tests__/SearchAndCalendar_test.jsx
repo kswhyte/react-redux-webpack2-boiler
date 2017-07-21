@@ -1,6 +1,6 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
-import ConfirmPatientInfo from '../ConfirmPatientInfo';
+import SearchAndCalendar from '../SearchAndCalendar';
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
@@ -14,14 +14,14 @@ import expect from 'expect';
 const stories = storiesOf('ConfirmPatientInfo', module);
 
 stories.add('Story', () => {
-    const confirmPatientInfoStory = (
-      <ConfirmPatientInfo/>);
+    const SearchAndCalendarStory = (
+      <SearchAndCalendar/>);
 
     specs(() => describe('Show a successful alert', () => {
-        it('Should render the ConfirmPatientInfo component without crashing', () => {
-            let output = shallow(confirmPatientInfoStory);
-            expect(output.find('.confirmPatientInfo-wrapper').length).toEqual(1);
+        it('Should render the SearchAndCalendar component without crashing', () => {
+            let output = shallow(SearchAndCalendarStory);
+            expect(output.find('.search-and-calendar-block').length).toEqual(1);
         });
     }));
-    return confirmPatientInfoStory;
+    return SearchAndCalendarStory;
 });

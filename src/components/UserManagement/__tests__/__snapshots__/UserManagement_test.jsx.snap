@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Patient Story 1`] = `
+<div
+  className="user-management-block"
+>
+  <h1>
+    User Management
+  </h1>
+</div>
+`;
