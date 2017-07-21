@@ -34,6 +34,7 @@
     "@hg/styleguide-kit": "git+https://git.healthgrades.com/blue-falcon/styleguide-kit.git#dev-release",
     "@hg/three-ui": "git+https://git.healthgrades.com/blue-falcon/three-ui.git#v1.8.10",
     "@kadira/storybook": "^2.21.0",
+    "autoprefixer": "^7.1.2",
     "babel-cli": "^6.16.0",
     "babel-core": "6.17.0",
     "babel-eslint": "6.0.3",
@@ -111,19 +112,41 @@
   },
   "jest": {
     "rootDir": "src/components",
-    "setupFiles": ["../../.storybook/__conf__/config.js"],
+    "setupFiles": [
+      "../../.storybook/__conf__/config.js"
+    ],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js",
-    "collectCoverageFrom": ["src/components/*.{es6, js,jsx}", "src/components/**/*.{es6, js,jsx}", "!**/helpers/**"],
-    "moduleFileExtensions": ["js", "json", "jsx", "node", "es", "es6", "less", "css"],
-    "unmockedModulePathPatterns": ["react", "redux", "enzyme", "react-addons-test-utils"],
+    "collectCoverageFrom": [
+      "src/components/*.{es6, js,jsx}",
+      "src/components/**/*.{es6, js,jsx}",
+      "!**/helpers/**"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "es",
+      "es6",
+      "less",
+      "css"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "redux",
+      "enzyme",
+      "react-addons-test-utils"
+    ],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
       "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
     },
-    "testPathIgnorePatterns": ["spec.jsx"],
+    "testPathIgnorePatterns": [
+      "spec.jsx"
+    ],
     "transform": {
       ".es$": "../../node_modules/babel-jest",
       ".jsx$": "../../node_modules/babel-jest",

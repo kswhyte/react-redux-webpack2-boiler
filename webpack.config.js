@@ -1,5 +1,4 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
   entry: {
@@ -9,29 +8,20 @@ module.exports = {
       "webpack/hot/only-dev-server",
       "./src/entry.es6"
     ]
-  }, // string | object | array
-  // Here the application starts executing
-  // and webpack starts bundling
+  },
 
   output: {
-    // options related to how webpack emits results
-    path: path.resolve(__dirname, "dist"), // string
-    // the target directory for all output files
-    // must be an absolute path (use the Node.js path module)
+    path: path.resolve(__dirname, "dist"),
 
-    filename: "bundle.js", // string
-    // the filename template for entry chunks
+    filename: "bundle.js",
 
-    publicPath: '/js/' // Required for webpack-dev-server", // string
-    // the url to the output directory resolved relative to the HTML page
+    publicPath: '/js/'
   },
 
   devtool: 'inline-source-map',
 
   module: {
-    // configuration regarding modules
     rules: [
-      // rules for modules (configure loaders, parser options, etc.)
        {
             test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
             use: [
@@ -72,11 +62,8 @@ module.exports = {
       }
 
     ]
-    /* Advanced module configuration (click to show) */
   },
   resolve: {
-    // options for resolving module requests
-    // (does not apply to resolving to loaders)
     alias: {
       "@hg/three-ui": "@hg/three-ui/src/components"
     },
@@ -84,10 +71,8 @@ module.exports = {
       "node_modules",
       path.resolve(__dirname, "src")
     ],
-    // directories where to look for modules
 
     extensions: [".js", ".es6", ".es", ".json", ".jsx", ".css", ".less"],
-    // extensions that are used
   },
 
   performance: {
@@ -107,9 +92,7 @@ module.exports = {
     hot: true,
     historyApiFallback: true
   },
-  target: "web", // enum
-  // the environment in which the bundle should run
-  // changes chunk loading behavior and available modules
+  target: "web",
 
   externals: {
      'jsdom': 'window',
@@ -118,10 +101,8 @@ module.exports = {
      'react/lib/ReactContext': 'window',
      'react/addons': true,
    },
-  // Don't follow/bundle these modules, but request them at runtime from the environment
 
   stats: "errors-only",
-  // lets you precisely control what bundle information gets displayed
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -138,14 +119,8 @@ module.exports = {
                 require('postcss-cssnext'),
                 require('postcss-reporter')()
             ]
-            // ...other configs that used to directly on `modules.exports`
         }
-    }),
-    new ExtractTextPlugin({ filename: '../../css/bundle/core.css', disable: false, allChunks: true }),
-    // do not emit compiled assets that include errors
-  ],
-  // list of additional plugins
+    })
 
-
-  /* Advanced configuration (click to show) */
+  ]
 }
