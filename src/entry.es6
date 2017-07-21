@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './containers/AppContainer';
 import configureStore from './store/configureStore';
-import { AppContainer } from 'react-hot-loader'
+import { AppContainer as HMRContainer } from 'react-hot-loader'
 
 const store = configureStore();
 
 const render = Component => {
     ReactDOM.render(
-        <AppContainer>
+        <HMRContainer>
           <Provider store={store}>
             <Component />
           </Provider>
-        </AppContainer>,
+        </HMRContainer>,
       document.querySelector('#main')
     )
 }

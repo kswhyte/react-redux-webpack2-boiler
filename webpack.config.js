@@ -15,7 +15,7 @@ module.exports = {
 
     filename: "bundle.js",
 
-    publicPath: '/js/'
+    publicPath: '/dist/'
   },
 
   devtool: 'inline-source-map',
@@ -85,10 +85,10 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public"), path.join(__dirname, "dist")],
+    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
     compress: true,
     port: 9000,
-    publicPath: "/js/",
+    publicPath: "/dist/",
     hot: true,
     historyApiFallback: true
   },

@@ -99,6 +99,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-url": "^7.0.0",
     "prop-types": "^15.5.10",
