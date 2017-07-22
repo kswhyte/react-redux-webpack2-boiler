@@ -17,10 +17,19 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 }
 
 /* Main container for each page */
 .body-wrapper {
-  padding: 59px 80px;
+  margin: 0 80px;
+  padding-top:18px;
   margin-top: 150px;
+  box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
+  background-color: var(--white);
+}
+/* Center the inside of body wrapper using margin: 0 auto; */
+nav, .router-wrapper {
+  margin: 0 auto;
+  width:830px;
 }

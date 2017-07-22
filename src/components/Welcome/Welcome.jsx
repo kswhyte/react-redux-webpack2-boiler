@@ -8,7 +8,7 @@ import './welcome.css';
 const Welcome = props => {
   return (
     <div className="start-call-banner-block">
-      <HgRow>
+      <HgRow className="no-margin">
         <h1>Welcome</h1>
         <hr />
         <HgButton className="new-session-button" tabIndex={1} onClick={props.startSessionClick} text="Begin New Session" />

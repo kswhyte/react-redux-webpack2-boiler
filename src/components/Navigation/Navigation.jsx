@@ -14,7 +14,7 @@ const Navigation = (props) => {
   }
   check();
     return (
-        <div className="navigation-wrapper">
+        <nav className="navigation-wrapper">
             <h1>Navigation</h1>
             <Link to="/login">Login</Link>
             <Link to="/patientsearch">Search for Patients</Link>
@@ -22,7 +22,7 @@ const Navigation = (props) => {
             <Link to="/patientinfo">Confirm Patient Info</Link>
             <Link to="/searchandcalendar">Search and Calendar</Link>
             <Link to="/confirm">Confirm</Link>
-        </div>
+        </nav>
     );
 };
 
