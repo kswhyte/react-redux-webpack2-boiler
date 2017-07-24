@@ -42,8 +42,8 @@ header {
   top: 0;
   left: 0;
   & img {
-      height: 70px;
-      width: 70px;
+      height: 100px;
+      width: 100px;
   }
 }
 

@@ -17,6 +17,10 @@ export default (state = defaultState, action) => {
         return Object.assign({}, state, { startError: 'ERROR' });
     case types.START_TIMEOUT:
         return Object.assign({}, state, { startError: 'TIMEOUT' });
+    case types.START_SUCCESS:
+        return Object.assign({}, state, { startError: null });
+    case types.START_SESSION:
+        return Object.assign({}, state, { startError: null });
     default:
         return state;
   }

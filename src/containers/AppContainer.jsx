@@ -80,14 +80,17 @@ class App extends Component {
               {
                   (this.props.showSpinner) && (
                     <div className="smaccess-spinner" >
-                        <img className="spinny-mc-spin-spin" src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
+                        <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
                     </div>
                   )
               }
               <Switch>
                 <Route exact
                   path="/"
-                  render={() => <Welcome startSessionClick={this.handlers.startSessionClick} />}
+                  render={() => <Welcome
+                      startSessionClick={this.handlers.startSessionClick}
+                      startError={this.props.startError}
+                  />}
                 />
                 <Route exact path="/login" component={LoginContainer} />
                 <Route exact path="/patientsearch" component={SearchPatientContainer} />

@@ -24,7 +24,7 @@ const startSessionRequest = (dispatch, agent) => {
             return;
         }
         if (err && err.timeout) {
-            dispatch(actions.startCallTimeout(res || err));
+            dispatch(actions.startSessionTimeout(res || err));
             return;
         }
         if (err || !res || res.status !== 201) {
