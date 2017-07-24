@@ -18,24 +18,23 @@ import ConfirmContainer from './ConfirmContainer';
 
 import sessionActions from '../actions/SessionActions';
 
-
 /// Replaces the dispatcher.es file for each container component.
 
 let createHandlers = function(dispatch) {
   let startSessionClick = function(node, data) {
-    dispatch(sessionActions.startSessionClick(data))
+    dispatch(sessionActions.startSessionClick(data));
   };
 
   let toggleHeader = function(data) {
     dispatch(sessionActions.toggle_header(data));
-  }
+  };
 
   return {
     startSessionClick,
     toggleHeader
     // other handlers
   };
-}
+};
 
 const proptypes = {
   dispatch: PropTypes.func,
