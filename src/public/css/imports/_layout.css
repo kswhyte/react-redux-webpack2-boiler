@@ -29,6 +29,24 @@ header {
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
 }
+
+.smaccess-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, .5);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  & img {
+      height: 70px;
+      width: 70px;
+  }
+}
+
 /* Center the inside of body wrapper using margin: 0 auto; */
 nav, .router-wrapper {
   margin: 0 auto;
