@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Story 1`] = `
+<div
+  className="patient-appointments-wrapper"
+>
+  <div
+    className="tab-content clearfix"
+  >
+    <div
+      className="patient-appointments-form tab-pane"
+    >
+      <h3>
+        Insert APPOINTMENTS Form
+      </h3>
+    </div>
+  </div>
+</div>
+`;
