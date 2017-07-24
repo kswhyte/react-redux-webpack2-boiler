@@ -1,7 +1,7 @@
 import actions from '../SessionActions';
 import expect from 'expect';
 
-import {describe, it} from "../../../../.storybook/facade";
+import {describe, it} from "../../../.storybook/facade";
 
 describe('Session Actions', () => {
     describe('Cacel Action', () => {
@@ -55,7 +55,7 @@ describe('Session Actions', () => {
             };
 
             //Act
-            const action = actions.startSessionFail(err);
+            const action = actions.startSessionTimeout(err);
 
             //Assert
             expect(action).toEqual(expectedAction)

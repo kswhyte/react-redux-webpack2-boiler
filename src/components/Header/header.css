@@ -1,4 +1,4 @@
-@import "imports/_helpers.css";
+@import "../../public/css/imports/_helpers.css";
 header {
   &.small + .body-wrapper {
     margin-top: 145px;
