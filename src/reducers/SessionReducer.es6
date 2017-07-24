@@ -1,6 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 const defaultState = {
+    headerSize: null,
     showSpinner: false,
     startError: null,
 }

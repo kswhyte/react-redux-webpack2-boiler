@@ -34,7 +34,7 @@ const actions = {
 const thunks = {
     startSessionClick: () => {
         return (dispatch) => {
-            //Will retrieve from User Management;
+            //TODO: Will retrieve from User Management;
             const agent = {
                 UserId: 4,
                 UserName: 'DRob',
@@ -42,7 +42,6 @@ const thunks = {
                 LastName: 'Robinson',
             };
             const postModel = startSessionRequest(dispatch, agent);
-            console.log("What de pos' is?", postModel);
             dispatch(actions.startSession(postModel.postModel));
             firePost(postModel, dispatch);
         };
