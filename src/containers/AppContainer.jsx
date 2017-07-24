@@ -82,12 +82,7 @@ class App extends Component {
                 <Route path="/login" component={LoginContainer} />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
-
                 <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
-                <Route exact path="patientinfo/generalinfo" component={PatientInfo} />
-                <Route exact path="patientinfo/appointments" component={PatientAppointments} />
-                <Route exact path="patientinfo/notes" component={PatientNotes} />
-
                 <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
                 <Route path="/confirm" component={ConfirmContainer} />
                 <Route component={NotFound} />

@@ -13,7 +13,6 @@ const PatientInfo = props => {
 
   return (
     <div className="patient-info-wrapper">
-      {props.children}
       <div className="tab-content clearfix">
         <div className="general-info-form tab-pane active">
           <h3>Insert GENERAL INFO Form</h3>
