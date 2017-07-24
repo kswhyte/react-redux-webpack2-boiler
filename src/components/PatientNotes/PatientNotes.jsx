@@ -13,7 +13,6 @@ const PatientNotes = props => {
 
   return (
     <div className="patient-notes-wrapper">
-      {props.children}
       <div className="tab-content clearfix">
         <div className="patient-notes-form tab-pane active">
           <h3>Insert NOTES Form</h3>

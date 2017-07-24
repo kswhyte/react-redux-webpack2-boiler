@@ -8,9 +8,6 @@ import Footer from '../components/Footer';
 import Nav from '../components/Navigation';
 import Welcome from '../components/Welcome';
 import NotFound from '../components/NotFound';
-import PatientInfo from '../components/PatientInfo';
-import PatientAppointments from '../components/PatientAppointments';
-import PatientNotes from '../components/PatientNotes';
 
 import LoginContainer from './LoginContainer';
 import SearchPatientContainer from './SearchPatientContainer';
