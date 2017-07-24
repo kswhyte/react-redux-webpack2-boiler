@@ -99,12 +99,14 @@ App.propTypes = proptypes;
 const mapStateToProps = state => {
   //Select the specific state items you would like here
   const { test } = state;
-  const { headerSize } = state.Session;
+  const { headerSize, showSpinner, startError } = state.Session;
 
   //return state items to be added as props to the container
   return {
     test,
-    headerSize
+    headerSize,
+    showSpinner,
+    startError
   };
 };
 

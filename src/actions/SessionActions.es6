@@ -34,10 +34,7 @@ const actions = {
 const thunks = {
     startSessionClick: () => {
         return (dispatch) => {
-            console.log("Is dispatch here???", dispatch);
             //Will retrieve from User Management;
-            dispatch(actions.startSpinner());
-
             const agent = {
                 UserId: 4,
                 UserName: 'DRob',
@@ -46,8 +43,8 @@ const thunks = {
             };
             const postModel = startSessionRequest(dispatch, agent);
             console.log("What de pos' is?", postModel);
-             dispatch(actions.startSession(postModel.postModel));
-            firePost(postModel);
+            dispatch(actions.startSession(postModel.postModel));
+            firePost(postModel, dispatch);
         };
     }
 };
