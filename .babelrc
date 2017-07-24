@@ -2,8 +2,13 @@
   "presets": [
     ["es2015", { "modules": false }],
     "latest",
-    "react"
+    "react",
+    "flow"
   ],
-  "plugins": ["transform-es2015-modules-commonjs", "transform-object-rest-spread", "transform-runtime", "react-hot-loader/babel"]
+  "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-object-rest-spread",
+    "transform-runtime",
+    "react-hot-loader/babel"]
 }
 
