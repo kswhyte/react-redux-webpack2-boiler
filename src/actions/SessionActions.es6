@@ -35,12 +35,7 @@ const thunks = {
     startSessionClick: () => {
         return (dispatch) => {
             //TODO: Will retrieve from User Management;
-            const agent = {
-                UserId: 4,
-                UserName: 'DRob',
-                FirstName: 'Danny',
-                LastName: 'Robinson',
-            };
+            const agent = {};
             const postModel = startSessionRequest(dispatch, agent);
             dispatch(actions.startSession(postModel.postModel));
             firePost(postModel, dispatch);
