@@ -11,7 +11,12 @@ const Welcome = props => {
       <HgRow className="no-margin">
         <h1>Welcome</h1>
         <hr />
-        <HgButton className="new-session-button" tabIndex={1} onClick={props.startSessionClick} text="Begin New Session" />
+        <HgButton
+          className="new-session-button"
+          tabIndex={1}
+          onClick={props.startSessionClick}
+          text="Begin New Session"
+        />
         <div className="error-container">
           {(props.startError === 'ERROR') && (<h3>Something went wrong.</h3>)}
           {(props.startError === 'TIMEOUT') && (<h3>Request timed out.</h3>)}
@@ -23,7 +28,7 @@ const Welcome = props => {
 
 Welcome.propTypes = {
     startSessionClick: PropTypes.func,
-    startError: PropTypes.bool,
+    startError: PropTypes.bool
 };
 
 export default Welcome;

@@ -64,6 +64,7 @@
     "flow-bin": "^0.50.0",
     "html-webpack-plugin": "2.22.0",
     "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
     "jest-enzyme": "^3.5.1",
     "jsdom": "9.8.0",
     "json-schema-faker": "0.3.6",
