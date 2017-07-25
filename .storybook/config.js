@@ -1,4 +1,4 @@
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/react';
 import './app/assets/css/bootstrap.min.css';
 import '../src/public/css/dist/core_build.css';
 
