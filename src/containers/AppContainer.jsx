@@ -38,7 +38,9 @@ let createHandlers = function(dispatch) {
 
 const proptypes = {
   dispatch: PropTypes.func,
-  headerSize: PropTypes.string
+  headerSize: PropTypes.string,
+  showSpinner: PropTypes.bool,
+  startError: PropTypes.string
 };
 
 class App extends Component {
@@ -74,14 +76,27 @@ class App extends Component {
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
+              {
+                  (this.props.showSpinner) && (
+                    <div className="smaccess-spinner" >
+                        <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
+                    </div>
+                  )
+              }
               <Switch>
-                <Route exact path="/" render={() => <Welcome startSessionClick={this.handlers.startSessionClick} />} />
-                <Route path="/login" component={LoginContainer} />
-                <Route path="/patientsearch" component={SearchPatientContainer} />
-                <Route path="/users" component={UserManagementContainer} />
-                <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
-                <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
-                <Route path="/confirm" component={ConfirmContainer} />
+                <Route exact
+                  path="/"
+                  render={() => <Welcome
+                      startSessionClick={this.handlers.startSessionClick}
+                      startError={this.props.startError}
+                  />}
+                />
+                <Route exact path="/login" component={LoginContainer} />
+                <Route exact path="/patientsearch" component={SearchPatientContainer} />
+                <Route exact path="/users" component={UserManagementContainer} />
+                <Route exact path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route exact path="/searchandcalendar" component={SearchAndCalendarContainer} />
+                <Route exact path="/confirm" component={ConfirmContainer} />
                 <Route component={NotFound} />
               </Switch>
             </div>
@@ -98,12 +113,14 @@ App.propTypes = proptypes;
 const mapStateToProps = state => {
   //Select the specific state items you would like here
   const { test } = state;
-  const { headerSize } = state.Session;
+  const { headerSize, showSpinner, startError } = state.Session;
 
   //return state items to be added as props to the container
   return {
     test,
-    headerSize
+    headerSize,
+    showSpinner,
+    startError
   };
 };
 

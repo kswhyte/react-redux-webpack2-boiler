@@ -20,22 +20,18 @@ const startSessionRequest = (dispatch, agent) => {
 
     const requestEnd = (err, res) => {
         if(res && res.status === 401) {
-            dispatch(actions.stopSpinner());
             window.location.assign('/login/');
             return;
         }
         if (err && err.timeout) {
-            dispatch(actions.stopSpinner());
-            dispatch(actions.startCallTimeout(res || err));
+            dispatch(actions.startSessionTimeout(res || err));
             return;
         }
         if (err || !res || res.status !== 201) {
-            dispatch(actions.stopSpinner());
+            console.log("Errs and whatnot; ", err, res);
             dispatch(actions.startSessionFail(res || err));
             return;
         }
-
-        dispatch(actions.stopSpinner());
         dispatch(actions.startSessionSuccess(res.body));
         window.location.assign('/patientsearch/');
     };

@@ -8,7 +8,7 @@ exports[`Story 1`] = `
     className="tab-content clearfix"
   >
     <div
-      className="patient-appointments-form tab-pane"
+      className="patient-appointments-form tab-pane active"
     >
       <h3>
         Insert APPOINTMENTS Form

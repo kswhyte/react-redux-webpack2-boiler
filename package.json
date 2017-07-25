@@ -119,13 +119,13 @@
     "webpack": "^3.1.0"
   },
   "jest": {
-    "rootDir": "src/components",
+    "rootDir": "src/",
     "setupFiles": [
-      "../../.storybook/__conf__/config.js"
+      "../.storybook/__conf__/config.js"
     ],
     "automock": false,
     "notify": true,
-    "setupTestFrameworkScriptFile": "../../node_modules/jest-enzyme/lib/index.js",
+    "setupTestFrameworkScriptFile": "../node_modules/jest-enzyme/lib/index.js",
     "collectCoverageFrom": [
       "src/components/*.{es6, js,jsx}",
       "src/components/**/*.{es6, js,jsx}",
@@ -148,17 +148,18 @@
       "react-addons-test-utils"
     ],
     "moduleNameMapper": {
-      "^@hg/three-ui": "<rootDir>/HgStub/HgStub.jsx",
-      "\\.(css|less|png|jpg)$": "<rootDir>/HgStub/HgStub.jsx",
-      "^@kadira/storybook$": "<rootDir>/__mocks__/@kadira/storybook"
+      "^@hg/three-ui": "<rootDir>/components/HgStub/HgStub.jsx",
+      "\\.(css|less|png|jpg)$": "<rootDir>/components/HgStub/HgStub.jsx",
+      "^@kadira/storybook$": "<rootDir>/components/__mocks__/@kadira/storybook"
     },
     "testPathIgnorePatterns": [
       "spec.jsx"
     ],
     "transform": {
-      ".es$": "../../node_modules/babel-jest",
-      ".jsx$": "../../node_modules/babel-jest",
-      ".js$": "../../node_modules/babel-jest"
+      ".es6$": "../node_modules/babel-jest",
+      ".es$": "../node_modules/babel-jest",
+      ".jsx$": "../node_modules/babel-jest",
+      ".js$": "../node_modules/babel-jest"
     }
   }
 }
