@@ -5,3 +5,5 @@ tools/dist/
 dist/
 
 public/css/dist/
+
+dist/bundle.js

@@ -16,20 +16,17 @@ const createCall = () => {
 
 const startProps = {
     createCall,
-    showError: false,
-    startCallTimeout: false
+    startError: null,
 }
 
 const errorProps = {
     createCall,
-    showError: true,
-    startCallTimeout: false
+    startError: 'ERROR',
 }
 
 const timeoutProps = {
     createCall,
-    showError: false,
-    startCallTimeout: true
+    startError: 'TIMEOUT',
 }
 
 const stories = storiesOf('Welcome', module);
