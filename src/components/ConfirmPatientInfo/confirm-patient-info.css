@@ -13,12 +13,12 @@
   & > li.active > a {
     color: var(--white);
     background-color: var(--dark-sky-blue);
+    /*border: var(--dark-sky-blue);*/
   }
 }
+
 /*.nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover {*/
-
-/*border: var(--dark-sky-blue);*/
 
 /*hr {
   color: var(--cloudy-blue);

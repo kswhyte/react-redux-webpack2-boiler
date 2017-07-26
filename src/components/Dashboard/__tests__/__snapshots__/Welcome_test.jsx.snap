@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome page main error story 1`] = `
+exports[`Dashboard page main error story 1`] = `
 <div
-  className="start-call-banner-block"
+  className="start-call-banner-wrapper"
 >
   <div>
     <h1>
-      Welcome
+      Dashboard
     </h1>
     <hr />
     <div />
@@ -21,13 +21,13 @@ exports[`Welcome page main error story 1`] = `
 </div>
 `;
 
-exports[`Welcome page main story 1`] = `
+exports[`Dashboard page main story 1`] = `
 <div
-  className="start-call-banner-block"
+  className="start-call-banner-wrapper"
 >
   <div>
     <h1>
-      Welcome
+      Dashboard
     </h1>
     <hr />
     <div />
@@ -38,13 +38,13 @@ exports[`Welcome page main story 1`] = `
 </div>
 `;
 
-exports[`Welcome page timeout error story 1`] = `
+exports[`Dashboard page timeout error story 1`] = `
 <div
-  className="start-call-banner-block"
+  className="start-call-banner-wrapper"
 >
   <div>
     <h1>
-      Welcome
+      Dashboard
     </h1>
     <hr />
     <div />

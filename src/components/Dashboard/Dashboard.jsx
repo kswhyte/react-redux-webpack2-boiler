@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import HgRow from '@hg/three-ui/HgRow';
 import HgButton from '@hg/three-ui/HgButton';
 
-import './welcome.css';
+import './dashboard.css';
 
-const Welcome = props => {
+const Dashboard = props => {
   return (
-    <div className="start-call-banner-block">
+    <div className="start-call-banner-wrapper">
       <HgRow className="no-margin">
-        <h1>Welcome</h1>
+        <h1>Dashboard</h1>
         <hr />
         <HgButton
           className="new-session-button"
@@ -18,17 +18,17 @@ const Welcome = props => {
           text="Begin New Session"
         />
         <div className="error-container">
-          {(props.startError === 'ERROR') && (<h3>Something went wrong.</h3>)}
-          {(props.startError === 'TIMEOUT') && (<h3>Request timed out.</h3>)}
+          {props.startError === 'ERROR' && <h3>Something went wrong.</h3>}
+          {props.startError === 'TIMEOUT' && <h3>Request timed out.</h3>}
         </div>
       </HgRow>
     </div>
   );
 };
 
-Welcome.propTypes = {
-    startSessionClick: PropTypes.func,
-    startError: PropTypes.bool
+Dashboard.propTypes = {
+  startSessionClick: PropTypes.func,
+  startError: PropTypes.bool
 };
 
-export default Welcome;
+export default Dashboard;

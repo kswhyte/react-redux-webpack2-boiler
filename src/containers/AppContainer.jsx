@@ -6,10 +6,10 @@ import { PropTypes } from 'prop-types';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Nav from '../components/Navigation';
-import Welcome from '../components/Welcome';
+import Dashboard from '../components/Dashboard';
 import NotFound from '../components/NotFound';
 
-import LoginContainer from './LoginContainer';
+import SignOnContainer from './SignOnContainer';
 import SearchPatientContainer from './SearchPatientContainer';
 import UserManagementContainer from './UserManagementContainer';
 import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
@@ -53,6 +53,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+      //is there a user?
+        //if so ... remove signed-out class && add signed-in
+
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
         this.toggleHeaderSize = 'small';
@@ -71,32 +75,25 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="wrapper">
+        <div className="wrapper signed-out">
           <Header headerSize={this.props.headerSize} />
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
-              {
-                  (this.props.showSpinner) && (
-                    <div className="smaccess-spinner" >
-                        <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
-                    </div>
-                  )
-              }
+              {this.props.showSpinner &&
+                <div className="smaccess-spinner">
+                  <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
+                </div>}
               <Switch>
-                <Route exact
-                  path="/"
-                  render={() => <Welcome
-                      startSessionClick={this.handlers.startSessionClick}
-                      startError={this.props.startError}
-                  />}
+                <Route exact path="/" render={() =>
+                    <Dashboard startSessionClick={this.handlers.startSessionClick} startError={this.props.startError} />}
                 />
-                <Route exact path="/login" component={LoginContainer} />
-                <Route exact path="/patientsearch" component={SearchPatientContainer} />
-                <Route exact path="/users" component={UserManagementContainer} />
-                <Route exact path="/patientinfo" component={ConfirmPatientInfoContainer} />
-                <Route exact path="/searchandcalendar" component={SearchAndCalendarContainer} />
-                <Route exact path="/confirm" component={ConfirmContainer} />
+                <Route path="/login" component={SignOnContainer} />
+                <Route path="/patientsearch" component={SearchPatientContainer} />
+                <Route path="/users" component={UserManagementContainer} />
+                <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
+                <Route path="/confirm" component={ConfirmContainer} />
                 <Route component={NotFound} />
               </Switch>
             </div>
