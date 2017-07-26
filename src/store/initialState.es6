@@ -1,7 +1,8 @@
 export default {
   Session: {
     user: {
-      isActive: false
+      isActive: false,
+      credentials : {}
     },
     headerSize: 'full'
   }
