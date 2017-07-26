@@ -40,7 +40,8 @@ const proptypes = {
   dispatch: PropTypes.func,
   headerSize: PropTypes.string,
   showSpinner: PropTypes.bool,
-  startError: PropTypes.string
+  startError: PropTypes.string,
+  user : PropTypes.object
 };
 
 class App extends Component {
@@ -53,10 +54,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-      //is there a user?
-        //if so ... remove signed-out class && add signed-in
-
-
     window.addEventListener('scroll', () => {
       if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
         this.toggleHeaderSize = 'small';
@@ -75,7 +72,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="wrapper signed-out">
+        <div className={this.props.user.isActive ? 'wrapper' : 'wrapper signed-out'}>
           <Header headerSize={this.props.headerSize} />
           <section className="body-wrapper">
             <Nav />
@@ -108,16 +105,15 @@ class App extends Component {
 App.propTypes = proptypes;
 
 const mapStateToProps = state => {
-  //Select the specific state items you would like here
-  const { test } = state;
-  const { headerSize, showSpinner, startError } = state.Session;
-
+  console.log('000--- state', state)
+  //Select the specific state items you would like here\
+  const { headerSize, showSpinner, startError, user } = state.Session;
   //return state items to be added as props to the container
   return {
-    test,
     headerSize,
     showSpinner,
-    startError
+    startError,
+    user
   };
 };
 

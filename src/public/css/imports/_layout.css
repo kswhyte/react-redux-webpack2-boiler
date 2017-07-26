@@ -22,8 +22,8 @@ header {
 
 /* Main container for each page */
  .body-wrapper {
-  height:100vh;
-  margin: 150px 80px 0;
+  height:90vh;
+  margin: 150px 80px 60px;
   padding-top:18px;
   margin-top: 150px;
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
@@ -31,10 +31,12 @@ header {
 }
 
 .signed-out .body-wrapper {
-  margin-top: 204px;
+  margin-top: 134px;
+  margin-bottom: 140px;
+  height: 667px;
 }
 
-.signed-out nav {
+.signed-out nav, .signed-out header > div:last-child {
   display:none;
 }
 

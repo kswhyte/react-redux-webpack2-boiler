@@ -47,6 +47,5 @@ h2 {
 }
 
 .page-instructions {
-  font-size:16px;
-  font-style: italic;
+  font: italic 16px 'Georgia', sans-serif;
 }

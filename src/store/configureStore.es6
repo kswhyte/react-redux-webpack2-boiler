@@ -4,10 +4,11 @@ import rootReducer from '../reducers/index';
 import InitialState from '../store/initialState';
 import logger from 'redux-logger';
 
-const createStoreWithMiddleware = applyMiddleware(logger, thunkMiddleware)(createStore);
-
-export default function configureStore(initialState=InitialState) {
-  const store = createStoreWithMiddleware(rootReducer, initialState);
-
+export default function configureStore(initalState=InitialState) {
+  const store = createStore(
+    rootReducer,
+    initalState,
+    applyMiddleware(logger, thunkMiddleware)
+  );
   return store;
 }
