@@ -1,6 +1,7 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
 import ConfirmPatientInfo from '../ConfirmPatientInfo';
+import { Route, Link } from 'react-router-dom';
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
 

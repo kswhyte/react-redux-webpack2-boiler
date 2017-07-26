@@ -9,7 +9,7 @@ import Nav from '../components/Navigation';
 import Welcome from '../components/Welcome';
 import NotFound from '../components/NotFound';
 
-import LoginContainer from './LoginContainer';
+import SignOnContainer from './SignOnContainer';
 import SearchPatientContainer from './SearchPatientContainer';
 import UserManagementContainer from './UserManagementContainer';
 import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
@@ -76,27 +76,23 @@ class App extends Component {
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
-              {
-                  (this.props.showSpinner) && (
-                    <div className="smaccess-spinner" >
-                        <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
-                    </div>
-                  )
-              }
+              {this.props.showSpinner &&
+                <div className="smaccess-spinner">
+                  <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
+                </div>}
               <Switch>
-                <Route exact
+                <Route
+                  exact
                   path="/"
-                  render={() => <Welcome
-                      startSessionClick={this.handlers.startSessionClick}
-                      startError={this.props.startError}
-                  />}
+                  render={() =>
+                    <Welcome startSessionClick={this.handlers.startSessionClick} startError={this.props.startError} />}
                 />
-                <Route exact path="/login" component={LoginContainer} />
-                <Route exact path="/patientsearch" component={SearchPatientContainer} />
-                <Route exact path="/users" component={UserManagementContainer} />
-                <Route exact path="/patientinfo" component={ConfirmPatientInfoContainer} />
-                <Route exact path="/searchandcalendar" component={SearchAndCalendarContainer} />
-                <Route exact path="/confirm" component={ConfirmContainer} />
+                <Route path="/login" component={SignOnContainer} />
+                <Route path="/patientsearch" component={SearchPatientContainer} />
+                <Route path="/users" component={UserManagementContainer} />
+                <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
+                <Route path="/confirm" component={ConfirmContainer} />
                 <Route component={NotFound} />
               </Switch>
             </div>
