@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Nav from '../components/Navigation';
-import Welcome from '../components/Welcome';
+import Dashboard from '../components/Dashboard';
 import NotFound from '../components/NotFound';
 
 import SignOnContainer from './SignOnContainer';
@@ -53,6 +53,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+      //is there a user?
+        //if so ... remove signed-out class && add signed-in
+
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
         this.toggleHeaderSize = 'small';
@@ -71,7 +75,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="wrapper">
+        <div className="wrapper signed-out">
           <Header headerSize={this.props.headerSize} />
           <section className="body-wrapper">
             <Nav />
@@ -81,11 +85,8 @@ class App extends Component {
                   <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
                 </div>}
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={() =>
-                    <Welcome startSessionClick={this.handlers.startSessionClick} startError={this.props.startError} />}
+                <Route exact path="/" render={() =>
+                    <Dashboard startSessionClick={this.handlers.startSessionClick} startError={this.props.startError} />}
                 />
                 <Route path="/login" component={SignOnContainer} />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
