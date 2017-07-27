@@ -104,10 +104,10 @@ class App extends Component {
 
 App.propTypes = proptypes;
 
-const mapStateToProps = state => {
-  console.log('000--- state', state)
-  //Select the specific state items you would like here\
-  const { headerSize, showSpinner, startError, user } = state.Session;
+const mapStoreToProps = store => {
+  console.log('000--- Store', store)
+  //Select the specific Store items you would like here\
+  const { headerSize, showSpinner, startError, user } = store.Session;
   //return state items to be added as props to the container
   return {
     headerSize,
@@ -117,4 +117,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStoreToProps)(App);
