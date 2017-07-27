@@ -54,7 +54,7 @@ header {
         color: var(--white);
         display: inline-block;
         text-align: center;
-        padding-right: 30px;
+        padding-right: 30 px;
 
         & i {
           font-size: 18px;
