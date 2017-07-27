@@ -112,9 +112,9 @@ class App extends Component {
 App.propTypes = proptypes;
 
 const mapStoreToProps = store => {
-  console.log('000--- Store', store);
   //Select the specific Store items you would like here\
-  const { headerSize, showSpinner, startError, user } = store.Session;
+  const { headerSize } = store.Header;
+  const { showSpinner, startError, user } = store.Session;
   //return state items to be added as props to the container
   return {
     headerSize,

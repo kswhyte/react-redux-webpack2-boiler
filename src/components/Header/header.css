@@ -115,4 +115,11 @@ header {
     margin-top: 30px;
     background-repeat: no-repeat;
   }
+
+  & .manager-logo {
+    background-image: image-set(url('~/images/MR_logo.png') 1x, url('~/images/MR_logo@2x.png') 2x);
+    width: 212px;
+    height: 30px;
+    background-repeat: no-repeat;
+  }
 }

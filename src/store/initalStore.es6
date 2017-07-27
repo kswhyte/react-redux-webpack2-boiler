@@ -1,11 +1,13 @@
 export default {
+  Header: {
+    headerSize: 'full'
+  },
   Session: {
     user: {
       isActive: true,
-      credentials : {}
+      credentials: {}
     },
-    headerSize: 'full',
     showSpinner: false,
-    startError: null,
+    startError: null
   }
-}
+};
