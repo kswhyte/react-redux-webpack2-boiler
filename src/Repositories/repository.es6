@@ -4,7 +4,8 @@ class LoginApi {
 
   static loginUser() {
     return new Promise((resolve, reject) => {
-      console.log('hosted-url pagth : ', URI.baseUISVC_URI);
+      //make call to login user
+      //resolve or reject based upon response from server
       resolve(URI.baseUISVC_URI);
     });
   }
