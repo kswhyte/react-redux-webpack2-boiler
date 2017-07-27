@@ -35,17 +35,17 @@ const Header = props => {
       </div>
 
       <div className="row no-margin">
-        <div className="col-sm-3">
+        <div className="col-xs-12 col-sm-3">
           <div className="manager-logo" />
         </div>
 
-        <div className="col-sm-9">
+        <div className="col-xs-12 col-sm-9">
           <div className="pull-right">
-            <span className="sign-in-status">
+            <div className="sign-in-status">
               Currently signed in as<br />
-              AgentUsername
-            </span>
-            <span>|</span>
+              <span>AgentUsername</span>
+            </div>
+            <div className="subheader-pipe">|</div>
             {/* {make this a tag, below, into a Link and connect to logout path} */}
             <a href="#">Log out</a>
           </div>

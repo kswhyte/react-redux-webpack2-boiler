@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--pale-grey-two);
   font-family: 'Raleway', sans-serif;
@@ -21,10 +25,10 @@ header {
 }
 
 /* Main container for each page */
- .body-wrapper {
-  height:90vh;
+.body-wrapper {
+  height: 90vh;
   margin: 150px 80px 60px;
-  padding-top:18px;
+  padding-top: 18px;
   margin-top: 150px;
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
@@ -36,8 +40,9 @@ header {
   height: 667px;
 }
 
-.signed-out nav, .signed-out header > div:last-child {
-  display:none;
+.signed-out nav,
+.signed-out header > div:last-child {
+  display: none;
 }
 
 .smaccess-spinner {
@@ -52,13 +57,14 @@ header {
   top: 0;
   left: 0;
   & img {
-      height: 100px;
-      width: 100px;
+    height: 100px;
+    width: 100px;
   }
 }
 
 /* Center the inside of body wrapper using margin: 0 auto; */
-nav, .router-wrapper {
+nav,
+.router-wrapper {
   margin: 0 auto;
-  width:830px;
+  width: 830px;
 }
