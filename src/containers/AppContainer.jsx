@@ -16,6 +16,7 @@ import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 
+import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
 
 /// Replaces the dispatcher.es file for each container component.
@@ -26,7 +27,7 @@ let createHandlers = function(dispatch) {
   };
 
   let toggleHeader = function(data) {
-    dispatch(sessionActions.toggle_header(data));
+    dispatch(headerActions.toggle_header(data));
   };
 
   return {
@@ -41,7 +42,7 @@ const proptypes = {
   headerSize: PropTypes.string,
   showSpinner: PropTypes.bool,
   startError: PropTypes.string,
-  user : PropTypes.object
+  user: PropTypes.object
 };
 
 class App extends Component {
@@ -82,8 +83,14 @@ class App extends Component {
                   <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
                 </div>}
               <Switch>
-                <Route exact path="/" render={() =>
-                    <Dashboard startSessionClick={this.handlers.startSessionClick} startError={this.props.startError} />}
+                <Route
+                  exact
+                  path="/"
+                  render={() =>
+                    <Dashboard
+                      startSessionClick={this.handlers.startSessionClick}
+                      startError={this.props.startError}
+                    />}
                 />
                 <Route path="/login" component={SignOnContainer} />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
@@ -105,7 +112,7 @@ class App extends Component {
 App.propTypes = proptypes;
 
 const mapStoreToProps = store => {
-  console.log('000--- Store', store)
+  console.log('000--- Store', store);
   //Select the specific Store items you would like here\
   const { headerSize, showSpinner, startError, user } = store.Session;
   //return state items to be added as props to the container

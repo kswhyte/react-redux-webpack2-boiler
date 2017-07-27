@@ -91,13 +91,13 @@
     "react-prop-types": "^0.4.0",
     "react-test-renderer": "^15.6.1",
     "rimraf": "2.5.4",
-    "sinon": "^2.2.0",
+    "sinon": "^2.4.1",
     "storybook-addon-specifications": "^1.0.16",
     "style-loader": "0.13.1",
     "url-loader": "^0.5.9",
-    "webpack": "^3.1.0",
+    "webpack": "^3.4.1",
     "webpack-dev-middleware": "1.8.4",
-    "webpack-dev-server": "^2.5.1",
+    "webpack-dev-server": "^2.6.1",
     "webpack-hot-middleware": "2.13.0",
     "webpack-md5-hash": "0.0.5",
     "webpack-sources": "^1.0.1",
@@ -106,7 +106,7 @@
   "dependencies": {
     "moment": "^2.18.1",
     "postcss-browser-reporter": "^0.5.0",
-    "postcss-url": "^7.0.0",
+    "postcss-url": "^7.1.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -115,8 +115,7 @@
     "react-router-dom": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "superagent": "^3.5.2",
-    "webpack": "^3.1.0"
+    "superagent": "^3.5.2"
   },
   "jest": {
     "rootDir": "src/",
