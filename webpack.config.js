@@ -52,19 +52,17 @@ module.exports = {
         test: /\.woff2$/,
         use: [{ loader: 'url?mimetype=application/font-woff2' }]
       },
-      {
+           {
         test: /\.(es|es6|jsx?)$/,
-        exclude: [/node_modules/, /tools/],
+        include: [
+          path.resolve(__dirname, "node_modules/@hg/")
+        ],
         use: ['babel-loader']
       },
       {
         test: /\.(es|es6|jsx?)$/,
-        include: [/node_modules\/@hg/],
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ]
+        exclude: [/node_modules/, /tools/],
+        use: ['babel-loader']
       },
       {
         test: /\.less$/,
