@@ -13,7 +13,6 @@ const stories = storiesOf('SignOn', module);
 
 stories.add('Search Patient Story', () => {
   const signOnStory = <SignOn />;
-
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should render the SignOn component without crashing', () => {
@@ -23,4 +22,18 @@ stories.add('Search Patient Story', () => {
     })
   );
   return signOnStory;
+});
+
+stories.add('SignOn Page', () => {
+const signOnHeader=<SignOn />;
+specs(()=>
+describe('Show a successful header',()=>{
+it('Should contain the signon h2 header tag',()=>{
+
+  let output=shallow(signOnHeader);
+          expect(output.find('h2').first().text()).toContain('SIGN ON');
+});
+})
+);
+ return signOnHeader;
 });

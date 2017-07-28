@@ -5,7 +5,7 @@ import './sign-on.css';
 const SignOn = () => {
   return (
     <div className="sign-on-wrapper">
-      <h1>SignOn</h1>
+      <h2>SIGN ON</h2>
     </div>
   );
 };
