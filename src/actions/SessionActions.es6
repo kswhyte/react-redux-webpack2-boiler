@@ -1,6 +1,6 @@
-import * as types from '../constants/actionTypes';
 import startSessionRequest from '../actionRequests/startSessionRequest';
 import firePost from '../../tools/firePost';
+import * as types from '../constants/actionTypes';
 
 const actions = {
   startSpinner: () => ({

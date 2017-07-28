@@ -4,8 +4,10 @@
   "description": "Smart Access Version 2",
   "main": "app.js",
   "scripts": {
-    "build_environment_babel": "babel-node ./tools/setEnvironment.es6",
+    "build_environment_babel": "babel  ./tools/setEnvironment.es6 --out-file  ./tools/dist/setEnvironment.js",
     "build_environment": "node ./tools/dist/setEnvironment default",
+    "add-mocks": "npm-run-all build_environment_babel \"build_environment -- mock\"",
+    "remove-mocks": "npm-run-all build_environment_babel \"build_environment -- remove-mock\"",
     "build-dev": "npm-run-all build_environment_babel \"build_environment -- dev\"",
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
