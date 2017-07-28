@@ -1,6 +1,7 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
 import ConfirmPatientInfo from '../ConfirmPatientInfo';
+import { StaticRouter } from 'react-router'
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
@@ -11,8 +12,14 @@ import expect from 'expect';
 
 const stories = storiesOf('ConfirmPatientInfo', module);
 
+const context = {};
+
 stories.add('Story', () => {
-  const confirmPatientInfoStory = <ConfirmPatientInfo />;
+  const confirmPatientInfoStory = (
+            <StaticRouter context={context} >
+                <ConfirmPatientInfo />
+            </StaticRouter>
+            );
 
   specs(() =>
     describe('Show a successful alert', () => {

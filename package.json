@@ -151,8 +151,7 @@
     ],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/components/HgStub/HgStub.jsx",
-      "\\.(css|less|png|jpg)$": "<rootDir>/components/HgStub/HgStub.jsx",
-      "^@kadira/storybook$": "<rootDir>/components/__mocks__/@kadira/storybook"
+      "\\.(css|less|png|jpg)$": "<rootDir>/components/HgStub/HgStub.jsx"
     },
     "testPathIgnorePatterns": [
       "spec.jsx"

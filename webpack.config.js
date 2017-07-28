@@ -98,14 +98,14 @@ module.exports = {
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
     }
   },
-  // devServer: {
-  //   contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
-  //   compress: true,
-  //   port: 9000,
-  //   publicPath: "/dist/",
-  //   hot: true,
-  //   historyApiFallback: true
-  // },
+  devServer: {
+    contentBase: [path.join(__dirname, "src"), path.join(__dirname, "src/public")],
+    compress: true,
+    port: 9000,
+    publicPath: "/dist/",
+    hot: true,
+    historyApiFallback: true
+  },
   target: 'web',
 
   externals: {
@@ -119,7 +119,7 @@ module.exports = {
   stats: 'errors-only',
 
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
 
     new webpack.NamedModulesPlugin(),
