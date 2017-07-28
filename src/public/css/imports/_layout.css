@@ -29,7 +29,6 @@ header {
   height: 90vh;
   margin: 150px 80px 60px;
   padding-top: 18px;
-  margin-top: 150px;
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
 }
