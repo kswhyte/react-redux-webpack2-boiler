@@ -3,6 +3,9 @@ import chalk from 'chalk';
 import path from 'path';
 import { URI, PORTS } from './app_config';
 
+import removeMock from "../mocks/remove_mock.es6";
+import addMocks from "../mocks/add_mocks.es6";
+
 const environments = {
   dev: `localhost:${PORTS.localhostPortNumber_uisvc}/${URI.baseUISVC_URI}`, // local dev
   test: `/${URI.baseUISVC_URI}`, // test AWS
@@ -14,13 +17,12 @@ export default environment => {
   let _environment = null;
   //check environment
   switch (environment) {
-  case 'dev':
-    console.log(chalk.green(
-      `------------------------------ \n
-  Check \n
----------------------------- \n`));
-    _environment = environment;
-    break;
+    case 'remove-mock':
+      removeMock();
+      break;
+    case 'mock':
+      addMocks();
+      break;
   case 'test':
     console.log(chalk.green(
         `------------------------------ \n
