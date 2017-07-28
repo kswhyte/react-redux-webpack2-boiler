@@ -16,6 +16,9 @@ const PatientInfo = props => {
       <div className="tab-content clearfix">
         <div className="general-info-form tab-pane active">
           <h3>Insert GENERAL INFO Form</h3>
+          <form onSubmit={handlePatientInfoSubmit}>
+            <input />
+          </form>
         </div>
       </div>
     </div>
