@@ -19,7 +19,7 @@ console.log(chalk.green('--> Opening : '), chalk.yellow('SessionActions'));
 console.log(chalk.blue('---------------------------------'));
 
 console.log(chalk.blue('---------------------------------'));
-console.log(chalk.green('--> Adding mocks folder to path : '), chalk.yellow("import startSessionRequest from \'../actionRequests/mocks/startSessionRequest'"));
+console.log(chalk.green('--> Removing mocks  : '), chalk.yellow("import startSessionRequest from \'../actionRequests/mocks/startSessionRequest'"));
 console.log(chalk.blue('---------------------------------'));
 
 const SessionActions_filePath = './src/actions/SessionActions.es6';
