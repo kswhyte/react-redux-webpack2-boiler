@@ -4,8 +4,10 @@
   "description": "Smart Access Version 2",
   "main": "app.js",
   "scripts": {
-    "build_environment_babel": "babel-node ./tools/setEnvironment.es6",
+    "build_environment_babel": "babel  ./tools/setEnvironment.es6 --out-file  ./tools/dist/setEnvironment.js",
     "build_environment": "node ./tools/dist/setEnvironment default",
+    "add-mocks": "npm-run-all build_environment_babel \"build_environment -- mock\"",
+    "remove-mocks": "npm-run-all build_environment_babel \"build_environment -- remove-mock\"",
     "build-dev": "npm-run-all build_environment_babel \"build_environment -- dev\"",
     "build-test": "npm-run-all build_environment_babel \"build_environment -- test\"",
     "build-prod": "npm-run-all build_environment_babel \"build_environment -- prod\"",
@@ -92,14 +94,14 @@
     "react-prop-types": "^0.4.0",
     "react-test-renderer": "^15.6.1",
     "rimraf": "2.5.4",
-    "sinon": "^2.2.0",
+    "sinon": "^2.4.1",
     "storybook-addon-specifications": "^2.1.0",
     "style-loader": "0.13.1",
     "url-loader": "^0.5.9",
-    "webpack": "^3.1.0",
+    "webpack": "^3.4.1",
     "webpack-config-utils": "^2.3.0",
     "webpack-dev-middleware": "1.8.4",
-    "webpack-dev-server": "^2.5.1",
+    "webpack-dev-server": "^2.6.1",
     "webpack-hot-middleware": "2.13.0",
     "webpack-md5-hash": "0.0.5",
     "webpack-sources": "^1.0.1",
@@ -108,7 +110,7 @@
   "dependencies": {
     "moment": "^2.18.1",
     "postcss-browser-reporter": "^0.5.0",
-    "postcss-url": "^7.0.0",
+    "postcss-url": "^7.1.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -117,8 +119,7 @@
     "react-router-dom": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "superagent": "^3.5.2",
-    "webpack": "^3.1.0"
+    "superagent": "^3.5.2"
   },
   "jest": {
     "rootDir": "src/",

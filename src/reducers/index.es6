@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-import Session from '../reducers/SessionReducer.es6';
+import Header from './HeaderReducer.es6';
+import Session from './SessionReducer.es6';
 
 const rootReducer = combineReducers({
+  Header,
   Session
 });
 

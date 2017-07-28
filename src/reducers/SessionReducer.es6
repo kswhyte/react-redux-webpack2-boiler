@@ -1,28 +1,23 @@
 import * as types from '../constants/actionTypes';
 
-const defaultState = {
-    headerSize: null,
-    showSpinner: false,
-    startError: null,
-}
-
-export default (state = defaultState, action) => {
+//inital state is set inside the store/initialState.es6
+const sessionReducer = (store = {}, action) => {
   switch (action.type) {
-    case types.TOGGLE_HEADER:
-        return Object.assign({}, state, { headerSize: action.headerSize });
     case types.START_SPINNER:
-        return Object.assign({}, state, { showSpinner: true });
+      return Object.assign({}, store, { showSpinner: true });
     case types.STOP_SPINNER:
-        return Object.assign({}, state, { showSpinner: false });
+      return Object.assign({}, store, { showSpinner: false });
     case types.START_FAIL:
-        return Object.assign({}, state, { startError: 'ERROR' });
+      return Object.assign({}, store, { startError: 'ERROR' });
     case types.START_TIMEOUT:
-        return Object.assign({}, state, { startError: 'TIMEOUT' });
+      return Object.assign({}, store, { startError: 'TIMEOUT' });
     case types.START_SUCCESS:
-        return Object.assign({}, state, { startError: null });
+      return Object.assign({}, store, { startError: null });
     case types.START_SESSION:
-        return Object.assign({}, state, { startError: null });
+      return Object.assign({}, store, { startError: null });
     default:
-        return state;
+      return store;
   }
 };
+
+export default sessionReducer;

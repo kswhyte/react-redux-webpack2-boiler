@@ -2,10 +2,10 @@
 
 exports[`Search Patient Story 1`] = `
 <div
-  className="login-block"
+  className="sign-on-wrapper"
 >
   <h1>
-    Login
+    SignOn
   </h1>
 </div>
 `;

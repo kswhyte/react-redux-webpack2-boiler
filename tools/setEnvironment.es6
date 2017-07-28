@@ -1,7 +1,8 @@
-import fs from 'fs';
 import chalk from 'chalk';
-import path from 'path';
 import { URI, PORTS } from './app_config';
+
+import removeMock from "../mocks/remove_mock.es6";
+import addMocks from "../mocks/add_mocks.es6";
 
 const environments = {
   dev: `localhost:${PORTS.localhostPortNumber_uisvc}/${URI.baseUISVC_URI}`, // local dev
@@ -14,13 +15,19 @@ export default environment => {
   let _environment = null;
   //check environment
   switch (environment) {
-  case 'dev':
+    case 'remove-mock':
+      removeMock();
+      break;
+    case 'mock':
+      addMocks();
+      break;
+    case 'dev':
     console.log(chalk.green(
-      `------------------------------ \n
-  Check \n
+        `------------------------------ \n
+Check \n
 ---------------------------- \n`));
-    _environment = environment;
-    break;
+      _environment = environment;
+      break;
   case 'test':
     console.log(chalk.green(
         `------------------------------ \n
@@ -41,7 +48,9 @@ Check \n
 "${environment}" does not exist \n
 --------------------------\n
   |  Try: passing one of these arguments \n
-  |   -- dev \
+  |   -- add-mocks
+      -- remove-mocks
+      -- dev \
       -- test \
       -- prod \n
 ---------------------------- \n`));
@@ -59,7 +68,7 @@ Check \n
     */
     console.log(chalk.bgMagenta(
       `------------------------------ \n
-    NOT IMPLEMENTED 7/10/2017 \n
+    Start Call Mocked out 7/27/2017 - Wes \n
 ---------------------------- \n`));
   }
 }; // END - export default environment

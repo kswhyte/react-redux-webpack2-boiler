@@ -7,7 +7,7 @@ import { StaticRouter } from 'react-router'
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import expect from 'expect';
 
 const stories = storiesOf('ConfirmPatientInfo', module);
@@ -24,7 +24,7 @@ stories.add('Story', () => {
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should render the ConfirmPatientInfo component without crashing', () => {
-        let output = shallow(confirmPatientInfoStory);
+        let output = mount(confirmPatientInfoStory);
         expect(output.find('.confirm-patient-info-block').length).toEqual(1);
       });
     })
