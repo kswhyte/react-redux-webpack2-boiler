@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard page main error story 1`] = `
+<div
+  className="start-call-banner-wrapper"
+>
+  <div>
+    <h1>
+      Dashboard
+    </h1>
+    <hr />
+    <div />
+    <div
+      className="error-container"
+    >
+      <h3>
+        Something went wrong.
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard page main story 1`] = `
+<div
+  className="start-call-banner-wrapper"
+>
+  <div>
+    <h1>
+      Dashboard
+    </h1>
+    <hr />
+    <div />
+    <div
+      className="error-container"
+    />
+  </div>
+</div>
+`;
+
+exports[`Dashboard page timeout error story 1`] = `
+<div
+  className="start-call-banner-wrapper"
+>
+  <div>
+    <h1>
+      Dashboard
+    </h1>
+    <hr />
+    <div />
+    <div
+      className="error-container"
+    >
+      <h3>
+        Request timed out.
+      </h3>
+    </div>
+  </div>
+</div>
+`;

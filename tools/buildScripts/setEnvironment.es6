@@ -15,10 +15,10 @@ export default environment => {
   let _environment = null;
   //check environment
   switch (environment) {
-    case 'remove-mock':
+    case 'remove-mocks':
       removeMock();
       break;
-    case 'mock':
+    case 'add-mocks':
       addMocks();
       break;
     case 'dev':

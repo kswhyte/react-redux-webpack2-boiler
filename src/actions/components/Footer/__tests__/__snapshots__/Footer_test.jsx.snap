@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Story 1`] = `
+<footer
+  className="footer-wrapper"
+>
+  <h1>
+    Footer
+  </h1>
+</footer>
+`;

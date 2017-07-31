@@ -1,0 +1,158 @@
+@import "imports/_helpers.css";
+
+header {
+  &.small + .body-wrapper {
+    margin-top: 130px;
+  }
+
+  & + .body-wrapper {
+    transition: margin-top 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &.small .logo-animation {
+    top: -73px;
+  }
+
+  &.small .logo-window {
+    height: 36px;
+  }
+
+  &.small > div:first-of-type {
+    height: 36px;
+  }
+
+  &.small > div:nth-child(1) a div {
+    opacity: 0;
+    bottom: -50px;
+    height: 18px;
+  }
+  &.small > div:first-of-type > div:last-of-type a:link i.fa {
+    top: 10px;
+  }
+
+  & > div {
+    padding: 0 93px;
+    display: flex;
+
+    & div {
+      align-self: center;
+    }
+  }
+
+  & > div:first-of-type {
+    background-color: var(--slate);
+    height: 81px;
+    transition: height 0.5s;
+    transition-timing-function: ease-in-out;
+
+    & > div:last-of-type {
+      color: var(--white);
+
+      & a:any-link {
+        text-declaration: none;
+        color: var(--white);
+        display: inline-block;
+        text-align: center;
+        padding-right: 30px;
+
+        & i {
+          font-size: 18px;
+          position: relative;
+          top: 0px;
+          transition: top 0.5s;
+        }
+      }
+    }
+  }
+
+  & > div:last-of-type {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    height: 70px;
+    font-size: 14px;
+  }
+
+  & > div:nth-child(1) a div {
+    opacity: 1;
+    position: relative;
+    bottom: 0px;
+    transition: opacity 1.5s, bottom 1.0s, height 1.0s;
+  }
+
+  & .logo-window {
+    position: relative;
+    height: 81px;
+    overflow: hidden;
+    transition: height 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  & .logo-animation {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    transition: top 0.5s;
+    transition-timing-function: ease-in-out;
+  }
+
+  & .logo-full {
+    background-image: image-set(
+      url('~/images/hg_smartAccess_logo.png') 1x,
+      url('~/images/hg_smartAccess_logo@2x.png') 2x
+    );
+    width: 250px;
+    height: 50px;
+    background-repeat: no-repeat;
+  }
+
+  & .logo-small {
+    background-image: image-set(
+      url('~/images/hg_smartAccess_small.png') 1x,
+      url('~/images/hg_smartAccess_small@2x.png') 2x
+    );
+    width: 212px;
+    height: 30px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+  }
+
+  & .manager-logo {
+    background-image: image-set(url('~/images/MR_logo.png') 1x, url('~/images/MR_logo@2x.png') 2x);
+    width: 212px;
+    height: 30px;
+    background-repeat: no-repeat;
+  }
+
+  & > div:last-of-type .pull-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & > div:last-of-type .sign-in-status,
+  & > div:last-of-type .subheader-pipe,
+  & > div:last-of-type a {
+    display: inline-block;
+  }
+
+  & > div:last-of-type .sign-in-status {
+    text-align: right;
+    color: var(--light-grey);
+  }
+
+  & > div:last-of-type .sign-in-status span {
+    font-weight: 600;
+  }
+
+  & > div:last-of-type div {
+    margin-right: 10px;
+  }
+
+  & > div:last-of-type a:any-link {
+    font-family: Open Sans;
+    text-decoration: none;
+    color: var(--link-color);
+  }
+}

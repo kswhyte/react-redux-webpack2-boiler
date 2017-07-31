@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Patient Story 1`] = `
+<div
+  className="search-patient-block"
+>
+  <h2>
+    Patient Information
+  </h2>
+</div>
+`;
+
+exports[`Search Patient Story 2`] = `
+<div
+  className="search-patient-block"
+>
+  <h2>
+    Patient Information
+  </h2>
+</div>
+`;

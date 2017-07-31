@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Danger Alert Options Story 1`] = `
+<div
+  className="alerts"
+>
+  <div
+    className="alert alert-danger"
+    role="alert"
+  >
+    Something went wrong!
+    <a
+      aria-label="close"
+      className="close"
+      onClick={undefined}
+    >
+      ×
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Info Alert Options Story 1`] = `
+<div
+  className="alerts"
+>
+  <div
+    className="alert alert-info"
+    role="alert"
+  >
+    Informational Alert!
+    <a
+      aria-label="close"
+      className="close"
+      onClick={undefined}
+    >
+      ×
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Success Alert Options Story 1`] = `
+<div
+  className="alerts"
+>
+  <div
+    className="alert alert-success"
+    role="alert"
+  >
+    This worked!
+    <a
+      aria-label="close"
+      className="close"
+      onClick={undefined}
+    >
+      ×
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Warning Alert Options Story 1`] = `
+<div
+  className="alerts"
+>
+  <div
+    className="alert alert-warning"
+    role="alert"
+  >
+    Be warned!
+    <a
+      aria-label="close"
+      className="close"
+      onClick={undefined}
+    >
+      ×
+    </a>
+  </div>
+</div>
+`;

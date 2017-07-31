@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Story 1`] = `
+<div
+  className="patient-notes-wrapper"
+>
+  <div
+    className="tab-content clearfix"
+  >
+    <div
+      className="patient-notes-form tab-pane active"
+    >
+      <h3>
+        Insert NOTES Form
+      </h3>
+    </div>
+  </div>
+</div>
+`;
