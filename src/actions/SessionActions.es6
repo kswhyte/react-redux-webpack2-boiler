@@ -54,7 +54,7 @@ const thunks = {
     return dispatch => {
       //TODO: Will retrieve from form
       const loginCredentials = {};
-      const postModel = startSessionRequest(dispatch, loginCredentials);
+      const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
     };
