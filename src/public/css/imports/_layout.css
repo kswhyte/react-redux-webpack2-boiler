@@ -24,6 +24,10 @@ header {
   z-index: 2;
 }
 
+*:focus {
+  outline: none;
+}
+
 /* Main container for each page */
 .body-wrapper {
   height: 90vh;
