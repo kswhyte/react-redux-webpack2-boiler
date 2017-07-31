@@ -24,3 +24,18 @@ stories.add('Story', () => {
   );
   return patientInfoStory;
 });
+
+
+stories.add('Story', () => {
+  const patientInfoStory = <PatientInfo />;
+
+  specs(() =>
+    describe('Show a successful header', () => {
+      it('Should render the PatientInfo header in PatientInfo component', () => {
+        let output = shallow(patientInfoStory);
+        expect(output.find('h2').first().text()).toContain('Patient Information');
+      });
+    })
+  );
+  return patientInfoStory;
+});
