@@ -7,6 +7,9 @@ exports[`Search Patient Story 1`] = `
   <h2>
     Patient Information
   </h2>
+  <hr
+    className="line"
+  />
 </div>
 `;
 
@@ -17,5 +20,8 @@ exports[`Search Patient Story 2`] = `
   <h2>
     Patient Information
   </h2>
+  <hr
+    className="line"
+  />
 </div>
 `;

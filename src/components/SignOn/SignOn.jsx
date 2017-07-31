@@ -1,32 +1,59 @@
 import React from 'react';
-
 import { Route, Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
-import HgButton from '@hg/three-ui/HgButton';
+import HgRow from '@hg/three-ui/HgRow';
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
+import HgButton from '@hg/three-ui/HgButton';
+
+import ResetPassword from '../ResetPassword';
+// import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
 
-const SignOn = () => {
+const propTypes = {
+    submitLogin: PropTypes.func
+}
+
+const SignOn = (props) => {
   return (
     <div className="sign-on-wrapper">
-      <h1>Sign On</h1>
-      <h5>Please enter your email address and password below</h5>
-        <form
-            statePath="session"
+      <h2>SIGN ON</h2>
+      <h3>Please enter your email address and password below.</h3>
+
+      <form
+        onSubmit={(e) => {
+                e.preventDefault();
+                const loginEmail = document.getElementById("loginEmail").value;
+                const loginPassword = document.getElementById("loginPassword").value;
+                const data = {
+                    loginEmail,
+                    loginPassword
+                }
+                console.log("Dataaaaa", data);
+                props.submitLogin(data);
+            }}
         >
+        <HgRow>
+          <div className="col-sm-6">
+               <TextInput
+                    id="loginEmail"
+                    className="form-group"
+                    placeholder={'Your Email Address'}
+                    label="User Name (Email)"
+                    required={true}
+                />
+          </div>
+          <div className="col-sm-6">
             <TextInput
-                className="form-group"
-                placeholder={'Your Email Address'}
-                label="User Name (Email)"
-                required={true}
-            />
-            <TextInput
+                id="loginPassword"
                 className="form-group"
                 placeholder={'Password'}
                 label="Your Password"
                 required={true}
             />
+        </div>
+        </HgRow>
             <HgButton
                 className="primary" text="Sign On"
             />
@@ -35,6 +62,7 @@ const SignOn = () => {
                 onClick={() => {console.log("Remember Me")}}
                 id="checkBox"
                 type="checkbox" />
+
         </form>
         <Link to="/login/resetpassword">Forgot your password?</Link>
         <Route exact path="/login/resetpassword" component={ResetPassword} />
@@ -42,6 +70,6 @@ const SignOn = () => {
   );
 };
 
-SignOn.propTypes = {};
+SignOn.propTypes = propTypes;
 
 export default SignOn;
