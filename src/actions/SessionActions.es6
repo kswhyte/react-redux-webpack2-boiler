@@ -1,6 +1,6 @@
 import startSessionRequest from '../actionRequests/startSessionRequest';
-import loginRequest from '../actionRequests/loginRequest';
 import firePost from '../../tools/firePost';
+import loginRequest from '../actionRequests/loginRequest';
 import * as types from '../constants/actionTypes';
 
 const actions = {
