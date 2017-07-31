@@ -12,8 +12,8 @@
 
   & > li.active > a {
     color: var(--white);
-    background-color: var(--dark-sky-blue);
-    /*border: var(--dark-sky-blue);*/
+    background-color: var(--primary-color);
+    border: var(--primary-color);
   }
 }
 
