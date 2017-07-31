@@ -41,7 +41,7 @@ header {
   }
 
   & > div:first-of-type {
-    background-color: var(--slate);
+    background-color: var(--header-logout);
     height: 81px;
     transition: height 0.5s;
     transition-timing-function: ease-in-out;
@@ -153,6 +153,6 @@ header {
   & > div:last-of-type a:any-link {
     font-family: Open Sans;
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--primary-color);
   }
 }
