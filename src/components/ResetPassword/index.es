@@ -1,2 +1,2 @@
-import Component from './SignOn';
+import Component from './ResetPassword';
 export default Component;

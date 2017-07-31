@@ -10,9 +10,251 @@ exports[`Story 1`] = `
     <div
       className="general-info-form tab-pane active"
     >
-      <h3>
-        Insert GENERAL INFO Form
-      </h3>
+      <hr />
+      <form>
+        <div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Story 2`] = `
+<div
+  className="patient-info-wrapper"
+>
+  <div
+    className="tab-content clearfix"
+  >
+    <div
+      className="general-info-form tab-pane active"
+    >
+      <hr />
+      <form>
+        <div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-3"
+          >
+            <div />
+          </div>
+        </div>
+        <div>
+          <div
+            className="col-sm-4"
+          >
+            <div />
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

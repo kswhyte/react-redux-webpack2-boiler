@@ -1,17 +1,28 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import './sign-on.css';
+import HgRow from '@hg/three-ui/HgRow';
+import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
+import HgButton from '@hg/three-ui/HgButton';
+
+import './reset-password.css';
 
 const ResetPassword = () => {
   return (
-    <div className="sign-on-wrapper">
+    <div className="reset-password-wrapper">
       <h2>RESET YOUR PASSWORD</h2>
-      <h3>Just enter your email and we'll send you instructions.</h3>
+      <h3>Just enter your email and we&#39;ll send you instructions.</h3>
 
-      <form />
-      <Link to="/login/resetpassword">Forgot your password?</Link>
-      <Route exact path="/login/resetpassword" component={ResetPassword} />
+      <form>
+        <HgRow>
+          <div className="col-sm-6">
+            <TextInput label="Your Email" placeholder="Your Email" />
+          </div>
+        </HgRow>
+        <HgButton text="RESET PASSWORD" />
+      </form>
+
+      <Link to="/login">Back to Sign in</Link>
     </div>
   );
 };
