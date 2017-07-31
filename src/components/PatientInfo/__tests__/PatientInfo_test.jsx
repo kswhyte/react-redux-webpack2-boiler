@@ -11,7 +11,7 @@ import expect from 'expect';
 
 const stories = storiesOf('PatientInfo', module);
 
-stories.add('Story', () => {
+stories.add('Patient Info Story', () => {
   const patientInfoStory = <PatientInfo />;
 
   specs(() =>

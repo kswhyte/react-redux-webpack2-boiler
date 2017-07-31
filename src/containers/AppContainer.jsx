@@ -9,8 +9,6 @@ import Nav from '../components/Navigation';
 import Dashboard from '../components/Dashboard';
 import NotFound from '../components/NotFound';
 
-import ResetPassword from '../components/ResetPassword';
-
 import SignOnContainer from './SignOnContainer';
 import SearchPatientContainer from './SearchPatientContainer';
 import UserManagementContainer from './UserManagementContainer';
@@ -95,7 +93,6 @@ class App extends Component {
                     />}
                 />
                 <Route path="/login" component={SignOnContainer} />
-                <Route path="/reset" component={ResetPassword} />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
                 <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
