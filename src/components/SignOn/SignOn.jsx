@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router';
 
 import HgRow from '@hg/three-ui/HgRow';
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
-
-import ResetPassword from '../ResetPassword';
 // import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
