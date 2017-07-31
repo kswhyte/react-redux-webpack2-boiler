@@ -28,8 +28,27 @@ header {
   outline: none;
 }
 
+.sm-spacer {
+  margin-top: 30px;
+}
+
+.md-spacer {
+  margin-top: 60px;
+}
+
+.lg-spacer {
+  margin-top: 90px;
+}
+
+.flex-column {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
 /* Main container for each page */
 .body-wrapper {
+  relative
   height: 90vh;
   margin: 150px 80px 60px;
   padding-top: 18px;

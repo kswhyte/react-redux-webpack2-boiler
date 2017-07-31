@@ -1,0 +1,35 @@
+@import "imports/_helpers.css";
+
+.sign-on-wrapper {
+    text-align: center;
+    & .page-instructions {
+        color: var(--light-grey);
+    }
+    & h2 {
+        font-size: 5rem;
+    }
+    & .remember-checkbox {
+        border: solid 1px black;
+        width: 2rem;
+        height: 2rem;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    & label {
+        color: var(--light-grey);
+    }
+
+    & .remember-checkbox > .checkaroo {
+        margin-top: -.8rem;
+        margin-left: -.2rem;
+    }
+
+    & .checkaroo > i {
+        color: var(--cool-blue);
+        font-size: 3rem;
+    }
+    & .forgot-password a {
+        color: var(--link-color);
+    }
+}

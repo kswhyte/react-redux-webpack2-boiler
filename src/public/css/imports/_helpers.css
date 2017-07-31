@@ -31,3 +31,9 @@
 .no-padding {
   padding: 0 !important;
 }
+
+.hg-button {
+  &.primary {
+    background: var(--primary-color);
+  }
+}
