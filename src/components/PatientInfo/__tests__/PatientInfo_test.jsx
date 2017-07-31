@@ -11,7 +11,7 @@ import expect from 'expect';
 
 const stories = storiesOf('PatientInfo', module);
 
-stories.add('Story', () => {
+stories.add('Patient Info Story', () => {
   const patientInfoStory = <PatientInfo />;
 
   specs(() =>
@@ -19,21 +19,6 @@ stories.add('Story', () => {
       it('Should render the PatientInfo component without crashing', () => {
         let output = shallow(patientInfoStory);
         expect(output.find('.patient-info-wrapper').length).toEqual(1);
-      });
-    })
-  );
-  return patientInfoStory;
-});
-
-
-stories.add('Story', () => {
-  const patientInfoStory = <PatientInfo />;
-
-  specs(() =>
-    describe('Show a successful header', () => {
-      it('Should render the PatientInfo header in PatientInfo component', () => {
-        let output = shallow(patientInfoStory);
-        expect(output.find('h2').first().text()).toContain('Patient Information');
       });
     })
   );

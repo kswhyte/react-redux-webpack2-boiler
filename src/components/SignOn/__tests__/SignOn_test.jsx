@@ -6,34 +6,31 @@ import SignOn from '../SignOn';
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import expect from 'expect';
+
 
 const stories = storiesOf('SignOn', module);
 
-stories.add('Search Patient Story', () => {
-  const signOnStory = <SignOn />;
-  specs(() =>
-    describe('Show a successful alert', () => {
+stories.add('Sign On Story', () => {
+  const signOnStory = (<SignOn />);
+
+  specs(() => describe('Show a successful alert', () => {
       it('Should render the SignOn component without crashing', () => {
         let output = shallow(signOnStory);
         expect(output.find('.sign-on-wrapper').length).toEqual(1);
       });
-    })
-  );
+
+      it('Should render with proper wording', () => {
+        let output = mount(signOnStory);
+        expect(output.find('.sign-on-wrapper').text()).toContain('Sign On');
+        expect(output.find('.sign-on-wrapper').text()).toContain('Please enter your email address and password below');
+        expect(output.find('.sign-on-wrapper').text()).toContain('Sign On');
+      });
+      it('Should render the SignOn component without crashing', () => {
+        let output = shallow(signOnStory);
+        expect(output.find('.sign-on-wrapper').text()).toContain('Sign On');
+      });
+    }));
   return signOnStory;
-});
-
-stories.add('SignOn Page', () => {
-const signOnHeader=<SignOn />;
-specs(()=>
-describe('Show a successful header',()=>{
-it('Should contain the signon h2 header tag',()=>{
-
-  let output=shallow(signOnHeader);
-          expect(output.find('h2').first().text()).toContain('SIGN ON');
-});
-})
-);
- return signOnHeader;
 });

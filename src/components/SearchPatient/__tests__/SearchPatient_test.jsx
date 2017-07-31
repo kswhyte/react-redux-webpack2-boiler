@@ -25,16 +25,3 @@ stories.add('Search Patient Story', () => {
     }));
     return searchPatientStory;
 });
-
-stories.add('Search Patient Story', () => {
-    const searchPatientStory = (
-      <SearchPatient/>);
-
-    specs(() => describe('Show a successful header', () => {
-        it('Should render the header as Patient Information', () => {
-            let output = shallow(searchPatientStory);
-        expect(output.find('h2').first().text()).toContain('Patient Information');
-        });
-    }));
-    return searchPatientStory;
-});
