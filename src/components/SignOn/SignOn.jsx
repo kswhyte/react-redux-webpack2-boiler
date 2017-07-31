@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 import HgRow from '@hg/three-ui/HgRow';
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
@@ -10,46 +11,74 @@ import ResetPassword from '../ResetPassword';
 
 import './sign-on.css';
 
-const SignOn = () => {
-  return (
-    <div className="sign-on-wrapper">
-      <h2>SIGN ON</h2>
-      <h3>Please enter your email address and password below.</h3>
+const propTypes = {
+    submitLogin: PropTypes.func.isRequired
+}
 
-      <form>
-        <HgRow>
-          <div className="col-sm-6">
-               <TextInput
+class SignOn extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        errors: []
+      }
+    }
+
+    render(){
+      return (
+        <div className="sign-on-wrapper">
+          <h2>SIGN ON</h2>
+          <h3>Please enter your email address and password below.</h3>
+
+          <form
+            onSubmit={(e) => {
+                    e.preventDefault();
+                    const loginEmail = document.getElementById("loginEmail").value;
+                    const loginPassword = document.getElementById("loginPassword").value;
+                    const data = {
+                        loginEmail,
+                        loginPassword
+                    }
+                    this.props.submitLogin(data);
+                }}
+            >
+            <HgRow>
+              <div className="col-sm-6">
+                  <TextInput
+                        id="loginEmail"
+                        className="form-group"
+                        placeholder={'Your Email Address'}
+                        label="User Name (Email)"
+                        required={true}
+                    />
+              </div>
+              <div className="col-sm-6">
+                <TextInput
+                    id="loginPassword"
                     className="form-group"
-                    placeholder={'Your Email Address'}
-                    label="User Name (Email)"
+                    placeholder={'Password'}
+                    label="Your Password"
                     required={true}
                 />
-          </div>
-          <div className="col-sm-6">
-            <TextInput
-                className="form-group"
-                placeholder={'Password'}
-                label="Your Password"
-                required={true}
-            />
-          </div>
-        </HgRow>
-        <HgButton text="SIGN ON" />
+            </div>
+            </HgRow>
+                <HgButton
+                    className="primary" text="Sign On"
+                />
+                <label>Remember Me?</label>
+                <input
+                    onClick={() => {console.log("Remember Me")}}
+                    id="checkBox"
+                    type="checkbox" />
 
-        <label>Remember Me?</label>
-        <input
-            onClick={() => {console.log("Remember Me")}}
-            id="checkBox"
-            type="checkbox" />
-      </form>
+            </form>
+            <Link to="/login/resetpassword">Forgot your password?</Link>
+            <Route exact path="/login/resetpassword" component={ResetPassword} />
+        </div>
+      );
+    }
 
-      <Link to="/login/resetpassword">Forgot your password?</Link>
-      <Route exact path="/login/resetpassword" component={ResetPassword} />
-    </div>
-  );
-};
+}
 
-SignOn.propTypes = {};
+SignOn.propTypes = propTypes;
 
 export default SignOn;

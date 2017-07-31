@@ -50,15 +50,15 @@ const thunks = {
       firePost(postModel, dispatch);
     };
   },
-  startLoginClick: () => {
+  startLoginClick: data => {
     return dispatch => {
       //TODO: Will retrieve from form
-      const loginCredentials = {};
+      const loginCredentials = data;
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
     };
-  }
+  },
 };
 
 export default {

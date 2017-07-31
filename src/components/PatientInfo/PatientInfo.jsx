@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 // import { HgReform } from '@hg/three-ui/HgReform';
 import HgRow from '@hg/three-ui/HgRow';
-// import HgCol from '@hg/three-ui/HgCol';
 
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import SelectInput from '@hg/three-ui/HgInputsV2/SelectInput';
