@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import { withRouter } from 'react-router';
 
 import HgRow from '@hg/three-ui/HgRow';
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
@@ -12,7 +13,8 @@ import ResetPassword from '../ResetPassword';
 import './sign-on.css';
 
 const propTypes = {
-    submitLogin: PropTypes.func.isRequired
+    submitLogin: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
 }
 
 class SignOn extends Component {
@@ -24,6 +26,7 @@ class SignOn extends Component {
     }
 
     render(){
+
       return (
         <div className="sign-on-wrapper">
           <h2>SIGN ON</h2>
@@ -39,6 +42,7 @@ class SignOn extends Component {
                         loginPassword
                     }
                     this.props.submitLogin(data);
+                    this.props.history.push('/')
                 }}
             >
             <HgRow>
@@ -71,8 +75,7 @@ class SignOn extends Component {
                     type="checkbox" />
 
             </form>
-            <Link to="/login/resetpassword">Forgot your password?</Link>
-            <Route exact path="/login/resetpassword" component={ResetPassword} />
+            <Link to="/resetpassword">Forgot your password?</Link>
         </div>
       );
     }
@@ -81,4 +84,6 @@ class SignOn extends Component {
 
 SignOn.propTypes = propTypes;
 
-export default SignOn;
+const SignOnWithRouter = withRouter(SignOn);
+
+export default SignOnWithRouter;
