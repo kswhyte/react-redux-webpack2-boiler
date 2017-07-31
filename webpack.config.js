@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.woff2$/,
-        use: [{ loader: 'url?mimetype=application/font-woff2' }]
+        use: [{ loader: 'url-loader?mimetype=application/font-woff2' }]
       },
            {
         test: /\.(es|es6|jsx?)$/,

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for Header/Header.jsx</title>
+    <title>Code coverage report for PatientTabs/PatientTabs.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">Header</a> Header.jsx
+      <a href="../index.html">All files</a> / <a href="index.html">PatientTabs</a> PatientTabs.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>6/6</span>
       </div>
     </div>
   </div>
@@ -83,61 +83,25 @@
 38
 39
 40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,62 +125,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 &nbsp;
-import './header.css';
+import PatientInfo from '../PatientInfo';
+import PatientAppointments from '../PatientAppointments';
+import PatientNotes from '../PatientNotes';
 &nbsp;
-const Header = props =&gt; {
-  Header.propTypes = {
-    headerSize: PropTypes.string
+const PatientTabs = props =&gt; {
+  PatientTabs.propTypes = {
+    children: PropTypes.object
   };
 &nbsp;
-  //handle no margin getting overwritten?
+  const check = () =&gt; {
+    console.log(props);
+  };
+  check();
+&nbsp;
   return (
-    &lt;header className={props.headerSize === 'small' ? <span class="branch-0 cbranch-no" title="branch not covered" >'small' </span>: null}&gt;
-      &lt;div className="row no-margin"&gt;
-        &lt;div className="logo-window col-xs-6"&gt;
-          &lt;div className="logo-animation"&gt;
-            &lt;div className="logo-full" /&gt;
-            &lt;div className="logo-small" /&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+    &lt;div className="patient-tabs-wrapper"&gt;
+      &lt;ul className="nav nav-tabs"&gt;
+        &lt;li className="general-info-tab active"&gt;
+          &lt;Link to="/patientinfo/generalinfo"&gt;General Info&lt;/Link&gt;
+        &lt;/li&gt;
+        &lt;li className="appointments-tab"&gt;
+          &lt;Link to="/patientinfo/appointments"&gt;PatientName Appointments&lt;/Link&gt;
+        &lt;/li&gt;
+        &lt;li className="notes-tab"&gt;
+          &lt;Link to="/patientinfo/notes"&gt;Notes&lt;/Link&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
 &nbsp;
-        &lt;div className="col-xs-6"&gt;
-          &lt;div className="pull-right"&gt;
-            &lt;Link to="/"&gt;
-              &lt;i className="fa fa-tachometer fa-2" aria-hidden="true" /&gt;
-              &lt;div className="text-small-o"&gt;Dashboard&lt;/div&gt;
-            &lt;/Link&gt;
-            &lt;Link to="/"&gt;
-              &lt;i className="fa fa-cog fa-2" aria-hidden="true" /&gt;
-              &lt;div className="text-small-o"&gt;Settings&lt;/div&gt;
-            &lt;/Link&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-&nbsp;
-      &lt;div className="row no-margin"&gt;
-        &lt;div className="col-xs-12 col-sm-3"&gt;
-          &lt;div className="manager-logo" /&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="col-xs-12 col-sm-9"&gt;
-          &lt;div className="pull-right"&gt;
-            &lt;div className="sign-in-status"&gt;
-              Currently signed in as&lt;br /&gt;
-              &lt;span&gt;AgentUsername&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;div className="subheader-pipe"&gt;|&lt;/div&gt;
-            {/* {make this a tag, below, into a Link and connect to logout path} */}
-            &lt;a href="#"&gt;Log out&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/header&gt;
+      &lt;Route exact path="/patientinfo/generalinfo" component={PatientInfo} /&gt;
+      &lt;Route exact path="/patientinfo/appointments" component={PatientAppointments} /&gt;
+      &lt;Route exact path="/patientinfo/notes" component={PatientNotes} /&gt;
+    &lt;/div&gt;
   );
 };
 &nbsp;
-export default Header;
+export default PatientTabs;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

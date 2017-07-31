@@ -1,4 +1,9 @@
-import {storiesOf as storiesOfReal, action as actionReal, linkTo as linkToReal} from "@kadira/storybook";
+import {
+    storiesOf as storiesOfReal,
+    action as actionReal,
+    linkTo as linkToReal
+} from '@storybook/react';
+
 import {
     specs as specsReal,
     describe as describeReal,

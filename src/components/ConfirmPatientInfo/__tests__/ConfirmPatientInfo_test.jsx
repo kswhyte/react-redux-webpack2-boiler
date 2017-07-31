@@ -1,23 +1,30 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
 import ConfirmPatientInfo from '../ConfirmPatientInfo';
+import { StaticRouter } from 'react-router'
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import expect from 'expect';
 
 const stories = storiesOf('ConfirmPatientInfo', module);
 
+const context = {};
+
 stories.add('Story', () => {
-  const confirmPatientInfoStory = <ConfirmPatientInfo />;
+  const confirmPatientInfoStory = (
+            <StaticRouter context={context} >
+                <ConfirmPatientInfo />
+            </StaticRouter>
+            );
 
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should render the ConfirmPatientInfo component without crashing', () => {
-        let output = shallow(confirmPatientInfoStory);
+        let output = mount(confirmPatientInfoStory);
         expect(output.find('.confirm-patient-info-block').length).toEqual(1);
       });
     })

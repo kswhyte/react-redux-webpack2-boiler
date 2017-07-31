@@ -1,91 +1,35 @@
-// you can use this file to add your custom webpack plugins, loaders and anything you like.
-// This is just the basic way to add addional webpack configurations.
-// For more information refer the docs: https://getstorybook.io/docs/configurations/custom-webpack-config
-
-// IMPORTANT
-// When you add this file, we won't add the default configurations which is similar
-// to "React Create App". This only has babel loader to load JavaScript.
+const config = require('../webpack.config.js');
 const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
-  resolve: {
-    root: [
-        __dirname,
-        path.join(__dirname, 'src'),
-        path.join(__dirname, 'src/components'),
-        path.resolve(__dirname, '../node_modules'),
-    ],
-    modulesDirectories: ['src', 'node_modules'],
-    extensions: [
-            '',
-            '.es',
-            '.js',
-            '.jsx',
-            '.css',
-            '.less',
-            '.raw.less',
-            '.scss',
-            '.txt',
-            '.md',
-            '.json',
-            '.png'
-        ],
-    alias: {
-        "hg3tracker": "@hg/three-ui/HgTracker/mockTracker",
-        "@hg/three-ui": "@hg/three-ui/src/components",
-        "@hg/search-ui": "@hg/search-ui/src/components"
-    }
-  },
-  plugins: [
-    // your custom plugins
-  ],
-  externals: {
-      'jsdom': 'window',
-      'cheerio': 'window',
-      'react/addons': true, // important!!
-      'react/lib/ExecutionEnvironment': true,
-      'react/lib/ReactContext': true
-    },
-  module: {
-    loaders: [
-        {
-            test: /\.less$/,
-            loaders: ["style", "css", "less"],
-        },
-        {
-            test: /\.css$/,
-            loaders: [ 'style-loader', 'css-loader' ]
-        },
-        {
-            test: /\.(jsx|js|es|es6)?$/,
-            loader: "babel",
-            include: path.resolve(__dirname, "../node_modules/@hg/"),
-            query: {
-                plugins: ["transform-runtime", "transform-object-rest-spread"],
-                presets: ["latest", "react"]
-            }
-        },
-        {
-            test: /\.(jsx|js|es|es6)?$/,
-            loader: 'babel',
-            exclude: /node_modules/,
-            query: {
-                "presets": ["latest", "react"]
-            }
-        },
-        {
-            test: /\.woff2$/,
-            loader: 'url?mimetype=application/font-woff2',
-            include: path.resolve(__dirname, "../node_modules/@hg/")
-        },
-        {
-            test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
-            loader: 'url-loader'
-        },
-        {
-            test: /\.scss$/,
-            loader: 'style!css!sass'
+const isVerbose = process.argv.indexOf('-v') !== -1;
+
+const envPlugin = new webpack.DefinePlugin({
+  __VERBOSE__: isVerbose,
+  __DEBUG__: true,
+  'process.env.NODE_ENV': "development"
+});
+
+const pluginsStorybook = [
+    new webpack.LoaderOptionsPlugin({
+        options: {
+            context: path.root,
+            postcss: [ // <---- postcss configs go here under LoadOptionsPlugin({ options: { ??? } })
+                require('postcss-cssnext'),
+                require('postcss-reporter')()
+            ]
         }
-    ],
-  }
+    }),
+    envPlugin
+  ];
+
+
+module.exports = function(storybookConfig, storybookEnv) {
+  storybookConfig.module = config.module;
+  storybookConfig.resolve = config.resolve;
+  storybookConfig.node = config.node;
+  storybookConfig.externals = config.externals;
+  storybookConfig.output.pathinfo = true;
+  storybookConfig.plugins = storybookConfig.plugins.concat(pluginsStorybook);
+  return storybookConfig;
 };
