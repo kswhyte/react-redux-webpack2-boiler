@@ -11,7 +11,7 @@ import {shallow} from 'enzyme';
 import expect from 'expect';
 
 
-const stories = storiesOf('ConfirmPatientInfo', module);
+const stories = storiesOf('SearchAndCalendar', module);
 
 stories.add('Story', () => {
     const SearchAndCalendarStory = (

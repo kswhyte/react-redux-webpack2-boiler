@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for UserManagement/UserManagement.jsx</title>
+    <title>Code coverage report for Dashboard/Dashboard.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">All files</a> / <a href="index.html">UserManagement</a> UserManagement.jsx
+      <a href="../index.html">All files</a> / <a href="index.html">Dashboard</a> Dashboard.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -27,7 +27,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -58,12 +58,47 @@
 13
 14
 15
-16</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -71,23 +106,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import HgRow from '@hg/three-ui/HgRow';
+import HgButton from '@hg/three-ui/HgButton';
 &nbsp;
-import './user-management.css';
+import './dashboard.css';
 &nbsp;
-const UserManagement = () =&gt; {
-    return (
-        &lt;div className="user-management-block"&gt;
-            &lt;h1&gt;User Management&lt;/h1&gt;
+const Dashboard = props =&gt; {
+  return (
+    &lt;div className="start-call-banner-wrapper"&gt;
+      &lt;HgRow className="no-margin"&gt;
+        &lt;h1&gt;Dashboard&lt;/h1&gt;
+        &lt;hr /&gt;
+        &lt;HgButton
+          className="new-session-button"
+          tabIndex={1}
+          onClick={props.startSessionClick}
+          text="Begin New Session"
+        /&gt;
+        &lt;div className="error-container"&gt;
+          {props.startError === 'ERROR' &amp;&amp; &lt;h3&gt;Something went wrong.&lt;/h3&gt;}
+          {props.startError === 'TIMEOUT' &amp;&amp; &lt;h3&gt;Request timed out.&lt;/h3&gt;}
         &lt;/div&gt;
-    )
-}
+      &lt;/HgRow&gt;
+    &lt;/div&gt;
+  );
+};
 &nbsp;
-UserManagement.propTypes = {};
+Dashboard.propTypes = {
+  startSessionClick: PropTypes.func,
+  startError: PropTypes.bool
+};
 &nbsp;
-export default UserManagement;
+export default Dashboard;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
