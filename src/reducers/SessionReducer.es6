@@ -15,6 +15,13 @@ const sessionReducer = (store = {}, action) => {
       return Object.assign({}, store, { startError: null });
     case types.START_SESSION:
       return Object.assign({}, store, { startError: null });
+    case types.START_LOGIN:
+      return Object.assign({}, store, { loginError: null });
+    case types.LOGIN_SUCCESS:
+      //assign action.data's result to the localStorage
+      return Object.assign({}, store, { loginError: null });
+    case types.LOGIN_FAIL:
+      return Object.assign({}, store, { loginError: "ERROR", message: action})
     default:
       return store;
   }
