@@ -8,7 +8,6 @@ import sessionActions from '../actions/SessionActions';
 
 let createHandlers = function(dispatch) {
   let submitLogin = function(data) {
-    console.log("Node and Data: ", data);
     dispatch(sessionActions.startLoginClick(data));
   };
 

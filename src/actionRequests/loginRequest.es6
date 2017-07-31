@@ -30,12 +30,12 @@ const loginRequest = (dispatch, ...args) => {
       dispatch(actions.loginSuccess(_res.body));
 
 
-      /* // FOR TESTING ERRORS
-      _res.err = {
+       // FOR TESTING ERRORS
+      // _res.err = {
 
-      };
-      dispatch(actions.loginFail(_res.err));
-      */
+      // };
+      // dispatch(actions.loginFail(_res.err));
+
 
 
       window.location.assign('/');

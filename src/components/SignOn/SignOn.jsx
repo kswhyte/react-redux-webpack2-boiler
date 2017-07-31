@@ -30,7 +30,6 @@ const SignOn = (props) => {
                     loginEmail,
                     loginPassword
                 }
-                console.log("Dataaaaa", data);
                 props.submitLogin(data);
             }}
         >
