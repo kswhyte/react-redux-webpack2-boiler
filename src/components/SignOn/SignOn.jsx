@@ -6,9 +6,6 @@ import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
 
 import ResetPassword from '../ResetPassword';
-
-import HgButton from '@hg/three-ui/HgButton';
-import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 // import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
