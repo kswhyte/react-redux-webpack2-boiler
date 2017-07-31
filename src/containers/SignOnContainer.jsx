@@ -18,11 +18,23 @@ class SignOnContainer extends Component {
 
 const mapStateToProps = state => {
   //Select the specific state items you would like here
-  const { test } = state;
+    const model = {};
+    const modelFull = {};
+    const validating = {};
+    const validation = {};
+  // const {
+  //   model,
+  //   modelFull,
+  //   validating,
+  //   validation
+  // } = state;
 
   //return state items to be added as props to the container
   return {
-    test
+    model,
+    modelFull,
+    validating,
+    validation
   };
 };
 
