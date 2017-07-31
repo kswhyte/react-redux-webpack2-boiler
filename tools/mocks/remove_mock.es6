@@ -18,12 +18,12 @@ module.exports = function(){
 + '---------------------------- \n'));
 
 /* ------
-Mock out the Start Session feature
+Remove Mock for the Start Session feature
 ================================== */
 mock_session(MOCK_STATE);
 
 /* ------
-Mock out the Login feature
+Remove Mock for the Login feature
 ================================== */
 mock_login(MOCK_STATE);
 
