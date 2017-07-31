@@ -1,7 +1,0 @@
-@import "imports/_helpers.css";
-
-.line {
-  width: 830px;
-  border: solid 2px #cad2da;
-  border: solid 2px var(--cloudy-blue);
-}

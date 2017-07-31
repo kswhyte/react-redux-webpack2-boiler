@@ -6,6 +6,7 @@ import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
 
 import ResetPassword from '../ResetPassword';
+// import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
 
@@ -18,18 +19,29 @@ const SignOn = () => {
       <form>
         <HgRow>
           <div className="col-sm-6">
-            <TextInput label="USER NAME (EMAIL)" placeholder="Your Email Address &#42;" />
+               <TextInput
+                    className="form-group"
+                    placeholder={'Your Email Address'}
+                    label="User Name (Email)"
+                    required={true}
+                />
           </div>
           <div className="col-sm-6">
-            <TextInput label="PASSWORD" placeholder="Your Password" />
+            <TextInput
+                className="form-group"
+                placeholder={'Password'}
+                label="Your Password"
+                required={true}
+            />
           </div>
         </HgRow>
         <HgButton text="SIGN ON" />
 
-        <label>
-          <input type="checkbox" name="Remember Me" checked="" value="rememberUser" />
-          Remember Me
-        </label>
+        <label>Remember Me?</label>
+        <input
+            onClick={() => {console.log("Remember Me")}}
+            id="checkBox"
+            type="checkbox" />
       </form>
 
       <Link to="/login/resetpassword">Forgot your password?</Link>
