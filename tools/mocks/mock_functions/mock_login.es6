@@ -2,7 +2,7 @@ var chalk = require('chalk');
 var fs = require('fs');
 
 
-module.exports = function(){
+module.exports = function(toggle){
 
 
 
@@ -15,7 +15,7 @@ console.log(chalk.blue('---------------------------------'));
 const SessionActions_filePath = './src/actions/SessionActions.es6';
 let SessionActionsSelector = fs.readFileSync(SessionActions_filePath, {encoding: 'utf8'});
 
-let StartLoginImport, FirePostImport
+let StartLoginImport;
 
 if(toggle === "add"){
    StartLoginImport = "import loginRequest from '../actionRequests/mocks/loginRequest';";
