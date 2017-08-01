@@ -23,25 +23,6 @@ header {
 *:focus {
   outline: none;
 }
-
-.sm-spacer {
-  margin-top: 30px;
-}
-
-.md-spacer {
-  margin-top: 60px;
-}
-
-.lg-spacer {
-  margin-top: 90px;
-}
-
-.flex-column {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
-
 /* Main container for each page */
 .body-wrapper {
   height: 90vh;
@@ -80,4 +61,28 @@ nav,
 .router-wrapper {
   margin: 0 auto;
   width: 830px;
+}
+
+/* THREE-UI OVERRIDES */
+.hg-input.v2 {
+  border: 0px !important;
+  border-bottom: solid 1px var(--slate) !important;
+}
+
+.sm-spacer {
+  margin-top: 30px;
+}
+
+.md-spacer {
+  margin-top: 60px;
+}
+
+.lg-spacer {
+  margin-top: 90px;
+}
+
+.flex-column {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
 }
