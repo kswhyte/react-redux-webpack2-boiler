@@ -6,6 +6,9 @@ import { withRouter } from 'react-router';
 import HgRow from '@hg/three-ui/HgRow';
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
+
+import isEmail from '../../helpers/isEmail';
+import isLongEnough from '../../helpers/isLongEnough';
 // import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
@@ -35,12 +38,20 @@ class SignOn extends Component {
                     e.preventDefault();
                     const loginEmail = document.getElementById("loginEmail").value;
                     const loginPassword = document.getElementById("loginPassword").value;
+                    const emailValidation = isEmail(loginEmail);
+                    const passwordValidation = isLongEnough(loginPassword, 6);
+                    if (!emailValidation) {
+                      console.log("Email Validation", emailValidation);
+                    }
+                    if (!passwordValidation) {
+                      console.log("Password Validation", passwordValidation);
+                    }
                     const data = {
                         loginEmail,
                         loginPassword
                     }
                     this.props.submitLogin(data);
-                    this.props.history.push('/')
+                    // this.props.history.push('/')
                 }}
             >
             <HgRow>
