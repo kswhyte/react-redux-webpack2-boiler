@@ -17,8 +17,12 @@ import ResetPassword from '../components/ResetPassword';
 import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
 import sStorage from '../../tools/sessionStorage_helper';
-
+ import createBrowserHistory from 'history/createBrowserHistory'
 /// Replaces the dispatcher.es file for each container component.
+
+const customHistory = createBrowserHistory()
+
+
 let createHandlers = function(dispatch) {
   let startSessionClick = function(node, data) {
     dispatch(sessionActions.startSessionClick(data));
@@ -28,6 +32,7 @@ let createHandlers = function(dispatch) {
   };
 
   let logoutUser = function(data) {
+    data.history = customHistory;
     dispatch(sessionActions.logoutClick(data));
   };
 
@@ -66,16 +71,17 @@ class App extends Component {
     });
   }
   componentWillMount() {
-    // this.props.init();
-    if(!sStorage.getItem({key:'isUserLoggedIn'}).status){
+    if(sStorage.getItem({key:'isUserLoggedIn'}).item){
       this.userIsActive = true;
+    } else {
+      this.userIsActive = false;
     }
   }
 
   render() {
     return (
       <BrowserRouter>
-        <div className={this.userIsActive ? 'wrapper' : 'wrapper signed-out'}>
+        <div className={this.userIsActive || this.props.user.isActive ? 'wrapper signed-in' : 'wrapper signed-out'}>
           <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser} />
           <section className="body-wrapper">
             <Nav />

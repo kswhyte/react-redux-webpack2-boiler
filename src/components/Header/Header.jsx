@@ -7,8 +7,8 @@ import './header.css';
 
 const propTypes = {
   headerSize: PropTypes.string,
-  logout: PropTypes.string,
-  history: PropTypes.string
+  logout: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 class Header extends Component {

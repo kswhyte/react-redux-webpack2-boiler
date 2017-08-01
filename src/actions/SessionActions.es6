@@ -66,12 +66,12 @@ const thunks = {
       dispatch(routeActions.push({route: '/', history:  data.history}));
     };
   },
-  logoutClick: () => {
+  logoutClick: data => {
     return dispatch => {
       sStorage.removeItem({ key: 'user' });
       sStorage.removeItem({ key: 'isUserLoggedIn' });
       dispatch(actions.logoutSuccess());
-      dispatch(routeActions.push('/login'));
+      dispatch(routeActions.push({route: '/login', history:  data.history}));
     };
   }
 };
