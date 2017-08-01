@@ -26,6 +26,14 @@ class sStorage {
     const ret = sessionStorage.getItem(item.key);
     return {status: true, message: 'Item retrieved', item: ret, err: []};
   }
+
+  static logoutUser(data){
+
+  }
+
+  static loginUser(data){
+
+  }
 }
 
 export default sStorage;
