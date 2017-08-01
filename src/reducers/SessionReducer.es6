@@ -19,13 +19,19 @@ const sessionReducer = (store = {}, action) => {
     case types.START_LOGIN:
       return Object.assign({}, store, { loginError: null });
     case types.LOGIN_FAIL:
-      return Object.assign({}, store, { loginError: "ERROR", message: action});
+      return Object.assign({}, store, { loginError: 'ERROR', message: action });
     case types.LOGIN_SUCCESS: {
       let newStore = Object.assign({}, store);
       newStore.user.credentials = action.data;
       newStore.user.isActive = true;
-      sStorage.setItem({key : 'user', value: JSON.stringify(action.data)});
-      sStorage.setItem({key: 'isUserLoggedIn', value: true});
+      sStorage.setItem({ key: 'user', value: JSON.stringify(action.data) });
+      sStorage.setItem({ key: 'isUserLoggedIn', value: true });
+      return Object.assign({}, store, newStore);
+    }
+    case types.LOGOUT_SUCCESS: {
+      let newStore = Object.assign({}, store);
+      newStore.user.credentials = {};
+      newStore.user.isActive = false;
       return Object.assign({}, store, newStore);
     }
     default:
