@@ -1,6 +1,8 @@
 var chalk = require('chalk');
 var mock_session = require('./mock_functions/mock_session_start.es6');
 var mock_login = require('./mock_functions/mock_login.es6');
+var mock_patientInfo=require('./mock_functions/mock_patientInfo.es6');
+
 var MOCK_STATE = "remove";
 
 
@@ -27,6 +29,6 @@ Remove Mock for the Login feature
 ================================== */
 mock_login(MOCK_STATE);
 
-
+mock_patientInfo(MOCK_STATE);
 
 }
