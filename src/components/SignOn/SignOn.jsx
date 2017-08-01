@@ -7,8 +7,6 @@ import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
 
 import isEmail from '../../helpers/isEmail';
-import isLongEnough from '../../helpers/isLongEnough';
-// import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
 
@@ -42,7 +40,6 @@ const SignOn = (props) => {
                 const loginPassword = document.getElementById("loginPassword").value;
                 const emailValidation = isEmail(loginEmail);
                 if (!emailValidation) {
-                  console.log("Email Validation", emailValidation);
                   props.validationError("Must enter a valid email.");
                   return;
                 }
@@ -51,7 +48,6 @@ const SignOn = (props) => {
                     loginPassword
                 }
                 props.submitLogin(data);
-                this.props.history.push('/')
             }}
           >
             <div className="row md-spacer">

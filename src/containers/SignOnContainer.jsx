@@ -8,12 +8,10 @@ import sessionActions from '../actions/SessionActions';
 
 let createHandlers = function(dispatch) {
   let submitLogin = function(data) {
-    console.log('submit login ------------ ');
     dispatch(sessionActions.startLoginClick(data));
   };
 
   let validationError = function(data) {
-    console.log('submit login ------------ ');
     dispatch(sessionActions.validationError(data));
   };
 
