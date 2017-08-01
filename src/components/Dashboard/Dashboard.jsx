@@ -2,10 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import HgRow from '@hg/three-ui/HgRow';
 import HgButton from '@hg/three-ui/HgButton';
+import { withRouter } from 'react-router';
+import sStorage from '../../../tools/sessionStorage_helper';
 
 import './dashboard.css';
 
 const Dashboard = props => {
+  if(!sStorage.getItem({key:'isUserLoggedIn'}).status){
+    props.history.push('/login')
+  }
   return (
     <div className="start-call-banner-wrapper">
       <HgRow className="no-margin">
@@ -27,8 +32,12 @@ const Dashboard = props => {
 };
 
 Dashboard.propTypes = {
-  startSessionClick: PropTypes.func,
-  startError: PropTypes.bool
+  startSessionClick: PropTypes.func.isRequired,
+  startError: PropTypes.bool,
+  history : PropTypes.object.isRequired,
+  userLoggedIn: PropTypes.bool.isRequired
 };
 
-export default Dashboard;
+const DashboardWithRouter = withRouter(Dashboard);
+
+export default DashboardWithRouter;
