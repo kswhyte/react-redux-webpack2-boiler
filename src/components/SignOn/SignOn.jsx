@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { withRouter } from 'react-router';
 
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
@@ -10,8 +9,7 @@ import HgButton from '@hg/three-ui/HgButton';
 import './sign-on.css';
 
 const propTypes = {
-  submitLogin: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  submitLogin: PropTypes.func.isRequired
 };
 
 const SignOn = (props) => {
@@ -82,6 +80,4 @@ const SignOn = (props) => {
 
 SignOn.propTypes = propTypes;
 
-const SignOnWithRouter = withRouter(SignOn);
-
-export default SignOnWithRouter;
+export default SignOn;
