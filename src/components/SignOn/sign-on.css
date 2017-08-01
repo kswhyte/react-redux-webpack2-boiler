@@ -8,6 +8,9 @@
     & h2 {
         font-size: 4rem;
     }
+    & .validation-error > h5 {
+        color: var(--dull-orange);
+    }
     & .remember-checkbox {
         border: solid 1px black;
         width: 1rem;

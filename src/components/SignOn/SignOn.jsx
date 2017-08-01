@@ -4,12 +4,15 @@ import { PropTypes } from 'prop-types';
 
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
-// import {HgReform} from '@hg/three-ui/HgReform';
+
+import isEmail from '../../helpers/isEmail';
 
 import './sign-on.css';
 
 const propTypes = {
-  submitLogin: PropTypes.func.isRequired
+  submitLogin: PropTypes.func.isRequired,
+  validationError: PropTypes.func,
+  validationMessage: PropTypes.string
 };
 
 const SignOn = (props) => {
@@ -21,18 +24,30 @@ const SignOn = (props) => {
                 <h4>Please enter your email address and password below.</h4>
             </div>
         </div>
+        {
+            (props.validationMessage) && (
+                <div className="sm-spacer validation-error">
+                    <h5>{props.validationMessage}</h5>
+                </div>
+            )
+        }
         <form
             onSubmit={(e) => {
                 e.preventDefault();
                 const loginEmail = document.getElementById("loginEmail").value;
                 const loginPassword = document.getElementById("loginPassword").value;
+                const emailValidation = isEmail(loginEmail);
+                if (!emailValidation) {
+                  props.validationError("Must enter a valid email.");
+                  return;
+                }
                 const data = {
                     loginEmail,
                     loginPassword
                 }
                 props.submitLogin(data);
             }}
-        >
+          >
             <div className="row md-spacer">
                 <div className="col-sm-6 input-row">
                    <TextInput
@@ -44,9 +59,10 @@ const SignOn = (props) => {
                     />
                 </div>
                 <div className="col-sm-6 input-row">
-                    <TextInput
+                    <input
                         id="loginPassword"
-                        className="form-group"
+                        type="password"
+                        className="form-group hg-input v2"
                         placeholder={'Your Password'}
                         label="Your Password"
                         required={true}

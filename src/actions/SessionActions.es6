@@ -42,6 +42,10 @@ const actions = {
   logoutSuccess: data => ({
     type: types.LOGOUT_SUCCESS,
     data
+  }),
+  validationError: data => ({
+    type: types.VALIDATION_ERROR,
+    data
   })
 };
 

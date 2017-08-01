@@ -10,12 +10,16 @@ import sessionActions from '../actions/SessionActions';
 
 let createHandlers = function(dispatch) {
   let submitLogin = function(data) {
-    console.log('submit login ------------ ');
     dispatch(sessionActions.startLoginClick(data));
   };
 
+  let validationError = function(data) {
+    dispatch(sessionActions.validationError(data));
+  };
+
   return {
-    submitLogin
+    submitLogin,
+    validationError
     // other handlers
   };
 };
@@ -23,6 +27,7 @@ let createHandlers = function(dispatch) {
 const proptypes = {
   dispatch: PropTypes.func,
   signonType: PropTypes.string,
+  validationMessage: PropTypes.string,
   history: PropTypes.object.isRequired
 };
 
@@ -43,6 +48,8 @@ class SignOnContainer extends Component {
     if (this.props.signonType === "signOn") {
       return (<SignOn
           submitLogin={this.handlers.submitLogin}
+          validationError={this.handlers.validationError}
+          validationMessage={this.props.validationMessage}
         />);
     }
 
@@ -58,14 +65,11 @@ class SignOnContainer extends Component {
 const mapStateToProps = state => {
   //Select the specific state items you would like here
 
-  const { model, modelFull, validating, validation } = state;
+  const { validationMessage } = state.Session;
 
   //return state items to be added as props to the container
   return {
-    model,
-    modelFull,
-    validating,
-    validation
+    validationMessage
   };
 };
 
