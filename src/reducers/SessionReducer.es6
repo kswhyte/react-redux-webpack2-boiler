@@ -3,6 +3,7 @@ import sStorage from '../../tools/sessionStorage_helper';
 
 //inital state is set inside the store/initialState.es6
 const sessionReducer = (store = {}, action) => {
+
   switch (action.type) {
     case types.START_SPINNER:
       return Object.assign({}, store, { showSpinner: true });
@@ -17,15 +18,23 @@ const sessionReducer = (store = {}, action) => {
     case types.START_SESSION:
       return Object.assign({}, store, { startError: null });
     case types.START_LOGIN:
-      return Object.assign({}, store, { loginError: null });
+      return Object.assign({}, store, { loginError: null, validationMessage: '' });
     case types.LOGIN_FAIL:
-      return Object.assign({}, store, { loginError: "ERROR", message: action});
+      return Object.assign({}, store, { loginError: 'ERROR', message: action });
+    case types.VALIDATION_ERROR:
+      return Object.assign({}, store, { validationMessage: action.data })
     case types.LOGIN_SUCCESS: {
       let newStore = Object.assign({}, store);
       newStore.user.credentials = action.data;
       newStore.user.isActive = true;
-      sStorage.setItem({key : 'user', value: JSON.stringify(action.data)});
-      sStorage.setItem({key: 'isUserLoggedIn', value: true});
+      sStorage.setItem({ key: 'user', value: JSON.stringify(action.data) });
+      sStorage.setItem({ key: 'isUserLoggedIn', value: true });
+      return Object.assign({}, store, newStore);
+    }
+    case types.LOGOUT_SUCCESS: {
+      let newStore = Object.assign({}, store);
+      newStore.user.credentials = {};
+      newStore.user.isActive = false;
       return Object.assign({}, store, newStore);
     }
     default:

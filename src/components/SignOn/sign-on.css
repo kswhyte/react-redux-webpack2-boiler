@@ -1,0 +1,37 @@
+@import "imports/_helpers.css";
+
+.sign-on-wrapper {
+    padding-top: 40px;
+    text-align: center;
+    & .input-row {
+        padding: 0 2rem;
+    }
+    & h2 {
+        font-size: 4rem;
+    }
+    & .validation-error > h5 {
+        color: var(--dull-orange);
+    }
+    & .remember-checkbox {
+        border: solid 1px black;
+        width: 1rem;
+        height: 1rem;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    & label {
+        color: var(--light-grey);
+    }
+
+    & .remember-checkbox > .checkaroo {
+        margin-top: -.5rem;
+        margin-left: -.2rem;
+    }
+
+    & .checkaroo > i {
+        color: var(--cool-blue);
+        font-size: 1.7rem;
+        -webkit-text-stroke: 3px white;
+    }
+}

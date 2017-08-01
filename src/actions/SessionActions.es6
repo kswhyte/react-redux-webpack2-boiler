@@ -1,6 +1,7 @@
 import loginRequest from '../actionRequests/mocks/loginRequest';
 import startSessionRequest from '../actionRequests/mocks/startSessionRequest';
 import firePost from '../../tools/mocks/firePost';
+import sStorage from '../../tools/sessionStorage_helper';
 import * as types from '../constants/actionTypes';
 
 const actions = {
@@ -37,6 +38,14 @@ const actions = {
   loginFail: err => ({
     type: types.LOGIN_FAIL,
     err
+  }),
+  logoutSuccess: data => ({
+    type: types.LOGOUT_SUCCESS,
+    data
+  }),
+  validationError: data => ({
+    type: types.VALIDATION_ERROR,
+    data
   })
 };
 
@@ -59,6 +68,13 @@ const thunks = {
       firePost(postModel, dispatch);
     };
   },
+  logoutClick: () => {
+    return dispatch => {
+      sStorage.removeItem({ key: 'user' });
+      sStorage.removeItem({ key: 'isUserLoggedIn' });
+      dispatch(actions.logoutSuccess());
+    };
+  }
 };
 
 export default {

@@ -46,6 +46,12 @@ h2 {
   font-size: 24px;
 }
 
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 .page-instructions {
   font: italic 16px 'Georgia', sans-serif;
+  color: var(--light-grey);
 }
