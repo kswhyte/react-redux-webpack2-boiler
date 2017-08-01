@@ -31,9 +31,14 @@ let createHandlers = function(dispatch) {
     dispatch(headerActions.toggle_header(data));
   };
 
+  let logoutUser = function(data) {
+    dispatch(sessionActions.logoutClick(data));
+  };
+
   return {
     startSessionClick,
-    toggleHeader
+    toggleHeader,
+    logoutUser
     // other handlers
   };
 };
@@ -75,7 +80,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className={this.props.user.isActive ? 'wrapper' : 'wrapper signed-out'}>
-          <Header headerSize={this.props.headerSize} />
+          <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser} />
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">

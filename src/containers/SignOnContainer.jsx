@@ -5,10 +5,9 @@ import { PropTypes } from 'prop-types';
 
 import sessionActions from '../actions/SessionActions';
 
-
 let createHandlers = function(dispatch) {
   let submitLogin = function(data) {
-    console.log('submit login ------------ ')
+    console.log('submit login ------------ ');
     dispatch(sessionActions.startLoginClick(data));
   };
 
@@ -34,21 +33,14 @@ class SignOnContainer extends Component {
   }
 
   render() {
-    return (<SignOn
-              submitLogin={this.handlers.submitLogin}
-            />);
+    return <SignOn submitLogin={this.handlers.submitLogin} />;
   }
 }
 
 const mapStateToProps = state => {
   //Select the specific state items you would like here
 
-  const {
-    model,
-    modelFull,
-    validating,
-    validation
-  } = state;
+  const { model, modelFull, validating, validation } = state;
 
   //return state items to be added as props to the container
   return {
