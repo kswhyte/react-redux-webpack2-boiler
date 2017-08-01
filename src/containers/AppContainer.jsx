@@ -67,7 +67,7 @@ class App extends Component {
   }
   componentWillMount() {
     // this.props.init();
-    if(sStorage.getItem({key:'isUserLoggedIn'}).status){
+    if(!sStorage.getItem({key:'isUserLoggedIn'}).status){
       this.userIsActive = true;
     }
   }

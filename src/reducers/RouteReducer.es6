@@ -1,6 +1,5 @@
 import * as types from '../constants/actionTypes';
 
-
 const routeReducer = (store = {}, action) => {
   switch (action.type) {
     case types.ROUTE_PUSH:
