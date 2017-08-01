@@ -1,14 +1,8 @@
 @import "imports/_helpers.css";
 
 .sign-on-wrapper {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    padding: 50px 75px;
+    padding-top: 40px;
     text-align: center;
-    & .page-instructions {
-        color: var(--light-grey);
-    }
     & .input-row {
         padding: 0 2rem;
     }

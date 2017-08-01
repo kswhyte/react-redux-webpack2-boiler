@@ -48,4 +48,5 @@ h2 {
 
 .page-instructions {
   font: italic 16px 'Georgia', sans-serif;
+  color: var(--light-grey);
 }

@@ -1,13 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: var(--pale-grey-two);
   font-family: 'Raleway', sans-serif;
   /*font-family: 'Open Sans', sans-serif;*/
 }
-
 footer {
   background-color: var(--white);
   text-align: center;
@@ -16,14 +14,12 @@ footer {
   bottom: 0;
   height: 42px;
 }
-
 header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
 }
-
 *:focus {
   outline: none;
 }
@@ -47,28 +43,22 @@ header {
 }
 
 /* Main container for each page */
-.router-wrapper {
-  position: relative;
-  width: 90%;
-  margin: 134px auto 60px;
-  height: 75vh;
+.body-wrapper {
+  height: 90vh;
+  margin: 150px 80px 60px;
   padding-top: 18px;
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
 }
-
-.router-wrapper.signed-out {
-  margin: 150px auto 60px;
-  width: 60%;
+.signed-out .body-wrapper {
+  margin-top: 134px;
   margin-bottom: 140px;
   height: 667px;
 }
-
 .signed-out nav,
 .signed-out header > div:last-child {
   display: none;
 }
-
 .smaccess-spinner {
   display: flex;
   align-items: center;
@@ -85,15 +75,9 @@ header {
     width: 100px;
   }
 }
-
-/* THREE-UI OVERRIDES */
-.hg-input.v2 {
-  border: 0px !important;
-  border-bottom: solid 1px var(--slate) !important;
-}
-
 /* Center the inside of body wrapper using margin: 0 auto; */
-nav {
+nav,
+.router-wrapper {
   margin: 0 auto;
   width: 830px;
 }
