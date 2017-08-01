@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import { HgReform } from '@hg/three-ui/HgReform';
 import HgRow from '@hg/three-ui/HgRow';
-
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import SelectInput from '@hg/three-ui/HgInputsV2/SelectInput';
-// import MaskedTextInput from '../ExtraFormElements/maskedInputs';
-// import HgButton from '@hg/three-ui/HgButton';
 
 import './patient-info.css';
 
