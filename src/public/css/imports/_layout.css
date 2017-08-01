@@ -1,13 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: var(--pale-grey-two);
   font-family: 'Raleway', sans-serif;
   /*font-family: 'Open Sans', sans-serif;*/
 }
-
 footer {
   background-color: var(--white);
   text-align: center;
@@ -16,18 +14,15 @@ footer {
   bottom: 0;
   height: 42px;
 }
-
 header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
 }
-
 *:focus {
   outline: none;
 }
-
 /* Main container for each page */
 .body-wrapper {
   height: 90vh;
@@ -36,18 +31,15 @@ header {
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
 }
-
 .signed-out .body-wrapper {
   margin-top: 134px;
   margin-bottom: 140px;
   height: 667px;
 }
-
 .signed-out nav,
 .signed-out header > div:last-child {
   display: none;
 }
-
 .smaccess-spinner {
   display: flex;
   align-items: center;
@@ -64,10 +56,33 @@ header {
     width: 100px;
   }
 }
-
 /* Center the inside of body wrapper using margin: 0 auto; */
 nav,
 .router-wrapper {
   margin: 0 auto;
   width: 830px;
+}
+
+/* THREE-UI OVERRIDES */
+.hg-input.v2 {
+  border: 0px !important;
+  border-bottom: solid 1px var(--slate) !important;
+}
+
+.sm-spacer {
+  margin-top: 30px;
+}
+
+.md-spacer {
+  margin-top: 60px;
+}
+
+.lg-spacer {
+  margin-top: 90px;
+}
+
+.flex-column {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
 }
