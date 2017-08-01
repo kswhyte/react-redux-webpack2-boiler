@@ -3,6 +3,8 @@ import SignOn from '../components/SignOn';
 import ResetPassword from '../components/ResetPassword';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import sStorage from '../../tools/sessionStorage_helper';
+import { withRouter } from 'react-router';
 
 import sessionActions from '../actions/SessionActions';
 
@@ -25,7 +27,8 @@ let createHandlers = function(dispatch) {
 const proptypes = {
   dispatch: PropTypes.func,
   signonType: PropTypes.string,
-  validationMessage: PropTypes.string
+  validationMessage: PropTypes.string,
+  history: PropTypes.object.isRequired
 };
 
 class SignOnContainer extends Component {
@@ -36,7 +39,9 @@ class SignOnContainer extends Component {
   }
 
   componentWillMount() {
-    // this.props.init();
+    if(sStorage.getItem({key:'isUserLoggedIn'}).item){
+      this.props.history.push('/');
+    }
   }
 
   render() {
@@ -70,4 +75,4 @@ const mapStateToProps = state => {
 
 SignOnContainer.propTypes = proptypes;
 
-export default connect(mapStateToProps)(SignOnContainer);
+export default connect(mapStateToProps)(withRouter(SignOnContainer));

@@ -24,6 +24,7 @@ const sessionReducer = (store = {}, action) => {
     case types.VALIDATION_ERROR:
       return Object.assign({}, store, { validationMessage: action.data })
     case types.LOGIN_SUCCESS: {
+      console.log('login_success');
       let newStore = Object.assign({}, store);
       newStore.user.credentials = action.data;
       newStore.user.isActive = true;
@@ -33,8 +34,10 @@ const sessionReducer = (store = {}, action) => {
     }
     case types.LOGOUT_SUCCESS: {
       let newStore = Object.assign({}, store);
-      newStore.user.credentials = {};
-      newStore.user.isActive = false;
+      let user = { isActive: false, credentials : {}};
+      newStore.user = user;
+      sStorage.removeItem({ key: 'user'});
+      sStorage.removeItem({ key: 'isUserLoggedIn'});
       return Object.assign({}, store, newStore);
     }
     default:

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { withRouter } from 'react-router';
 
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
@@ -14,7 +13,7 @@ const propTypes = {
   submitLogin: PropTypes.func.isRequired,
   validationError: PropTypes.func,
   validationMessage: PropTypes.string,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
 };
 
 const SignOn = (props) => {
@@ -98,6 +97,4 @@ const SignOn = (props) => {
 
 SignOn.propTypes = propTypes;
 
-const SignOnWithRouter = withRouter(SignOn);
-
-export default SignOnWithRouter;
+export default SignOn;
