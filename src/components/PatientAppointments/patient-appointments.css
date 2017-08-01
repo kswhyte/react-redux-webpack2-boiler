@@ -1,0 +1,6 @@
+.line {
+  background-image: image-set(url('~/images/line.png') 1x, url('~/images/line@2x.png') 2x);
+  width: 250px;
+  height: 50px;
+  background-repeat: no-repeat;
+}
