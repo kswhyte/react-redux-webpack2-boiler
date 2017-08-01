@@ -31,7 +31,4 @@
         font-size: 1.7rem;
         -webkit-text-stroke: 3px white;
     }
-    & .forgot-password a {
-        color: var(--link-color);
-    }
 }
