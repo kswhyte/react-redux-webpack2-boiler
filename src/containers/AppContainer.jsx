@@ -91,6 +91,7 @@ class App extends Component {
                     <Dashboard
                       startSessionClick={this.handlers.startSessionClick}
                       startError={this.props.startError}
+                      userLoggedIn={this.props.user.isActive}
                     />}
                 />
                 <Route path="/login" component={SignOnContainer} />
