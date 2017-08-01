@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -17,10 +17,8 @@ import ResetPassword from '../components/ResetPassword';
 import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
 import sStorage from '../../tools/sessionStorage_helper';
- import createBrowserHistory from 'history/createBrowserHistory'
+import createBrowserHistory from '../../tools/history'
 /// Replaces the dispatcher.es file for each container component.
-
-const customHistory = createBrowserHistory()
 
 
 let createHandlers = function(dispatch) {
@@ -32,7 +30,6 @@ let createHandlers = function(dispatch) {
   };
 
   let logoutUser = function(data) {
-    data.history = customHistory;
     dispatch(sessionActions.logoutClick(data));
   };
 
@@ -71,18 +68,19 @@ class App extends Component {
     });
   }
   componentWillMount() {
-    if(sStorage.getItem({key:'isUserLoggedIn'}).item){
+
+  }
+
+  render() {
+     if(sStorage.getItem({key:'isUserLoggedIn'}).item){
       this.userIsActive = true;
     } else {
       this.userIsActive = false;
     }
-  }
-
-  render() {
     return (
-      <BrowserRouter>
-        <div className={this.userIsActive || this.props.user.isActive ? 'wrapper signed-in' : 'wrapper signed-out'}>
-          <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser} />
+      <Router history={createBrowserHistory}>
+        <div className={this.userIsActive? 'wrapper ' : 'wrapper signed-out'}>
+          <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser}/>
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
@@ -115,7 +113,7 @@ class App extends Component {
           </section>
           <Footer />
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

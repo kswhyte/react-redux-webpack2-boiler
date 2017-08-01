@@ -2,7 +2,6 @@ import loginRequest from '../actionRequests/mocks/loginRequest';
 import startSessionRequest from '../actionRequests/mocks/startSessionRequest';
 import routeActions from './routeActions';
 import firePost from '../../tools/mocks/firePost';
-import sStorage from '../../tools/sessionStorage_helper';
 import * as types from '../constants/actionTypes';
 
 const actions = {
@@ -63,15 +62,13 @@ const thunks = {
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
-      dispatch(routeActions.push({route: '/', history:  data.history}));
+      dispatch(routeActions.push({route: '/'}));
     };
   },
-  logoutClick: data => {
+  logoutClick: () => {
     return dispatch => {
-      sStorage.removeItem({ key: 'user' });
-      sStorage.removeItem({ key: 'isUserLoggedIn' });
       dispatch(actions.logoutSuccess());
-      dispatch(routeActions.push({route: '/login', history:  data.history}));
+      dispatch(routeActions.push({route: '/login'}));
     };
   }
 };

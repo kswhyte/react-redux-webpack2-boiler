@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
 
 import './header.css';
 
 const propTypes = {
   headerSize: PropTypes.string,
-  logout: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  logout: PropTypes.func.isRequired
 };
 
 class Header extends Component {
@@ -63,7 +61,6 @@ class Header extends Component {
                 onClick={e => {
                   e.preventDefault();
                   this.props.logout();
-                  this.props.history.push('/login');
                 }}
                 href="#"
               >
@@ -79,6 +76,4 @@ class Header extends Component {
 
 Header.propTypes = propTypes;
 
-const HeaderWithRouter = withRouter(Header);
-
-export default HeaderWithRouter;
+export default Header;
