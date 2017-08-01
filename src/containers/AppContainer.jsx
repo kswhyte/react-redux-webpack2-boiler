@@ -16,6 +16,8 @@ import ConfirmContainer from './ConfirmContainer';
 import ResetPassword from '../components/ResetPassword';
 import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
+import sStorage from '../../tools/sessionStorage_helper';
+
 /// Replaces the dispatcher.es file for each container component.
 let createHandlers = function(dispatch) {
   let startSessionClick = function(node, data) {
@@ -50,6 +52,7 @@ class App extends Component {
     this.headerToggleTolerance = 50;
     this.props = props;
     this.handlers = createHandlers(this.props.dispatch);
+    this.userIsActive = false;
   }
   componentDidMount() {
     window.addEventListener('scroll', () => {
@@ -64,11 +67,15 @@ class App extends Component {
   }
   componentWillMount() {
     // this.props.init();
+    if(sStorage.getItem({key:'isUserLoggedIn'}).status){
+      this.userIsActive = true;
+    }
   }
+
   render() {
     return (
       <BrowserRouter>
-        <div className={this.props.user.isActive ? 'wrapper' : 'wrapper signed-out'}>
+        <div className={this.userIsActive ? 'wrapper' : 'wrapper signed-out'}>
           <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser} />
           <section className="body-wrapper">
             <Nav />

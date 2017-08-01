@@ -30,7 +30,8 @@ const SignOn = (props) => {
                 const loginPassword = document.getElementById("loginPassword").value;
                 const data = {
                     loginEmail,
-                    loginPassword
+                    loginPassword,
+                    history: props.history
                 }
                 props.submitLogin(data);
             }}
