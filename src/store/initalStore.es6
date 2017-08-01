@@ -4,7 +4,7 @@ export default {
   },
   Session: {
     user: {
-      isActive: false,
+      isActive: true,
       credentials: {}
     },
     showSpinner: false,

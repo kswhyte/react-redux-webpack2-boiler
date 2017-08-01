@@ -22,6 +22,7 @@ const sessionReducer = (store = {}, action) => {
     case types.LOGIN_SUCCESS: {
       let newStore = Object.assign({}, store);
       newStore.user.credentials = action.data;
+      newStore.user.isActive = true;
       return Object.assign({}, store, newStore);
     }
     default:

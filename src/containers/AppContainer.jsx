@@ -15,6 +15,7 @@ import UserManagementContainer from './UserManagementContainer';
 import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
+import ResetPassword from '../components/ResetPassword';
 
 import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
@@ -99,6 +100,7 @@ class App extends Component {
                 <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
                 <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
                 <Route path="/confirm" component={ConfirmContainer} />
+                <Route path="/resetpassword" component={ResetPassword} />
                 <Route component={NotFound} />
               </Switch>
             </div>

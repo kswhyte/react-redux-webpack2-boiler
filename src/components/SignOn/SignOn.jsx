@@ -1,17 +1,17 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
+import { withRouter } from 'react-router';
 
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
-
-import ResetPassword from '../ResetPassword';
 // import {HgReform} from '@hg/three-ui/HgReform';
 
 import './sign-on.css';
 
 const propTypes = {
-    submitLogin: PropTypes.func
+    submitLogin: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired
 }
 
 const SignOn = (props) => {
@@ -72,7 +72,6 @@ const SignOn = (props) => {
                     </div>
                     <div className="row md-spacer forgot-password">
                         <Link to="/login/resetpassword">Forgot your password?</Link>
-                        <Route exact path="/login/resetpassword" component={ResetPassword} />
                     </div>
                 </div>
             </div>
@@ -83,4 +82,6 @@ const SignOn = (props) => {
 
 SignOn.propTypes = propTypes;
 
-export default SignOn;
+const SignOnWithRouter = withRouter(SignOn);
+
+export default SignOnWithRouter;
