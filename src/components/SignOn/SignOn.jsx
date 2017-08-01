@@ -63,9 +63,9 @@ const SignOn = (props) => {
                         id="loginPassword"
                         type="password"
                         className="form-group hg-input v2"
-                        placeholder={'Your Password'}
+                        placeholder="Your Password"
                         label="Your Password"
-                        required={true}
+                        required
                     />
                 </div>
             </div>
@@ -76,8 +76,7 @@ const SignOn = (props) => {
                         text="SIGN ON"
                     />
                     <div className="row sm-spacer">
-                        <div
-                            className="remember-checkbox">
+                        <div className="remember-checkbox">
                             <div className="checkaroo">
                                 <i className="fa fa-check" aria-hidden="true"></i>
                             </div>
