@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SignOn from '../components/SignOn';
+import ResetPassword from '../components/ResetPassword';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -18,7 +19,8 @@ let createHandlers = function(dispatch) {
 };
 
 const proptypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  signonType: PropTypes.string
 };
 
 class SignOnContainer extends Component {
@@ -33,9 +35,18 @@ class SignOnContainer extends Component {
   }
 
   render() {
-    return (<SignOn
+    if (this.props.signonType === "signOn") {
+      return (<SignOn
+          submitLogin={this.handlers.submitLogin}
+        />);
+    }
+
+
+    if (this.props.signonType === "reset") {
+        return (<ResetPassword
               submitLogin={this.handlers.submitLogin}
             />);
+    }
   }
 }
 

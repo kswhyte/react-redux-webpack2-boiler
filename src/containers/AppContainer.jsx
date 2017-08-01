@@ -73,11 +73,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className={this.props.user.isActive ? 'wrapper' : 'wrapper signed-out'}>
+        <div className={this.props.user.isActive ? '' : 'signed-out'}>
           <Header headerSize={this.props.headerSize} />
           <section className="body-wrapper">
-            <Nav />
-            <div className="router-wrapper">
+            <div className={this.props.user.isActive ? 'router-wrapper' : 'router-wrapper signed-out'}>
+              { (this.props.user.isActive) && (<Nav />) }
               {this.props.showSpinner &&
                 <div className="smaccess-spinner">
                   <img src="http://camspex.com/graphbase/icons/processing_circle_rotate.gif" />
@@ -92,7 +92,8 @@ class App extends Component {
                       startError={this.props.startError}
                     />}
                 />
-                <Route path="/login" component={SignOnContainer} />
+                <Route path="/login" render={() => <SignOnContainer signonType="signOn" />} />
+                <Route path="/reset" render={() => <SignOnContainer signonType="reset" />} />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
                 <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />

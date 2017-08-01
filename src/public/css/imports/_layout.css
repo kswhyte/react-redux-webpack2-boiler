@@ -47,17 +47,19 @@ header {
 }
 
 /* Main container for each page */
-.body-wrapper {
-  relative
-  height: 90vh;
-  margin: 150px 80px 60px;
+.router-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 134px auto 60px;
+  height: 75vh;
   padding-top: 18px;
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
 }
 
-.signed-out .body-wrapper {
-  margin-top: 134px;
+.router-wrapper.signed-out {
+  margin: 150px auto 60px;
+  width: 60%;
   margin-bottom: 140px;
   height: 667px;
 }
@@ -84,9 +86,14 @@ header {
   }
 }
 
+/* THREE-UI OVERRIDES */
+.hg-input.v2 {
+  border: 0px !important;
+  border-bottom: solid 1px var(--slate) !important;
+}
+
 /* Center the inside of body wrapper using margin: 0 auto; */
-nav,
-.router-wrapper {
+nav {
   margin: 0 auto;
   width: 830px;
 }

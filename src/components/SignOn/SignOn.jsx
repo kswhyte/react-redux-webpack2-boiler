@@ -17,7 +17,7 @@ const propTypes = {
 const SignOn = (props) => {
   return (
     <div className="sign-on-wrapper">
-        <div className="row sm-spacer">
+        <div className="row">
             <h2>SIGN ON</h2>
             <div className="page-instructions col-xs-offset-4 col-xs-4">
                 <h4>Please enter your email address and password below.</h4>
@@ -36,7 +36,7 @@ const SignOn = (props) => {
             }}
         >
             <div className="row md-spacer">
-                <div className="col-sm-6">
+                <div className="col-sm-6 input-row">
                    <TextInput
                         id="loginEmail"
                         className="form-group"
@@ -45,7 +45,7 @@ const SignOn = (props) => {
                         required={true}
                     />
                 </div>
-                <div className="col-sm-6">
+                <div className="col-sm-6 input-row">
                     <TextInput
                         id="loginPassword"
                         className="form-group"
@@ -59,7 +59,7 @@ const SignOn = (props) => {
                 <div className="col-xs-offset-3 col-xs-6 flex-column">
                     <HgButton
                         className="primary"
-                        text="Sign On"
+                        text="SIGN ON"
                     />
                     <div className="row sm-spacer">
                         <div
@@ -68,7 +68,7 @@ const SignOn = (props) => {
                                 <i className="fa fa-check" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <label>Remember Me?</label>
+                        <label>Remember Me</label>
                     </div>
                     <div className="row md-spacer forgot-password">
                         <Link to="/login/resetpassword">Forgot your password?</Link>
