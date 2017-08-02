@@ -34,7 +34,9 @@ header {
 .signed-out .body-wrapper {
   margin-top: 134px;
   margin-bottom: 140px;
+  margin: 134px auto 140px;
   height: 667px;
+  width: 851px;
 }
 .signed-out nav,
 .signed-out header > div:last-child {
@@ -58,7 +60,7 @@ header {
 }
 /* Center the inside of body wrapper using margin: 0 auto; */
 nav,
-.router-wrapper {
+.router-wrapper:not(.signed-out) {
   margin: 0 auto;
   width: 830px;
 }

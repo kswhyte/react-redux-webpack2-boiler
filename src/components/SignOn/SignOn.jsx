@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
 import HgButton from '@hg/three-ui/HgButton';
 
 import isEmail from '../../helpers/isEmail';
@@ -50,15 +49,16 @@ const SignOn = (props) => {
           >
             <div className="row md-spacer">
                 <div className="col-sm-6 input-row">
-                   <TextInput
+                    <label forHtml="loginEmail">USER NAME (EMAIL)</label>
+                    <input
                         id="loginEmail"
-                        className="form-group"
-                        placeholder={'Your Email Address'}
-                        label="User Name (Email)"
+                        className="form-group hg-input v2"
+                        placeholder="Your Email Address*"
                         required={true}
                     />
                 </div>
                 <div className="col-sm-6 input-row">
+                    <label forHtml="loginPassword">PASSWORD</label>
                     <input
                         id="loginPassword"
                         type="password"
@@ -70,12 +70,13 @@ const SignOn = (props) => {
                 </div>
             </div>
             <div className="row lg-spacer">
-                <div className="col-xs-offset-3 col-xs-6 flex-column">
+                <div className="col-xs-offset-3 col-xs-6
+                ">
                     <HgButton
                         className="primary"
                         text="SIGN ON"
                     />
-                    <div className="row sm-spacer">
+                    <div className="row remember-me-row">
                         <div className="remember-checkbox">
                             <div className="checkaroo">
                                 <i className="fa fa-check" aria-hidden="true"></i>
@@ -83,7 +84,7 @@ const SignOn = (props) => {
                         </div>
                         <label>Remember Me</label>
                     </div>
-                    <div className="row md-spacer forgot-password">
+                    <div className="row forgot-password-row">
                         <Link to="/login/resetpassword">Forgot your password?</Link>
                     </div>
                 </div>

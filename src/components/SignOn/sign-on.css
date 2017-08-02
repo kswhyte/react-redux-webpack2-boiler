@@ -4,6 +4,18 @@
     text-align: center;
     & .input-row {
         padding: 0 2rem;
+        text-align: left;
+    }
+    & .input-row > input {
+        width: 335px;
+    }
+    & .input-row:first-child {
+        padding-left: 55px;
+        padding-right: 37px;
+    }
+    $ .input-row:last-child {
+        padding-left: 37px;
+        padding-right: 52px;
     }
     & .page-instructions {
         padding-top: 10px;
@@ -12,6 +24,13 @@
         font-size: 48px;
         font-weight: bold;
     }
+    & .primary {
+        width: 276px;
+        height: 40px;
+        font-size: 12px;
+        font-family: Open Sans;
+    }
+
     & .validation-error > h5 {
         color: var(--dull-orange);
     }
@@ -27,14 +46,11 @@
         color: var(--light-grey);
     }
 
-    & .remember-checkbox > .checkaroo {
-        margin-top: -.5rem;
-        margin-left: -.2rem;
+    & .remember-me-row {
+        margin-top: 35px;
     }
 
-    & .checkaroo > i {
-        color: var(--cool-blue);
-        font-size: 1.7rem;
-        -webkit-text-stroke: 3px white;
+    & .forgot-password-row {
+        margin-top: 46px;
     }
 }
