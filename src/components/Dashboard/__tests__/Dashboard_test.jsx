@@ -6,7 +6,7 @@ import Dashboard from '../Dashboard';
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import expect from 'expect';
 
 const createCall = () => {

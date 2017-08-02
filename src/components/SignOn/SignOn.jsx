@@ -21,7 +21,7 @@ const SignOn = props => {
       <div className="row">
         <h2>SIGN ON</h2>
         <div className="page-instructions col-xs-offset-4 col-xs-4">
-          <h4>Please enter your email address and password below.</h4>
+          <p>Please enter your email address and password below.</p>
         </div>
       </div>
       {props.validationMessage &&
