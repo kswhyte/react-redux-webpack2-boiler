@@ -5,8 +5,12 @@
     & .input-row {
         padding: 0 2rem;
     }
+    & .page-instructions {
+        padding-top: 10px;
+    }
     & h2 {
-        font-size: 4rem;
+        font-size: 48px;
+        font-weight: bold;
     }
     & .validation-error > h5 {
         color: var(--dull-orange);
