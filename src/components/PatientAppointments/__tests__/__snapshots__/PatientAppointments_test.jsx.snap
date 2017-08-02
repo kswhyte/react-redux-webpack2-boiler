@@ -10,9 +10,31 @@ exports[`Story 1`] = `
     <div
       className="patient-appointments-form tab-pane active"
     >
-      <h3>
-        Insert APPOINTMENTS Form
-      </h3>
+      <form>
+        <div>
+          <div
+            className="col-sm-2"
+          >
+            <div />
+          </div>
+          <div
+            className="col-sm-1"
+          >
+            <div
+              label="Time"
+            />
+          </div>
+        </div>
+        <div
+          className="line"
+        />
+        <h3>
+          CREATE NEW APPOINTMENT
+        </h3>
+        <h3>
+          PAST APPOINTMENTS
+        </h3>
+      </form>
     </div>
   </div>
 </div>
