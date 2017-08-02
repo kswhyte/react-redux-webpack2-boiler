@@ -1,5 +1,6 @@
 import loginRequest from '../actionRequests/mocks/loginRequest';
 import startSessionRequest from '../actionRequests/mocks/startSessionRequest';
+import resetPasswordRequest from '../actionRequests/mocks/resetPasswordRequest';
 import routeActions from './routeActions';
 import firePost from '../../tools/mocks/firePost';
 import * as types from '../constants/actionTypes';
@@ -46,7 +47,19 @@ const actions = {
   validationError: data => ({
     type: types.VALIDATION_ERROR,
     data
-  })
+  }),
+  startResetPasswordSubmit: data => ({
+    type: types.RESETPASSWORD_START,
+    data
+  }),
+  resetPasswordSuccess: data => ({
+    type: types.RESETPASSWORD_SUCCESS,
+    data
+  }),
+  resetPasswordFail: data => ({
+    type: types.RESETPASSWORD_FAIL,
+    data
+  }),
 };
 
 const thunks = {
@@ -66,14 +79,21 @@ const thunks = {
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
-      dispatch(routeActions.push({route: '/'}));
+      dispatch(routeActions.changeRoute({route: '/'}));
     };
   },
   logoutClick: () => {
     return dispatch => {
       dispatch(actions.logoutSuccess());
-      dispatch(routeActions.push({route: '/login'}));
+      dispatch(routeActions.changeRoute({route: '/login'}));
     };
+  },
+  startResetPasswordClick: resetPasswordFormData => {
+    return dispatch => {
+      const postModel = resetPasswordRequest(dispatch, resetPasswordFormData);
+      dispatch(actions.startResetPasswordSubmit(postModel.postModel));
+      firePost(postModel, dispatch);
+    }
   }
 };
 

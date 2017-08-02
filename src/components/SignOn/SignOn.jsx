@@ -12,7 +12,8 @@ import './sign-on.css';
 const propTypes = {
   submitLogin: PropTypes.func.isRequired,
   validationError: PropTypes.func,
-  validationMessage: PropTypes.string
+  validationMessage: PropTypes.string,
+  handlerResetPassword: PropTypes.func.isRequired
 };
 
 const SignOn = (props) => {
@@ -84,7 +85,7 @@ const SignOn = (props) => {
                         <label>Remember Me</label>
                     </div>
                     <div className="row md-spacer forgot-password">
-                        <Link to="/login/resetpassword">Forgot your password?</Link>
+                        <Link to="/resetpassword">Forgot your password?</Link>
                     </div>
                 </div>
             </div>

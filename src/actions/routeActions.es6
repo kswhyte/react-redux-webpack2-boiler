@@ -1,8 +1,8 @@
 import * as types from '../constants/actionTypes';
 
 const actions = {
-  push: data => ({
-    type: types.ROUTE_PUSH,
+  changeRoute: data => ({
+    type: types.CHANGE_ROUTE,
     data
   })
 };

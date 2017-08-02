@@ -4,7 +4,8 @@ import ResetPassword from '../components/ResetPassword';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import sStorage from '../../tools/sessionStorage_helper';
-import { withRouter } from 'react-router';
+import routerActions from '../actions/routeACtions';
+
 
 import sessionActions from '../actions/SessionActions';
 
@@ -40,7 +41,7 @@ class SignOnContainer extends Component {
 
   componentWillMount() {
     if(sStorage.getItem({key:'isUserLoggedIn'}).item){
-      this.props.history.push('/');
+      this.props.dispatch(routerActions.changeRoute({route: '/'}));
     }
   }
 
@@ -75,4 +76,4 @@ const mapStateToProps = state => {
 
 SignOnContainer.propTypes = proptypes;
 
-export default connect(mapStateToProps)(withRouter(SignOnContainer));
+export default connect(mapStateToProps)(SignOnContainer);
