@@ -1,13 +1,27 @@
 @import "imports/_helpers.css";
 .sign-on-wrapper {
+    position: relative;
     padding-top: 40px;
     text-align: center;
+    & .dots-pattern {
+        position: absolute;
+        z-index: 0;
+        height: 473px;
+        top: 120px;
+        left: -8px;
+    }
     & .input-row {
         padding: 0 2rem;
         text-align: left;
     }
     & .input-row > input {
         width: 335px;
+        background: transparent;
+        font-family: Open Sans;
+    }
+    & .input-row > input:focus {
+        color: var(--light-teal);
+        border-bottom: solid 1px var(--light-teal) !important;
     }
     & .input-row:first-child {
         padding-left: 55px;
@@ -34,23 +48,75 @@
     & .validation-error > h5 {
         color: var(--dull-orange);
     }
-    & .remember-checkbox {
-        border: solid 1px black;
-        width: 1rem;
-        height: 1rem;
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    & label {
-        color: var(--light-grey);
-    }
-
     & .remember-me-row {
         margin-top: 35px;
+    }
+
+    & .remember-me-row > label {
+      font-family: Open Sans;
+      font-size: 14px;
+      color: var(--light-grey);
     }
 
     & .forgot-password-row {
         margin-top: 46px;
     }
+
+    & .remember-checkbox {
+      position: absolute;
+      opacity: 0;
+
+      & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      & + label:before {
+        border: solid 1px var(--light-grey);
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        background: white;
+      }
+
+      &:focus + label:before {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+      }
+
+
+      &:disabled + label {
+        color: #b8b8b8;
+        cursor: auto;
+      }
+
+      &:disabled + label:before {
+        box-shadow: none;
+        background: #ddd;
+      }
+
+      &:checked + label:after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        background: var(--light-teal);
+        width: 2px;
+        height: 2px;
+        box-shadow:
+          2px 0 0 var(--light-teal),
+          4px 0 0 var(--light-teal),
+          4px -2px 0 var(--light-teal),
+          4px -4px 0 var(--light-teal),
+          4px -6px 0 var(--light-teal),
+          4px -8px 0 var(--light-teal),
+          4px -10px 0 var(--light-teal);
+        transform: rotate(45deg);
+      }
+    }
+
+
 }

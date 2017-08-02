@@ -17,6 +17,7 @@ const propTypes = {
 const SignOn = (props) => {
   return (
     <div className="sign-on-wrapper">
+        <img src="images/pattern-dots.png" className="dots-pattern" />
         <div className="row">
             <h2>SIGN ON</h2>
             <div className="page-instructions col-xs-offset-4 col-xs-4">
@@ -53,7 +54,7 @@ const SignOn = (props) => {
                     <input
                         id="loginEmail"
                         className="form-group hg-input v2"
-                        placeholder="Your Email Address*"
+                        placeholder="Your Email Address"
                         required={true}
                     />
                 </div>
@@ -77,12 +78,8 @@ const SignOn = (props) => {
                         text="SIGN ON"
                     />
                     <div className="row remember-me-row">
-                        <div className="remember-checkbox">
-                            <div className="checkaroo">
-                                <i className="fa fa-check" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <label>Remember Me</label>
+                        <input className="remember-checkbox" id="remember-checkbox" type="checkbox" />
+                        <label htmlFor="remember-checkbox">Remember Me</label>
                     </div>
                     <div className="row forgot-password-row">
                         <Link to="/login/resetpassword">Forgot your password?</Link>

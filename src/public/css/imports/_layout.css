@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 body {
+  background-image: url("../../images/brand-bg-pattern.png");
   background-color: var(--pale-grey-two);
   font-family: 'Raleway', sans-serif;
   /*font-family: 'Open Sans', sans-serif;*/
