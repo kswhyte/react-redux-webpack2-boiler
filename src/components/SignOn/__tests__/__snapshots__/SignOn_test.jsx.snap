@@ -1,187 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Clicking Submit 1`] = `
-<div
-  className="sign-on-wrapper"
->
-  <div
-    className="row"
-  >
-    <h2>
-      SIGN ON
-    </h2>
-    <div
-      className="page-instructions col-xs-offset-4 col-xs-4"
-    >
-      <p>
-        Please enter your email address and password below.
-      </p>
-    </div>
-  </div>
-  <div
-    className="sm-spacer validation-error"
-  >
-    <h5>
-      Please enter a valid email
-    </h5>
-  </div>
-  <form
-    onSubmit={[Function]}
-  >
-    <div
-      className="row md-spacer"
-    >
-      <div
-        className="col-sm-6 input-row"
-      >
-        <div />
-      </div>
-      <div
-        className="col-sm-6 input-row"
-      >
-        <input
-          className="form-group hg-input v2"
-          id="loginPassword"
-          label="Your Password"
-          placeholder="Your Password"
-          required={true}
-          type="password"
-        />
-      </div>
-    </div>
-    <div
-      className="row lg-spacer"
-    >
-      <div
-        className="col-xs-offset-3 col-xs-6 flex-column"
-      >
-        <div />
-        <div
-          className="row sm-spacer"
-        >
-          <div
-            className="remember-checkbox"
-          >
-            <div
-              className="checkaroo"
-            >
-              <i
-                aria-hidden="true"
-                className="fa fa-check"
-              />
-            </div>
-          </div>
-          <label>
-            Remember Me
-          </label>
-        </div>
-        <div
-          className="row md-spacer forgot-password"
-        >
-          <a
-            href="/resetpassword"
-            onClick={[Function]}
-          >
-            Forgot your password?
-          </a>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`Remember Me Checkbox 1`] = `
-<div
-  className="sign-on-wrapper"
->
-  <div
-    className="row"
-  >
-    <h2>
-      SIGN ON
-    </h2>
-    <div
-      className="page-instructions col-xs-offset-4 col-xs-4"
-    >
-      <p>
-        Please enter your email address and password below.
-      </p>
-    </div>
-  </div>
-  <div
-    className="sm-spacer validation-error"
-  >
-    <h5>
-      Please enter a valid email
-    </h5>
-  </div>
-  <form
-    onSubmit={[Function]}
-  >
-    <div
-      className="row md-spacer"
-    >
-      <div
-        className="col-sm-6 input-row"
-      >
-        <div />
-      </div>
-      <div
-        className="col-sm-6 input-row"
-      >
-        <input
-          className="form-group hg-input v2"
-          id="loginPassword"
-          label="Your Password"
-          placeholder="Your Password"
-          required={true}
-          type="password"
-        />
-      </div>
-    </div>
-    <div
-      className="row lg-spacer"
-    >
-      <div
-        className="col-xs-offset-3 col-xs-6 flex-column"
-      >
-        <div />
-        <div
-          className="row sm-spacer"
-        >
-          <div
-            className="remember-checkbox"
-          >
-            <div
-              className="checkaroo"
-            >
-              <i
-                aria-hidden="true"
-                className="fa fa-check"
-              />
-            </div>
-          </div>
-          <label>
-            Remember Me
-          </label>
-        </div>
-        <div
-          className="row md-spacer forgot-password"
-        >
-          <a
-            href="/resetpassword"
-            onClick={[Function]}
-          >
-            Forgot your password?
-          </a>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-`;
-
 exports[`Sign On Page Elements 1`] = `
 <div
   className="sign-on-wrapper"
@@ -209,7 +27,14 @@ exports[`Sign On Page Elements 1`] = `
       <div
         className="col-sm-6 input-row"
       >
-        <div />
+        <input
+          className="form-group hg-input v2"
+          id="loginEmail"
+          label="User Name (Email)"
+          placeholder="Your Email Address"
+          required={true}
+          type="text"
+        />
       </div>
       <div
         className="col-sm-6 input-row"
@@ -230,7 +55,12 @@ exports[`Sign On Page Elements 1`] = `
       <div
         className="col-xs-offset-3 col-xs-6 flex-column"
       >
-        <div />
+        <button
+          className="primary"
+          type="submit"
+        >
+          SIGN ON
+        </button>
         <div
           className="row sm-spacer"
         >

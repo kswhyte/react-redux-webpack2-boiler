@@ -1,6 +1,6 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Dashboard from '../Dashboard';
+import {Dashboard} from '../Dashboard';
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
@@ -15,17 +15,32 @@ const createCall = () => {
 
 const startProps = {
   createCall,
-  startError: null
+  startError: null,
+  startSessionClick: function(){},
+  history: {},
+  userLoggedIn: true
 };
 
 const errorProps = {
   createCall,
-  startError: 'ERROR'
+  startError: 'ERROR',
+  startSessionClick: function(){},
+  history: {},
+  userLoggedIn: true
 };
 
 const timeoutProps = {
   createCall,
-  startError: 'TIMEOUT'
+  startError: 'TIMEOUT',
+  startSessionClick: function(){},
+  history: {},
+  userLoggedIn: true
+};
+
+window.sessionStorage = {
+  setItem: function(){},
+  getItem: function(){},
+  removeItem: function(){}
 };
 
 const stories = storiesOf('Dashboard', module);
@@ -36,8 +51,7 @@ stories.add('Dashboard page main story', () => {
     describe('Show the main start call page', () => {
       it('Show the main start call page', () => {
         let output = shallow(dashboardStory);
-        expect(output.find('.start-call-banner-wrapper').length).toEqual(1);
-        expect(output.find('h1').first().text()).toContain('Dashboard');
+        expect(output.find('h2').text()).toEqual('Dashboard');
       });
     })
   );
