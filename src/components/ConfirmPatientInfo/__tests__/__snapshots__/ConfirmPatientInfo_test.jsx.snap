@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Story 1`] = `
+<div
+  className="confirm-patient-info-wrapper"
+>
+  <h1>
+    PatientName
+  </h1>
+  <div
+    className="patient-tabs-wrapper"
+  >
+    <ul
+      className="nav nav-tabs"
+    >
+      <li
+        className="general-info-tab active"
+      >
+        <a
+          href="/patientinfo/generalinfo"
+          onClick={[Function]}
+        >
+          General Info
+        </a>
+      </li>
+      <li
+        className="appointments-tab"
+      >
+        <a
+          href="/patientinfo/appointments"
+          onClick={[Function]}
+        >
+          PatientName Appointments
+        </a>
+      </li>
+      <li
+        className="notes-tab"
+      >
+        <a
+          href="/patientinfo/notes"
+          onClick={[Function]}
+        >
+          Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="footer-line"
+  />
+  <div>
+    <div
+      className="col-sm-3"
+    >
+      <div />
+    </div>
+    <div
+      className="col-sm-3"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
