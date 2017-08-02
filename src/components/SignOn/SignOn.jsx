@@ -82,7 +82,7 @@ const SignOn = (props) => {
                         <label htmlFor="remember-checkbox">Remember Me</label>
                     </div>
                     <div className="row forgot-password-row">
-                        <Link to="/login/resetpassword">Forgot your password?</Link>
+                        <Link to="/resetpassword">Forgot your password?</Link>
                     </div>
                 </div>
             </div>

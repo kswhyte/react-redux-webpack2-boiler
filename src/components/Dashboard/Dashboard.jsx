@@ -25,7 +25,6 @@ const Dashboard = props => {
         <HgButton
           className="dashboard-button"
           tabIndex={1}
-          onClick={props.startSessionClick}
           text="Manage My Account"
         />
         <div className="error-container">
