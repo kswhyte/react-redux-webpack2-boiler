@@ -76,12 +76,8 @@ const SignOn = (props) => {
                         text="SIGN ON"
                     />
                     <div className="row sm-spacer">
-                        <div className="remember-checkbox">
-                            <div className="checkaroo">
-                                <i className="fa fa-check" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <label>Remember Me</label>
+                        <input className="styled-checkbox" id="styled-checkbox-2" type="checkbox" />
+                        <label htmlFor="styled-checkbox-2">Remember Me</label>
                     </div>
                     <div className="row md-spacer forgot-password">
                         <Link to="/login/resetpassword">Forgot your password?</Link>
