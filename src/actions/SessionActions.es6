@@ -48,7 +48,7 @@ const actions = {
     type: types.VALIDATION_ERROR,
     data
   }),
-  startResetPasswordSubmit: data => ({
+  startResetPassword: data => ({
     type: types.RESETPASSWORD_START,
     data
   }),
@@ -59,7 +59,7 @@ const actions = {
   resetPasswordFail: data => ({
     type: types.RESETPASSWORD_FAIL,
     data
-  }),
+  })
 };
 
 const thunks = {
@@ -79,21 +79,21 @@ const thunks = {
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
-      dispatch(routeActions.changeRoute({route: '/'}));
+      dispatch(routeActions.changeRoute({ route: '/' }));
     };
   },
-  logoutClick: () => {
+  startLogoutClick: () => {
     return dispatch => {
       dispatch(actions.logoutSuccess());
-      dispatch(routeActions.changeRoute({route: '/login'}));
+      dispatch(routeActions.changeRoute({ route: '/login' }));
     };
   },
   startResetPasswordClick: resetPasswordFormData => {
     return dispatch => {
       const postModel = resetPasswordRequest(dispatch, resetPasswordFormData);
-      dispatch(actions.startResetPasswordSubmit(postModel.postModel));
+      dispatch(actions.startResetPassword(postModel.postModel));
       firePost(postModel, dispatch);
-    }
+    };
   }
 };
 
