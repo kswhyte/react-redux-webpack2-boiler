@@ -31,7 +31,7 @@ const PatientTabs = props => {
       </ul>
 
       <Route exact path="/patientinfo/generalinfo" component={PatientInfo} />
-      <Route exact path="/patientinfo/appointments" component={PatientAppointments} />
+      <Route exact path="/patientinfo/appointments" render={() => <PatientAppointments appointments={[]} />}  />
       <Route exact path="/patientinfo/notes" component={PatientNotes} />
     </div>
   );
