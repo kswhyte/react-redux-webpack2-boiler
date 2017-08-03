@@ -30,7 +30,9 @@ const PatientAppointments = props => {
 
           {
             (props.appointments.length === 0) && (
-              <h1>Patient has no appointment history</h1>
+              <div className="page-instructions">
+                <p>Patient has no appointment history</p>
+              </div>
             )
           }
           <table className="appt-tables header-table">
