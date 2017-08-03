@@ -45,11 +45,13 @@
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2015-loose": "^8.0.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-latest": "6.16.0",
     "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "6.16.3",
     "chalk": "1.1.3",
     "compression": "1.6.2",
@@ -126,18 +128,41 @@
   },
   "jest": {
     "rootDir": "src/",
-    "setupFiles": ["../.storybook/__conf__/config.js"],
+    "setupFiles": [
+      "../.storybook/__conf__/config.js"
+    ],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../node_modules/jest-enzyme/lib/index.js",
-    "collectCoverageFrom": ["src/components/*.{es6, js,jsx}", "src/components/**/*.{es6, js,jsx}", "!**/helpers/**"],
-    "moduleFileExtensions": ["js", "json", "jsx", "node", "es", "es6", "less", "css"],
-    "unmockedModulePathPatterns": ["react", "redux", "enzyme", "react-addons-test-utils", "react-router"],
+    "collectCoverageFrom": [
+      "src/components/*.{es6, js,jsx}",
+      "src/components/**/*.{es6, js,jsx}",
+      "!**/helpers/**"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "es",
+      "es6",
+      "less",
+      "css"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "redux",
+      "enzyme",
+      "react-addons-test-utils",
+      "react-router"
+    ],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/components/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/components/HgStub/HgStub.jsx"
     },
-    "testPathIgnorePatterns": ["spec.jsx"],
+    "testPathIgnorePatterns": [
+      "spec.jsx"
+    ],
     "transform": {
       ".es6$": "../node_modules/babel-jest",
       ".es$": "../node_modules/babel-jest",
