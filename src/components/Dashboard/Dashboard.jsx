@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HgRow from '@hg/three-ui/HgRow';
-import HgButton from '@hg/three-ui/HgButton';
 import { withRouter } from 'react-router';
 import sStorage from '../../../tools/sessionStorage_helper';
 
@@ -16,8 +14,18 @@ export const Dashboard = props => {
       <div className="no-margin">
         <h2 className="dashboard-text">Dashboard</h2>
         <hr />
-        <button className="new-session-button primary" tabIndex="1" onClick={props.startSessionClick}>
+        <button
+          className="new-session-button primary dashboard-button"
+          tabIndex="1"
+          onClick={props.startSessionClick}
+        >
           Begin New Session
+        </button>
+        <button
+          className="dashboard-button primary"
+          tabIndex="1"
+        >
+          Manage My Account
         </button>
         <div className="error-container">
           {props.startError === 'ERROR' && <h3>Something went wrong.</h3>}
