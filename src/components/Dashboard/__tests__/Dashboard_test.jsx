@@ -36,7 +36,7 @@ const timeoutProps = {
   history: {},
   userLoggedIn: true
 };
-
+/* may remove this */
 const jest = jest || null;
 if(jest){
   window.sessionStorage = {
