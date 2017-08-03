@@ -7,34 +7,31 @@ import sStorage from '../../../tools/sessionStorage_helper';
 
 import './dashboard.css';
 
-const Dashboard = props => {
-  if(!sStorage.getItem({key:'isUserLoggedIn'}).status){
-    props.history.push('/login')
+export const Dashboard = props => {
+  if (!sStorage.getItem({ key: 'isUserLoggedIn' }).status) {
+    props.history.push('/login');
   }
   return (
     <div className="start-call-banner-wrapper">
-      <HgRow className="no-margin">
-        <h1>Dashboard</h1>
+      <div className="no-margin">
+        <h2 className="dashboard-text">Dashboard</h2>
         <hr />
-        <HgButton
-          className="new-session-button"
-          tabIndex={1}
-          onClick={props.startSessionClick}
-          text="Begin New Session"
-        />
+        <button className="new-session-button primary" tabIndex="1" onClick={props.startSessionClick}>
+          Begin New Session
+        </button>
         <div className="error-container">
           {props.startError === 'ERROR' && <h3>Something went wrong.</h3>}
           {props.startError === 'TIMEOUT' && <h3>Request timed out.</h3>}
         </div>
-      </HgRow>
+      </div>
     </div>
   );
 };
 
 Dashboard.propTypes = {
   startSessionClick: PropTypes.func.isRequired,
-  startError: PropTypes.bool,
-  history : PropTypes.object.isRequired,
+  startError: PropTypes.string,
+  history: PropTypes.object.isRequired,
   userLoggedIn: PropTypes.bool.isRequired
 };
 

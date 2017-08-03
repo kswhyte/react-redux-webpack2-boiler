@@ -90,6 +90,7 @@ exports[`Story 1`] = `
         </div>
         <a
           href="#"
+          onClick={[Function]}
         >
           Log out
         </a>

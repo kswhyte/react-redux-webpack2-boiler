@@ -9,7 +9,6 @@ import HgButton from '@hg/three-ui/HgButton';
 import './reset-password.css';
 
 const ResetPassword = () => {
-
   return (
     <div className="reset-password-wrapper">
       <h2>RESET YOUR PASSWORD</h2>
@@ -30,7 +29,7 @@ const ResetPassword = () => {
 };
 
 ResetPassword.propTypes = {
-  handlerResetPassword : PropTypes.func.isRequired
+  handlerResetPassword: PropTypes.func.isRequired
 };
 
 export default ResetPassword;

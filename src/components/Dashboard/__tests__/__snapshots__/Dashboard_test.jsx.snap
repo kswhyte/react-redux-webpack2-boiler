@@ -4,12 +4,22 @@ exports[`Dashboard page main error story 1`] = `
 <div
   className="start-call-banner-wrapper"
 >
-  <div>
-    <h1>
+  <div
+    className="no-margin"
+  >
+    <h2
+      className="dashboard-text"
+    >
       Dashboard
-    </h1>
+    </h2>
     <hr />
-    <div />
+    <button
+      className="new-session-button primary"
+      onClick={[Function]}
+      tabIndex="1"
+    >
+      Begin New Session
+    </button>
     <div
       className="error-container"
     >
@@ -25,12 +35,22 @@ exports[`Dashboard page main story 1`] = `
 <div
   className="start-call-banner-wrapper"
 >
-  <div>
-    <h1>
+  <div
+    className="no-margin"
+  >
+    <h2
+      className="dashboard-text"
+    >
       Dashboard
-    </h1>
+    </h2>
     <hr />
-    <div />
+    <button
+      className="new-session-button primary"
+      onClick={[Function]}
+      tabIndex="1"
+    >
+      Begin New Session
+    </button>
     <div
       className="error-container"
     />
@@ -42,12 +62,22 @@ exports[`Dashboard page timeout error story 1`] = `
 <div
   className="start-call-banner-wrapper"
 >
-  <div>
-    <h1>
+  <div
+    className="no-margin"
+  >
+    <h2
+      className="dashboard-text"
+    >
       Dashboard
-    </h1>
+    </h2>
     <hr />
-    <div />
+    <button
+      className="new-session-button primary"
+      onClick={[Function]}
+      tabIndex="1"
+    >
+      Begin New Session
+    </button>
     <div
       className="error-container"
     >

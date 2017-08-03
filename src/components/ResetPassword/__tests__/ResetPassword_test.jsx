@@ -5,18 +5,23 @@ import ResetPassword from '../ResetPassword';
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
-
-import { shallow } from 'enzyme';
+import { StaticRouter } from 'react-router';
+import { shallow, mount } from 'enzyme';
 import expect from 'expect';
 
 const stories = storiesOf('ResetPassword', module);
 
 stories.add('ResetPassword Page Story', () => {
-  const resetPasswordStory = <ResetPassword />;
+  const resetPasswordStory = (
+    <StaticRouter context={{}}>
+      <ResetPassword />
+    </StaticRouter>
+  );
+
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should render the ResetPassword component without crashing', () => {
-        let output = shallow(resetPasswordStory);
+        let output = mount(resetPasswordStory);
         expect(output.find('.reset-password-wrapper').length).toEqual(1);
       });
     })

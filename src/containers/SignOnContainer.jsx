@@ -6,7 +6,6 @@ import { PropTypes } from 'prop-types';
 import sStorage from '../../tools/sessionStorage_helper';
 import routerActions from '../actions/routeACtions';
 
-
 import sessionActions from '../actions/SessionActions';
 
 let createHandlers = function(dispatch) {
@@ -40,25 +39,24 @@ class SignOnContainer extends Component {
   }
 
   componentWillMount() {
-    if(sStorage.getItem({key:'isUserLoggedIn'}).item){
-      this.props.dispatch(routerActions.changeRoute({route: '/'}));
+    if (sStorage.getItem({ key: 'isUserLoggedIn' }).item) {
+      this.props.dispatch(routerActions.changeRoute({ route: '/' }));
     }
   }
 
   render() {
-    if (this.props.signonType === "signOn") {
-      return (<SignOn
+    if (this.props.signonType === 'signOn') {
+      return (
+        <SignOn
           submitLogin={this.handlers.submitLogin}
           validationError={this.handlers.validationError}
           validationMessage={this.props.validationMessage}
-        />);
+        />
+      );
     }
 
-
-    if (this.props.signonType === "reset") {
-        return (<ResetPassword
-              submitLogin={this.handlers.submitLogin}
-            />);
+    if (this.props.signonType === 'reset') {
+      return <ResetPassword submitLogin={this.handlers.submitLogin} />;
     }
   }
 }
