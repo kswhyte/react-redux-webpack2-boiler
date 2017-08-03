@@ -2,9 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
-import HgButton from '@hg/three-ui/HgButton';
-
 import isEmail from '../../helpers/isEmail';
 
 import './sign-on.css';
@@ -21,7 +18,7 @@ const SignOn = props => {
       <div className="row">
         <h2>SIGN ON</h2>
         <div className="page-instructions col-xs-offset-4 col-xs-4">
-          <h4>Please enter your email address and password below.</h4>
+          <p>Please enter your email address and password below.</p>
         </div>
       </div>
       {props.validationMessage &&
@@ -49,12 +46,13 @@ const SignOn = props => {
       >
         <div className="row md-spacer">
           <div className="col-sm-6 input-row">
-            <TextInput
+            <input
               id="loginEmail"
-              className="form-group"
-              placeholder={'Your Email Address'}
+              type="text"
+              className="form-group hg-input v2"
+              placeholder="Your Email Address"
               label="User Name (Email)"
-              required={true}
+              required
             />
           </div>
           <div className="col-sm-6 input-row">
@@ -70,7 +68,9 @@ const SignOn = props => {
         </div>
         <div className="row lg-spacer">
           <div className="col-xs-offset-3 col-xs-6 flex-column">
-            <HgButton className="primary" text="SIGN ON" />
+            <button type="submit" className="primary">
+              SIGN ON
+            </button>
             <div className="row sm-spacer">
               <div className="remember-checkbox">
                 <div className="checkaroo">

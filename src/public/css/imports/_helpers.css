@@ -35,8 +35,21 @@
   padding: 0 !important;
 }
 
-.hg-button {
+button {
   &.primary {
     background: var(--primary-color);
+    color: var(--white);
+    border: 1px solid #df907a;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    font-family: 'Open Sans', 'OpenSans', 'Arial', 'Helvetica', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
   }
 }
