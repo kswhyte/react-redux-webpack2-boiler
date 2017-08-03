@@ -29,13 +29,14 @@
     }
 
 
-    & .appt-tables td,th {
+    & .appt-tables td {
         width: 16.666%;
     }
     & .appt-tables td {
         font-family: Open Sans;
         font-size: 12px;
         padding: 20px 10px 20px;
+        empty-cells: show;
     }
     & .appt-tables tr {
         border-bottom: solid 2px var(--light-grey);

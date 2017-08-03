@@ -36,12 +36,14 @@ const PatientAppointments = props => {
             )
           }
           <table className="appt-tables header-table">
-            <th>Date</th>
-            <th>Time</th>
-            <th>Provider Name</th>
-            <th>Phone</th>
-            <th>Scheduler</th>
-            <th>Actions</th>
+            <thead>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Provider Name</th>
+              <th>Phone</th>
+              <th>Scheduler</th>
+              <th>Actions</th>
+            </thead>
           </table>
           {
             (upcomingAppts.length > 0) && (
@@ -65,7 +67,10 @@ const PastAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <th colSpan={6} className="past-appt-head">Past Appointments</th>
+      <thead>
+        <th colSpan={6} className="past-appt-head">Past Appointments</th>
+      </thead>
+      <tbody>
       {
         props.pastAppts.map(appt => {
           return (
@@ -80,6 +85,7 @@ const PastAppointments = props => {
           )
         })
       }
+      </tbody>
     </table>
 
   )
@@ -91,7 +97,10 @@ const UpcomingAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <th colSpan={6} className="upcoming-appt-head">Upcoming Appointments</th>
+      <thead>
+        <th colSpan={6} className="upcoming-appt-head">Upcoming Appointments</th>
+      </thead>
+      <tbody>
       {
         props.upcomingAppts.map(appt => {
           return (
@@ -106,6 +115,7 @@ const UpcomingAppointments = props => {
           )
         })
       }
+      </tbody>
     </table>
 
   )

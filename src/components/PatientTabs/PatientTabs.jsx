@@ -16,6 +16,8 @@ const PatientTabs = props => {
   };
   check();
 
+
+  //TODO: Going to be replaced w/ a Mock patient appointments request
   const testAppointments = [{
       appointmentID: "12345",
       appointmentDateTime: "2017-09-03T15:38:54-06:00",
