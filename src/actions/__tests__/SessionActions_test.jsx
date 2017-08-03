@@ -1,6 +1,8 @@
 import actions from '../SessionActions';
 import expect from 'expect';
 
+import { Router, Route } from 'react-router-dom';
+
 describe('Session Actions', () => {
   describe('Cancel Action', () => {
     it('Should start a session', () => {
@@ -96,35 +98,39 @@ describe('Session Actions', () => {
 
       expect(action).toEqual(expectedAction);
 
-//ROUTES in react router for testing
-// var TestComponent = React.createClass({
-//   render: function () {
-//     return <div ref='wooo'>Hello!</div>;
-//   }
-// });
-//
-// var location = createLocation('/');
-// var history = new MemoryHistory(['/']);
-//
-// var tree = testRouterTree(
-//   <Router history={history} location={location}>
-//     <Route path='/' component={TestComponent} />
-//   </Router>
-// );
-//
-// tree.wooo; // woooooo!
-//
-// function testRouterTree (router) {
-//   var oldRenderFn = router.type.prototype.render;
-//   router.type.innerComponentRef = 'innerComponent';
-//   router.type.prototype.render = function () {
-//     var renderTree = oldRenderFn.apply(this, arguments);
-//     return React.cloneElement(renderTree, {
-//       ref: 'innerComponent'
-//     });
-//   };
-//   return testTree(router);
-// }
+      let SignOn = React.createClass({
+        render: () => {
+          return (
+            <div className="row">
+              <h2>SIGN ON</h2>
+              <div className="page-instructions col-xs-offset-4 col-xs-4">
+                <p>Please enter your email address and password below.</p>
+              </div>
+            </div>
+          )
+        }
+      });
+
+      let location = createLocation('/');
+      let history = new MemoryHistory(['/']);
+
+      let tree = testRouterTree(
+        <Router history={history} location={location}>
+          <Route path='/' component={SignOn} />
+        </Router>
+      );
+    
+      const testRouterTree = (router) => {
+        let oldRenderFn = router.type.prototype.render;
+        router.type.innerComponentRef = 'innerComponent';
+        router.type.prototype.render = () => {
+          var renderTree = oldRenderFn.apply(this, arguments);
+          return React.cloneElement(renderTree, {
+            ref: 'innerComponent'
+          });
+        };
+        return testTree(router);
+      }
     });
 
     // it('Should check local storage; If the user login username is there, the username input field should be filled out', () => {
@@ -177,6 +183,20 @@ describe('Session Actions', () => {
   });
 
   describe('Log Out', () => {
+    it('Should execute logoutSuccess action', () => {
+      const data = {
+        loginEmail: 'newagent@mailinator.com',
+        loginPassword: 'newpassword'
+      };
+      let expectedAction = {
+        type: 'LOGOUT_SUCCESS',
+        data
+      };
+
+      const action = actions.logoutSuccess(data);
+
+      expect(action).toEqual(expectedAction);
+    });
 
     describe('Clicking Logout', () => {
     });

@@ -33,11 +33,11 @@ class Header extends Component {
             <div className="pull-right">
               <Link to="/">
                 <i className="fa fa-tachometer fa-2" aria-hidden="true" />
-                <div className="text-small-o">Dashboard</div>
+                <div className="dashboard-text text-small-o">Dashboard</div>
               </Link>
               <Link to="/">
                 <i className="fa fa-cog fa-2" aria-hidden="true" />
-                <div className="text-small-o">Settings</div>
+                <div className="settings-text text-small-o">Settings</div>
               </Link>
             </div>
           </div>
@@ -58,6 +58,7 @@ class Header extends Component {
               {/* {make this a tag, below, into a Link and connect to logout path} */}
 
               <a
+                className="logout"
                 onClick={e => {
                   e.preventDefault();
                   this.props.logout();
