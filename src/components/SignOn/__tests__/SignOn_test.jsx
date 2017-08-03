@@ -22,6 +22,12 @@ stories.add('Sign On Page Elements', () => {
     </StaticRouter>
   );
 
+  window.sessionStorage = {
+    setItem: function(){},
+    getItem: function(){},
+    removeItem: function(){}
+  };
+
   specs(() =>
     describe('SignOn Page elements and content', () => {
       it('Should render the SignOn component without crashing', () => {
@@ -55,6 +61,10 @@ stories.add('Sign On Page Elements', () => {
         let output = mount(signOnStory);
         expect(output.find('a').length).toEqual(1);
         expect(output.find('a').text()).toContain('Forgot your password?');
+      });
+      it('If Unsuccessful, Should display an error message with red text above the form."', () => {
+        let output = mount(signOnStory);
+        expect(output.find('h5').length).toEqual(1);
       });
       it('Should display red text and bottom border for username and password if no text is present in form inputs"', () => {
         let output = mount(signOnStory);

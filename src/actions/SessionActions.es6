@@ -74,7 +74,6 @@ const thunks = {
   },
   startLoginClick: data => {
     return dispatch => {
-      //TODO: Will retrieve from form
       const loginCredentials = data;
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));

@@ -95,36 +95,33 @@ describe('Session Reducer', () => {
       validationMessage: action.data
     });
   });
-//   it('should handle LOGIN_SUCCESS', () => {
-//     let action = {
-//       data: {
-//         loginEmail: 'newagent@mailinator.com',
-//         loginPassword: 'newpassword'
-//       }
-//     };
-//     let store = {
-//       user: {}
-//     };
-//     let newStore = Object.assign({}, store);
-//
-// console.log('reducer--------', sessionReducer([], {
-//       type: types.LOGIN_SUCCESS
-//     }));
-//
-// console.log('1--------', newStore);
-//
-//     newStore.user = {}
-//     newStore.user.credentials = action.data;
-//     newStore.user.isActive = true;
-//
-// console.log('2--------', newStore);
-//
-//     expect(
-//       sessionReducer([], {
-//         type: types.LOGIN_SUCCESS
-//       })
-//     ).toEqual({
-//       newStore
-//     });
+  it('should handle LOGIN_SUCCESS', () => {
+    let action = {
+      data: {
+        loginEmail: 'newagent@mailinator.com',
+        loginPassword: 'newpassword'
+      }
+    };
+    let store = {
+      user: {}
+    };
+    let newStore = Object.assign({}, store);
+
+console.log('1--------', newStore);
+
+    newStore.user = {}
+    newStore.user.credentials = action.data;
+    newStore.user.isActive = true;
+
+console.log('2--------', newStore);
+
+    expect(
+      sessionReducer(store, {
+        type: types.LOGIN_SUCCESS,
+        data: action.data
+      })
+    ).toEqual({
+      newStore
+    });
   });
 });
