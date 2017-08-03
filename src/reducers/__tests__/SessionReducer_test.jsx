@@ -126,5 +126,5 @@ describe('Session Reducer', () => {
 //     ).toEqual({
 //       newStore
 //     });
-  });
+//  });
 });

@@ -40,6 +40,7 @@ const timeoutProps = {
 const jest = jest || null;
 if(jest){
   window.sessionStorage = {
+
     setItem: function(){},
     getItem: function(){},
     removeItem: function(){}
