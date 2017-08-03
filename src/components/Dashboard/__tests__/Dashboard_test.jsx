@@ -36,12 +36,15 @@ const timeoutProps = {
   history: {},
   userLoggedIn: true
 };
-
-window.sessionStorage = {
-  setItem: function(){},
-  getItem: function(){},
-  removeItem: function(){}
-};
+/* may remove this d */
+const jest = jest || null;
+if(jest){
+  window.sessionStorage = {
+    setItem: function(){},
+    getItem: function(){},
+    removeItem: function(){}
+  };
+}
 
 const stories = storiesOf('Dashboard', module);
 
