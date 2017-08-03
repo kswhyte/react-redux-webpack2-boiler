@@ -17,9 +17,9 @@ exports[`Sign On Page Elements 1`] = `
     <div
       className="page-instructions col-xs-offset-4 col-xs-4"
     >
-      <h4>
+      <p>
         Please enter your email address and password below.
-      </h4>
+      </p>
     </div>
   </div>
   <form
