@@ -30,8 +30,8 @@ const SignOn = props => {
       <form
         onSubmit={e => {
           e.preventDefault();
-          const loginEmail = document.getElementById('loginEmail').value;
-          const loginPassword = document.getElementById('loginPassword').value;
+          const loginEmail = escape(document.getElementById('loginEmail').value);
+          const loginPassword = escape(document.getElementById('loginPassword').value);
           const emailValidation = isEmail(loginEmail);
           if (!emailValidation) {
             props.validationError('Must enter a valid email.');
