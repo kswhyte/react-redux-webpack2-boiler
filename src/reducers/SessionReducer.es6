@@ -1,5 +1,4 @@
 import * as types from '../constants/actionTypes';
-import sStorage from '../../tools/sessionStorage_helper';
 
 //inital state is set inside the store/initialState.es6
 const sessionReducer = (store = {}, action) => {
@@ -28,16 +27,12 @@ const sessionReducer = (store = {}, action) => {
       let newStore = Object.assign({}, store);
       newStore.user.credentials = action.data;
       newStore.user.isActive = true;
-      sStorage.setItem({ key: 'user', value: JSON.stringify(action.data) });
-      sStorage.setItem({ key: 'isUserLoggedIn', value: true });
       return Object.assign({}, store, newStore);
     }
     case types.LOGOUT_SUCCESS: {
       let newStore = Object.assign({}, store);
       let user = { isActive: false, credentials : {}};
       newStore.user = user;
-      sStorage.removeItem({ key: 'user'});
-      sStorage.removeItem({ key: 'isUserLoggedIn'});
       return Object.assign({}, store, newStore);
     }
     default:
