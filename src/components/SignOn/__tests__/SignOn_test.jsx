@@ -3,34 +3,60 @@ import React from 'react';
 import SignOn from '../SignOn';
 
 // import { specs, describe, it } from 'storybook-addon-specifications';
-
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
 import { shallow, mount } from 'enzyme';
-import expect from 'expect';
-
+import expect, { createSpy, spyOn, isSpy } from 'expect';
+import { StaticRouter } from 'react-router';
 
 const stories = storiesOf('SignOn', module);
 
-stories.add('Sign On Story', () => {
-  const signOnStory = (<SignOn />);
+stories.add('Sign On Page Elements', () => {
+  const props = {
+    validationMessage: 'Please enter a valid email'
+  };
 
-  specs(() => describe('Show a successful alert', () => {
+  const signOnStory = (
+    <StaticRouter {...props} context={{}}>
+      <SignOn />
+    </StaticRouter>
+  );
+
+  specs(() =>
+    describe('SignOn Page elements and content', () => {
       it('Should render the SignOn component without crashing', () => {
-        let output = shallow(signOnStory);
+        let output = mount(signOnStory);
         expect(output.find('.sign-on-wrapper').length).toEqual(1);
       });
 
-      it('Should render with proper wording', () => {
+      it('Should have a header element that says "Sign On"', () => {
         let output = mount(signOnStory);
-        expect(output.find('.sign-on-wrapper').text()).toContain('Sign On');
-        expect(output.find('.sign-on-wrapper').text()).toContain('Please enter your email address and password below');
-        expect(output.find('.sign-on-wrapper').text()).toContain('Sign On');
+        expect(output.find('h2').text()).toContain('SIGN ON');
       });
-      it('Should render the SignOn component without crashing', () => {
-        let output = shallow(signOnStory);
-        expect(output.find('.sign-on-wrapper').text()).toContain('Sign On');
+      it('Should have a <p> tag that says "please enter your email address and password below"', () => {
+        let output = mount(signOnStory);
+        expect(output.find('p').text()).toContain('Please enter your email address and password below');
       });
-    }));
+      it('Should have two input form fields', () => {
+        let output = mount(signOnStory);
+        expect(output.find('input').length).toEqual(2);
+      });
+      it('Should have two input form fields: username/email and password', () => {
+        let output = mount(signOnStory);
+        expect(output.find('#loginEmail').length).toEqual(1);
+        expect(output.find('#loginPassword').length).toEqual(1);
+      });
+      it('Should have one call-to-action submit button', () => {
+        let output = mount(signOnStory);
+        expect(output.find('button').length).toEqual(1);
+        expect(output.find('.primary').length).toEqual(1);
+      });
+      it('Should have one link: "Forgot Password"', () => {
+        let output = mount(signOnStory);
+        expect(output.find('a').length).toEqual(1);
+        expect(output.find('a').text()).toContain('Forgot your password?');
+      });
+    })
+  );
   return signOnStory;
 });

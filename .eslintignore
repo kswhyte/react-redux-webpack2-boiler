@@ -6,3 +6,4 @@ src/public/js/bundle/*.js
 postcss.config.js
 tools/*.es
 tools/dist/*.js
+__tests__

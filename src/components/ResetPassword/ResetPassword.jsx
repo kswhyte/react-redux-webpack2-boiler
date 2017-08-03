@@ -19,6 +19,9 @@ const ResetPassword = () => {
             <TextInput label="Your Email" placeholder="Your Email" />
           </div>
         </HgRow>
+        {/* TODO: for RESET-btn, onClick sends a dispatch to
+                  1. update client credentials
+                  2. reroute to PassWordConfirm component */}
         <HgButton text="RESET PASSWORD" />
       </form>
 
