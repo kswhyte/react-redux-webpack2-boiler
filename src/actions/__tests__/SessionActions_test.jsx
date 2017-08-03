@@ -82,57 +82,57 @@ describe('Session Actions', () => {
 
       expect(action).toEqual(expectedAction);
     });
-
-    it('Should execute startLoginClick action and change route to home', () => {
-      const data = {
-        loginEmail: 'newagent@mailinator.com',
-        loginPassword: 'newpassword'
-      };
-      let expectedAction = {
-        type: 'START_LOGIN',
-        data
-      };
-      // const routeAction
-      // const afterAction
-      const action = actions.startLoginClick(data);
-
-      expect(action).toEqual(expectedAction);
-
-      let SignOn = React.createClass({
-        render: () => {
-          return (
-            <div className="row">
-              <h2>SIGN ON</h2>
-              <div className="page-instructions col-xs-offset-4 col-xs-4">
-                <p>Please enter your email address and password below.</p>
-              </div>
-            </div>
-          )
-        }
-      });
-
-      let location = createLocation('/');
-      let history = new MemoryHistory(['/']);
-
-      let tree = testRouterTree(
-        <Router history={history} location={location}>
-          <Route path='/' component={SignOn} />
-        </Router>
-      );
-    
-      const testRouterTree = (router) => {
-        let oldRenderFn = router.type.prototype.render;
-        router.type.innerComponentRef = 'innerComponent';
-        router.type.prototype.render = () => {
-          var renderTree = oldRenderFn.apply(this, arguments);
-          return React.cloneElement(renderTree, {
-            ref: 'innerComponent'
-          });
-        };
-        return testTree(router);
-      }
-    });
-
+// __________________________________
+    // it('Should execute startLoginClick action and change route to home', () => {
+    //   const data = {
+    //     loginEmail: 'newagent@mailinator.com',
+    //     loginPassword: 'newpassword'
+    //   };
+    //   let expectedAction = {
+    //     type: 'START_LOGIN',
+    //     data
+    //   };
+    //   // const routeAction
+    //   // const afterAction
+    //   const action = actions.startLoginClick(data);
+    //
+    //   expect(action).toEqual(expectedAction);
+    //
+    //   let SignOn = React.createClass({
+    //     render: () => {
+    //       return (
+    //         <div className="row">
+    //           <h2>SIGN ON</h2>
+    //           <div className="page-instructions col-xs-offset-4 col-xs-4">
+    //             <p>Please enter your email address and password below.</p>
+    //           </div>
+    //         </div>
+    //       )
+    //     }
+    //   });
+    //
+    //   let location = createLocation('/');
+    //   let history = new MemoryHistory(['/']);
+    //
+    //   let tree = testRouterTree(
+    //     <Router history={history} location={location}>
+    //       <Route path='/' component={SignOn} />
+    //     </Router>
+    //   );
+    //
+    //   const testRouterTree = (router) => {
+    //     let oldRenderFn = router.type.prototype.render;
+    //     router.type.innerComponentRef = 'innerComponent';
+    //     router.type.prototype.render = () => {
+    //       var renderTree = oldRenderFn.apply(this, arguments);
+    //       return React.cloneElement(renderTree, {
+    //         ref: 'innerComponent'
+    //       });
+    //     };
+    //     return testTree(router);
+    //   }
+    // });
+// __________________________________
     // it('Should check local storage; If the user login username is there, the username input field should be filled out', () => {
     //   let output = mount(signOnStory3);
     //   expect(output.find('#loginPassword').text()).toNotExist();
@@ -144,8 +144,6 @@ describe('Session Actions', () => {
     // });
   });
   describe('Clicking Submit', () => {
-    xit('Should...', () => {
-    });
 
     describe('Remember Me', () => {
     });
