@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 body {
+  background-image: url("../../images/brand-bg-pattern.png");
   background-color: var(--pale-grey-two);
   font-family: 'Raleway', sans-serif;
   /*font-family: 'Open Sans', sans-serif;*/
@@ -34,7 +35,9 @@ header {
 .signed-out .body-wrapper {
   margin-top: 134px;
   margin-bottom: 140px;
+  margin: 134px auto 140px;
   height: 667px;
+  width: 851px;
 }
 .signed-out nav,
 .signed-out header > div:last-child {
@@ -58,7 +61,7 @@ header {
 }
 /* Center the inside of body wrapper using margin: 0 auto; */
 nav,
-.router-wrapper {
+.router-wrapper:not(.signed-out) {
   margin: 0 auto;
   width: 830px;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SignOn from '../components/SignOn';
 import ResetPassword from '../components/ResetPassword';
+import ResetPasswordConfirm from '../components/ResetPasswordConfirm';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import sStorage from '../../tools/sessionStorage_helper';
@@ -17,9 +18,14 @@ let createHandlers = function(dispatch) {
     dispatch(sessionActions.validationError(data));
   };
 
+  let resetPassword = function(data) {
+    dispatch(sessionActions.startResetPasswordClick(data));
+  };
+
   return {
     submitLogin,
-    validationError
+    validationError,
+    resetPassword
     // other handlers
   };
 };
@@ -27,8 +33,7 @@ let createHandlers = function(dispatch) {
 const proptypes = {
   dispatch: PropTypes.func,
   signonType: PropTypes.string,
-  validationMessage: PropTypes.string,
-  history: PropTypes.object.isRequired
+  validationMessage: PropTypes.string
 };
 
 class SignOnContainer extends Component {
@@ -55,8 +60,12 @@ class SignOnContainer extends Component {
       );
     }
 
-    if (this.props.signonType === 'reset') {
-      return <ResetPassword submitLogin={this.handlers.submitLogin} />;
+    if (this.props.signonType === 'resetpassword') {
+      return <ResetPassword resetPassword={this.handlers.resetPassword} />;
+    }
+
+    if (this.props.signonType === 'resetpasswordconfirm') {
+      return <ResetPasswordConfirm />;
     }
   }
 }

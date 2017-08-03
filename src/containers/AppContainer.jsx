@@ -13,7 +13,6 @@ import UserManagementContainer from './UserManagementContainer';
 import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
-import ResetPassword from '../components/ResetPassword';
 import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
 import sStorage from '../../tools/sessionStorage_helper';
@@ -29,7 +28,7 @@ let createHandlers = function(dispatch) {
   };
 
   let logoutUser = function(data) {
-    dispatch(sessionActions.logoutClick(data));
+    dispatch(sessionActions.startLogoutClick(data));
   };
 
   return {
@@ -97,13 +96,16 @@ class App extends Component {
                     />}
                 />
                 <Route path="/login" render={() => <SignOnContainer signonType="signOn" />} />
-                <Route path="/reset" render={() => <SignOnContainer signonType="reset" />} />
+                <Route path="/resetpassword" render={() => <SignOnContainer signonType="resetpassword" />} />
+                <Route
+                  path="/resetpasswordconfirm"
+                  render={() => <SignOnContainer signonType="resetpasswordconfirm" />}
+                />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
                 <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
                 <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
                 <Route path="/confirm" component={ConfirmContainer} />
-                <Route path="/resetpassword" component={ResetPassword} />
                 <Route component={NotFound} />
               </Switch>
             </div>

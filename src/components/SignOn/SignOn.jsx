@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
+import HgButton from '@hg/three-ui/HgButton';
+
 import isEmail from '../../helpers/isEmail';
 
 import './sign-on.css';
@@ -9,17 +11,17 @@ import './sign-on.css';
 const propTypes = {
   submitLogin: PropTypes.func.isRequired,
   validationError: PropTypes.func,
-  validationMessage: PropTypes.string,
-  handlerResetPassword: PropTypes.func.isRequired
+  validationMessage: PropTypes.string
 };
 
 const SignOn = props => {
   return (
     <div className="sign-on-wrapper">
+      <img src="images/pattern-dots.png" className="dots-pattern" />
       <div className="row">
         <h2>SIGN ON</h2>
         <div className="page-instructions col-xs-offset-4 col-xs-4">
-          <p>Please enter your email address and password below.</p>
+          <h4>Please enter your email address and password below.</h4>
         </div>
       </div>
       {props.validationMessage &&
@@ -47,16 +49,11 @@ const SignOn = props => {
       >
         <div className="row md-spacer">
           <div className="col-sm-6 input-row">
-            <input
-              id="loginEmail"
-              type="text"
-              className="form-group hg-input v2"
-              placeholder="Your Email Address"
-              label="User Name (Email)"
-              required
-            />
+            <label forHtml="loginEmail">USER NAME (EMAIL)</label>
+            <input id="loginEmail" className="form-group hg-input v2" placeholder="Your Email Address" required />
           </div>
           <div className="col-sm-6 input-row">
+            <label forHtml="loginPassword">PASSWORD</label>
             <input
               id="loginPassword"
               type="password"
@@ -67,20 +64,15 @@ const SignOn = props => {
             />
           </div>
         </div>
+        <label>Remember Me</label>
         <div className="row lg-spacer">
-          <div className="col-xs-offset-3 col-xs-6 flex-column">
-            <button type="submit" className="primary">
-              SIGN ON
-            </button>
-            <div className="row sm-spacer">
-              <div className="remember-checkbox">
-                <div className="checkaroo">
-                  <i className="fa fa-check" aria-hidden="true" />
-                </div>
-              </div>
-              <label>Remember Me</label>
+          <div className="col-xs-offset-3 col-xs-6">
+            <button className="primary">SIGN ON</button>
+            <div className="row remember-me-row">
+              <input className="remember-checkbox" id="remember-checkbox" type="checkbox" />
+              <label htmlFor="remember-checkbox">Remember Me</label>
             </div>
-            <div className="row md-spacer forgot-password">
+            <div className="row forgot-password-row">
               <Link to="/resetpassword">Forgot your password?</Link>
             </div>
           </div>

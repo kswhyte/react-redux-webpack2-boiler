@@ -8,7 +8,7 @@ import HgButton from '@hg/three-ui/HgButton';
 
 import './reset-password.css';
 
-const ResetPassword = () => {
+const ResetPassword = props => {
   return (
     <div className="reset-password-wrapper">
       <h2>RESET YOUR PASSWORD</h2>
@@ -20,7 +20,11 @@ const ResetPassword = () => {
             <TextInput label="Your Email" placeholder="Your Email" />
           </div>
         </HgRow>
-        <HgButton onClick={this.props.handlerResetPassword} text="RESET PASSWORD" />
+        <HgButton onClick={props.resetPassword} text="RESET PASSWORD" />
+        {/* TODO: for RESET-btn, onClick sends a dispatch to
+                  1. update client credentials
+                  2. reroute to PassWordConfirm component */}
+        <HgButton text="RESET PASSWORD" />
       </form>
 
       <Link to="/login">Back to Sign in</Link>
@@ -29,7 +33,7 @@ const ResetPassword = () => {
 };
 
 ResetPassword.propTypes = {
-  handlerResetPassword: PropTypes.func.isRequired
+  resetPassword: PropTypes.func.isRequired
 };
 
 export default ResetPassword;
