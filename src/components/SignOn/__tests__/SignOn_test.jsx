@@ -56,6 +56,10 @@ stories.add('Sign On Page Elements', () => {
         expect(output.find('a').length).toEqual(1);
         expect(output.find('a').text()).toContain('Forgot your password?');
       });
+      it('Should display red text and bottom border for username and password if no text is present in form inputs"', () => {
+        let output = mount(signOnStory);
+        // TODO: create functionality for making text red when no text is present
+      });
     })
   );
   return signOnStory;
