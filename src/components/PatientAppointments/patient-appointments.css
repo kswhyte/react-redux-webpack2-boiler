@@ -1,9 +1,11 @@
 @import "imports/_helpers.css";
 
 .patient-appointments-wrapper {
+
     & .appt-tables {
         margin-top: 40px;
         width: 100%;
+        margin-bottom: 40px;
     }
     & .header-table th {
         border-bottom: solid 3px var(--light-grey);
@@ -25,6 +27,25 @@
     }
     & .appt-tables:not(:first-child) tr {
         border-bottom: solid 2px var(--light-grey);
+    }
+
+    & td > button {
+
+            background: var(--white);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            position: relative;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 6px 20px;
+            font-family: 'Open Sans';
+            font-size: 10px;
+            line-height: 1;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 0px;
+
     }
 
 }

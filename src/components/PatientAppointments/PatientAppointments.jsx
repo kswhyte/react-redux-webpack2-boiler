@@ -99,7 +99,7 @@ const UpcomingAppointments = props => {
               <td>Dr Name Name</td>
               <td>123-567-8910</td>
               <td>Name</td>
-              <td><button className="primary">Cancel</button></td>
+              <td><button>CANCEL</button></td>
             </tr>
           )
         })
