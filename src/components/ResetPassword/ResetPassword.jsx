@@ -20,7 +20,7 @@ const ResetPassword = () => {
             <TextInput label="Your Email" placeholder="Your Email" />
           </div>
         </HgRow>
-        <HgButton onClick={handlerResetPassword} text="RESET PASSWORD" />
+        <HgButton onClick={this.props.handlerResetPassword} text="RESET PASSWORD" />
       </form>
 
       <Link to="/login">Back to Sign in</Link>
