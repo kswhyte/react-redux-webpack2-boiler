@@ -3,8 +3,26 @@ import expect from 'expect';
 
 describe('Session Actions', () => {
   describe('Cancel Action', () => {
-    it('Should start a session successfully', () => {
+    it('Should start a session', () => {
       //Arrange
+      const data = {
+        Acknowledge: 'Start',
+        StatusCode: 1,
+        MessageTitle: 'Start Session',
+        MessageBody: 'Session started',
+        Data: null
+      };
+      let expectedAction = {
+        type: 'START_SESSION',
+        data
+      };
+      //Act
+      const action = actions.startSession(data);
+      //Assert
+      expect(action).toEqual(expectedAction);
+    });
+
+    it('Should start a session successfully', () => {
       const data = {
         Acknowledge: 'Success',
         StatusCode: 1,
@@ -17,10 +35,8 @@ describe('Session Actions', () => {
         data
       };
 
-      //Act
       const action = actions.startSessionSuccess(data);
 
-      //Assert
       expect(action).toEqual(expectedAction);
     });
 
@@ -50,17 +66,34 @@ describe('Session Actions', () => {
   });
 
   describe('Clicking Submit', () => {
+    it('Should execute startLogin action', () => {
+      const data = {
+        loginEmail: 'newagent@mailinator.com',
+        loginPassword: 'newpassword'
+      };
+      let expectedAction = {
+        type: 'START_LOGIN',
+        data
+      };
+
+      const action = actions.startLogin(data);
+
+      expect(action).toEqual(expectedAction);
+    });
 
     it('Should execute startLoginClick action and change route to home', () => {
       const data = {
         loginEmail: 'newagent@mailinator.com',
         loginPassword: 'newpassword'
       };
-
-      const routeAction =
-      const afterAction =
-
+      let expectedAction = {
+        type: 'START_LOGIN',
+        data
+      };
+      // const routeAction
+      // const afterAction
       const action = actions.startLoginClick(data);
+
       expect(action).toEqual(expectedAction);
 
 //ROUTES in react router for testing
@@ -112,10 +145,24 @@ describe('Session Actions', () => {
     });
 
     describe('When Successful', () => {
+      it('Should successfully login the user', () => {
+        const data = {
+          loginEmail: 'newagent@mailinator.com',
+          loginPassword: 'newpassword'
+        };
+        let expectedAction = {
+          type: 'LOGIN_SUCCESS',
+          data
+        };
+
+        const action = actions.loginSuccess(data);
+
+        expect(action).toEqual(expectedAction);
+      });
     });
 
     describe('When Unsuccessful', () => {
-      it('Should get back a 404 status code', () => {
+      it('Should get back a 404 status code indicating a failed login', () => {
         const err = `404 : Not Found`;
         let expectedAction = {
           type: 'LOGIN_FAIL',
