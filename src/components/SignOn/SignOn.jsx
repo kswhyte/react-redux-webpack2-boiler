@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-
-import HgButton from '@hg/three-ui/HgButton';
-
 import isEmail from '../../helpers/isEmail';
 
 import './sign-on.css';
