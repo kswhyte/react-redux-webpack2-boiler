@@ -16,7 +16,6 @@ describe('Session Actions', () => {
         MessageBody: 'Session started successfull (guid)',
         Data: null
       };
-
       let expectedAction = {
         type: 'START_SUCCESS',
         data
@@ -32,7 +31,6 @@ describe('Session Actions', () => {
     it('Should create an ERROR on start session', () => {
       //Arrange
       const err = `500 : Error on Start Session`;
-
       let expectedAction = {
         type: 'START_FAIL',
         err
@@ -48,7 +46,6 @@ describe('Session Actions', () => {
     it('Should create an ERROR on start session', () => {
       //Arrange
       const err = `500 : Timeout`;
-
       let expectedAction = {
         type: 'START_TIMEOUT',
         err
@@ -60,6 +57,10 @@ describe('Session Actions', () => {
       //Assert
       expect(action).toEqual(expectedAction);
     });
+  });
+
+  describe('Clicking Submit', () => {
+
     // it('Should store username and NOT the password in local storage, if not found in local storage', () => {
     //   let output = mount(signOnStory3);
     //   let loginInfo = {
@@ -103,5 +104,28 @@ describe('Session Actions', () => {
     //   // expect(output.find('#loginPassword').text()).toExist();
     //   // expect(output.find('#loginEmail').text()).toExist();
     // });
+  });
+  describe('Clicking Submit', () => {
+
+    describe('Remember Me', () => {
+    });
+    describe('When Successful', () => {
+    });
+    describe('When Unsuccessful', () => {
+    });
+    
+  });
+  describe('Log Out', () => {
+
+    describe('Clicking Logout', () => {
+    });
+    describe('Clicking Logout half way through a session', () => {
+
+      describe('Yes, Logout', () => {
+      });
+      describe('No, Stay', () => {
+      });
+    });
+
   });
 });
