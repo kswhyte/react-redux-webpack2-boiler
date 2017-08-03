@@ -1,12 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-
-<<<<<<< HEAD
-=======
-import HgButton from '@hg/three-ui/HgButton';
-
->>>>>>> origin/SWB-348-Design-Changes
 import isEmail from '../../helpers/isEmail';
 
 import './sign-on.css';

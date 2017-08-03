@@ -14,11 +14,17 @@ exports[`Dashboard page main error story 1`] = `
     </h2>
     <hr />
     <button
-      className="new-session-button primary"
+      className="new-session-button primary dashboard-button"
       onClick={[Function]}
       tabIndex="1"
     >
       Begin New Session
+    </button>
+    <button
+      className="dashboard-button primary"
+      tabIndex="1"
+    >
+      Manage My Account
     </button>
     <div
       className="error-container"
@@ -45,11 +51,17 @@ exports[`Dashboard page main story 1`] = `
     </h2>
     <hr />
     <button
-      className="new-session-button primary"
+      className="new-session-button primary dashboard-button"
       onClick={[Function]}
       tabIndex="1"
     >
       Begin New Session
+    </button>
+    <button
+      className="dashboard-button primary"
+      tabIndex="1"
+    >
+      Manage My Account
     </button>
     <div
       className="error-container"
@@ -72,11 +84,17 @@ exports[`Dashboard page timeout error story 1`] = `
     </h2>
     <hr />
     <button
-      className="new-session-button primary"
+      className="new-session-button primary dashboard-button"
       onClick={[Function]}
       tabIndex="1"
     >
       Begin New Session
+    </button>
+    <button
+      className="dashboard-button primary"
+      tabIndex="1"
+    >
+      Manage My Account
     </button>
     <div
       className="error-container"
