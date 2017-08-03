@@ -13,15 +13,6 @@ const ConfirmPatientInfo = () => {
       <h1>PatientName</h1>
       <PatientTabs />
       <div className="footer-line" />
-      <HgRow>
-        <div className="col-sm-3">
-          <HgButton className="back-btn" tabIndex={1} text="Begin New Session" />
-        </div>
-
-        <div className="col-sm-3">
-          <HgButton className="next-btn" tabIndex={1} text="Begin New Session" />
-        </div>
-      </HgRow>
     </div>
   );
 };
