@@ -6,6 +6,8 @@ import PatientInfo from '../PatientInfo';
 import PatientAppointments from '../PatientAppointments';
 import PatientNotes from '../PatientNotes';
 
+import './patient-tabs.css';
+
 const PatientTabs = props => {
   PatientTabs.propTypes = {
     children: PropTypes.object
@@ -29,6 +31,8 @@ const PatientTabs = props => {
           <Link to="/patientinfo/notes">Notes</Link>
         </li>
       </ul>
+      <div className="tabs-line" />
+      <div className="break-line" />
 
       <Route exact path="/patientinfo/generalinfo" component={PatientInfo} />
       <Route exact path="/patientinfo/appointments" component={PatientAppointments} />
