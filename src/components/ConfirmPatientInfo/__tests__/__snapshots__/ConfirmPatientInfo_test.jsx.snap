@@ -4,9 +4,6 @@ exports[`Story 1`] = `
 <div
   className="confirm-patient-info-wrapper"
 >
-  <h1>
-    PatientName
-  </h1>
   <div
     className="patient-tabs-wrapper"
   >
@@ -44,20 +41,40 @@ exports[`Story 1`] = `
         </a>
       </li>
     </ul>
+    <div
+      className="tabs-line"
+    />
+    <div
+      className="break-line"
+    />
   </div>
   <div
-    className="footer-line"
+    className="break-line footer-line"
   />
-  <div>
-    <div
-      className="col-sm-3"
-    >
-      <div />
-    </div>
-    <div
-      className="col-sm-3"
-    >
-      <div />
+  <div
+    className="button-wrapper"
+  >
+    <div>
+      <div
+        className="col-sm-6"
+      >
+        <button
+          className="back-btn"
+          tabIndex={1}
+        >
+          BACK
+        </button>
+      </div>
+      <div
+        className="col-sm-6"
+      >
+        <button
+          className="next-btn"
+          tabIndex={1}
+        >
+          NEXT
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -38,5 +38,11 @@ exports[`Story 1`] = `
       </a>
     </li>
   </ul>
+  <div
+    className="tabs-line"
+  />
+  <div
+    className="break-line"
+  />
 </div>
 `;

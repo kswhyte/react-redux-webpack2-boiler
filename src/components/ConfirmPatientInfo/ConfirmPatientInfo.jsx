@@ -14,13 +14,13 @@ const ConfirmPatientInfo = () => {
       <div className="break-line footer-line" />
       <div className="button-wrapper">
         <div>
-          <div className="col-sm-3">
+          <div className="col-sm-6">
             <button className="back-btn" tabIndex={1}>
               BACK
             </button>
           </div>
 
-          <div className="col-sm-3">
+          <div className="col-sm-6">
             <button className="next-btn" tabIndex={1}>
               NEXT
             </button>

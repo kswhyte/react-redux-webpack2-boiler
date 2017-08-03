@@ -10,7 +10,6 @@ exports[`Patient Info Story 1`] = `
     <div
       className="general-info-form tab-pane active"
     >
-      <hr />
       <form>
         <div>
           <div
