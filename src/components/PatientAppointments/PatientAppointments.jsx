@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
 
+import './patient-appointments.css';
+
 const PatientAppointments = props => {
   PatientAppointments.propTypes = {
     children: PropTypes.object,
@@ -61,9 +63,7 @@ const PastAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <tr>
-        <th colSpan={6}>Past Appointments</th>
-      </tr>
+      <th colSpan={6} className="past-appt-head">Past Appointments</th>
       {
         props.pastAppts.map(appt => {
           return (
@@ -89,9 +89,7 @@ const UpcomingAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <tr>
-        <th colSpan={6}>Upcoming Appointments</th>
-      </tr>
+      <th colSpan={6} className="upcoming-appt-head">Upcoming Appointments</th>
       {
         props.upcomingAppts.map(appt => {
           return (

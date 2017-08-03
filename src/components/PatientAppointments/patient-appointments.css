@@ -1,6 +1,43 @@
-.line {
-  background-image: image-set(url('~/images/line.png') 1x, url('~/images/line@2x.png') 2x);
-  width: 250px;
-  height: 50px;
-  background-repeat: no-repeat;
+@import "imports/_helpers.css";
+
+.patient-appointments-wrapper {
+    & .appt-tables {
+        margin-top: 40px;
+        width: 100%;
+    }
+    & .header-table th {
+        border-bottom: solid 3px var(--light-grey);
+    }
+    & .appt-tables th {
+        padding: 0px 20px 5px;
+        font-family: Open Sans;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+
+    & .appt-tables td,th {
+        width: (100%/6)%;
+    }
+    & .appt-tables td {
+        font-size: 12px;
+        padding: 20px 10px 20px;
+    }
+    & .appt-tables:not(:first-child) tr {
+        border-bottom: solid 2px var(--light-grey);
+    }
+
+}
+
+.upcoming-appt-head {
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--future-green);
+}
+.past-appt-head {
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--dull-orange);
 }
