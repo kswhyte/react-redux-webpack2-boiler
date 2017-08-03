@@ -37,9 +37,9 @@ stories.add('Sign On Page Elements', () => {
         let output = mount(signOnStory);
         expect(output.find('p').text()).toContain('Please enter your email address and password below');
       });
-      it('Should have two input form fields', () => {
+      it('Should have three input form fields', () => {
         let output = mount(signOnStory);
-        expect(output.find('input').length).toEqual(2);
+        expect(output.find('input').length).toEqual(3);
       });
       it('Should have two input form fields: username/email and password', () => {
         let output = mount(signOnStory);
