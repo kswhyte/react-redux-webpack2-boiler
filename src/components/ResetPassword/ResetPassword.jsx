@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 import HgRow from '@hg/three-ui/HgRow';
 import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
@@ -7,7 +8,7 @@ import HgButton from '@hg/three-ui/HgButton';
 
 import './reset-password.css';
 
-const ResetPassword = () => {
+const ResetPassword = props => {
   return (
     <div className="reset-password-wrapper">
       <h2>RESET YOUR PASSWORD</h2>
@@ -19,10 +20,14 @@ const ResetPassword = () => {
             <TextInput label="Your Email" placeholder="Your Email" />
           </div>
         </HgRow>
+<<<<<<< HEAD
+        <HgButton onClick={props.resetPassword} text="RESET PASSWORD" />
+=======
         {/* TODO: for RESET-btn, onClick sends a dispatch to
                   1. update client credentials
                   2. reroute to PassWordConfirm component */}
         <HgButton text="RESET PASSWORD" />
+>>>>>>> 5b94ac6909a337e2c326ad3eb0873e14a6e105af
       </form>
 
       <Link to="/login">Back to Sign in</Link>
@@ -30,6 +35,8 @@ const ResetPassword = () => {
   );
 };
 
-ResetPassword.propTypes = {};
+ResetPassword.propTypes = {
+  resetPassword: PropTypes.func.isRequired
+};
 
 export default ResetPassword;
