@@ -21,7 +21,6 @@ const PatientInfo = props => {
     <div className="patient-info-wrapper">
       <div className="tab-content clearfix">
         <div className="general-info-form tab-pane active">
-          <hr />
           <form>
             <HgRow>
               <div className="col-sm-3">
