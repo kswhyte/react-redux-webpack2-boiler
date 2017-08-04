@@ -4,6 +4,7 @@ import firePost from '../../tools/mocks/firePost';
 import resetPasswordRequest from '../actionRequests/mocks/resetPasswordRequest';
 import routeActions from './routeActions';
 import * as types from '../constants/actionTypes';
+import sStorage from '../../tools/sessionStorage_helper';
 
 const actions = {
   startSpinner: () => ({
@@ -83,6 +84,8 @@ const thunks = {
   },
   startLogoutClick: () => {
     return dispatch => {
+      sStorage.removeItem({ key: 'user'});
+      sStorage.removeItem({ key: 'isUserLoggedIn'});
       dispatch(actions.logoutSuccess());
       dispatch(routeActions.changeRoute({ route: '/login' }));
     };

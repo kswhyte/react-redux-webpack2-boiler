@@ -1,6 +1,75 @@
-.line {
-  background-image: image-set(url('~/images/line.png') 1x, url('~/images/line@2x.png') 2x);
-  width: 250px;
-  height: 50px;
-  background-repeat: no-repeat;
+@import "imports/_helpers.css";
+
+.patient-appointments-wrapper {
+
+    & .page-instructions {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    & .appt-tables {
+        margin-top: 20px;
+        width: 100%;
+    }
+    & .appt-tables:last-child {
+        margin-bottom: 40px;
+    }
+    & .header-table {
+        margin-top: 20px;
+    }
+    & .header-table th {
+        border-bottom: solid 3px var(--light-grey);
+    }
+    & .appt-tables th {
+        padding: 0px 20px 5px;
+        font-family: Open Sans;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+
+    & .appt-tables td {
+        width: 16.666%;
+    }
+    & .appt-tables td {
+        font-family: Open Sans;
+        font-size: 12px;
+        padding: 20px 10px 20px;
+        empty-cells: show;
+    }
+    & .appt-tables tr {
+        border-bottom: solid 2px var(--light-grey);
+    }
+
+    & td > button {
+        background: var(--white);
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 6px 20px;
+        font-family: 'Open Sans';
+        font-size: 10px;
+        line-height: 1;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0px;
+    }
+
+}
+
+.upcoming-appt-head {
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--future-green);
+}
+.past-appt-head {
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--dull-orange);
 }

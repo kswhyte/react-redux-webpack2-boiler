@@ -36,10 +36,11 @@ const timeoutProps = {
   history: {},
   userLoggedIn: true
 };
-
+/* may remove this d */
 const jest = jest || null;
 if(jest){
   window.sessionStorage = {
+
     setItem: function(){},
     getItem: function(){},
     removeItem: function(){}

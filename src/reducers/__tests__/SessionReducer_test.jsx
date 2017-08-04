@@ -117,12 +117,11 @@ describe('Session Reducer', () => {
 // console.log('2--------', newStore);
 //
 //     expect(
-//       sessionReducer(store, {
-//         type: types.LOGIN_SUCCESS,
-//         data: action.data
-//     })
-//   ).toEqual({
-//     newStore
-//   });
-// });
+//       sessionReducer([], {
+//         type: types.LOGIN_SUCCESS
+//       })
+//     ).toEqual({
+//       newStore
+//     });
+//  });
 });
