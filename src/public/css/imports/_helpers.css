@@ -21,6 +21,8 @@
   --icon-color: #a6afb0;
   --footer-line: #cad2da;
   --label-black: #5a5b5c;
+  --form-error-color: var(--dull-orange);
+  --future-green: #5ec23b;
 }
 
 :root {

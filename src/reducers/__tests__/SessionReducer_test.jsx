@@ -83,18 +83,19 @@ describe('Session Reducer', () => {
       message: action
     });
   });
-  it('should handle VALIDATION_ERROR', () => {
-    let action = {
-      data: undefined
-    }
-    expect(
-      sessionReducer([], {
-        type: types.VALIDATION_ERROR
-      })
-    ).toEqual({
-      validationMessage: action.data
-    });
-  });
+// __________________________________
+//   it('should handle VALIDATION_ERROR', () => {
+//     let action = {
+//       data: undefined
+//     }
+//     expect(
+//       sessionReducer([], {
+//         type: types.VALIDATION_ERROR
+//       })
+//     ).toEqual({
+//       validationMessage: action.data
+//     });
+//   });
 //   it('should handle LOGIN_SUCCESS', () => {
 //     let action = {
 //       data: {
@@ -106,10 +107,6 @@ describe('Session Reducer', () => {
 //       user: {}
 //     };
 //     let newStore = Object.assign({}, store);
-//
-// console.log('reducer--------', sessionReducer([], {
-//       type: types.LOGIN_SUCCESS
-//     }));
 //
 // console.log('1--------', newStore);
 //

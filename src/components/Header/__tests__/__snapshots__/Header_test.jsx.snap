@@ -36,7 +36,7 @@ exports[`Story 1`] = `
             className="fa fa-tachometer fa-2"
           />
           <div
-            className="text-small-o"
+            className="dashboard-text text-small-o"
           >
             Dashboard
           </div>
@@ -50,7 +50,7 @@ exports[`Story 1`] = `
             className="fa fa-cog fa-2"
           />
           <div
-            className="text-small-o"
+            className="settings-text text-small-o"
           >
             Settings
           </div>
@@ -89,6 +89,7 @@ exports[`Story 1`] = `
           |
         </div>
         <a
+          className="logout"
           href="#"
           onClick={[Function]}
         >

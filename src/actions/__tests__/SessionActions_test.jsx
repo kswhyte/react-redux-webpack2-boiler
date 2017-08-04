@@ -1,14 +1,30 @@
 import actions from '../SessionActions';
 import expect from 'expect';
 
-// let createSpy = expect.createSpy;
-// let spyOn = expect.spyOn;
-// let isSpy = expect.isSpy;
+import { Router, Route } from 'react-router-dom';
 
 describe('Session Actions', () => {
   describe('Cancel Action', () => {
-    it('Should start a session successfully', () => {
+    it('Should start a session', () => {
       //Arrange
+      const data = {
+        Acknowledge: 'Start',
+        StatusCode: 1,
+        MessageTitle: 'Start Session',
+        MessageBody: 'Session started',
+        Data: null
+      };
+      let expectedAction = {
+        type: 'START_SESSION',
+        data
+      };
+      //Act
+      const action = actions.startSession(data);
+      //Assert
+      expect(action).toEqual(expectedAction);
+    });
+
+    it('Should start a session successfully', () => {
       const data = {
         Acknowledge: 'Success',
         StatusCode: 1,
@@ -21,80 +37,102 @@ describe('Session Actions', () => {
         data
       };
 
-      //Act
       const action = actions.startSessionSuccess(data);
 
-      //Assert
       expect(action).toEqual(expectedAction);
     });
 
     it('Should create an ERROR on start session', () => {
-      //Arrange
       const err = `500 : Error on Start Session`;
       let expectedAction = {
         type: 'START_FAIL',
         err
       };
 
-      //Act
       const action = actions.startSessionFail(err);
 
-      //Assert
       expect(action).toEqual(expectedAction);
     });
 
     it('Should create an ERROR on start session', () => {
-      //Arrange
       const err = `500 : Timeout`;
       let expectedAction = {
         type: 'START_TIMEOUT',
         err
       };
 
-      //Act
       const action = actions.startSessionTimeout(err);
 
-      //Assert
       expect(action).toEqual(expectedAction);
     });
   });
 
   describe('Clicking Submit', () => {
+    it('Should execute startLogin action', () => {
+      const data = {
+        loginEmail: 'newagent@mailinator.com',
+        loginPassword: 'newpassword'
+      };
+      let expectedAction = {
+        type: 'START_LOGIN',
+        data
+      };
 
-    // it('Should store username and NOT the password in local storage, if not found in local storage', () => {
-    //   let output = mount(signOnStory3);
-    //   let loginInfo = {
+      const action = actions.startLogin(data);
+
+      expect(action).toEqual(expectedAction);
+    });
+// __________________________________
+    // it('Should execute startLoginClick action and change route to home', () => {
+    //   const data = {
     //     loginEmail: 'newagent@mailinator.com',
     //     loginPassword: 'newpassword'
     //   };
-    //
-    //   let spy = expect.createSpy();
-    //   window.localStorage.setItem('loginInfo', loginInfo);
-    //
-    //   spy();
-    //   output.find('.fa-check').simulate('click');
-    //   output.find('.hg-button').simulate('click');
-    //   expect(spy).toHaveBeenCalled();
-    //   expect(spy.calls.length).toEqual(1);
-    //   // expect(window.localStorage.getItem('')).toEqual('');
-    //
-    //   spy.restore();
-    //   expect.restoreSpies();
-    //   // TODO: need to actually set localStorage, then check it for added loginInfo credentials
-    // });
-
-    // it('Should send post with an object that contains username, password to endpoint', () => {
-    //   let output = mount(signOnStory2);
-    //   const userData = {
-    //     loginEmail: 'newagent@mailinator.com',
-    //     loginPassword: 'newpassword'
+    //   let expectedAction = {
+    //     type: 'START_LOGIN',
+    //     data
     //   };
-    //   let currentRoute = window.location;
+    //   // const routeAction
+    //   // const afterAction
+    //   const action = actions.startLoginClick(data);
     //
-    //   sessionActions.startLoginClick(userData);
-    //   // TODO: think about how to best check that the data is sent through with "startLoginClick(data)"
+    //   expect(action).toEqual(expectedAction);
+    //
+    //   let SignOn = React.createClass({
+    //     render: () => {
+    //       return (
+    //         <div className="row">
+    //           <h2>SIGN ON</h2>
+    //           <div className="page-instructions col-xs-offset-4 col-xs-4">
+    //             <p>Please enter your email address and password below.</p>
+    //           </div>
+    //         </div>
+    //       )
+    //     }
+    //   });
+    //
+    //   let location = createLocation('/');
+    //   let history = new MemoryHistory(['/']);
+    //
+    //   let tree = testRouterTree(
+    //     <Router history={history} location={location}>
+    //       <Route path='/' component={SignOn} />
+    //     </Router>
+    //   );
+    //
+    //   const testRouterTree = (router) => {
+    //     let oldRenderFn = router.type.prototype.render;
+    //     router.type.innerComponentRef = 'innerComponent';
+    //     router.type.prototype.render = () => {
+    //       var renderTree = oldRenderFn.apply(this, arguments);
+    //       return React.cloneElement(renderTree, {
+    //         ref: 'innerComponent'
+    //       });
+    //     };
+    //     return testTree(router);
+    //   }
     // });
-
+// __________________________________
     // it('Should check local storage; If the user login username is there, the username input field should be filled out', () => {
     //   let output = mount(signOnStory3);
     //   expect(output.find('#loginPassword').text()).toNotExist();
@@ -109,23 +147,65 @@ describe('Session Actions', () => {
 
     describe('Remember Me', () => {
     });
+
     describe('When Successful', () => {
+      it('Should successfully login the user', () => {
+        const data = {
+          loginEmail: 'newagent@mailinator.com',
+          loginPassword: 'newpassword'
+        };
+        let expectedAction = {
+          type: 'LOGIN_SUCCESS',
+          data
+        };
+
+        const action = actions.loginSuccess(data);
+
+        expect(action).toEqual(expectedAction);
+      });
     });
+
     describe('When Unsuccessful', () => {
+      it('Should get back a 404 status code indicating a failed login', () => {
+        const err = `404 : Not Found`;
+        let expectedAction = {
+          type: 'LOGIN_FAIL',
+          err
+        };
+
+        const action = actions.loginFail(err);
+
+        expect(action).toEqual(expectedAction);
+      });
     });
-    
   });
+
   describe('Log Out', () => {
+    it('Should execute logoutSuccess action', () => {
+      const data = {
+        loginEmail: 'newagent@mailinator.com',
+        loginPassword: 'newpassword'
+      };
+      let expectedAction = {
+        type: 'LOGOUT_SUCCESS',
+        data
+      };
+
+      const action = actions.logoutSuccess(data);
+
+      expect(action).toEqual(expectedAction);
+    });
 
     describe('Clicking Logout', () => {
     });
+
     describe('Clicking Logout half way through a session', () => {
 
       describe('Yes, Logout', () => {
       });
       describe('No, Stay', () => {
       });
-    });
 
+    });
   });
 });

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
 
+import './patient-appointments.css';
+
 const PatientAppointments = props => {
   PatientAppointments.propTypes = {
     children: PropTypes.object,
@@ -25,14 +27,23 @@ const PatientAppointments = props => {
     <div className="patient-appointments-wrapper">
       <div className="tab-content clearfix">
         <div className="patient-appointments-form tab-pane active">
-          {props.appointments.length === 0 && <h1>Patient has no appointment history</h1>}
+
+          {
+            (props.appointments.length === 0) && (
+              <div className="page-instructions">
+                <p>Patient has no appointment history</p>
+              </div>
+            )
+          }
           <table className="appt-tables header-table">
-            <th>Date</th>
-            <th>Time</th>
-            <th>Provider Name</th>
-            <th>Phone</th>
-            <th>Scheduler</th>
-            <th>Actions</th>
+            <thead>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Provider Name</th>
+              <th>Phone</th>
+              <th>Scheduler</th>
+              <th>Actions</th>
+            </thead>
           </table>
           {upcomingAppts.length > 0 && <UpcomingAppointments upcomingAppts={upcomingAppts} />}
           {pastAppts.length > 0 && <PastAppointments pastAppts={pastAppts} />}
@@ -48,25 +59,26 @@ const PastAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <tr>
-        <th colSpan={6}>Past Appointments</th>
-      </tr>
-      {props.pastAppts.map(appt => {
-        return (
-          <tr key={appt.appointmentID}>
-            <td>
-              {Moment(appt.appointmentDateTime).format('LL')}
-            </td>
-            <td>
-              {Moment(appt.appointmentDateTime).format('LT')}
-            </td>
-            <td>Dr Name Name</td>
-            <td>123-567-8910</td>
-            <td>Name</td>
-            <td />
-          </tr>
-        );
-      })}
+
+      <thead>
+        <th colSpan={6} className="past-appt-head">Past Appointments</th>
+      </thead>
+      <tbody>
+      {
+        props.pastAppts.map(appt => {
+          return (
+            <tr key={appt.appointmentID} >
+              <td>{Moment(appt.appointmentDateTime).format('LL')}</td>
+              <td>{Moment(appt.appointmentDateTime).format('LT')}</td>
+              <td>Dr Name Name</td>
+              <td>123-567-8910</td>
+              <td>Name</td>
+              <td></td>
+            </tr>
+          )
+        })
+      }
+      </tbody>
     </table>
   );
 };
@@ -77,27 +89,26 @@ const UpcomingAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <tr>
-        <th colSpan={6}>Upcoming Appointments</th>
-      </tr>
-      {props.upcomingAppts.map(appt => {
-        return (
-          <tr key={appt.appointmentID}>
-            <td>
-              {Moment(appt.appointmentDateTime).format('LL')}
-            </td>
-            <td>
-              {Moment(appt.appointmentDateTime).format('LT')}
-            </td>
-            <td>Dr Name Name</td>
-            <td>123-567-8910</td>
-            <td>Name</td>
-            <td>
-              <button className="primary">Cancel</button>
-            </td>
-          </tr>
-        );
-      })}
+
+      <thead>
+        <th colSpan={6} className="upcoming-appt-head">Upcoming Appointments</th>
+      </thead>
+      <tbody>
+      {
+        props.upcomingAppts.map(appt => {
+          return (
+            <tr key={appt.appointmentID} >
+              <td>{Moment(appt.appointmentDateTime).format('LL')}</td>
+              <td>{Moment(appt.appointmentDateTime).format('LT')}</td>
+              <td>Dr Name Name</td>
+              <td>123-567-8910</td>
+              <td>Name</td>
+              <td><button>CANCEL</button></td>
+            </tr>
+          )
+        })
+      }
+      </tbody>
     </table>
   );
 };
