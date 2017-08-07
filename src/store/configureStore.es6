@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from '../reducers/index';
+import patientAppointmentsReducer from '../reducers/patientAppointments';
 import InitialStore from '../store/initalStore';
 import logger from 'redux-logger';
 
