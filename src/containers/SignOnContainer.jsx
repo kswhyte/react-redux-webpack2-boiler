@@ -9,16 +9,16 @@ import routerActions from '../actions/routeACtions';
 
 import sessionActions from '../actions/SessionActions';
 
-let createHandlers = function(dispatch) {
-  let submitLogin = function(data) {
+let createHandlers = dispatch => {
+  let submitLogin = data => {
     dispatch(sessionActions.startLoginClick(data));
   };
 
-  let validationError = function(data) {
+  let validationError = data => {
     dispatch(sessionActions.validationError(data));
   };
 
-  let resetPassword = function(data) {
+  let resetPassword = data => {
     dispatch(sessionActions.startResetPasswordClick(data));
   };
 
