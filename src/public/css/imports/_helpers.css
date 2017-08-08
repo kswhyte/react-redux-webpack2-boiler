@@ -28,6 +28,29 @@
 :root {
   --font-weight: 300;
   --line-height: 1.5;
+  --linkFontSize: 100%;
+}
+
+@keyframes attention-animation {
+  0% {
+    font-size: var(--linkFontSize);
+  }
+  25% {
+    font-size: calc(var(--linkFontSize) * 1.5);
+  }
+  50% {
+    font-size: var(--linkFontSize);
+  }
+  75% {
+    font-size: calc(var(--linkFontSize) * 1.5);
+  }
+  100% {
+    font-size: var(--linkFontSize);
+  }
+}
+
+.attention-animation {
+  animation: attention-animation 4s 1;
 }
 
 .no-margin {

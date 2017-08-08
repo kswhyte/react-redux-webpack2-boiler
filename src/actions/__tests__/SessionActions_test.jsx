@@ -1,7 +1,6 @@
 import actions from '../SessionActions';
 import expect from 'expect';
-
-import { Router, Route } from 'react-router-dom';
+// import { Router, Route } from 'react-router-dom';
 
 describe('Session Actions', () => {
   describe('Cancel Action', () => {

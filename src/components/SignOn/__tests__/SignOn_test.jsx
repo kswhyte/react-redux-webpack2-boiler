@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
 import SignOn from '../SignOn';
 
@@ -15,12 +17,14 @@ const stories = storiesOf('SignOn', module);
 
 stories.add('Sign On Page Elements', () => {
   const props = {
+    submitLogin: function(){},
+    validationError: function(){},
     validationMessage: 'Please enter a valid email'
   };
 
   const signOnStory = (
     <StaticRouter {...props} context={{}}>
-      <SignOn />
+      <SignOn {...props} />
     </StaticRouter>
   );
 
@@ -42,7 +46,6 @@ stories.add('Sign On Page Elements', () => {
         let output = mount(signOnStory);
         expect(output.find('.sign-on-wrapper').length).toEqual(1);
       });
-
       it('Should have a header element that says "Sign On"', () => {
         let output = mount(signOnStory);
         expect(output.find('h2').text()).toContain('SIGN ON');
@@ -70,9 +73,19 @@ stories.add('Sign On Page Elements', () => {
         expect(output.find('a').length).toEqual(1);
         expect(output.find('a').text()).toContain('Forgot your password?');
       });
+      it('Should mount SignOn component with 0 loginAttempts"', () => {
+        let output = mount(signOnStory);
+
+        output.setState({loginAttempts: 1})
+        expect(output.find('.attention-animation').length).toEqual(0)
+        console.log('1----outputsetstate', output.state());
+
+        output.find('.primary').simulate('click');
+        output.find('.primary').simulate('click');
+        expect(output.find('.attention-animation').length).toEqual(1)
+      });
       // it('If Unsuccessful, Should display an error message with red text above the form."', () => {
       //   let output = mount(signOnStory);
-      //   output.find('.primary').simulate('click');
       //   expect(output.find('h5').text()).toContain('Must enter a valid email.');
       // });
       // it('Should display red text and bottom border for username and password if no text is present in form inputs"', () => {

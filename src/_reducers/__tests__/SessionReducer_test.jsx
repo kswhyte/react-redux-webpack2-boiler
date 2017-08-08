@@ -17,6 +17,7 @@ describe('Session Reducer', () => {
       showSpinner: true
     });
   });
+
   it('should handle STOP_SPINNER', () => {
     expect(
       sessionReducer([], {
@@ -26,6 +27,7 @@ describe('Session Reducer', () => {
       showSpinner: false
     });
   });
+
   it('should handle START_FAIL', () => {
     expect(
       sessionReducer([], {
@@ -35,6 +37,7 @@ describe('Session Reducer', () => {
       startError: 'ERROR'
     });
   });
+
   it('should handle START_TIMEOUT', () => {
     expect(
       sessionReducer([], {
@@ -44,6 +47,7 @@ describe('Session Reducer', () => {
       startError: 'TIMEOUT'
     });
   });
+
   it('should handle START_SUCCESS', () => {
     expect(
       sessionReducer([], {
@@ -53,6 +57,7 @@ describe('Session Reducer', () => {
       startError: null
     });
   });
+
   it('should handle START_SESSION', () => {
     expect(
       sessionReducer([], {
@@ -62,6 +67,7 @@ describe('Session Reducer', () => {
       startError: null
     });
   });
+
   it('should handle START_LOGIN', () => {
     expect(
       sessionReducer([], {
@@ -72,30 +78,39 @@ describe('Session Reducer', () => {
       validationMessage: ''
     });
   });
+
   it('should handle LOGIN_FAIL', () => {
-    let action = { type: 'LOGIN_FAIL' };
+    let action = {
+      type: 'LOGIN_FAIL',
+       err: {
+         validationMessage: "Testing"
+        }
+    };
     expect(
       sessionReducer([], {
-        type: types.LOGIN_FAIL
+        type: types.LOGIN_FAIL,
+        validationMessage: "Testing"
       })
     ).toEqual({
       loginError: 'ERROR',
-      message: action
+      validationMessage: action.err.validationMessage
+    });
+  });
+
+  it('should handle VALIDATION_ERROR', () => {
+    let action = {
+      data: undefined
+    }
+    expect(
+      sessionReducer([], {
+        type: types.VALIDATION_ERROR
+      })
+    ).toEqual({
+      validationMessage: action.data
     });
   });
 // __________________________________
-//   it('should handle VALIDATION_ERROR', () => {
-//     let action = {
-//       data: undefined
-//     }
-//     expect(
-//       sessionReducer([], {
-//         type: types.VALIDATION_ERROR
-//       })
-//     ).toEqual({
-//       validationMessage: action.data
-//     });
-//   });
+
 //   it('should handle LOGIN_SUCCESS', () => {
 //     let action = {
 //       data: {
@@ -124,4 +139,9 @@ describe('Session Reducer', () => {
 //       newStore
 //     });
 //  });
+// __________________________________
+
+  // it('should handle LOGOUT_SUCCESS', () => {
+  //
+  // });
 });
