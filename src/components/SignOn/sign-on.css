@@ -49,6 +49,11 @@
     color: var(--form-error-color);
   }
 
+  & .input-error {
+    color: var(--form-error-color);
+    border-bottom: solid 1px var(--form-error-color) !important;
+  }
+
   & .remember-me-row {
     margin-top: 35px;
   }
