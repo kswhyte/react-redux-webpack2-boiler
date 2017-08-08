@@ -1,6 +1,7 @@
 import actions from '../../actions/SessionActions';
 import { URI } from '../../../tools/app_config';
 import Moment from 'moment';
+import routeActions from '../../actions/routeActions';
 
 const startSessionRequest = (dispatch, ...args) => {
     const hostedUrlPath = URI.baseUISVC_URI;
@@ -31,7 +32,7 @@ const startSessionRequest = (dispatch, ...args) => {
           }
         };
       dispatch(actions.startSessionSuccess(_res.body));
-      window.location.assign('/patientsearch/');
+      dispatch(routeActions.changeRoute({ route: '/patientsearch/' }));
 
 
 
