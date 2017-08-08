@@ -42,7 +42,6 @@ exports[`Sign On Page Elements 1`] = `
           placeholder="Your Email Address"
           required={true}
           type="text"
-          value=""
         />
       </div>
       <div
