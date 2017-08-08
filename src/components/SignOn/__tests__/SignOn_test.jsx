@@ -9,6 +9,8 @@ import { shallow, mount } from 'enzyme';
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 import { StaticRouter } from 'react-router';
 
+import localStorage from 'mock-local-storage'
+
 const stories = storiesOf('SignOn', module);
 
 stories.add('Sign On Page Elements', () => {
@@ -21,6 +23,9 @@ stories.add('Sign On Page Elements', () => {
       <SignOn />
     </StaticRouter>
   );
+
+  global.window = {}
+  window.localStorage = global.localStorage
 
   const jest = jest || null;
   if(jest){
@@ -70,10 +75,17 @@ stories.add('Sign On Page Elements', () => {
       //   output.find('.primary').simulate('click');
       //   expect(output.find('h5').text()).toContain('Must enter a valid email.');
       // });
-      it('Should display red text and bottom border for username and password if no text is present in form inputs"', () => {
-        let output = mount(signOnStory);
+      // it('Should display red text and bottom border for username and password if no text is present in form inputs"', () => {
+        // this.setState({ loginEmail: 'username.com' });
+        // output.find('.primary').simulate('click');
+        // expect(output.find('.validation-error').length).toEqual(1);
         // TODO: create functionality for making text red when no text is present
-      });
+      // });
+      // it('Should retrieve data from localStorage onMount"', () => {
+      //   let output = mount(signOnStory);
+      //   let storedEmail = localStorage.getItem('userEmail');
+      //   expect(storedEmail).toEqual('');
+      // });
     })
   );
   return signOnStory;
