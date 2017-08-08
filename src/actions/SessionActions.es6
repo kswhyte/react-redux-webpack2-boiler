@@ -79,7 +79,7 @@ const thunks = {
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
-      dispatch(routeActions.changeRoute({ route: '/' }));
+
     };
   },
   startLogoutClick: () => {

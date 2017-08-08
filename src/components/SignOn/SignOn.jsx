@@ -19,6 +19,7 @@ class SignOn extends Component {
       rememberMeValue: 'off'
     };
     this.rememberMe = this.rememberMe.bind(this);
+    this.handleInputEmailChange = this.handleInputEmailChange.bind(this);
   }
 
   componentDidMount() {
@@ -28,8 +29,11 @@ class SignOn extends Component {
         loginEmail: storedUserEmail,
         rememberMeValue: 'on'
       });
-      // document.querySelector('#loginEmail').value = storedUserEmail
     }
+  }
+
+  handleInputEmailChange(e){
+     this.setState({ loginEmail: e.target.value });
   }
 
   rememberMe() {
@@ -86,9 +90,7 @@ class SignOn extends Component {
                   this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
                 }
                 value={this.state.loginEmail}
-                onChange={e => {
-                  this.setState({ loginEmail: e.target.value });
-                }}
+                onChange={this.handleInputEmailChange}
                 type="text"
                 id="loginEmail"
                 placeholder="Your Email Address"

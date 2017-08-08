@@ -18,7 +18,7 @@ const sessionReducer = (store = {}, action) => {
     case types.START_LOGIN:
       return Object.assign({}, store, { loginError: null, validationMessage: '' });
     case types.LOGIN_FAIL:
-      return Object.assign({}, store, { loginError: 'ERROR', message: action });
+      return Object.assign({}, store, { loginError: 'ERROR', validationMessage: action.err.validationMessage });
     case types.VALIDATION_ERROR:
       return Object.assign({}, store, { validationMessage: action.data });
     case types.LOGIN_SUCCESS: {

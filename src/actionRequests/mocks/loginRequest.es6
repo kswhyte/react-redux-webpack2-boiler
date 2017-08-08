@@ -1,6 +1,8 @@
+/*eslint no-unused-vars: */
 import actions from '../../actions/SessionActions';
 import { URI } from '../../../tools/app_config';
-// import routeActions from './routeActions';
+import * as errors from '../../constants/errors';
+import routeActions from '../../actions/routeActions';
 import sStorage from '../../../tools/sessionStorage_helper';
 
 const loginRequest = (dispatch, ...args) => {
@@ -32,17 +34,15 @@ const loginRequest = (dispatch, ...args) => {
     sStorage.setItem({ key: 'user', value: JSON.stringify(_res.body) });
     sStorage.setItem({ key: 'isUserLoggedIn', value: true });
     dispatch(actions.loginSuccess(_res.body));
+    dispatch(routeActions.changeRoute({ route: '/' }));
 
-    /* // FOR TESTING ERRORS
-      _res.err = {
 
-      };
-      dispatch(actions.loginFail(_res.err));
-      */
 
-    //use routes instead of window.location
-    ///window.location.assign('/');
-    // dispatch(routeActions.changeRoute({ route: '/' }));
+
+     // FOR TESTING ERRORS
+
+     // dispatch(actions.loginFail({validationMessage: errors.GENERIC_LOGIN_FAILURE_MESSAGE}));
+
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };
