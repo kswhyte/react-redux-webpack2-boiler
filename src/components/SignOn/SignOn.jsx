@@ -78,7 +78,7 @@ class SignOn extends Component {
               <label forHtml="loginEmail">USER NAME (EMAIL)</label>
               <input
                 className={this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'}
-                value={this.state.loginEmail}
+
                 type="text"
                 id="loginEmail"
                 placeholder="Your Email Address"
