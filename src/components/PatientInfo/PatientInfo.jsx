@@ -1,3 +1,5 @@
+/*eslint no-unused-vars: */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -11,11 +13,6 @@ const PatientInfo = props => {
   PatientInfo.propTypes = {
     children: PropTypes.object
   };
-
-  const check = () => {
-    console.log(props);
-  };
-  check();
 
   return (
     <div className="patient-info-wrapper">

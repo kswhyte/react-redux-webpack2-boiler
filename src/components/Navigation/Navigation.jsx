@@ -1,3 +1,5 @@
+/*eslint no-unused-vars: */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -8,10 +10,6 @@ const Navigation = props => {
     children: PropTypes.object
   };
 
-  const check = () => {
-    console.log(props);
-  };
-  check();
   return (
     <nav className="navigation-wrapper">
       <h1>Navigation</h1>

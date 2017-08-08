@@ -1,3 +1,5 @@
+/*eslint no-unused-vars: */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 // import Moment from 'moment';
@@ -6,11 +8,6 @@ const PatientNotes = props => {
   PatientNotes.propTypes = {
     children: PropTypes.object
   };
-
-  const check = () => {
-    console.log(props);
-  };
-  check();
 
   // const existingNotes = props.appointments.filter(note => {
   //   return Moment(note.noteDateTime) < Moment();

@@ -3,7 +3,7 @@ import { URI } from '../../../tools/app_config';
 // import routeActions from './routeActions';
 import sStorage from '../../../tools/sessionStorage_helper';
 
-const loginRequest = (dispatch, ...args) => {
+const loginRequest = dispatch => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const postRoute = '/#fake';
   const postModel = {
@@ -14,7 +14,6 @@ const loginRequest = (dispatch, ...args) => {
   };
 
   const requestEnd = () => {
-    console.log('---- args : ', args);
     const _res = {
       body: {
         access_token:

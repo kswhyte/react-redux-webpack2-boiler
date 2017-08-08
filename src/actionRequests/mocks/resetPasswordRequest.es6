@@ -1,3 +1,5 @@
+/*eslint no-unused-vars: */
+
 import actions from '../../actions/SessionActions';
 import { URI } from '../../../tools/app_config';
 import routeActions from '../../actions/routeActions';
@@ -10,7 +12,6 @@ const loginRequest = (dispatch, ...args) => {
   };
 
   const requestEnd = () => {
-    console.log('---- args : ', args);
     const _res = {
       body: {
         result: 'success'

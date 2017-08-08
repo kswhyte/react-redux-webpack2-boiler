@@ -28,15 +28,14 @@ class SignOn extends Component {
         loginEmail: storedUserEmail,
         rememberMeValue: 'on'
       });
-      // document.querySelector('#loginEmail').value = storedUserEmail
     }
   }
 
   rememberMe() {
-    let user_supplied_email_value = escape(document.querySelector('#loginEmail').value);
+    let userEmailValue = escape(document.querySelector('#loginEmail').value);
     if (this.state.rememberMeValue === 'off') {
       this.setState({ rememberMeValue: 'on' });
-      localStorage.setItem('userEmail', user_supplied_email_value);
+      localStorage.setItem('userEmail', userEmailValue);
     } else {
       this.setState({ rememberMeValue: 'off' });
       localStorage.removeItem('userEmail');
