@@ -24,18 +24,21 @@ class SignOn extends Component {
   componentDidMount() {
     const storedUserEmail = localStorage.getItem('userEmail');
     if (storedUserEmail !== null && storedUserEmail !== undefined && storedUserEmail !== '') {
-      this.setState({ loginEmail: storedUserEmail });
-      this.setState({rememberMeValue: 'on'});
+      this.setState({
+        loginEmail: storedUserEmail,
+        rememberMeValue: 'on'
+      });
+      // document.querySelector('#loginEmail').value = storedUserEmail
     }
   }
 
-  rememberMe(){
+  rememberMe() {
     let user_supplied_email_value = escape(document.querySelector('#loginEmail').value);
-    if(this.state.rememberMeValue === 'off'){
-       this.setState({rememberMeValue: 'on'});
-       localStorage.setItem('userEmail', user_supplied_email_value);
+    if (this.state.rememberMeValue === 'off') {
+      this.setState({ rememberMeValue: 'on' });
+      localStorage.setItem('userEmail', user_supplied_email_value);
     } else {
-      this.setState({rememberMeValue: 'off'});
+      this.setState({ rememberMeValue: 'off' });
       localStorage.removeItem('userEmail');
     }
   }
@@ -63,7 +66,9 @@ class SignOn extends Component {
             const loginPassword = escape(document.querySelector('#loginPassword').value);
             const emailValidation = isEmail(loginEmail);
             if (!emailValidation) {
-              this.props.validationError('Must enter a valid email.');
+              this.props.validationError(
+                'The information entered is not recognized. Please enter a valid username and password.'
+              );
               return;
             }
             const data = {
@@ -77,8 +82,13 @@ class SignOn extends Component {
             <div className="col-sm-6 input-row">
               <label forHtml="loginEmail">USER NAME (EMAIL)</label>
               <input
-                className={this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'}
-
+                className={
+                  this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
+                }
+                value={this.state.loginEmail}
+                onChange={e => {
+                  this.setState({ loginEmail: e.target.value });
+                }}
                 type="text"
                 id="loginEmail"
                 placeholder="Your Email Address"
@@ -97,7 +107,6 @@ class SignOn extends Component {
               />
             </div>
           </div>
-          <label>Remember Me</label>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
               <button className="primary">SIGN ON</button>
@@ -105,9 +114,7 @@ class SignOn extends Component {
                 <input
                   className="remember-checkbox"
                   checked={this.state.rememberMeValue === 'on' ? 'checked' : ''}
-                  onClick={() => {
-                    this.rememberMe();
-                  }}
+                  onClick={this.rememberMe}
                   id="remember-checkbox"
                   type="checkbox"
                 />
