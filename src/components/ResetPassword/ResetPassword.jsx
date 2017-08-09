@@ -2,30 +2,45 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-import HgRow from '@hg/three-ui/HgRow';
-import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
-
 import './reset-password.css';
 
 const ResetPassword = props => {
   return (
-    <div className="reset-password-wrapper">
+    <div className="reset-password-wrapper card">
+      <img src="images/pattern-dots.png" className="dots-pattern" />
       <h2>RESET YOUR PASSWORD</h2>
-      <h3>Just enter your email and we&#39;ll send you instructions.</h3>
+      <div className="page-instructions col-xs-offset-3 col-xs-6">
+        <p>Just enter your email and we&#39;ll send you instructions.</p>
+      </div>
 
       <form>
-        <HgRow>
-          <div className="col-sm-6">
-            <TextInput label="Your Email" placeholder="Your Email" />
+        <div className="row lg-spacer">
+          <div className="col-sm-offset-3 col-sm-6 input-row">
+            <input
+              id="reset-email"
+              className="form-group hg-input v2"
+              type="text"
+              placeholder="Your Email Address"
+              label="Your Email"
+              required
+            />
           </div>
-        </HgRow>
+        </div>
         {/* TODO: for RESET-btn, onClick sends a dispatch to
                   1. update client credentials
                   2. reroute to PassWordConfirm component */}
-        <button onClick={props.resetPassword}>RESET PASSWORD</button>
+        <div className="row lg-spacer">
+          <div className="col-xs-offset-3 col-xs-6">
+            <button className="primary" onClick={props.resetPassword}>
+              RESET PASSWORD
+            </button>
+          </div>
+        </div>
       </form>
 
-      <Link to="/login">Back to Sign in</Link>
+      <div className="row back-to-sign-in-row">
+        <Link to="/login">Back to Sign in</Link>
+      </div>
     </div>
   );
 };

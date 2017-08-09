@@ -24,6 +24,32 @@ stories.add('ResetPassword Page Story', () => {
         let output = mount(resetPasswordStory);
         expect(output.find('.reset-password-wrapper').length).toEqual(1);
       });
+      it('Should have a header element that says "Reset Your Password"', () => {
+        let output = mount(resetPasswordStory);
+        expect(output.find('h2').text()).toContain('RESET YOUR PASSWORD');
+      });
+      it('Should have a <p> tag that says "Just enter your email address and we\'ll send you instructions"', () => {
+        let output = mount(resetPasswordStory);
+        expect(output.find('p').text()).toContain('Just enter your email and we\'ll send you instructions.');
+      });
+      it('Should have one input form field', () => {
+        let output = mount(resetPasswordStory);
+        expect(output.find('input').length).toEqual(1);
+      });
+      it('Should have one input form field: username/email', () => {
+        let output = mount(resetPasswordStory);
+        expect(output.find('#reset-email').length).toEqual(1);
+      });
+      it('Should have one call-to-action "Reset Password" submit button', () => {
+        let output = mount(resetPasswordStory);
+        expect(output.find('button').length).toEqual(1);
+        expect(output.find('.primary').length).toEqual(1);
+      });
+      it('Should have one link: "Back to Sign in"', () => {
+        let output = mount(resetPasswordStory);
+        expect(output.find('a').length).toEqual(1);
+        expect(output.find('a').text()).toContain('Back to Sign in');
+      });
     })
   );
   return resetPasswordStory;

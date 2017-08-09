@@ -2,7 +2,7 @@
 
 exports[`Sign On Page Elements 1`] = `
 <div
-  className="sign-on-wrapper"
+  className="sign-on-wrapper card"
 >
   <img
     className="dots-pattern"
@@ -36,9 +36,11 @@ exports[`Sign On Page Elements 1`] = `
       className="row md-spacer"
     >
       <div
-        className="col-sm-6 input-row"
+        className="col-sm-offset-1 col-sm-5 input-row"
       >
-        <label>
+        <label
+          forHtml="loginEmail"
+        >
           USER NAME (EMAIL)
         </label>
         <input
@@ -52,9 +54,11 @@ exports[`Sign On Page Elements 1`] = `
         />
       </div>
       <div
-        className="col-sm-6 input-row"
+        className="col-sm-5 input-row"
       >
-        <label>
+        <label
+          forHtml="loginPassword"
+        >
           PASSWORD
         </label>
         <input
@@ -80,16 +84,17 @@ exports[`Sign On Page Elements 1`] = `
           SIGN ON
         </button>
         <div
-          className="row remember-me-row"
+          className="row checkbox-row"
         >
           <input
             checked=""
-            className="remember-checkbox"
+            className="checkbox"
             id="remember-checkbox"
             onClick={[Function]}
             type="checkbox"
           />
           <label
+            className="checkbox-label"
             htmlFor="remember-checkbox"
           >
             Remember Me

@@ -62,7 +62,7 @@ class SignOn extends Component {
 
   render() {
     return (
-      <div className="sign-on-wrapper">
+      <div className="sign-on-wrapper card">
         <img src="images/pattern-dots.png" className="dots-pattern" />
         <div className="row">
           <h2>SIGN ON</h2>
@@ -96,8 +96,8 @@ class SignOn extends Component {
           }}
         >
           <div className="row md-spacer">
-            <div className="col-sm-6 input-row">
-              <label>USER NAME (EMAIL)</label>
+            <div className="col-sm-offset-1 col-sm-5 input-row">
+              <label forHtml="loginEmail">USER NAME (EMAIL)</label>
               <input
                 id="loginEmail"
                 type="text"
@@ -110,8 +110,8 @@ class SignOn extends Component {
                 required
               />
             </div>
-            <div className="col-sm-6 input-row">
-              <label>PASSWORD</label>
+            <div className="col-sm-5 input-row">
+              <label forHtml="loginPassword">PASSWORD</label>
               <input
                 id="loginPassword"
                 className={
@@ -126,18 +126,18 @@ class SignOn extends Component {
           </div>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
-              <button className="primary" onClick={this.checkLoginAttempts}>
-                SIGN ON
-              </button>
-              <div className="row remember-me-row">
+              <button onClick={this.checkLoginAttempts} className="primary">SIGN ON</button>
+              <div className="row checkbox-row">
                 <input
-                  className="remember-checkbox"
+                  className="checkbox"
                   checked={this.state.rememberMeValue === 'on' ? 'checked' : ''}
                   onClick={this.rememberMe}
                   id="remember-checkbox"
                   type="checkbox"
                 />
-                <label htmlFor="remember-checkbox">Remember Me</label>
+                <label className="checkbox-label" htmlFor="remember-checkbox">
+                  Remember Me
+                </label>
               </div>
               <div className="row forgot-password-row">
                 <Link className={this.state.loginAttempts >= 2 ? 'attention-animation' : ''} to="/resetpassword">

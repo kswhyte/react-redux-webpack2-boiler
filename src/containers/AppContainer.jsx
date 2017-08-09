@@ -32,7 +32,6 @@ let createHandlers = function(dispatch) {
   let logOutUser = function(){
     dispatch(sessionActions.startLogoutClick());
   }
-
   return {
     startSessionClick,
     toggleHeader,
@@ -47,7 +46,7 @@ const proptypes = {
   startError: PropTypes.string,
   user: PropTypes.object,
   sessionStarted: PropTypes.bool,
-  currentModal : PropTypes.string
+  currentModal: PropTypes.string
 };
 class App extends Component {
   constructor(props) {
