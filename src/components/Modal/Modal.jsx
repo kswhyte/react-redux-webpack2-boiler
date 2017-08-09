@@ -47,7 +47,7 @@ class Modal extends Component {
 
               {this.props.buttons.map((button, index) => {
                return <button
-                id={`modal-button-${index}`}
+                key={`modal-button-${index}`}
                 type="button"
                 onClick={() => {
                   this.props.closButtonOnClick()
