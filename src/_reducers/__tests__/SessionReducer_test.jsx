@@ -73,14 +73,20 @@ describe('Session Reducer', () => {
     });
   });
   it('should handle LOGIN_FAIL', () => {
-    let action = { type: 'LOGIN_FAIL' };
+    let action = {
+      type: 'LOGIN_FAIL',
+       err: {
+         validationMessage: "Testing"
+        }
+    };
     expect(
       sessionReducer([], {
-        type: types.LOGIN_FAIL
+        type: types.LOGIN_FAIL,
+        validationMessage: "Testing"
       })
     ).toEqual({
       loginError: 'ERROR',
-      message: action
+      validationMessage: action.err.validationMessage
     });
   });
 // __________________________________

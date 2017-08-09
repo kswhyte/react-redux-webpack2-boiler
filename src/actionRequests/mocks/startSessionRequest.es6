@@ -34,6 +34,14 @@ const startSessionRequest = (dispatch, ...args) => {
     };
     dispatch(actions.startSessionSuccess(_res.body));
     dispatch(routeActions.changeRoute({ route: '/patientsearch/' }));
+
+
+    // const _err = {
+    //   body: {
+    //     message: 'Mocked Data'
+    //   }
+    // };
+    // dispatch(actions.startSessionFail({}));
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };
