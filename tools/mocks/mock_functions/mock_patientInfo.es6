@@ -12,28 +12,28 @@ console.log(chalk.blue('---------------------------------'));
 const patientInfoActions_filePath = './src/actions/PatientInfoActions.es6';
 let patientInfoActionsSelector = fs.readFileSync(patientInfoActions_filePath, {encoding: 'utf8'});
 
-let patientSearchImport, firePostImport;
+let patientInfoImport, fireGetImport;
 
 if(toggle === "add"){
-   patientSearchImport = "import patientSearchRequest from '../actionRequests/mocks/patientInfoRequest';";
-   firePostImport = "import firePost from '../../tools/mocks/firePost';"
+   patientInfoImport = "import getPatientInfoRequest from '../actionRequests/mocks/patientInfoRequest';";
+   fireGetImport = "import fireGet from '../../tools/mocks/fireGet';"
 } else if(toggle === "remove"){
-   patientSearchImport = "import patientSearchRequest from '../actionRequests/patientInfoRequest';";
-   firePostImport = "import firePost from '../../tools/firePost';"
+   patientInfoImport = "import getPatientInfoRequest from '../actionRequests/patientInfoRequest';";
+   fireGetImport = "import fireGet from '../../tools/fireGet';"
 } else {
   throw Error("add or remove | these are the only two options. ");
 }
 
 console.log(chalk.blue('---------------------------------'));
-console.log(chalk.green('--> Building folder path : '), chalk.yellow(patientSearchImport));
+console.log(chalk.green('--> Building folder path : '), chalk.yellow(patientInfoImport));
 
-console.log(chalk.green('--> Building folder path : '), chalk.yellow(firePostImport));
+console.log(chalk.green('--> Building folder path : '), chalk.yellow(fireGetImport));
 console.log(chalk.blue('---------------------------------'));
 
 let patientInfoActionsParts = patientInfoActionsSelector.split('\n');
 
 let patientInfoActionsPart_filter = patientInfoActionsParts.filter(function filterOutDataThatNeedsHardcoding(line){
-    let regexStartSession = /(import patientSearchRequest|import firePost)/g;
+    let regexStartSession = /(import getPatientInfoRequest|import fireGet)/g;
     if(line.match(regexStartSession)){
         return false;
     } else {
@@ -42,8 +42,8 @@ let patientInfoActionsPart_filter = patientInfoActionsParts.filter(function filt
 });
 
 let patientInfoActionsPartsAppended = [
-    patientSearchImport,
-    firePostImport,
+    patientInfoImport,
+    fireGetImport,
     ...patientInfoActionsPart_filter
 ];
 

@@ -77,9 +77,9 @@ const PastAppointments = props => {
             <tr key={appt.appointmentID} >
               <td>{Moment(appt.appointmentDateTime).format('LL')}</td>
               <td>{Moment(appt.appointmentDateTime).format('LT')}</td>
-              <td>Dr Name Name</td>
-              <td>123-567-8910</td>
-              <td>Name</td>
+              <td>{appt.providerName}</td>
+              <td>{appt.officePhone}</td>
+              <td>{appt.agentName}</td>
               <td></td>
             </tr>
           )
@@ -107,9 +107,9 @@ const UpcomingAppointments = props => {
             <tr key={appt.appointmentID} >
               <td>{Moment(appt.appointmentDateTime).format('LL')}</td>
               <td>{Moment(appt.appointmentDateTime).format('LT')}</td>
-              <td>Dr Name Name</td>
-              <td>123-567-8910</td>
-              <td>Name</td>
+              <td>{appt.providerName}</td>
+              <td>{appt.officePhone}</td>
+              <td>{appt.agentName}</td>
               <td><button>CANCEL</button></td>
             </tr>
           )

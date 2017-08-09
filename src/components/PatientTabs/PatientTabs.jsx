@@ -8,7 +8,9 @@ import PatientNotes from '../PatientNotes';
 
 const PatientTabs = props => {
   PatientTabs.propTypes = {
-    children: PropTypes.object
+    children: PropTypes.object,
+    patientInfo:PropTypes.object
+    
   };
 
   const check = () => {
@@ -16,41 +18,6 @@ const PatientTabs = props => {
   };
   check();
 
-
-  //TODO: Going to be replaced w/ a Mock patient appointments request
-  const testAppointments = [{
-      appointmentID: "12345",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
-      providerName: "Dr Name Name",
-      agentName: "Name",
-      officePhone: "123-456-7891"
-    },
-    {
-      appointmentID: "12346",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
-      providerName: "Dr Name Name",
-      agentName: "Name",
-      officePhone: "123-456-7891"
-    },
-    {
-      appointmentID: "12347",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
-      providerName: "Dr Name Name",
-      agentName: "Name",
-      officePhone: "123-456-7891"
-    },{
-      appointmentID: "12348",
-      appointmentDateTime: "2017-07-03T15:38:54-06:00",
-      providerName: "Dr Name Name",
-      agentName: "Name",
-      officePhone: "123-456-7891"
-    },{
-      appointmentID: "12349",
-      appointmentDateTime: "2017-07-03T15:38:54-06:00",
-      providerName: "Dr Name Name",
-      agentName: "Name",
-      officePhone: "123-456-7891"
-    }];
 
   return (
     <div className="patient-tabs-wrapper">
@@ -66,9 +33,9 @@ const PatientTabs = props => {
         </li>
       </ul>
 
-      <Route exact path="/patientinfo/generalinfo" component={PatientInfo} />
-      <Route exact path="/patientinfo/appointments" render={() => <PatientAppointments appointments={testAppointments} />}  />
-      <Route exact path="/patientinfo/notes" component={PatientNotes} />
+      <Route exact path="/patientinfo/generalinfo" render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}  />
+      <Route exact path="/patientinfo/appointments" render={() => <PatientAppointments appointments={props.patientInfo.appointments} />}  />
+      <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={props.patientInfo.notes} />}  />
     </div>
   );
 };

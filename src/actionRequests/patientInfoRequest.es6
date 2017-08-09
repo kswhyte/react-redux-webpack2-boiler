@@ -1,20 +1,13 @@
-import actions from '../../actions/PatientInfoActions';
-import { URI } from '../../../tools/app_config';
+import actions from '../actions/PatientInfoActions';
+import { URI } from '../../tools/app_config';
 
-const patientsearchRequest = (dispatch, ...args) => {
+const getPatientInfoRequest = (dispatch, ...args) => {
     const hostedUrlPath = URI.baseUISVC_URI;
-    const postRoute = '/#fake';
-    const postModel = {
-      firstName: "saminathan",
-      lastName: "v",
-      DOB: "02-02-1980",
-      clientId: "1005"
-    };
-
+    const getRoute = '/#fake';
     const requestEnd = () => {
       console.log('---- args : ', args)
       const _res = {
-          body:[{
+          body:{
               "patientId":"1f47af8b-ec5c-4b53-b734-22a30eff3519",
               "firstName":"Saminathan",
               "middleName":"",
@@ -41,12 +34,11 @@ const patientsearchRequest = (dispatch, ...args) => {
               "pastAppointments":null,
               "insuranceCarrierCode":""
             }
-            ]
           };
-      dispatch(actions.patientSearchSuccess(_res.body));
+      dispatch(actions.getPatientInfoSuccess(_res.body));
         };
 
-    return {hostedUrlPath, postRoute, requestEnd, postModel};
+    return {hostedUrlPath, getRoute, requestEnd};
 };
 
-export default patientsearchRequest;
+export default getPatientInfoRequest;

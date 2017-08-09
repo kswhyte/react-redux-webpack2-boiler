@@ -1,4 +1,5 @@
 import request from 'superagent';
+import actions from '../../src/actions/SessionActions';
 
 const fireGet = (requestModel,dispatch) => {
         dispatch(actions.startSpinner());
