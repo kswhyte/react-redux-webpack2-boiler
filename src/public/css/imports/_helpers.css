@@ -27,6 +27,7 @@
   --label-black: #5a5b5c;
   --form-error-color: var(--dull-orange);
   --future-green: #5ec23b;
+  --check-circle-icon: #74e5d1;
 }
 
 :root {
@@ -40,23 +41,4 @@
 
 .no-padding {
   padding: 0 !important;
-}
-
-button {
-  &.primary {
-    background: var(--primary-color);
-    color: var(--white);
-    border: 1px solid #df907a;
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 14px 20px;
-    font-family: 'Open Sans', 'OpenSans', 'Arial', 'Helvetica', sans-serif;
-    font-size: 16px;
-    line-height: 1;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 3px;
-  }
 }

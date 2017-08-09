@@ -13,7 +13,7 @@ const Navigation = props => {
   return (
     <nav className="navigation-wrapper">
       <h1>Navigation</h1>
-      <Link to="/login">Login</Link>
+      <Link to="/login">SignOn</Link>
       <Link to="/patientsearch">Search for Patients</Link>
       <Link to="/users">User Management Page</Link>
       <Link to="/patientinfo">Confirm Patient Info</Link>

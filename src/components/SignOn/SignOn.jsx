@@ -32,8 +32,8 @@ class SignOn extends Component {
     }
   }
 
-  handleInputEmailChange(e){
-     this.setState({ loginEmail: e.target.value });
+  handleInputEmailChange(e) {
+    this.setState({ loginEmail: e.target.value });
   }
 
   rememberMe() {
@@ -49,7 +49,7 @@ class SignOn extends Component {
 
   render() {
     return (
-      <div className="sign-on-wrapper">
+      <div className="sign-on-wrapper card">
         <img src="images/pattern-dots.png" className="dots-pattern" />
         <div className="row">
           <h2>SIGN ON</h2>
@@ -83,7 +83,7 @@ class SignOn extends Component {
           }}
         >
           <div className="row md-spacer">
-            <div className="col-sm-6 input-row">
+            <div className="col-sm-offset-1 col-sm-5 input-row">
               <label forHtml="loginEmail">USER NAME (EMAIL)</label>
               <input
                 className={
@@ -97,7 +97,7 @@ class SignOn extends Component {
                 required
               />
             </div>
-            <div className="col-sm-6 input-row">
+            <div className="col-sm-5 input-row">
               <label forHtml="loginPassword">PASSWORD</label>
               <input
                 id="loginPassword"
@@ -112,17 +112,19 @@ class SignOn extends Component {
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
               <button className="primary">SIGN ON</button>
-              <div className="row remember-me-row">
+              <div className="row checkbox-row">
                 <input
-                  className="remember-checkbox"
+                  className="checkbox"
                   checked={this.state.rememberMeValue === 'on' ? 'checked' : ''}
                   onClick={this.rememberMe}
                   id="remember-checkbox"
                   type="checkbox"
                 />
-                <label htmlFor="remember-checkbox">Remember Me</label>
+                <label className="checkbox-label" htmlFor="remember-checkbox">
+                  Remember Me
+                </label>
               </div>
-              <div className="row forgot-password-row">
+              <div className="row link-row">
                 <Link to="/resetpassword">Forgot your password?</Link>
               </div>
             </div>

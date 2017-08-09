@@ -28,10 +28,9 @@ let createHandlers = function(dispatch) {
     dispatch(headerActions.toggle_header(data));
   };
 
-   let logoutUser = function(data) {
+  let logoutUser = function(data) {
     dispatch(sessionActions.startLogoutClick(data));
   };
-
 
   return {
     startSessionClick,
@@ -47,7 +46,7 @@ const proptypes = {
   startError: PropTypes.string,
   user: PropTypes.object,
   sessionStarted: PropTypes.bool,
-  currentModal : PropTypes.string
+  currentModal: PropTypes.string
 };
 class App extends Component {
   constructor(props) {
@@ -84,10 +83,7 @@ class App extends Component {
     return (
       <Router history={createBrowserHistory}>
         <div className={this.userIsActive ? 'wrapper ' : 'wrapper signed-out'}>
-          <Header
-            headerSize={this.props.headerSize}
-            logout={this.handlers.logoutUser}
-          />
+          <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser} />
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
