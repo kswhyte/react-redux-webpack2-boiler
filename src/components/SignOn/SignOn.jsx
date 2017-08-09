@@ -16,10 +16,12 @@ class SignOn extends Component {
     super(props);
     this.state = {
       loginEmail: '',
-      rememberMeValue: 'off'
+      rememberMeValue: 'off',
+      loginAttempts: 0
     };
-    this.rememberMe = this.rememberMe.bind(this);
     this.handleInputEmailChange = this.handleInputEmailChange.bind(this);
+    this.rememberMe = this.rememberMe.bind(this);
+    this.checkLoginAttempts = this.checkLoginAttempts.bind(this);
   }
 
   componentDidMount() {
@@ -27,13 +29,14 @@ class SignOn extends Component {
     if (storedUserEmail !== null && storedUserEmail !== undefined && storedUserEmail !== '') {
       this.setState({
         loginEmail: storedUserEmail,
-        rememberMeValue: 'on'
+        rememberMeValue: 'on',
+        loginAttempts: 0
       });
     }
   }
 
-  handleInputEmailChange(e){
-     this.setState({ loginEmail: e.target.value });
+  handleInputEmailChange(e) {
+    this.setState({ loginEmail: e.target.value });
   }
 
   rememberMe() {
@@ -44,6 +47,16 @@ class SignOn extends Component {
     } else {
       this.setState({ rememberMeValue: 'off' });
       localStorage.removeItem('userEmail');
+    }
+  }
+
+  checkLoginAttempts() {
+    if (this.state.loginAttempts < 2) {
+      let updatedCount = this.state.loginAttempts;
+      updatedCount += 1;
+      this.setState({ loginAttempts: updatedCount });
+    } else if (this.state.loginAttempts >= 2) {
+      this.setState({ loginAttempts: 0 });
     }
   }
 
@@ -84,25 +97,27 @@ class SignOn extends Component {
         >
           <div className="row md-spacer">
             <div className="col-sm-6 input-row">
-              <label forHtml="loginEmail">USER NAME (EMAIL)</label>
+              <label>USER NAME (EMAIL)</label>
               <input
+                id="loginEmail"
+                type="text"
                 className={
                   this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
                 }
                 value={this.state.loginEmail}
                 onChange={this.handleInputEmailChange}
-                type="text"
-                id="loginEmail"
                 placeholder="Your Email Address"
                 required
               />
             </div>
             <div className="col-sm-6 input-row">
-              <label forHtml="loginPassword">PASSWORD</label>
+              <label>PASSWORD</label>
               <input
                 id="loginPassword"
+                className={
+                  this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
+                }
                 type="password"
-                className="form-group hg-input v2"
                 placeholder="Your Password"
                 label="Your Password"
                 required
@@ -111,7 +126,9 @@ class SignOn extends Component {
           </div>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
-              <button className="primary">SIGN ON</button>
+              <button className="primary" onClick={this.checkLoginAttempts}>
+                SIGN ON
+              </button>
               <div className="row remember-me-row">
                 <input
                   className="remember-checkbox"
@@ -123,7 +140,9 @@ class SignOn extends Component {
                 <label htmlFor="remember-checkbox">Remember Me</label>
               </div>
               <div className="row forgot-password-row">
-                <Link to="/resetpassword">Forgot your password?</Link>
+                <Link className={this.state.loginAttempts >= 2 ? 'attention-animation' : ''} to="/resetpassword">
+                  Forgot your password?
+                </Link>
               </div>
             </div>
           </div>

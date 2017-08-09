@@ -22,6 +22,13 @@ exports[`Sign On Page Elements 1`] = `
       </p>
     </div>
   </div>
+  <div
+    className="sm-spacer validation-error"
+  >
+    <h5>
+      Please enter a valid email
+    </h5>
+  </div>
   <form
     onSubmit={[Function]}
   >
@@ -31,13 +38,11 @@ exports[`Sign On Page Elements 1`] = `
       <div
         className="col-sm-6 input-row"
       >
-        <label
-          forHtml="loginEmail"
-        >
+        <label>
           USER NAME (EMAIL)
         </label>
         <input
-          className="form-group hg-input v2"
+          className="input-error form-group hg-input v2"
           id="loginEmail"
           onChange={[Function]}
           placeholder="Your Email Address"
@@ -49,13 +54,11 @@ exports[`Sign On Page Elements 1`] = `
       <div
         className="col-sm-6 input-row"
       >
-        <label
-          forHtml="loginPassword"
-        >
+        <label>
           PASSWORD
         </label>
         <input
-          className="form-group hg-input v2"
+          className="input-error form-group hg-input v2"
           id="loginPassword"
           label="Your Password"
           placeholder="Your Password"
@@ -72,6 +75,7 @@ exports[`Sign On Page Elements 1`] = `
       >
         <button
           className="primary"
+          onClick={[Function]}
         >
           SIGN ON
         </button>
@@ -95,6 +99,7 @@ exports[`Sign On Page Elements 1`] = `
           className="row forgot-password-row"
         >
           <a
+            className=""
             href="/resetpassword"
             onClick={[Function]}
           >

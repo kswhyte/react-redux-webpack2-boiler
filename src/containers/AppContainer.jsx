@@ -26,7 +26,7 @@ let createHandlers = function(dispatch) {
     dispatch(sessionActions.startSessionClick(data));
   };
   let toggleHeader = function(data) {
-    dispatch(headerActions.toggle_header(data));
+    dispatch(headerActions.toggleHeader(data));
   };
 
   let logOutUser = function(){

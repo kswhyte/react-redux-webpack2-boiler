@@ -129,9 +129,7 @@
   },
   "jest": {
     "rootDir": "src/",
-    "setupFiles": [
-      "../.storybook/__conf__/config.js"
-    ],
+    "setupFiles": ["../.storybook/__conf__/config.js"],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../node_modules/jest-enzyme/lib/index.js",
@@ -157,15 +155,14 @@
       "redux",
       "enzyme",
       "react-addons-test-utils",
-      "react-router"
+      "react-router",
+      "react-router-dom"
     ],
     "moduleNameMapper": {
       "^@hg/three-ui": "<rootDir>/components/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/components/HgStub/HgStub.jsx"
     },
-    "testPathIgnorePatterns": [
-      "spec.jsx"
-    ],
+    "testPathIgnorePatterns": ["spec.jsx"],
     "transform": {
       ".es6$": "../node_modules/babel-jest",
       ".es$": "../node_modules/babel-jest",

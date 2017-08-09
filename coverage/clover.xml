@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1502305040962" clover="3.2.0">
-  <project timestamp="1502305040962" name="All files">
-    <metrics statements="239" coveredstatements="133" conditionals="187" coveredconditionals="37" methods="111" coveredmethods="49" elements="537" coveredelements="219" complexity="0" loc="239" ncloc="239" packages="24" files="41" classes="41">
+<coverage generated="1502305590529" clover="3.2.0">
+  <project timestamp="1502305590529" name="All files">
+    <metrics statements="243" coveredstatements="141" conditionals="181" coveredconditionals="43" methods="109" coveredmethods="51" elements="533" coveredelements="235" complexity="0" loc="243" ncloc="243" packages="24" files="41" classes="41">
       <package name="_reducers">
-        <metrics statements="50" coveredstatements="19" conditionals="64" coveredconditionals="15" methods="12" coveredmethods="2"/>
+        <metrics statements="50" coveredstatements="20" conditionals="64" coveredconditionals="16" methods="12" coveredmethods="2"/>
         <file name="HeaderReducer.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/_reducers/HeaderReducer.es6">
           <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
           <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -32,9 +32,9 @@
           <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
         </file>
         <file name="SessionReducer.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/_reducers/SessionReducer.es6">
-          <metrics statements="25" coveredstatements="15" conditionals="15" coveredconditionals="12" methods="1" coveredmethods="1"/>
+          <metrics statements="25" coveredstatements="16" conditionals="15" coveredconditionals="13" methods="1" coveredmethods="1"/>
           <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
-          <line num="5" count="11" type="cond" truecount="11" falsecount="3"/>
+          <line num="5" count="12" type="cond" truecount="12" falsecount="2"/>
           <line num="7" count="1" type="stmt"/>
           <line num="9" count="1" type="stmt"/>
           <line num="11" count="1" type="stmt"/>
@@ -43,7 +43,7 @@
           <line num="17" count="1" type="stmt"/>
           <line num="19" count="1" type="stmt"/>
           <line num="21" count="1" type="stmt"/>
-          <line num="23" count="0" type="stmt"/>
+          <line num="23" count="1" type="stmt"/>
           <line num="25" count="0" type="stmt"/>
           <line num="26" count="0" type="stmt"/>
           <line num="27" count="0" type="stmt"/>
@@ -71,14 +71,11 @@
         </file>
       </package>
       <package name="actions">
-        <metrics statements="56" coveredstatements="15" conditionals="28" coveredconditionals="0" methods="36" coveredmethods="12"/>
+        <metrics statements="53" coveredstatements="17" conditionals="14" coveredconditionals="0" methods="33" coveredmethods="13"/>
         <file name="HeaderActions.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/actions/HeaderActions.es6">
-          <metrics statements="5" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="4" coveredmethods="0"/>
-          <line num="1" count="0" type="cond" truecount="0" falsecount="12"/>
-          <line num="5" count="0" type="stmt"/>
-          <line num="6" count="0" type="stmt"/>
-          <line num="8" count="0" type="stmt"/>
-          <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
         </file>
         <file name="PatientInfoActions.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/actions/PatientInfoActions.es6">
           <metrics statements="12" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="7" coveredmethods="0"/>
@@ -396,35 +393,42 @@
         </file>
       </package>
       <package name="components.SignOn">
-        <metrics statements="26" coveredstatements="9" conditionals="15" coveredconditionals="5" methods="6" coveredmethods="3"/>
+        <metrics statements="33" coveredstatements="14" conditionals="23" coveredconditionals="10" methods="7" coveredmethods="4"/>
         <file name="SignOn.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/SignOn/SignOn.jsx">
-          <metrics statements="26" coveredstatements="9" conditionals="15" coveredconditionals="5" methods="6" coveredmethods="3"/>
+          <metrics statements="33" coveredstatements="14" conditionals="23" coveredconditionals="10" methods="7" coveredmethods="4"/>
           <line num="8" count="1" type="stmt"/>
-          <line num="16" count="8" type="stmt"/>
-          <line num="17" count="8" type="stmt"/>
-          <line num="21" count="8" type="stmt"/>
-          <line num="22" count="8" type="stmt"/>
-          <line num="26" count="8" type="stmt"/>
-          <line num="27" count="8" type="cond" truecount="2" falsecount="3"/>
-          <line num="28" count="0" type="stmt"/>
-          <line num="36" count="0" type="stmt"/>
-          <line num="40" count="0" type="stmt"/>
-          <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="42" count="0" type="stmt"/>
+          <line num="16" count="9" type="stmt"/>
+          <line num="17" count="9" type="stmt"/>
+          <line num="22" count="9" type="stmt"/>
+          <line num="23" count="9" type="stmt"/>
+          <line num="24" count="9" type="stmt"/>
+          <line num="28" count="9" type="stmt"/>
+          <line num="29" count="9" type="cond" truecount="2" falsecount="3"/>
+          <line num="30" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
           <line num="43" count="0" type="stmt"/>
+          <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
           <line num="45" count="0" type="stmt"/>
           <line num="46" count="0" type="stmt"/>
-          <line num="51" count="8" type="stmt"/>
-          <line num="68" count="0" type="stmt"/>
-          <line num="69" count="0" type="stmt"/>
-          <line num="70" count="0" type="stmt"/>
-          <line num="71" count="0" type="stmt"/>
-          <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
-          <line num="73" count="0" type="stmt"/>
-          <line num="76" count="0" type="stmt"/>
-          <line num="78" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="54" count="2" type="cond" truecount="1" falsecount="1"/>
+          <line num="55" count="2" type="stmt"/>
+          <line num="56" count="2" type="stmt"/>
+          <line num="57" count="2" type="stmt"/>
+          <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="64" count="12" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
           <line num="82" count="0" type="stmt"/>
-          <line num="136" count="1" type="stmt"/>
+          <line num="83" count="0" type="stmt"/>
+          <line num="84" count="0" type="stmt"/>
+          <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="86" count="0" type="stmt"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="91" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
+          <line num="155" count="1" type="stmt"/>
         </file>
       </package>
       <package name="components.UserManagement">

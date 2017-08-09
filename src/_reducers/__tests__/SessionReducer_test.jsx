@@ -17,6 +17,7 @@ describe('Session Reducer', () => {
       showSpinner: true
     });
   });
+
   it('should handle STOP_SPINNER', () => {
     expect(
       sessionReducer([], {
@@ -26,6 +27,7 @@ describe('Session Reducer', () => {
       showSpinner: false
     });
   });
+
   it('should handle START_FAIL', () => {
     expect(
       sessionReducer([], {
@@ -35,6 +37,7 @@ describe('Session Reducer', () => {
       startError: 'ERROR'
     });
   });
+
   it('should handle START_TIMEOUT', () => {
     expect(
       sessionReducer([], {
@@ -44,6 +47,7 @@ describe('Session Reducer', () => {
       startError: 'TIMEOUT'
     });
   });
+
   it('should handle START_SUCCESS', () => {
     expect(
       sessionReducer([], {
@@ -54,6 +58,7 @@ describe('Session Reducer', () => {
       sessionStarted: true
     });
   });
+
   it('should handle START_SESSION', () => {
     expect(
       sessionReducer([], {
@@ -63,6 +68,7 @@ describe('Session Reducer', () => {
       startError: null
     });
   });
+
   it('should handle START_LOGIN', () => {
     expect(
       sessionReducer([], {
@@ -73,6 +79,7 @@ describe('Session Reducer', () => {
       validationMessage: ''
     });
   });
+
   it('should handle LOGIN_FAIL', () => {
     let action = {
       type: 'LOGIN_FAIL',
@@ -88,6 +95,19 @@ describe('Session Reducer', () => {
     ).toEqual({
       loginError: 'ERROR',
       validationMessage: action.err.validationMessage
+    });
+  });
+
+  it('should handle VALIDATION_ERROR', () => {
+    let action = {
+      data: undefined
+    }
+    expect(
+      sessionReducer([], {
+        type: types.VALIDATION_ERROR
+      })
+    ).toEqual({
+      validationMessage: action.data
     });
   });
   it('Should show a modal', () => {
@@ -125,18 +145,7 @@ it('Should hide a modal', () => {
       });
  });
 // __________________________________
-//   it('should handle VALIDATION_ERROR', () => {
-//     let action = {
-//       data: undefined
-//     }
-//     expect(
-//       sessionReducer([], {
-//         type: types.VALIDATION_ERROR
-//       })
-//     ).toEqual({
-//       validationMessage: action.data
-//     });
-//   });
+
 //   it('should handle LOGIN_SUCCESS', () => {
 //     let action = {
 //       data: {
@@ -165,4 +174,9 @@ it('Should hide a modal', () => {
 //       newStore
 //     });
 //  });
+// __________________________________
+
+  // it('should handle LOGOUT_SUCCESS', () => {
+  //
+  // });
 });
