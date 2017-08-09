@@ -53,6 +53,29 @@ const PatientNotes = props => {
   );
 };
 
+//TODO: make sure data is coming in for each note. UNCOMMENT when Redux wiring is setup
+// const ExistingNotes = props => {
+//   ExistingNotes.propTypes = {
+//     existingNotes: PropTypes.array.required
+//   };
+//   return (
+//     <table className="notes-tables">
+//       {props.existingNotes.map(note => {
+//         return (
+//           <tr key={note.noteID}>
+//             <td>
+//               {Moment(note.noteDateTime).format('LL')}
+//             </td>
+//             <td>
+//               {Moment(note.noteTitle).format('LT')}
+//             </td>
+//           </tr>
+//         );
+//       })}
+//     </table>
+//   );
+// };
+
 export default PatientNotes;
 
   

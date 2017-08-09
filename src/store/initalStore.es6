@@ -8,6 +8,7 @@ export default {
       credentials: {}
     },
     showSpinner: false,
-    startError: null
+    startError: null,
+    sessionStarted: false
   }
 };

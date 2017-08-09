@@ -1,3 +1,5 @@
+/*eslint no-unused-vars: */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -13,16 +15,10 @@ const PatientInfo = props => {
     generalInfo: PropTypes.object.required
   };
 
-  const check = () => {
-    console.log(props);
-  };
-  check();
-
   return (
     <div className="patient-info-wrapper">
       <div className="tab-content clearfix">
         <div className="general-info-form tab-pane active">
-          <hr />
           <form>
             <HgRow>
               <div className="col-sm-3">

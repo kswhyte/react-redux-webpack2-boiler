@@ -41,6 +41,7 @@ exports[`Sign On Page Elements 1`] = `
           id="loginEmail"
           placeholder="Your Email Address"
           required={true}
+          type="text"
         />
       </div>
       <div
@@ -79,8 +80,10 @@ exports[`Sign On Page Elements 1`] = `
           className="row remember-me-row"
         >
           <input
+            checked=""
             className="remember-checkbox"
             id="remember-checkbox"
+            onClick={[Function]}
             type="checkbox"
           />
           <label
