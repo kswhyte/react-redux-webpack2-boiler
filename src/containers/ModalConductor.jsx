@@ -8,7 +8,8 @@ import LogoutAreYouSure from '../components/Modal/components/logoutAreYouSure';
 
 const _propTypes = {
   currentModal : PropTypes.string,
-  hideModal: PropTypes.func.isRequired
+  hideModal: PropTypes.func.isRequired,
+  dispatch: PropTypes.func
 }
 
 const ModalConductor = props => {

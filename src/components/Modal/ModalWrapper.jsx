@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 import './modal.css';
 
 const ModalWrapper = props => {
+
   const handleBackgroundClick = e => {
     if (e.target === e.currentTarget) props.hideModal();
   };
@@ -12,8 +13,7 @@ const ModalWrapper = props => {
 
   return (
   <section>
-    <div className="modal-background" onClick={handleBackgroundClick}></div>
-    <div className={`modal fade in ${props.modalType}`} tabIndex="-1" role="dialog">
+    <div onClick={handleBackgroundClick} className={`modal fade in ${props.modalType}`} tabIndex="-1" role="dialog">
       <div className={"modal-dialog"} role="document">
         <div className={"modal-content"}>
           <div className={"modal-header"}>
@@ -26,6 +26,7 @@ const ModalWrapper = props => {
         </div>
       </div>
     </div>
+    <div className="modal-background"></div>
   </section>
   );
 };

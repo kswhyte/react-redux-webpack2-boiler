@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>5/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>5/7</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -101,33 +101,50 @@
 56
 57
 58
-59</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,62 +176,111 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 &nbsp;
 import './header.css';
 &nbsp;
-const Header = props =&gt; {
-  Header.propTypes = {
-    headerSize: PropTypes.string
-  };
-&nbsp;
-  //handle no margin getting overwritten?
-  return (
-    &lt;header className={props.headerSize === 'small' ? <span class="branch-0 cbranch-no" title="branch not covered" >'small' </span>: null}&gt;
-      &lt;div className="row no-margin"&gt;
-        &lt;div className="logo-window col-xs-6"&gt;
-          &lt;div className="logo-animation"&gt;
-            &lt;div className="logo-full" /&gt;
-            &lt;div className="logo-small" /&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="col-xs-6"&gt;
-          &lt;div className="pull-right"&gt;
-            &lt;Link to="/"&gt;
-              &lt;i className="fa fa-tachometer fa-2" aria-hidden="true" /&gt;
-              &lt;div className="text-small-o"&gt;Dashboard&lt;/div&gt;
-            &lt;/Link&gt;
-            &lt;Link to="/"&gt;
-              &lt;i className="fa fa-cog fa-2" aria-hidden="true" /&gt;
-              &lt;div className="text-small-o"&gt;Settings&lt;/div&gt;
-            &lt;/Link&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-&nbsp;
-      &lt;div className="row no-margin"&gt;
-        &lt;div className="col-xs-12 col-sm-3"&gt;
-          &lt;div className="manager-logo" /&gt;
-        &lt;/div&gt;
-&nbsp;
-        &lt;div className="col-xs-12 col-sm-9"&gt;
-          &lt;div className="pull-right"&gt;
-            &lt;div className="sign-in-status"&gt;
-              Currently signed in as&lt;br /&gt;
-              &lt;span&gt;AgentUsername&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;div className="subheader-pipe"&gt;|&lt;/div&gt;
-            {/* {make this a tag, below, into a Link and connect to logout path} */}
-            &lt;a href="#"&gt;Log out&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/header&gt;
-  );
+const propTypes = {
+  headerSize: PropTypes.string,
+  logout: PropTypes.func.isRequired
 };
+&nbsp;
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      errors: []
+    };
+  }
+&nbsp;
+  render() {
+    //handle no margin getting overwritten?
+    return (
+      &lt;header className={this.props.headerSize === 'small' ? <span class="branch-0 cbranch-no" title="branch not covered" >'small' </span>: null}&gt;
+        &lt;div className="row no-margin"&gt;
+          &lt;div className="logo-window col-xs-6"&gt;
+            &lt;div className="logo-animation"&gt;
+              &lt;div className="logo-full" /&gt;
+              &lt;div className="logo-small" /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;div className="col-xs-6"&gt;
+            &lt;div className="pull-right"&gt;
+              &lt;Link to="/"&gt;
+                &lt;i className="fa fa-tachometer fa-2" aria-hidden="true" /&gt;
+                &lt;div className="dashboard-text text-small-o"&gt;Dashboard&lt;/div&gt;
+              &lt;/Link&gt;
+              &lt;Link to="/"&gt;
+                &lt;i className="fa fa-cog fa-2" aria-hidden="true" /&gt;
+                &lt;div className="settings-text text-small-o"&gt;Settings&lt;/div&gt;
+              &lt;/Link&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+&nbsp;
+        &lt;div className="row no-margin"&gt;
+          &lt;div className="col-xs-12 col-sm-3"&gt;
+            &lt;div className="manager-logo" /&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;div className="col-xs-12 col-sm-9"&gt;
+            &lt;div className="pull-right"&gt;
+              &lt;div className="sign-in-status"&gt;
+                Currently signed in as&lt;br /&gt;
+                &lt;span&gt;AgentUsername&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;div className="subheader-pipe"&gt;|&lt;/div&gt;
+              {/* {make this a tag, below, into a Link and connect to logout path} */}
+&nbsp;
+              &lt;a
+                className="logout"
+                onClick={<span class="fstat-no" title="function not covered" >e </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >                  e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >                  this.props.logout();</span>
+                }}
+                href="#"
+              &gt;
+                Log out
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+    );
+  }
+}
+&nbsp;
+Header.propTypes = propTypes;
 &nbsp;
 export default Header;
 &nbsp;</pre></td></tr>
@@ -223,7 +289,7 @@ export default Header;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 31 2017 07:48:33 GMT-0600 (MDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 09 2017 12:07:41 GMT-0600 (MDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

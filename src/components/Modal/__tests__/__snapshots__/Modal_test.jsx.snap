@@ -3,11 +3,8 @@
 exports[`renders Logout Modal correctly 1`] = `
 <section>
   <div
-    className="modal-background"
-    onClick={[Function]}
-  />
-  <div
     className="modal fade in undefined"
+    onClick={[Function]}
     role="dialog"
     tabIndex="-1"
   >
@@ -73,17 +70,17 @@ exports[`renders Logout Modal correctly 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="modal-background"
+  />
 </section>
 `;
 
 exports[`renders Wrapper Correctly 1`] = `
 <section>
   <div
-    className="modal-background"
-    onClick={[Function]}
-  />
-  <div
     className="modal fade in undefined"
+    onClick={[Function]}
     role="dialog"
     tabIndex="-1"
   >
@@ -123,5 +120,8 @@ exports[`renders Wrapper Correctly 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="modal-background"
+  />
 </section>
 `;

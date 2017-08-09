@@ -39,9 +39,11 @@ exports[`Sign On Page Elements 1`] = `
         <input
           className="form-group hg-input v2"
           id="loginEmail"
+          onChange={[Function]}
           placeholder="Your Email Address"
           required={true}
           type="text"
+          value=""
         />
       </div>
       <div
@@ -62,9 +64,6 @@ exports[`Sign On Page Elements 1`] = `
         />
       </div>
     </div>
-    <label>
-      Remember Me
-    </label>
     <div
       className="row lg-spacer"
     >

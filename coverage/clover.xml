@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1501508913110" clover="3.2.0">
-  <project timestamp="1501508913110" name="All files">
-    <metrics statements="84" coveredstatements="75" conditionals="62" coveredconditionals="7" methods="43" coveredmethods="25" elements="189" coveredelements="107" complexity="0" loc="84" ncloc="84" packages="18" files="27" classes="27">
+<coverage generated="1502302061286" clover="3.2.0">
+  <project timestamp="1502302061287" name="All files">
+    <metrics statements="124" coveredstatements="93" conditionals="93" coveredconditionals="20" methods="58" coveredmethods="33" elements="275" coveredelements="146" complexity="0" loc="124" ncloc="124" packages="22" files="32" classes="32">
       <package name="Alerts">
         <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <file name="Alerts.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Alerts/Alerts.jsx">
@@ -16,15 +16,12 @@
         </file>
       </package>
       <package name="Body">
-        <metrics statements="7" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <file name="Body.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Body/Body.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="5" count="1" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
           <line num="7" count="2" type="stmt"/>
           <line num="11" count="2" type="stmt"/>
-          <line num="12" count="2" type="stmt"/>
-          <line num="14" count="2" type="stmt"/>
-          <line num="16" count="2" type="stmt"/>
         </file>
         <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Body/index.es6">
           <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -48,9 +45,9 @@
         <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <file name="ConfirmPatientInfo.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/ConfirmPatientInfo/ConfirmPatientInfo.jsx">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="7" count="1" type="stmt"/>
-          <line num="8" count="2" type="stmt"/>
-          <line num="16" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
         </file>
         <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/ConfirmPatientInfo/index.es6">
           <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -58,24 +55,24 @@
         </file>
       </package>
       <package name="Dashboard">
-        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <metrics statements="6" coveredstatements="5" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <file name="Dashboard.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Dashboard/Dashboard.jsx">
-          <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+          <metrics statements="6" coveredstatements="5" conditionals="6" coveredconditionals="5" methods="1" coveredmethods="1"/>
           <line num="8" count="1" type="stmt"/>
-          <line num="9" count="6" type="stmt"/>
-          <line num="29" count="1" type="stmt"/>
+          <line num="9" count="6" type="cond" truecount="1" falsecount="1"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="12" count="6" type="stmt"/>
+          <line num="39" count="1" type="stmt"/>
+          <line num="46" count="1" type="stmt"/>
         </file>
       </package>
       <package name="Footer">
-        <metrics statements="7" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <file name="Footer.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Footer/Footer.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="4" count="1" type="stmt"/>
-          <line num="6" count="2" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
           <line num="11" count="2" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
-          <line num="15" count="2" type="stmt"/>
         </file>
         <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Footer/index.es6">
           <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -83,12 +80,16 @@
         </file>
       </package>
       <package name="Header">
-        <metrics statements="4" coveredstatements="3" conditionals="8" coveredconditionals="1" methods="3" coveredmethods="1"/>
+        <metrics statements="8" coveredstatements="5" conditionals="8" coveredconditionals="1" methods="5" coveredmethods="2"/>
         <file name="Header.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Header/Header.jsx">
-          <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+          <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
           <line num="7" count="1" type="stmt"/>
-          <line num="8" count="2" type="stmt"/>
-          <line num="13" count="2" type="stmt"/>
+          <line num="14" count="7" type="stmt"/>
+          <line num="15" count="7" type="stmt"/>
+          <line num="22" count="7" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="78" count="1" type="stmt"/>
         </file>
         <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Header/index.es6">
           <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -99,21 +100,44 @@
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <file name="HgStub.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/HgStub/HgStub.jsx">
           <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-          <line num="4" count="8" type="stmt"/>
-          <line num="5" count="6" type="stmt"/>
-          <line num="12" count="8" type="stmt"/>
+          <line num="4" count="14" type="stmt"/>
+          <line num="5" count="31" type="stmt"/>
+          <line num="12" count="14" type="stmt"/>
+        </file>
+      </package>
+      <package name="Modal">
+        <metrics statements="7" coveredstatements="6" conditionals="8" coveredconditionals="1" methods="5" coveredmethods="3"/>
+        <file name="ModalWrapper.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Modal/ModalWrapper.jsx">
+          <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="8" count="3" type="stmt"/>
+          <line num="9" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="14" count="3" type="stmt"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
+        </file>
+        <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Modal/index.es6">
+          <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="1" count="0" type="cond" truecount="0" falsecount="6"/>
+        </file>
+      </package>
+      <package name="Modal.components">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="logoutAreYouSure.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Modal/components/logoutAreYouSure.jsx">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="35" count="1" type="stmt"/>
         </file>
       </package>
       <package name="Navigation">
-        <metrics statements="7" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <file name="Navigation.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Navigation/Navigation.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="2" type="stmt"/>
-          <line num="11" count="2" type="stmt"/>
-          <line num="12" count="2" type="stmt"/>
-          <line num="14" count="2" type="stmt"/>
-          <line num="15" count="2" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
         </file>
         <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/Navigation/index.es6">
           <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
@@ -130,55 +154,75 @@
         </file>
       </package>
       <package name="PatientAppointments">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
         <file name="PatientAppointments.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/PatientAppointments/PatientAppointments.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="9" count="2" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
-          <line num="12" count="2" type="stmt"/>
-          <line num="14" count="2" type="stmt"/>
+          <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
+          <line num="9" count="3" type="stmt"/>
+          <line num="10" count="9" type="stmt"/>
+          <line num="15" count="9" type="stmt"/>
+          <line num="16" count="25" type="stmt"/>
+          <line num="19" count="9" type="stmt"/>
+          <line num="20" count="25" type="stmt"/>
+          <line num="23" count="9" type="stmt"/>
+          <line num="49" count="3" type="stmt"/>
+          <line num="50" count="5" type="stmt"/>
+          <line num="53" count="5" type="stmt"/>
+          <line num="62" count="10" type="stmt"/>
+          <line num="82" count="3" type="stmt"/>
+          <line num="83" count="5" type="stmt"/>
+          <line num="86" count="5" type="stmt"/>
+          <line num="95" count="15" type="stmt"/>
         </file>
       </package>
       <package name="PatientInfo">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="PatientInfo.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/PatientInfo/PatientInfo.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="9" count="2" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
-          <line num="12" count="2" type="stmt"/>
-          <line num="14" count="2" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="12" count="3" type="stmt"/>
+          <line num="13" count="2" type="stmt"/>
+          <line num="17" count="2" type="stmt"/>
         </file>
       </package>
       <package name="PatientNotes">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="PatientNotes.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/PatientNotes/PatientNotes.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="4" count="3" type="stmt"/>
-          <line num="5" count="2" type="stmt"/>
-          <line num="9" count="2" type="stmt"/>
-          <line num="10" count="2" type="stmt"/>
-          <line num="12" count="2" type="stmt"/>
-          <line num="14" count="2" type="stmt"/>
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+          <line num="16" count="2" type="stmt"/>
         </file>
       </package>
       <package name="PatientTabs">
-        <metrics statements="7" coveredstatements="6" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <metrics statements="6" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="1"/>
         <file name="PatientTabs.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/PatientTabs/PatientTabs.jsx">
-          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-          <line num="9" count="2" type="stmt"/>
-          <line num="10" count="4" type="stmt"/>
+          <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+          <line num="13" count="2" type="stmt"/>
           <line num="14" count="4" type="stmt"/>
-          <line num="15" count="4" type="stmt"/>
-          <line num="17" count="4" type="stmt"/>
           <line num="19" count="4" type="stmt"/>
+          <line num="57" count="4" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
         </file>
         <file name="index.es6" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/PatientTabs/index.es6">
           <metrics statements="1" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="2" coveredmethods="0"/>
           <line num="1" count="0" type="cond" truecount="0" falsecount="6"/>
+        </file>
+      </package>
+      <package name="ResetPassword">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="ResetPassword.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/ResetPassword/ResetPassword.jsx">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="2" type="stmt"/>
+          <line num="33" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="ResetPasswordConfirm">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <file name="ResetPasswordConfirm.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/ResetPasswordConfirm/ResetPasswordConfirm.jsx">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="2" type="stmt"/>
+          <line num="26" count="1" type="stmt"/>
         </file>
       </package>
       <package name="SearchAndCalendar">
@@ -198,18 +242,41 @@
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <file name="SearchPatient.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/SearchPatient/SearchPatient.jsx">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="2" type="stmt"/>
-          <line num="13" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
         </file>
       </package>
       <package name="SignOn">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <metrics statements="26" coveredstatements="9" conditionals="15" coveredconditionals="5" methods="6" coveredmethods="3"/>
         <file name="SignOn.jsx" path="/Users/wduff/Documents/code/SmartAccess_v2/src/components/SignOn/SignOn.jsx">
-          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="6" count="2" type="stmt"/>
-          <line num="13" count="1" type="stmt"/>
+          <metrics statements="26" coveredstatements="9" conditionals="15" coveredconditionals="5" methods="6" coveredmethods="3"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="16" count="8" type="stmt"/>
+          <line num="17" count="8" type="stmt"/>
+          <line num="21" count="8" type="stmt"/>
+          <line num="22" count="8" type="stmt"/>
+          <line num="26" count="8" type="stmt"/>
+          <line num="27" count="8" type="cond" truecount="2" falsecount="3"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="51" count="8" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="71" count="0" type="stmt"/>
+          <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="73" count="0" type="stmt"/>
+          <line num="76" count="0" type="stmt"/>
+          <line num="78" count="0" type="stmt"/>
+          <line num="82" count="0" type="stmt"/>
+          <line num="136" count="1" type="stmt"/>
         </file>
       </package>
       <package name="UserManagement">
