@@ -12,7 +12,7 @@ const _propTypes = {
 const ModalConductor = props => {
   switch (props.currentModal) {
     case Modal_Names.LOGOUT_MODAL:
-      return <LogoutAreYouSure {...props}/>;
+      return <LogoutAreYouSure modalType={'danger'} {...props}/>;
     default:
       return null;
   }

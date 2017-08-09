@@ -70,6 +70,10 @@ class App extends Component {
   }
   componentWillMount() {}
 
+  hideModal() {
+    alert('closing');
+  }
+
   render() {
     if (sStorage.getItem({ key: 'isUserLoggedIn' }).item) {
       this.userIsActive = true;
@@ -116,7 +120,7 @@ class App extends Component {
             </div>
           </section>
           <Footer />
-          <ModalConductor currentModal={this.props.currentModal} />
+          <ModalConductor hideModal={this.hideModal} currentModal={this.props.currentModal} />
         </div>
       </Router>
     );
