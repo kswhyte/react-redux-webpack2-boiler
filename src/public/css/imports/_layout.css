@@ -109,11 +109,6 @@ nav,
 }
 
 /* THREE-UI OVERRIDES */
-.hg-input.v2 {
-  border: 0px !important;
-  border-bottom: solid 1px var(--slate) !important;
-}
-
 .sm-spacer {
   margin-top: 30px;
 }

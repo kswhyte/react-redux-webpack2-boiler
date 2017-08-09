@@ -61,7 +61,13 @@ class SignOnContainer extends Component {
     }
 
     if (this.props.signonType === 'resetpassword') {
-      return <ResetPassword resetPassword={this.handlers.resetPassword} />;
+      return (
+        <ResetPassword
+          resetPassword={this.handlers.resetPassword}
+          validationError={this.handlers.validationError}
+          validationMessage={this.props.validationMessage}
+        />
+      );
     }
 
     if (this.props.signonType === 'resetpasswordconfirm') {
