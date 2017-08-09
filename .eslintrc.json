@@ -1,4 +1,4 @@
-  //http://eslint.org/docs/rules/
+//http://eslint.org/docs/rules/
 {
   "root": true, //root only file applied to our files.
   "extends": [
@@ -22,7 +22,7 @@
   },
   "rules": { //[0 off, 1 Warning, 2 Error]
     "import/no-unresolved": 0,
-    "no-console": 0,
+    "no-console": 1,
     "no-alert": 1,
     "no-eval": 1,
     "react/prefer-stateless-function": 0,

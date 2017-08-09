@@ -60,6 +60,13 @@ const actions = {
   resetPasswordFail: data => ({
     type: types.RESETPASSWORD_FAIL,
     data
+  }),
+  showModal: modal => ({
+    type: types.SHOW_MODAL,
+    modal
+  }),
+  hideModal: () => ({
+    type: types.HIDE_MODAL
   })
 };
 
@@ -79,7 +86,7 @@ const thunks = {
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
-      dispatch(routeActions.changeRoute({ route: '/' }));
+
     };
   },
   startLogoutClick: () => {

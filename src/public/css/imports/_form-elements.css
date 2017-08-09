@@ -1,0 +1,106 @@
+::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 1.2em !important;
+}
+
+.validation-error {
+  color: var(--form-error-color);
+}
+
+form {
+  & .input-row {
+    padding: 0 2rem;
+    text-align: left;
+  }
+  & .input-row > input {
+    width: 335px;
+    background: transparent;
+    font-family: Open Sans;
+  }
+  & .input-row > input:focus {
+    color: var(--light-teal);
+    border-bottom: solid 1px var(--light-teal) !important;
+  }
+  & .input-error {
+    color: var(--form-error-color);
+    border-bottom: solid 1px var(--form-error-color) !important;
+  }
+  & .checkbox-label {
+    font-family: Open Sans;
+    font-size: 14px;
+    color: var(--light-grey);
+  }
+  & .checkbox-row {
+    margin-top: 35px;
+  }
+  & .checkbox {
+    position: absolute;
+    opacity: 0;
+
+    & + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    & + label:before {
+      border: solid 1px var(--light-grey);
+      content: '';
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 20px;
+      height: 20px;
+      background: white;
+    }
+
+    &:focus + label:before {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+
+    &:disabled + label {
+      color: #b8b8b8;
+      cursor: auto;
+    }
+
+    &:disabled + label:before {
+      box-shadow: none;
+      background: #ddd;
+    }
+
+    &:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      background: var(--light-teal);
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 var(--light-teal), 4px 0 0 var(--light-teal), 4px -2px 0 var(--light-teal),
+        4px -4px 0 var(--light-teal), 4px -6px 0 var(--light-teal), 4px -8px 0 var(--light-teal),
+        4px -10px 0 var(--light-teal);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+button {
+  &.primary {
+    width: 276px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: 1px solid #df907a;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    font-family: 'Open Sans', 'OpenSans', 'Arial', 'Helvetica', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+}

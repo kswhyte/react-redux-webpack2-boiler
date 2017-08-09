@@ -11,7 +11,7 @@ exports[`Story 1`] = `
     href="/login"
     onClick={[Function]}
   >
-    Login
+    SignOn
   </a>
   <a
     href="/patientsearch"

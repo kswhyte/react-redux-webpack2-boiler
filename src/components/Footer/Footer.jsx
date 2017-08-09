@@ -1,22 +1,18 @@
+/*eslint no-unused-vars: */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Footer = (props) => {
-
+const Footer = props => {
   Footer.propTypes = {
-    title : PropTypes.string
+    title: PropTypes.string
   };
 
-  const check = () => {
-    console.log(props)
-  }
-  check();
-
-    return (
-        <footer className="footer-wrapper">
-            <h1>Footer</h1>
-        </footer>
-    );
+  return (
+    <footer className="footer-wrapper">
+      <h1>Footer</h1>
+    </footer>
+  );
 };
 
 export default Footer;

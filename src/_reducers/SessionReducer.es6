@@ -12,13 +12,13 @@ const sessionReducer = (store = {}, action) => {
     case types.START_TIMEOUT:
       return Object.assign({}, store, { startError: 'TIMEOUT' });
     case types.START_SUCCESS:
-      return Object.assign({}, store, { startError: null });
+      return Object.assign({}, store, { startError: null, sessionStarted: true });
     case types.START_SESSION:
       return Object.assign({}, store, { startError: null });
     case types.START_LOGIN:
       return Object.assign({}, store, { loginError: null, validationMessage: '' });
     case types.LOGIN_FAIL:
-      return Object.assign({}, store, { loginError: 'ERROR', message: action });
+      return Object.assign({}, store, { loginError: 'ERROR', validationMessage: action.validationMessage });
     case types.VALIDATION_ERROR:
       return Object.assign({}, store, { validationMessage: action.data });
     case types.LOGIN_SUCCESS: {
@@ -31,7 +31,16 @@ const sessionReducer = (store = {}, action) => {
       let newStore = Object.assign({}, store);
       let user = { isActive: false, credentials: {} };
       newStore.user = user;
+      newStore.sessionStarted = false;
       return Object.assign({}, store, newStore);
+    }
+    case types.SHOW_MODAL: {
+      let newStore = Object.assign({}, store, {currentModal : action.modal});
+      return newStore;
+    }
+    case types.HIDE_MODAL: {
+      let newStore = Object.assign({}, store, {currentModal : null});
+      return newStore;
     }
     default:
       return store;

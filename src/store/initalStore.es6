@@ -7,7 +7,9 @@ export default {
       isActive: false,
       credentials: {}
     },
+    currentModal: null,
     showSpinner: false,
-    startError: null
+    startError: null,
+    sessionStarted: false,
   }
 };

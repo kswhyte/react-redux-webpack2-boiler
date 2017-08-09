@@ -17,6 +17,8 @@ import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
 import sStorage from '../../tools/sessionStorage_helper';
 import createBrowserHistory from '../../tools/history';
+import ModalConductor from './ModalConductor';
+import * as modal_names from '../constants/modals';
 /// Replaces the dispatcher.es file for each container component.
 
 let createHandlers = function(dispatch) {
@@ -24,17 +26,16 @@ let createHandlers = function(dispatch) {
     dispatch(sessionActions.startSessionClick(data));
   };
   let toggleHeader = function(data) {
-    dispatch(headerActions.toggle_header(data));
+    dispatch(headerActions.toggleHeader(data));
   };
 
-  let logoutUser = function(data) {
-    dispatch(sessionActions.startLogoutClick(data));
-  };
-
+  let logOutUser = function(){
+    dispatch(sessionActions.startLogoutClick());
+  }
   return {
     startSessionClick,
     toggleHeader,
-    logoutUser
+    logOutUser
     // other handlers
   };
 };
@@ -43,7 +44,9 @@ const proptypes = {
   headerSize: PropTypes.string,
   showSpinner: PropTypes.bool,
   startError: PropTypes.string,
-  user: PropTypes.object
+  user: PropTypes.object,
+  sessionStarted: PropTypes.bool,
+  currentModal: PropTypes.string
 };
 class App extends Component {
   constructor(props) {
@@ -51,9 +54,22 @@ class App extends Component {
     this.toggleHeaderSize = 'full';
     this.headerToggleTolerance = 50;
     this.props = props;
-    this.handlers = createHandlers(this.props.dispatch);
+    this.handlers = createHandlers(this.props.dispatch, this.props);
     this.userIsActive = false;
+
+    this.logoutUserHandler = this.logoutUserHandler.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
+
+  logoutUserHandler(){
+        if(this.props.sessionStarted){
+          this.props.dispatch(sessionActions.showModal(modal_names.LOGOUT_MODAL));
+        } else {
+          this.props.dispatch(sessionActions.startLogoutClick());
+        }
+    }
+
+
   componentDidMount() {
     window.addEventListener('scroll', () => {
       if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
@@ -67,6 +83,10 @@ class App extends Component {
   }
   componentWillMount() {}
 
+  hideModal() {
+    this.props.dispatch(sessionActions.hideModal());
+  }
+
   render() {
     if (sStorage.getItem({ key: 'isUserLoggedIn' }).item) {
       this.userIsActive = true;
@@ -76,7 +96,10 @@ class App extends Component {
     return (
       <Router history={createBrowserHistory}>
         <div className={this.userIsActive ? 'wrapper ' : 'wrapper signed-out'}>
-          <Header headerSize={this.props.headerSize} logout={this.handlers.logoutUser} />
+          <Header
+            headerSize={this.props.headerSize}
+            logout={this.logoutUserHandler}
+          />
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
@@ -111,22 +134,27 @@ class App extends Component {
             </div>
           </section>
           <Footer />
+          <ModalConductor hideModal={this.hideModal} currentModal={this.props.currentModal} />
         </div>
       </Router>
     );
   }
 }
+
 App.propTypes = proptypes;
+
 const mapStoreToProps = store => {
   //Select the specific Store items you would like here\
   const { headerSize } = store.Header;
-  const { showSpinner, startError, user } = store.Session;
+  const { showSpinner, startError, user, sessionStarted, currentModal } = store.Session;
   //return state items to be added as props to the container
   return {
     headerSize,
     showSpinner,
     startError,
-    user
+    user,
+    sessionStarted,
+    currentModal
   };
 };
 export default connect(mapStoreToProps)(App);

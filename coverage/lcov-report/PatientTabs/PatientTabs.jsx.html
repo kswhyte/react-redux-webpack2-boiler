@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>6/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>2/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>6/9</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -83,7 +83,16 @@
 38
 39
 40
-41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+41
+42
+43
+44
+45
+46
+47
+48</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -96,11 +105,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,7 +129,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,15 +145,20 @@ import PatientInfo from '../PatientInfo';
 import PatientAppointments from '../PatientAppointments';
 import PatientNotes from '../PatientNotes';
 &nbsp;
+import './patient-tabs.css';
+&nbsp;
 const PatientTabs = props =&gt; {
   PatientTabs.propTypes = {
-    children: PropTypes.object
+    children: PropTypes.object,
+    patientInfo:PropTypes.object
+    
   };
 &nbsp;
   const check = () =&gt; {
     console.log(props);
   };
   check();
+&nbsp;
 &nbsp;
   return (
     &lt;div className="patient-tabs-wrapper"&gt;
@@ -154,10 +173,12 @@ const PatientTabs = props =&gt; {
           &lt;Link to="/patientinfo/notes"&gt;Notes&lt;/Link&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
+      &lt;div className="tabs-line" /&gt;
+      &lt;div className="break-line" /&gt;
 &nbsp;
-      &lt;Route exact path="/patientinfo/generalinfo" component={PatientInfo} /&gt;
-      &lt;Route exact path="/patientinfo/appointments" component={PatientAppointments} /&gt;
-      &lt;Route exact path="/patientinfo/notes" component={PatientNotes} /&gt;
+      &lt;Route exact path="/patientinfo/generalinfo" render={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PatientInfo generalInfo={props.patientInfo.generalInfo} /&gt;}</span>  /&gt;
+      &lt;Route exact path="/patientinfo/appointments" render={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PatientAppointments appointments={props.patientInfo.appointments} /&gt;}</span>  /&gt;
+      &lt;Route exact path="/patientinfo/notes" render={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PatientNotes notes={props.patientInfo.notes} /&gt;}</span>  /&gt;
     &lt;/div&gt;
   );
 };
@@ -169,7 +190,7 @@ export default PatientTabs;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 31 2017 07:48:33 GMT-0600 (MDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 09 2017 12:54:54 GMT-0600 (MDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

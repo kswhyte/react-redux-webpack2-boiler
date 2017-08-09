@@ -10,21 +10,31 @@ exports[`Story 1`] = `
     <div
       className="patient-notes-form tab-pane active"
     >
+      <div
+        className="page-instructions"
+      >
+        <p>
+          No notes description
+        </p>
+      </div>
       <table
         className="notes-tables header-table"
       >
-        <th>
-          Date
-        </th>
-        <th>
-          Time
-        </th>
-        <th>
-          Title
-        </th>
-        <th>
-          Actions
-        </th>
+        <thead>
+          <th>
+            Date
+          </th>
+          <th>
+            Time
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            Actions
+          </th>
+        </thead>
+        <tbody />
       </table>
     </div>
   </div>

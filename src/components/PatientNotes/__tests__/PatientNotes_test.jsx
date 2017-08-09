@@ -17,8 +17,10 @@ stories.add('Story', () => {
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should render the PatientNotes component without crashing', () => {
-        let output = shallow(patientNotesStory);
-        expect(output.find('.patient-notes-wrapper').length).toEqual(1);
+        let output = shallow(<PatientNotes />);
+        //act
+        const lengthOf = output.find('.patient-notes-wrapper');
+        expect(lengthOf.length).toEqual(1)
       });
     })
   );

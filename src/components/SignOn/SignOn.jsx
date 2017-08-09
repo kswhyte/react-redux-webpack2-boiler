@@ -16,9 +16,12 @@ class SignOn extends Component {
     super(props);
     this.state = {
       loginEmail: '',
-      rememberMeValue: 'off'
+      rememberMeValue: 'off',
+      loginAttempts: 0
     };
+    this.handleInputEmailChange = this.handleInputEmailChange.bind(this);
     this.rememberMe = this.rememberMe.bind(this);
+    this.checkLoginAttempts = this.checkLoginAttempts.bind(this);
   }
 
   componentDidMount() {
@@ -26,26 +29,40 @@ class SignOn extends Component {
     if (storedUserEmail !== null && storedUserEmail !== undefined && storedUserEmail !== '') {
       this.setState({
         loginEmail: storedUserEmail,
-        rememberMeValue: 'on'
+        rememberMeValue: 'on',
+        loginAttempts: 0
       });
-      // document.querySelector('#loginEmail').value = storedUserEmail
     }
   }
 
+  handleInputEmailChange(e) {
+    this.setState({ loginEmail: e.target.value });
+  }
+
   rememberMe() {
-    let user_supplied_email_value = escape(document.querySelector('#loginEmail').value);
+    let userEmailValue = escape(document.querySelector('#loginEmail').value);
     if (this.state.rememberMeValue === 'off') {
       this.setState({ rememberMeValue: 'on' });
-      localStorage.setItem('userEmail', user_supplied_email_value);
+      localStorage.setItem('userEmail', userEmailValue);
     } else {
       this.setState({ rememberMeValue: 'off' });
       localStorage.removeItem('userEmail');
     }
   }
 
+  checkLoginAttempts() {
+    if (this.state.loginAttempts < 2) {
+      let updatedCount = this.state.loginAttempts;
+      updatedCount += 1;
+      this.setState({ loginAttempts: updatedCount });
+    } else if (this.state.loginAttempts >= 2) {
+      this.setState({ loginAttempts: 0 });
+    }
+  }
+
   render() {
     return (
-      <div className="sign-on-wrapper">
+      <div className="sign-on-wrapper card">
         <img src="images/pattern-dots.png" className="dots-pattern" />
         <div className="row">
           <h2>SIGN ON</h2>
@@ -79,28 +96,28 @@ class SignOn extends Component {
           }}
         >
           <div className="row md-spacer">
-            <div className="col-sm-6 input-row">
+            <div className="col-sm-offset-1 col-sm-5 input-row">
               <label forHtml="loginEmail">USER NAME (EMAIL)</label>
               <input
+                id="loginEmail"
+                type="text"
                 className={
                   this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
                 }
                 value={this.state.loginEmail}
-                onChange={e => {
-                  this.setState({ loginEmail: e.target.value });
-                }}
-                type="text"
-                id="loginEmail"
+                onChange={this.handleInputEmailChange}
                 placeholder="Your Email Address"
                 required
               />
             </div>
-            <div className="col-sm-6 input-row">
+            <div className="col-sm-5 input-row">
               <label forHtml="loginPassword">PASSWORD</label>
               <input
                 id="loginPassword"
+                className={
+                  this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
+                }
                 type="password"
-                className="form-group hg-input v2"
                 placeholder="Your Password"
                 label="Your Password"
                 required
@@ -109,19 +126,23 @@ class SignOn extends Component {
           </div>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
-              <button className="primary">SIGN ON</button>
-              <div className="row remember-me-row">
+              <button onClick={this.checkLoginAttempts} className="primary">SIGN ON</button>
+              <div className="row checkbox-row">
                 <input
-                  className="remember-checkbox"
+                  className="checkbox"
                   checked={this.state.rememberMeValue === 'on' ? 'checked' : ''}
                   onClick={this.rememberMe}
                   id="remember-checkbox"
                   type="checkbox"
                 />
-                <label htmlFor="remember-checkbox">Remember Me</label>
+                <label className="checkbox-label" htmlFor="remember-checkbox">
+                  Remember Me
+                </label>
               </div>
               <div className="row forgot-password-row">
-                <Link to="/resetpassword">Forgot your password?</Link>
+                <Link className={this.state.loginAttempts >= 2 ? 'attention-animation' : ''} to="/resetpassword">
+                  Forgot your password?
+                </Link>
               </div>
             </div>
           </div>

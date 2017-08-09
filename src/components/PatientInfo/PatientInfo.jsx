@@ -1,3 +1,5 @@
+/*eslint no-unused-vars: */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,13 +11,9 @@ import './patient-info.css';
 
 const PatientInfo = props => {
   PatientInfo.propTypes = {
-    children: PropTypes.object
+    children: PropTypes.object,
+    generalInfo: PropTypes.object.required
   };
-
-  const check = () => {
-    console.log(props);
-  };
-  check();
 
   return (
     <div className="patient-info-wrapper">
@@ -24,11 +22,11 @@ const PatientInfo = props => {
           <form>
             <HgRow>
               <div className="col-sm-3">
-                <TextInput label="PATIENT FIRST NAME &#42;" placeholder="Patient First Name" />
+                <TextInput value={props.generalInfo.firstName} label="PATIENT FIRST NAME &#42;" placeholder="Patient First Name" />
               </div>
 
               <div className="col-sm-4">
-                <TextInput label="PATIENT LAST NAME &#42;" placeholder="Patient Last Name" />
+                <TextInput value={props.generalInfo.lastName} label="PATIENT LAST NAME &#42;" placeholder="Patient Last Name" />
               </div>
 
               <div className="col-sm-2">
@@ -40,81 +38,81 @@ const PatientInfo = props => {
               </div>
 
               <div className="col-sm-3">
-                <TextInput label="EMAIL ADDRESS &#42;" placeholder="Email Adress" />
+                <TextInput value={props.generalInfo.emailAddress} label="EMAIL ADDRESS &#42;" placeholder="Email Adress" />
               </div>
             </HgRow>
 
             <HgRow>
               <div className="col-sm-3">
-                <SelectInput label="PATIENT DATE OF BIRTH &#42;" required />
+                <SelectInput value={props.generalInfo.dob} label="PATIENT DATE OF BIRTH &#42;"  />
               </div>
 
               <div className="col-sm-2">
-                <SelectInput label="PATIENT DATE OF BIRTH &#42;" required />
+                <SelectInput label="PATIENT DATE OF BIRTH &#42;"  />
               </div>
 
               <div className="col-sm-2">
-                <SelectInput label="PATIENT DATE OF BIRTH &#42;" required />
+                <SelectInput label="PATIENT DATE OF BIRTH &#42;"  />
               </div>
 
               <div className="col-sm-2">
-                <TextInput label="PHONE NUMBER &#42;" placeholder="Phone Number" />
+                <TextInput value={props.generalInfo.homePhoneNumber} label="PHONE NUMBER &#42;" placeholder="Phone Number" />
               </div>
 
               <div className="col-sm-3">
-                <SelectInput label="CONTACT METHOD &#42;" required />
-              </div>
-            </HgRow>
-
-            <HgRow>
-              <div className="col-sm-4">
-                <TextInput label="STREET &#42;" required />
-              </div>
-
-              <div className="col-sm-3">
-                <TextInput label="CITY STATE ZIP &#42;" required />
-              </div>
-
-              <div className="col-sm-2">
-                <SelectInput label="CITY STATE ZIP &#42;" required />
-              </div>
-
-              <div className="col-sm-2">
-                <TextInput label="CITY STATE ZIP &#42;" placeholder="Zip" required />
+                <SelectInput label="CONTACT METHOD &#42;"  />
               </div>
             </HgRow>
 
             <HgRow>
               <div className="col-sm-4">
-                <SelectInput label="PRIMARY INSURANCE CARRIER &#42;" required />
-              </div>
-
-              <div className="col-sm-2">
-                <SelectInput label="PLAN TYPE &#42;" required />
+                <TextInput label="STREET &#42;"  />
               </div>
 
               <div className="col-sm-3">
-                <TextInput label="PLAN NO. &#42;" placeholder="Plan Number" required />
+                <TextInput label="CITY STATE ZIP &#42;"  />
+              </div>
+
+              <div className="col-sm-2">
+                <SelectInput label="CITY STATE ZIP &#42;"  />
+              </div>
+
+              <div className="col-sm-2">
+                <TextInput label="CITY STATE ZIP &#42;" placeholder="Zip"  />
               </div>
             </HgRow>
 
             <HgRow>
               <div className="col-sm-4">
-                <SelectInput label="ALTERNATIVE INSURANCE CARRIER &#42;" required />
+                <SelectInput label="PRIMARY INSURANCE CARRIER &#42;"  />
               </div>
 
               <div className="col-sm-2">
-                <SelectInput label="PLAN TYPE &#42;" required />
+                <SelectInput label="PLAN TYPE &#42;"  />
               </div>
 
               <div className="col-sm-3">
-                <TextInput label="PLAN NO. &#42;" placeholder="Plan Number" required />
+                <TextInput label="PLAN NO. &#42;" placeholder="Plan Number"  />
               </div>
             </HgRow>
 
             <HgRow>
               <div className="col-sm-4">
-                <SelectInput label="REFERRING PHYSICIAN &#42;" required />
+                <SelectInput label="ALTERNATIVE INSURANCE CARRIER &#42;"  />
+              </div>
+
+              <div className="col-sm-2">
+                <SelectInput label="PLAN TYPE &#42;"  />
+              </div>
+
+              <div className="col-sm-3">
+                <TextInput label="PLAN NO. &#42;" placeholder="Plan Number"  />
+              </div>
+            </HgRow>
+
+            <HgRow>
+              <div className="col-sm-4">
+                <SelectInput label="REFERRING PHYSICIAN &#42;"  />
               </div>
             </HgRow>
           </form>

@@ -12,7 +12,10 @@ import expect from 'expect';
 const stories = storiesOf('PatientInfo', module);
 
 stories.add('Patient Info Story', () => {
-  const patientInfoStory = <PatientInfo />;
+  const props = {
+    generalInfo : {firstName: "test"}
+  }
+  const patientInfoStory = <PatientInfo {...props} />;
 
   specs(() =>
     describe('Show a successful alert', () => {
