@@ -28,9 +28,10 @@ let createHandlers = function(dispatch) {
     dispatch(headerActions.toggle_header(data));
   };
 
-  let logoutUser = function(data) {
+   let logoutUser = function(data) {
     dispatch(sessionActions.startLogoutClick(data));
   };
+
 
   return {
     startSessionClick,
@@ -83,8 +84,9 @@ class App extends Component {
     return (
       <Router history={createBrowserHistory}>
         <div className={this.userIsActive ? 'wrapper ' : 'wrapper signed-out'}>
-          <Header headerSize={this.props.headerSize}
-          logout={this.logout}
+          <Header
+            headerSize={this.props.headerSize}
+            logout={this.handlers.logoutUser}
           />
           <section className="body-wrapper">
             <Nav />
