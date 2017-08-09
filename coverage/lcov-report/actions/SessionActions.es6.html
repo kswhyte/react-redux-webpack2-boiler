@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for actions/SessionActions.es6</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">actions</a> SessionActions.es6
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.84% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.84% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import loginRequest from '../actionRequests/mocks/loginRequest';
+import startSessionRequest from '../actionRequests/mocks/startSessionRequest';
+import firePost from '../../tools/mocks/firePost';
+import resetPasswordRequest from '../actionRequests/mocks/resetPasswordRequest';
+import routeActions from './routeActions';
+import * as types from '../constants/actionTypes';
+import sStorage from '../../tools/sessionStorage_helper';
+&nbsp;
+const actions = {
+  startSpinner: <span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    type: types.START_SPINNER
+  }),
+  stopSpinner: <span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    type: types.STOP_SPINNER
+  }),
+  startSession: data =&gt; ({
+    type: types.START_SESSION,
+    data
+  }),
+  startSessionSuccess: data =&gt; ({
+    type: types.START_SUCCESS,
+    data
+  }),
+  startSessionFail: err =&gt; ({
+    type: types.START_FAIL,
+    err
+  }),
+  startSessionTimeout: err =&gt; ({
+    type: types.START_TIMEOUT,
+    err
+  }),
+  startLogin: data =&gt; ({
+    type: types.START_LOGIN,
+    data
+  }),
+  loginSuccess: data =&gt; ({
+    type: types.LOGIN_SUCCESS,
+    data
+  }),
+  loginFail: err =&gt; ({
+    type: types.LOGIN_FAIL,
+    err
+  }),
+  logoutSuccess: data =&gt; ({
+    type: types.LOGOUT_SUCCESS,
+    data
+  }),
+  validationError: <span class="fstat-no" title="function not covered" >da</span>ta =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    type: types.VALIDATION_ERROR,
+    data
+  }),
+  startResetPassword: data =&gt; ({
+    type: types.RESETPASSWORD_START,
+    data
+  }),
+  resetPasswordSuccess: <span class="fstat-no" title="function not covered" >da</span>ta =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+    type: types.RESETPASSWORD_SUCCESS,
+    data
+  }),
+  resetPasswordFail: data =&gt; ({
+    type: types.RESETPASSWORD_FAIL,
+    data
+  }),
+  showModal: modal =&gt; ({
+    type: types.SHOW_MODAL,
+    modal
+  }),
+  hideModal: () =&gt; ({
+    type: types.HIDE_MODAL
+  })
+};
+&nbsp;
+const thunks = {
+  startSessionClick: <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >di</span>spatch =&gt; {</span>
+      //TODO: Will retrieve from User Management;
+      const agent = <span class="cstat-no" title="statement not covered" >{};</span>
+      const postModel = <span class="cstat-no" title="statement not covered" >startSessionRequest(dispatch, agent);</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(actions.startSession(postModel.postModel));</span>
+<span class="cstat-no" title="statement not covered" >      firePost(postModel, dispatch);</span>
+    };
+  },
+  startLoginClick: <span class="fstat-no" title="function not covered" >da</span>ta =&gt; {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >di</span>spatch =&gt; {</span>
+      const loginCredentials = <span class="cstat-no" title="statement not covered" >data;</span>
+      const postModel = <span class="cstat-no" title="statement not covered" >loginRequest(dispatch, loginCredentials);</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(actions.startLogin(postModel.postModel));</span>
+<span class="cstat-no" title="statement not covered" >      firePost(postModel, dispatch);</span>
+&nbsp;
+    };
+  },
+  startLogoutClick: <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >di</span>spatch =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      sStorage.removeItem({ key: 'user'});</span>
+<span class="cstat-no" title="statement not covered" >      sStorage.removeItem({ key: 'isUserLoggedIn'});</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(actions.logoutSuccess());</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(routeActions.changeRoute({ route: '/login' }));</span>
+    };
+  },
+  startResetPasswordClick: <span class="fstat-no" title="function not covered" >re</span>setPasswordFormData =&gt; {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >di</span>spatch =&gt; {</span>
+      const postModel = <span class="cstat-no" title="statement not covered" >resetPasswordRequest(dispatch, resetPasswordFormData);</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(actions.startResetPassword(postModel.postModel));</span>
+<span class="cstat-no" title="statement not covered" >      firePost(postModel, dispatch);</span>
+    };
+  }
+};
+&nbsp;
+export default {
+  ...actions,
+  ...thunks
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 09 2017 12:57:20 GMT-0600 (MDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

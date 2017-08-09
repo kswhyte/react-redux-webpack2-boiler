@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>7/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>7/8</span>
       </div>
     </div>
   </div>
@@ -99,8 +99,38 @@
 54
 55
 56
-57</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,8 +141,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,6 +167,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,36 +207,74 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*eslint no-unused-vars: */
-&nbsp;
-import React from 'react';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import PropTypes from 'prop-types';
-// import Moment from 'moment';
+import Moment from 'moment';
+import './patient-notes.css';
 &nbsp;
 const PatientNotes = props =&gt; {
   PatientNotes.propTypes = {
-    children: PropTypes.object
+    children: PropTypes.object,
+    notes: PropTypes.array.required
   };
 &nbsp;
-  // const existingNotes = props.appointments.filter(note =&gt; {
-  //   return Moment(note.noteDateTime) &lt; Moment();
-  // });
+  const check = () =&gt; {
+    console.log(props);
+  };
+  check();
 &nbsp;
   return (
     &lt;div className="patient-notes-wrapper"&gt;
       &lt;div className="tab-content clearfix"&gt;
         &lt;div className="patient-notes-form tab-pane active"&gt;
+          {
+            (props.notes.length === 0) &amp;&amp; (
+              &lt;div className="page-instructions"&gt;
+                &lt;p&gt;No notes description&lt;/p&gt;
+              &lt;/div&gt;
+            )
+          }
           &lt;table className="notes-tables header-table"&gt;
-            &lt;th&gt;Date&lt;/th&gt;
-            &lt;th&gt;Time&lt;/th&gt;
-            &lt;th&gt;Title&lt;/th&gt;
-            &lt;th&gt;Actions&lt;/th&gt;
-          &lt;/table&gt;
-          {/* {existingNotes.length &gt; 0 &amp;&amp; &lt;ExistingNotes existingNotes={existingNotes} /&gt;} */}
+            &lt;thead&gt;
+              &lt;th&gt;Date&lt;/th&gt;
+              &lt;th&gt;Time&lt;/th&gt;
+              &lt;th&gt;Title&lt;/th&gt;
+              &lt;th&gt;Actions&lt;/th&gt;
+            &lt;/thead&gt;
+      &lt;tbody&gt;
+      {
+        props.notes.map(<span class="fstat-no" title="function not covered" >no</span>te =&gt; {
+<span class="cstat-no" title="statement not covered" >          return (</span>
+            &lt;tr key={note.noteId} &gt;
+              &lt;td&gt;{Moment(note.dateTime).format('LL')}&lt;/td&gt;
+              &lt;td&gt;{Moment(note.dateTime).format('LT')}&lt;/td&gt;
+              &lt;td&gt;{note.description}&lt;/td&gt;
+              &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          )
+        })
+      }
+      &lt;/tbody&gt;
+    &lt;/table&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
+};
+&nbsp;
+&nbsp;
+PatientNotes.defaultProps = {
+  notes: []
 };
 &nbsp;
 //TODO: make sure data is coming in for each note. UNCOMMENT when Redux wiring is setup
@@ -211,13 +301,16 @@ const PatientNotes = props =&gt; {
 // };
 &nbsp;
 export default PatientNotes;
+&nbsp;
+&nbsp;
+&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 09 2017 12:07:41 GMT-0600 (MDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 09 2017 12:54:54 GMT-0600 (MDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

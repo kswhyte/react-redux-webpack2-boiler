@@ -49,6 +49,9 @@ exports[`Story 1`] = `
     />
   </div>
   <div
+    className="footer-line"
+  />
+  <div
     className="break-line footer-line"
   />
   <div

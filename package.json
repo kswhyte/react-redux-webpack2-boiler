@@ -138,7 +138,9 @@
     "collectCoverageFrom": [
       "src/components/*.{es6, js,jsx}",
       "src/components/**/*.{es6, js,jsx}",
-      "!**/helpers/**"
+      "!**/helpers/**",
+      "src/_reducers/*.{es6, js,jsx}",
+      "src/actions/*.{es6, js,jsx}"
     ],
     "moduleFileExtensions": [
       "js",

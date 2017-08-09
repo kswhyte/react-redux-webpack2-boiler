@@ -1,27 +1,26 @@
-import patientSearchRequest from '../actionRequests/mocks/patientInfoRequest';
-import firePost from '../../tools/mocks/firePost';
+import getPatientInfoRequest from '../actionRequests/mocks/patientInfoRequest';
+import fireGet from '../../tools/mocks/fireGet';
 import * as types from '../constants/actionTypes';
 
 const actions = {
   
-  patientSearch: data => ({
-    type: types.PATIENT_SEARCH,
+  getPatientInfo: data => ({
+    type: types.GET_PATIENT_INFO,
     data
   }),
-  patientSearchSuccess: data => ({
-    type: types.PATIENT_SEARCH_SUCCESS,
+  getPatientInfoSuccess: data => ({
+    type: types.GET_PATIENT_INFO_SUCCESS,
     data
   })
 };
 
 const thunks = {
-  patientSearchClick: () => {
+  getPatientInfo: (patientId) => {
     return dispatch => {
       //TODO:Implementation pending
-      //Need to get clientId of agent from state.
-      const postModel=patientSearchRequest(dispatch);
-      dispatch(actions.patientSearch(postModel));
-      firePost(postModel, dispatch);
+      const request=getPatientInfoRequest(dispatch,patientId);
+    //  dispatch(actions.patientSearch(postModel));
+      fireGet(request, dispatch);
     };
   }
  

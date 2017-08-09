@@ -1,5 +1,3 @@
-/*eslint no-unused-vars: */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
@@ -60,17 +58,13 @@ const PastAppointments = props => {
       <tbody>
         {props.pastAppts.map(appt => {
           return (
-            <tr key={appt.appointmentID}>
-              <td>
-                {Moment(appt.appointmentDateTime).format('LL')}
-              </td>
-              <td>
-                {Moment(appt.appointmentDateTime).format('LT')}
-              </td>
-              <td>Dr Name Name</td>
-              <td>123-567-8910</td>
-              <td>Name</td>
-              <td />
+            <tr key={appt.appointmentID} >
+              <td>{Moment(appt.appointmentDateTime).format('LL')}</td>
+              <td>{Moment(appt.appointmentDateTime).format('LT')}</td>
+              <td>{appt.providerName}</td>
+              <td>{appt.officePhone}</td>
+              <td>{appt.agentName}</td>
+              <td></td>
             </tr>
           );
         })}
@@ -93,19 +87,13 @@ const UpcomingAppointments = props => {
       <tbody>
         {props.upcomingAppts.map(appt => {
           return (
-            <tr key={appt.appointmentID}>
-              <td>
-                {Moment(appt.appointmentDateTime).format('LL')}
-              </td>
-              <td>
-                {Moment(appt.appointmentDateTime).format('LT')}
-              </td>
-              <td>Dr Name Name</td>
-              <td>123-567-8910</td>
-              <td>Name</td>
-              <td>
-                <button>CANCEL</button>
-              </td>
+            <tr key={appt.appointmentID} >
+              <td>{Moment(appt.appointmentDateTime).format('LL')}</td>
+              <td>{Moment(appt.appointmentDateTime).format('LT')}</td>
+              <td>{appt.providerName}</td>
+              <td>{appt.officePhone}</td>
+              <td>{appt.agentName}</td>
+              <td><button>CANCEL</button></td>
             </tr>
           );
         })}

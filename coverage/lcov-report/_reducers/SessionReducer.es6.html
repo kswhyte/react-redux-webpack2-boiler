@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for _reducers/SessionReducer.es6</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">_reducers</a> SessionReducer.es6
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as types from '../constants/actionTypes';
+&nbsp;
+//inital state is set inside the store/initialState.es6
+const sessionReducer = (store = {}, action) =&gt; {
+  switch (action.type) {
+    case types.START_SPINNER:
+      return Object.assign({}, store, { showSpinner: true });
+    case types.STOP_SPINNER:
+      return Object.assign({}, store, { showSpinner: false });
+    case types.START_FAIL:
+      return Object.assign({}, store, { startError: 'ERROR' });
+    case types.START_TIMEOUT:
+      return Object.assign({}, store, { startError: 'TIMEOUT' });
+    case types.START_SUCCESS:
+      return Object.assign({}, store, { startError: null, sessionStarted: true });
+    case types.START_SESSION:
+      return Object.assign({}, store, { startError: null });
+    case types.START_LOGIN:
+      return Object.assign({}, store, { loginError: null, validationMessage: '' });
+    case types.LOGIN_FAIL:
+      return Object.assign({}, store, { loginError: 'ERROR', validationMessage: action.validationMessage });
+<span class="branch-8 cbranch-no" title="branch not covered" >    case types.VALIDATION_ERROR:</span>
+<span class="cstat-no" title="statement not covered" >      return Object.assign({}, store, { validationMessage: action.data });</span>
+<span class="branch-9 cbranch-no" title="branch not covered" >    case types.LOGIN_SUCCESS: {</span>
+      let newStore = <span class="cstat-no" title="statement not covered" >Object.assign({}, store);</span>
+<span class="cstat-no" title="statement not covered" >      newStore.user.credentials = action.data;</span>
+<span class="cstat-no" title="statement not covered" >      newStore.user.isActive = true;</span>
+<span class="cstat-no" title="statement not covered" >      return Object.assign({}, store, newStore);</span>
+    }
+<span class="branch-10 cbranch-no" title="branch not covered" >    case types.LOGOUT_SUCCESS: {</span>
+      let newStore = <span class="cstat-no" title="statement not covered" >Object.assign({}, store);</span>
+      let user = <span class="cstat-no" title="statement not covered" >{ isActive: false, credentials: {} };</span>
+<span class="cstat-no" title="statement not covered" >      newStore.user = user;</span>
+<span class="cstat-no" title="statement not covered" >      newStore.sessionStarted = false;</span>
+<span class="cstat-no" title="statement not covered" >      return Object.assign({}, store, newStore);</span>
+    }
+    case types.SHOW_MODAL: {
+      let newStore = Object.assign({}, store, {currentModal : action.modal});
+      return newStore;
+    }
+    case types.HIDE_MODAL: {
+      let newStore = Object.assign({}, store, {currentModal : null});
+      return newStore;
+    }
+    default:
+      return store;
+  }
+};
+&nbsp;
+export default sessionReducer;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Aug 09 2017 12:57:20 GMT-0600 (MDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
