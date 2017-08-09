@@ -17,7 +17,7 @@ import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
 import sStorage from '../../tools/sessionStorage_helper';
 import createBrowserHistory from '../../tools/history';
-import Modal from '../components/Modal';
+import ModalConductor from './ModalConductor';
 /// Replaces the dispatcher.es file for each container component.
 
 let createHandlers = function(dispatch) {
@@ -45,36 +45,17 @@ const proptypes = {
   showSpinner: PropTypes.bool,
   startError: PropTypes.string,
   user: PropTypes.object,
-  showModal: PropTypes.bool,
-  sessionStarted: PropTypes.bool
+  sessionStarted: PropTypes.bool,
+  currentModal : PropTypes.string
 };
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showModal : props.sessionStarted
-    };
     this.toggleHeaderSize = 'full';
     this.headerToggleTolerance = 50;
     this.props = props;
     this.handlers = createHandlers(this.props.dispatch);
-    this.logout = this.logout.bind(this);
     this.userIsActive = false;
-    this.closeModal = this.closeModal.bind(this);
-    this.IamSureToLogOut = this.IamSureToLogOut.bind(this);
-  }
-  closeModal() {
-    this.setState({showModal: false});
-  }
-  logout() {
-    if(this.props.sessionStarted){
-      this.setState({showModal: true});
-    } else {
-      this.props.dispatch(sessionActions.startLogoutClick());
-    }
-  }
-  IamSureToLogOut() {
-    this.props.dispatch(sessionActions.startLogoutClick());
   }
   componentDidMount() {
     window.addEventListener('scroll', () => {
@@ -135,40 +116,27 @@ class App extends Component {
             </div>
           </section>
           <Footer />
-           <Modal
-              toggle={this.state.showModal}
-              modalType={'danger'}
-              content= {'You are in the middle of a session and all unsaved changes may be lost'}
-              title= {'Are you sure you want to log out?'}
-              closeButtonTitle="Cancel"
-              closButtonOnClick={this.closeModal}
-              buttons={
-                [
-                  {
-                    displayName: 'Yes',
-                    onclick: this.IamSureToLogOut,
-                    buttonType: 'default',
-                  }
-                ]
-              }
-          />
+          <ModalConductor currentModal={this.props.currentModal} />
         </div>
       </Router>
     );
   }
 }
+
 App.propTypes = proptypes;
+
 const mapStoreToProps = store => {
   //Select the specific Store items you would like here\
   const { headerSize } = store.Header;
-  const { showSpinner, startError, user, sessionStarted } = store.Session;
+  const { showSpinner, startError, user, sessionStarted, currentModal } = store.Session;
   //return state items to be added as props to the container
   return {
     headerSize,
     showSpinner,
     startError,
     user,
-    sessionStarted
+    sessionStarted,
+    currentModal
   };
 };
 export default connect(mapStoreToProps)(App);
