@@ -97,3 +97,7 @@ nav,
   height: 3px;
   background-color: var(--footer-line);
 }
+
+button.btn-primary {
+  background-color: var(--primary-color);
+}

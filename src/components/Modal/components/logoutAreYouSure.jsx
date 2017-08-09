@@ -5,25 +5,29 @@ import ModalWrapper from '../ModalWrapper.jsx';
 
 const _propTypes = {
   hideModal: PropTypes.func,
-  logOutAreYouSure: PropTypes.func
+  logout: PropTypes.func
 }
 
 const LogOutAreYouSure = props => {
 
-  const logOutAreYouSurehandler = provider => {
-    props.hideModal();
-    props.logOutAreYouSure(provider);
-  };
 
   return (
     <ModalWrapper
       {...props}
-      title="Sign in"
+      title="Are you sure you want to log out?"
       width={400}
       showOk={false}
     >
-      <p>Logout</p>
-      <button onClick={logOutAreYouSurehandler}>LogOut</button>
+      <p>You are in the middle of a session and all unsaved changes may be lost</p>
+      <div className="row">
+        <div className="col-xs-12">
+         <div className="pull-right">
+          <button onClick={props.hideModal} className="btn-default btn">Cancel</button>
+          <button onClick={props.logout} className="btn-primary btn">LogOut</button>
+        </div>
+        </div>
+      </div>
+
     </ModalWrapper>
   );
 };

@@ -2,17 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as Modal_Names from '../constants/modals';
+import sessionActions from '../actions/SessionActions';
 
 import LogoutAreYouSure from '../components/Modal/components/logoutAreYouSure';
 
 const _propTypes = {
-  currentModal : PropTypes.string
+  currentModal : PropTypes.string,
+  hideModal: PropTypes.func.isRequired
 }
 
 const ModalConductor = props => {
+
+  const logout = () => {
+    props.hideModal();
+    props.dispatch(sessionActions.startLogoutClick());
+  }
+
   switch (props.currentModal) {
     case Modal_Names.LOGOUT_MODAL:
-      return <LogoutAreYouSure modalType={'danger'} {...props}/>;
+      return <LogoutAreYouSure logout={logout}  modalType={'danger'} {...props}/>;
     default:
       return null;
   }

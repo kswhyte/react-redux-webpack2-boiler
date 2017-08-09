@@ -50,7 +50,8 @@ describe('Session Reducer', () => {
         type: types.START_SUCCESS
       })
     ).toEqual({
-      startError: null
+      startError: null,
+      sessionStarted: true
     });
   });
   it('should handle START_SESSION', () => {
@@ -89,6 +90,40 @@ describe('Session Reducer', () => {
       validationMessage: action.err.validationMessage
     });
   });
+  it('Should show a modal', () => {
+      //Arrange
+      let action = {
+            type: 'SHOW_MODAL',
+            modal: "LOGOUT_MODAL"
+          };
+      //Act
+
+      //Assert
+      expect(
+        sessionReducer([], {
+          type: types.SHOW_MODAL,
+          modal: 'LOGOUT_MODAL'
+        })
+      ).toEqual({
+        currentModal: 'LOGOUT_MODAL'
+      });
+ });
+it('Should hide a modal', () => {
+      //Arrange
+      let action = {
+            type: 'HIDE_MODAL'
+          };
+      //Act
+
+      //Assert
+      expect(
+        sessionReducer([], {
+          type: types.HIDE_MODAL
+        })
+      ).toEqual({
+        currentModal: null
+      });
+ });
 // __________________________________
 //   it('should handle VALIDATION_ERROR', () => {
 //     let action = {

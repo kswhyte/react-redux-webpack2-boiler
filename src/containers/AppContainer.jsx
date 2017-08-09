@@ -18,6 +18,7 @@ import sessionActions from '../actions/SessionActions';
 import sStorage from '../../tools/sessionStorage_helper';
 import createBrowserHistory from '../../tools/history';
 import ModalConductor from './ModalConductor';
+import * as modal_names from '../constants/modals';
 /// Replaces the dispatcher.es file for each container component.
 
 let createHandlers = function(dispatch) {
@@ -28,15 +29,14 @@ let createHandlers = function(dispatch) {
     dispatch(headerActions.toggle_header(data));
   };
 
-   let logoutUser = function(data) {
-    dispatch(sessionActions.startLogoutClick(data));
-  };
-
+  let logOutUser = function(){
+    dispatch(sessionActions.startLogoutClick());
+  }
 
   return {
     startSessionClick,
     toggleHeader,
-    logoutUser
+    logOutUser
     // other handlers
   };
 };
@@ -55,9 +55,22 @@ class App extends Component {
     this.toggleHeaderSize = 'full';
     this.headerToggleTolerance = 50;
     this.props = props;
-    this.handlers = createHandlers(this.props.dispatch);
+    this.handlers = createHandlers(this.props.dispatch, this.props);
     this.userIsActive = false;
+
+    this.logoutUserHandler = this.logoutUserHandler.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
+
+  logoutUserHandler(){
+        if(this.props.sessionStarted){
+          this.props.dispatch(sessionActions.showModal(modal_names.LOGOUT_MODAL));
+        } else {
+          this.props.dispatch(sessionActions.startLogoutClick());
+        }
+    }
+
+
   componentDidMount() {
     window.addEventListener('scroll', () => {
       if (window.scrollY > this.headerToggleTolerance && this.toggleHeaderSize !== 'small') {
@@ -72,7 +85,7 @@ class App extends Component {
   componentWillMount() {}
 
   hideModal() {
-    alert('closing');
+    this.props.dispatch(sessionActions.hideModal());
   }
 
   render() {
@@ -86,7 +99,7 @@ class App extends Component {
         <div className={this.userIsActive ? 'wrapper ' : 'wrapper signed-out'}>
           <Header
             headerSize={this.props.headerSize}
-            logout={this.handlers.logoutUser}
+            logout={this.logoutUserHandler}
           />
           <section className="body-wrapper">
             <Nav />

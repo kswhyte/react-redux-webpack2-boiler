@@ -60,6 +60,13 @@ const actions = {
   resetPasswordFail: data => ({
     type: types.RESETPASSWORD_FAIL,
     data
+  }),
+  showModal: modal => ({
+    type: types.SHOW_MODAL,
+    modal
+  }),
+  hideModal: () => ({
+    type: types.HIDE_MODAL
   })
 };
 

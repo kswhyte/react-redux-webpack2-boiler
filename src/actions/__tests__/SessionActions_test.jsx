@@ -1,5 +1,6 @@
 import actions from '../SessionActions';
 import expect from 'expect';
+import * as types from '../../constants/actionTypes';
 
 import { Router, Route } from 'react-router-dom';
 
@@ -66,7 +67,33 @@ describe('Session Actions', () => {
       expect(action).toEqual(expectedAction);
     });
   });
+  describe('Modals', () => {
+    it('Should show a modal', () => {
+          //Arrange
+          const modal = 'LOGOUT_MODAL';
 
+          let expectedAction = {
+            type: types.SHOW_MODAL,
+            modal
+          };
+
+          //Act
+          const action = actions.showModal(modal);
+          //Assert
+          expect(action).toEqual(expectedAction);
+      });
+        it('Should hide a modal', () => {
+          //Arrange
+          let expectedAction = {
+            type: types.HIDE_MODAL,
+          };
+
+          //Act
+          const action = actions.hideModal();
+          //Assert
+          expect(action).toEqual(expectedAction);
+      });
+  });
   describe('Clicking Submit', () => {
     it('Should execute startLogin action', () => {
       const data = {

@@ -34,6 +34,14 @@ const sessionReducer = (store = {}, action) => {
       newStore.sessionStarted = false;
       return Object.assign({}, store, newStore);
     }
+    case types.SHOW_MODAL: {
+      let newStore = Object.assign({}, store, {currentModal : action.modal});
+      return newStore;
+    }
+    case types.HIDE_MODAL: {
+      let newStore = Object.assign({}, store, {currentModal : null});
+      return newStore;
+    }
     default:
       return store;
   }
