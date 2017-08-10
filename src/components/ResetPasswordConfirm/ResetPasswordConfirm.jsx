@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './reset-password-confirm.css';
 
@@ -24,9 +24,7 @@ const ResetPasswordConfirm = () => {
       <form>
         <div className="row sm-spacer">
           <div className="col-xs-offset-3 col-xs-6">
-            <Link to="/login" className="primary-btn btn-link">
-              SIGN IN
-            </Link>
+            <button className="primary">SIGN IN</button>
           </div>
         </div>
       </form>

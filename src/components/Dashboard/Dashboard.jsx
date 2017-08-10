@@ -14,22 +14,19 @@ export const Dashboard = props => {
       <div className="no-margin">
         <h2 className="dashboard-text">Dashboard</h2>
         <hr />
-
-        <div className="sm-spacer">
-          <div className="col-xs-4">
-            <button className="new-session-button primary-btn" tabIndex="1" onClick={props.startSessionClick}>
-              BEGIN NEW SESSION
-            </button>
-          </div>
-        </div>
-        <div className="sm-spacer">
-          <div className="col-xs-offset-1 col-xs-4">
-            <button className="primary-btn" tabIndex="1">
-              MANAGE MY ACCOUNT
-            </button>
-          </div>
-        </div>
-
+        <button
+          className="new-session-button primary dashboard-button"
+          tabIndex="1"
+          onClick={props.startSessionClick}
+        >
+          Begin New Session
+        </button>
+        <button
+          className="dashboard-button primary"
+          tabIndex="1"
+        >
+          Manage My Account
+        </button>
         <div className="error-container">
           {props.startError === 'ERROR' && <h3>Something went wrong.</h3>}
           {props.startError === 'TIMEOUT' && <h3>Request timed out.</h3>}

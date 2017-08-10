@@ -44,9 +44,7 @@ h1 {
 
 h2 {
   font-family: "Arial Bold", sans-serif;
-  /*font-size: 24px;*/
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 24px;
 }
 
 h5 {
@@ -69,55 +67,13 @@ input[type="text"] {
   font-family: Open Sans;
 }
 
-.page-instructions {
-  font: italic 16px 'Georgia', sans-serif;
-  color: var(--light-grey);
-}
-
 a:any-link {
   font-family: Open Sans;
   color: var(--light-teal);
   text-decoration: none;
-  &.btn-link {
-    color: var(--white);
-    text-transform: uppercase;
-  }
-  &.btn-link:hover {
-    width: 276px;
-    height: 40px;
-    background: var(--primary-color);
-    color: var(--white);
-    border: 1px solid #df907a;
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 14px 20px;
-    font-family: 'Open Sans', 'OpenSans', 'Arial', 'Helvetica', sans-serif;
-    font-size: 12px !important;
-    line-height: 1;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 3px;
-  }
 }
 
-button,
-.primary-btn {
-  width: 276px;
-  height: 40px;
-  background: var(--primary-color);
-  color: var(--white);
-  border: 1px solid #df907a;
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 14px 20px;
-  font-family: 'Open Sans', 'OpenSans', 'Arial', 'Helvetica', sans-serif;
-  font-size: 12px !important;
-  line-height: 1;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 3px;
+.page-instructions {
+  font: italic 16px 'Georgia', sans-serif;
+  color: var(--light-grey);
 }

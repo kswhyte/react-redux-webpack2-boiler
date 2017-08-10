@@ -139,16 +139,16 @@ describe('Session Reducer', () => {
     });
    });
 
-  it('should handle RESET_PASSWORD', () => {
-    let action = {
-      message: 'Successful reset of password'
-    }
-    expect(
-      sessionReducer([], {
-        type: types.RESET_PASSWORD
-      })
-    ).toEqual({
-      validationMessage: action.message
-    });
-  });
+  // it('should handle RESET_PASSWORD', () => {
+  //   let action = {
+  //     message: 'Successful reset of password'
+  //   }
+  //   expect(
+  //     sessionReducer([], {
+  //       type: types.RESET_PASSWORD
+  //     })
+  //   ).toEqual({
+  //     validationMessage: action.message
+  //   });
+  // });
 });

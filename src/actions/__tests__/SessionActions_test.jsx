@@ -162,20 +162,20 @@ describe('Session Actions', () => {
         expect(action).toEqual(expectedAction);
       });
 
-      // it('Should execute resetPasswordSuccess action', () => {
-      //   const data = {
-      //     loginEmail: 'newagent@mailinator.com',
-      //     loginPassword: 'newpassword'
-      //   };
-      //   let expectedAction = {
-      //     type: 'RESETPASSWORD_SUCCESS',
-      //     data
-      //   };
-      //
-      //   const action = actions.resetPasswordSuccess(data);
-      //
-      //   expect(action).toEqual(expectedAction);
-      // });
+      it('Should execute resetPasswordSuccess action', () => {
+        const data = {
+          loginEmail: 'newagent@mailinator.com',
+          loginPassword: 'newpassword'
+        };
+        let expectedAction = {
+          type: 'RESETPASSWORD_SUCCESS',
+          data
+        };
+
+        const action = actions.resetPasswordSuccess(data);
+
+        expect(action).toEqual(expectedAction);
+      });
 
       it('Should execute resetPasswordFail action', () => {
         const data = {

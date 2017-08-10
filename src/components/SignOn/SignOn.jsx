@@ -70,13 +70,12 @@ class SignOn extends Component {
             <p>Please enter your email address and password below.</p>
           </div>
         </div>
-        <div className="sm-spacer validation-error">
-          {this.props.validationMessage &&
+        {this.props.validationMessage &&
+          <div className="sm-spacer validation-error">
             <h5>
               {this.props.validationMessage}
-            </h5>}
-        </div>
-
+            </h5>
+          </div>}
         <form
           onSubmit={e => {
             e.preventDefault();
@@ -87,7 +86,7 @@ class SignOn extends Component {
               this.props.validationError(
                 'The information entered is not recognized. Please enter a valid username and password.'
               );
-              return false;
+              return;
             }
             const data = {
               loginEmail,
@@ -102,7 +101,9 @@ class SignOn extends Component {
               <input
                 id="loginEmail"
                 type="text"
-                className={this.props.validationMessage ? 'input-error form-group' : 'form-group'}
+                className={
+                  this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
+                }
                 value={this.state.loginEmail}
                 onChange={this.handleInputEmailChange}
                 placeholder="Your Email Address"
@@ -113,7 +114,9 @@ class SignOn extends Component {
               <label forHtml="loginPassword">PASSWORD</label>
               <input
                 id="loginPassword"
-                className={this.props.validationMessage ? 'input-error form-group' : 'form-group'}
+                className={
+                  this.props.validationMessage ? 'input-error form-group hg-input v2' : 'form-group hg-input v2'
+                }
                 type="password"
                 placeholder="Your Password"
                 label="Your Password"
@@ -123,10 +126,8 @@ class SignOn extends Component {
           </div>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
-              <button onClick={this.checkLoginAttempts} className="primary-btn">
-                SIGN ON
-              </button>
-              <div className="row sm-spacer">
+              <button onClick={this.checkLoginAttempts} className="primary">SIGN ON</button>
+              <div className="row checkbox-row">
                 <input
                   className="checkbox"
                   checked={this.state.rememberMeValue === 'on' ? 'checked' : ''}
