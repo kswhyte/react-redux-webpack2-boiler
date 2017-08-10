@@ -1,13 +1,9 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 
 import './change-password.css';
 
-const propTypes = {
-  submitLogin: PropTypes.func.isRequired,
-  validationError: PropTypes.func,
-  validationMessage: PropTypes.string
-};
+const propTypes = {};
 
 const ChangePassword = () => {
   return (
@@ -25,7 +21,7 @@ const ChangePassword = () => {
             console.log("Ze Submission");
           }}
         >
-          <div className="row md-spacer">
+          <div className="row change-password-spacer">
             <div className="col-sm-offset-1 col-sm-5 input-row">
               <label forHtml="loginChangePassword">NEW PASSWORD</label>
               <input
@@ -46,7 +42,7 @@ const ChangePassword = () => {
               />
             </div>
           </div>
-          <div className="row lg-spacer">
+          <div className="row change-password-spacer">
             <div className="col-xs-offset-3 col-xs-6">
               <button className="primary-btn">
                 CHANGE PASSWORD
