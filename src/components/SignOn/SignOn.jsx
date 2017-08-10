@@ -89,6 +89,7 @@ class SignOn extends Component {
               );
               return false;
             }
+            this.props.validationError('');
             const data = {
               loginEmail,
               loginPassword
@@ -139,7 +140,13 @@ class SignOn extends Component {
                 </label>
               </div>
               <div className="row forgot-password-row">
-                <Link className={this.state.loginAttempts >= 2 ? 'attention-animation' : ''} to="/resetpassword">
+                <Link
+                  className={this.state.loginAttempts >= 2 ? 'attention-animation' : ''}
+                  to="/resetpassword"
+                  onClick={() => {
+                    this.props.validationError('');
+                  }}
+                >
                   Forgot your password?
                 </Link>
               </div>
