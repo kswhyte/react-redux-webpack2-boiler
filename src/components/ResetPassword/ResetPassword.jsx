@@ -39,6 +39,7 @@ const ResetPassword = props => {
             props.validationError('The email entered is not recognized. Please enter a valid email address.');
             return false;
           }
+          props.validationError('');
           const userData = {
             userEmail
           };
