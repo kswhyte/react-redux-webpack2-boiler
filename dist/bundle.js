@@ -7,7 +7,7 @@
 /********/
 /********/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
+/*******/ 			return installedModules[moduleId].exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
