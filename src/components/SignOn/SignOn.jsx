@@ -123,7 +123,7 @@ class SignOn extends Component {
           </div>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
-              <button onClick={this.checkLoginAttempts} className="primary">
+              <button onClick={this.checkLoginAttempts} className="primary-btn">
                 SIGN ON
               </button>
               <div className="row sm-spacer">

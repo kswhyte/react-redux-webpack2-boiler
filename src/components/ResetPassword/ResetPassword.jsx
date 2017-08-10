@@ -66,7 +66,7 @@ const ResetPassword = props => {
         </div>
         <div className="row lg-spacer">
           <div className="col-xs-offset-3 col-xs-6">
-            <button className="primary" type="submit">
+            <button className="primary-btn" type="submit">
               RESET PASSWORD
             </button>
           </div>
