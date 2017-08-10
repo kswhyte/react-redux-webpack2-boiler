@@ -5,6 +5,28 @@ import './change-password.css';
 
 const propTypes = {};
 
+const checkPassword = () => {
+  const loginChangePassword = escape(document.querySelector('#loginChangePassword').value);
+  const loginChangePasswordConfirm = escape(document.querySelector('#loginChangePasswordConfirm').value);
+  if (loginChangePassword !== loginChangePasswordConfirm) {
+    console.log("Ain't no gooood");
+  }
+  if (loginChangePassword === loginChangePasswordConfirm) {
+    console.log("Looks good");
+  }
+}
+
+const submitPasswordChange = () => {
+  const loginChangePassword = escape(document.querySelector('#loginChangePassword').value);
+  const loginChangePasswordConfirm = escape(document.querySelector('#loginChangePasswordConfirm').value);
+  if (loginChangePassword !== loginChangePasswordConfirm) {
+    console.log("Ain't no gooood 2");
+  }
+  if (loginChangePassword === loginChangePasswordConfirm) {
+    console.log("Looks good 2");
+  }
+}
+
 const ChangePassword = () => {
   return (
     <div className="change-password-wrapper card">
@@ -18,7 +40,7 @@ const ChangePassword = () => {
         <form
           onSubmit={e => {
             e.preventDefault();
-            console.log("Ze Submission");
+            submitPasswordChange();
           }}
         >
           <div className="row change-password-spacer">
@@ -38,6 +60,7 @@ const ChangePassword = () => {
                 type="password"
                 placeholder="Confirm Password"
                 label="Confirm Password"
+                onBlur={checkPassword}
                 required
               />
             </div>
