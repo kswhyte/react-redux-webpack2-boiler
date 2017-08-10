@@ -29,12 +29,11 @@ const startSessionRequest = (dispatch, ...args) => {
   const requestEnd = () => {
     const _res = {
       body: {
-        message: 'Mocked Data'
+        message: 'Your session has begun'
       }
     };
     dispatch(actions.startSessionSuccess(_res.body));
     dispatch(routeActions.changeRoute({ route: '/patientsearch/' }));
-
 
     // const _err = {
     //   body: {

@@ -8,7 +8,8 @@ import './reset-password.css';
 const propTypes = {
   resetPassword: PropTypes.func.isRequired,
   validationError: PropTypes.func,
-  validationMessage: PropTypes.string
+  validationMessage: PropTypes.string,
+  submitPasswordRecoveryEmail: PropTypes.func
 };
 
 const ResetPassword = props => {

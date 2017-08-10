@@ -4,20 +4,20 @@ import actions from '../../actions/SessionActions';
 import { URI } from '../../../tools/app_config';
 import routeActions from '../../actions/routeActions';
 
-const loginRequest = (dispatch, ...args) => {
+const resetPasswordRequest = (dispatch, ...args) => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const postRoute = '/#fake';
   const postModel = {
-    password: '123'
+    email: 'john@doe.com'
   };
 
   const requestEnd = () => {
     const _res = {
       body: {
-        result: 'success'
+        message: 'Success. The recovery email has been sent.'
       }
     };
-    dispatch(actions.loginSuccess(_res.body));
+    dispatch(actions.startResetPassword(_res.body));
 
     /* // FOR TESTING ERRORS
       _res.err = {
@@ -34,4 +34,4 @@ const loginRequest = (dispatch, ...args) => {
   return { hostedUrlPath, postRoute, requestEnd, postModel };
 };
 
-export default loginRequest;
+export default resetPasswordRequest;

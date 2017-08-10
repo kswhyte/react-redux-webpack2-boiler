@@ -29,7 +29,8 @@ let createHandlers = dispatch => {
   return {
     submitLogin,
     validationError,
-    resetPassword
+    resetPassword,
+    submitPasswordRecoveryEmail
     // other handlers
   };
 };
@@ -70,12 +71,13 @@ class SignOnContainer extends Component {
           resetPassword={this.handlers.resetPassword}
           validationError={this.handlers.validationError}
           validationMessage={this.props.validationMessage}
+          submitPasswordRecoveryEmail={this.handlers.submitPasswordRecoveryEmail}
         />
       );
     }
 
     if (this.props.signonType === 'resetpasswordconfirm') {
-      return <ResetPasswordConfirm submitPasswordRecoveryEmail={this.handlers.submitPasswordRecoveryEmail} />;
+      return <ResetPasswordConfirm />;
     }
   }
 }
