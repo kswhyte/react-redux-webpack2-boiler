@@ -7,17 +7,23 @@ import ResetPasswordConfirm from '../ResetPasswordConfirm';
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
 import { shallow, mount } from 'enzyme';
+import { StaticRouter } from 'react-router';
 import expect from 'expect';
 
 const stories = storiesOf('ResetPasswordConfirm', module);
-
+const props = {
+}
 stories.add('ResetPasswordConfirm Page Story', () => {
-  const resetPasswordConfirmStory = <ResetPasswordConfirm />;
+  const resetPasswordConfirmStory = (
+    <StaticRouter {...props} context={{}}>
+      <ResetPasswordConfirm {...props} />
+    </StaticRouter>
+  );
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should render the ResetPasswordConfirm component without crashing', () => {
-        let output = shallow(resetPasswordConfirmStory);
-        expect(output.find('.reset-password-confirm-wrapper').length).toEqual(1);
+        let output = mount(resetPasswordConfirmStory);
+        expect(output.find('.reset-password-confirm-wrapper').exists()).toBe(true)
       });
       it('Should have a header element that says "Reset Your Password"', () => {
         let output = mount(resetPasswordConfirmStory);
@@ -33,8 +39,8 @@ stories.add('ResetPasswordConfirm Page Story', () => {
       });
       it('Should have a "Sign On" button to return to login', () => {
         let output = mount(resetPasswordConfirmStory);
-        expect(output.find('button').length).toEqual(1);
-        expect(output.find('.primary').length).toEqual(1);
+        expect(output.find('a').length).toEqual(1);
+        expect(output.find('.primary-btn').length).toEqual(1);
       });
     })
   );

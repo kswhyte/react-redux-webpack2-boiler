@@ -6,7 +6,7 @@ import isEmail from '../../helpers/isEmail';
 import './reset-password.css';
 
 const propTypes = {
-  resetPassword: PropTypes.func.isRequired,
+  resetPassword: PropTypes.func,
   validationError: PropTypes.func,
   validationMessage: PropTypes.string,
   submitPasswordRecoveryEmail: PropTypes.func

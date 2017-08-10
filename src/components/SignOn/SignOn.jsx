@@ -98,7 +98,7 @@ class SignOn extends Component {
         >
           <div className="row md-spacer">
             <div className="col-sm-offset-1 col-sm-5 input-row">
-              <label forHtml="loginEmail">USER NAME (EMAIL)</label>
+              <label>USER NAME (EMAIL)</label>
               <input
                 id="loginEmail"
                 type="text"
@@ -110,7 +110,7 @@ class SignOn extends Component {
               />
             </div>
             <div className="col-sm-5 input-row">
-              <label forHtml="loginPassword">PASSWORD</label>
+              <label>PASSWORD</label>
               <input
                 id="loginPassword"
                 className={this.props.validationMessage ? 'input-error form-group' : 'form-group'}
@@ -123,7 +123,7 @@ class SignOn extends Component {
           </div>
           <div className="row lg-spacer">
             <div className="col-xs-offset-3 col-xs-6">
-              <button onClick={this.checkLoginAttempts} className="primary-btn">
+              <button onClick={this.checkLoginAttempts} type="submit" className="primary-btn">
                 SIGN ON
               </button>
               <div className="row sm-spacer">

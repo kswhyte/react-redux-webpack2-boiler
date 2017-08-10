@@ -68,7 +68,6 @@ stories.add('Sign On Page Elements', () => {
       it('Should have one call-to-action submit button', () => {
         let output = mount(signOnStory);
         expect(output.find('button').length).toEqual(1);
-        expect(output.find('.primary').length).toEqual(1);
       });
 
       it('Should have one link: "Forgot Password"', () => {
@@ -79,12 +78,15 @@ stories.add('Sign On Page Elements', () => {
 
       it('Should display an animation alerting user, "Forgot Password" after 2 login attempts', () => {
         let output = mount(signOnStory);
-
+        output.find('#loginEmail').text('s');
+        output.find('#loginPassword').text('d');
         output.setState({loginAttempts: 1})
         expect(output.find('.attention-animation').length).toEqual(0)
 
-        output.find('.primary').simulate('click');
-        output.find('.primary').simulate('click');
+        output.find('[type="submit"]').simulate('click');
+        output.find('[type="submit"]').simulate('click');
+
+        console.log(output.state());
         expect(output.find('.attention-animation').length).toEqual(1)
       });
     })
