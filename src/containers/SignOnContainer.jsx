@@ -18,10 +18,6 @@ let createHandlers = dispatch => {
     dispatch(sessionActions.validationError(data));
   };
 
-  let resetPassword = data => {
-    dispatch(sessionActions.startResetPasswordClick(data));
-  };
-
   let submitPasswordRecoveryEmail = email => {
     dispatch(sessionActions.startResetPasswordClick(email));
   };
@@ -29,7 +25,6 @@ let createHandlers = dispatch => {
   return {
     submitLogin,
     validationError,
-    resetPassword,
     submitPasswordRecoveryEmail
     // other handlers
   };
@@ -68,7 +63,6 @@ class SignOnContainer extends Component {
     if (this.props.signonType === 'resetpassword') {
       return (
         <ResetPassword
-          resetPassword={this.handlers.resetPassword}
           validationError={this.handlers.validationError}
           validationMessage={this.props.validationMessage}
           submitPasswordRecoveryEmail={this.handlers.submitPasswordRecoveryEmail}

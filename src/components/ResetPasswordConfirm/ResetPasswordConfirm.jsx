@@ -24,7 +24,7 @@ const ResetPasswordConfirm = () => {
       <form>
         <div className="row sm-spacer">
           <div className="col-xs-offset-3 col-xs-6">
-            <Link to="/login" className="primary-btn btn-link">
+            <Link to="/login" id="back-to-signin-link" className="primary-btn btn-link">
               SIGN IN
             </Link>
           </div>

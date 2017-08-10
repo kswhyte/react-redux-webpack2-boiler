@@ -20,7 +20,7 @@ stories.add('ResetPasswordConfirm Page Story', () => {
     </StaticRouter>
   );
   specs(() =>
-    describe('Show a successful alert', () => {
+    describe('ResetPasswordConfirm page and functionality', () => {
       it('Should render the ResetPasswordConfirm component without crashing', () => {
         let output = mount(resetPasswordConfirmStory);
         expect(output.find('.reset-password-confirm-wrapper').exists()).toBe(true)

@@ -66,33 +66,7 @@ describe('Session Actions', () => {
       expect(action).toEqual(expectedAction);
     });
   });
-  describe('Modals', () => {
-    it('Should show a modal', () => {
-          //Arrange
-          const modal = 'LOGOUT_MODAL';
 
-          let expectedAction = {
-            type: types.SHOW_MODAL,
-            modal
-          };
-
-          //Act
-          const action = actions.showModal(modal);
-          //Assert
-          expect(action).toEqual(expectedAction);
-      });
-        it('Should hide a modal', () => {
-          //Arrange
-          let expectedAction = {
-            type: types.HIDE_MODAL,
-          };
-
-          //Act
-          const action = actions.hideModal();
-          //Assert
-          expect(action).toEqual(expectedAction);
-      });
-  });
   describe('Clicking Submit', () => {
     it('Should execute startLogin action', () => {
       const data = {
@@ -108,148 +82,50 @@ describe('Session Actions', () => {
 
       expect(action).toEqual(expectedAction);
     });
-// __________________________________
-    // it('Should execute startLoginClick action and change route to home', () => {
-    //   const data = {
-    //     loginEmail: 'newagent@mailinator.com',
-    //     loginPassword: 'newpassword'
-    //   };
-    //   let expectedAction = {
-    //     type: 'START_LOGIN',
-    //     data
-    //   };
-    //   // const routeAction
-    //   // const afterAction
-    //   const action = actions.startLoginClick(data);
-    //
-    //   expect(action).toEqual(expectedAction);
-    //
-    //   let SignOn = React.createClass({
-    //     render: () => {
-    //       return (
-    //         <div className="row">
-    //           <h2>SIGN ON</h2>
-    //           <div className="page-instructions col-xs-offset-4 col-xs-4">
-    //             <p>Please enter your email address and password below.</p>
-    //           </div>
-    //         </div>
-    //       )
-    //     }
-    //   });
-    //
-    //   let location = createLocation('/');
-    //   let history = new MemoryHistory(['/']);
-    //
-    //   let tree = testRouterTree(
-    //     <Router history={history} location={location}>
-    //       <Route path='/' component={SignOn} />
-    //     </Router>
-    //   );
-    //
-    //   const testRouterTree = (router) => {
-    //     let oldRenderFn = router.type.prototype.render;
-    //     router.type.innerComponentRef = 'innerComponent';
-    //     router.type.prototype.render = () => {
-    //       var renderTree = oldRenderFn.apply(this, arguments);
-    //       return React.cloneElement(renderTree, {
-    //         ref: 'innerComponent'
-    //       });
-    //     };
-    //     return testTree(router);
-    //   }
-    // });
-// __________________________________
-    // it('Should check local storage; If the user login username is there, the username input field should be filled out', () => {
-    //   let output = mount(signOnStory3);
-    //   expect(output.find('#loginPassword').text()).toNotExist();
-    //   expect(output.find('#loginEmail').text()).toNotExist();
-    //
-    //   // TODO: check that these input fields don't have text, then that they do
-    //   // expect(output.find('#loginPassword').text()).toExist();
-    //   // expect(output.find('#loginEmail').text()).toExist();
-    // });
   });
-  describe('Clicking Submit', () => {
 
-    describe('Remember Me', () => {
+  describe('ValidationError', () => {
+    it('Should a validationError if credentials are invalid', () => {
+      const data = 'your credentials are invalid';
+      let expectedAction = {
+        type: 'VALIDATION_ERROR',
+        data
+      };
+
+      const action = actions.validationError(data);
+
+      expect(action).toEqual(expectedAction);
     });
+  });
 
-    describe('When Successful', () => {
-      it('Should successfully login the user', () => {
-        const data = {
-          loginEmail: 'newagent@mailinator.com',
-          loginPassword: 'newpassword'
-        };
-        let expectedAction = {
-          type: 'LOGIN_SUCCESS',
-          data
-        };
+  describe('When Submit is Successful', () => {
+    it('Should successfully login the user', () => {
+      const data = {
+        loginEmail: 'newagent@mailinator.com',
+        loginPassword: 'newpassword'
+      };
+      let expectedAction = {
+        type: 'LOGIN_SUCCESS',
+        data
+      };
 
-        const action = actions.loginSuccess(data);
+      const action = actions.loginSuccess(data);
 
-        expect(action).toEqual(expectedAction);
-      });
+      expect(action).toEqual(expectedAction);
     });
+  });
 
-    describe('When Unsuccessful', () => {
-      it('Should get back a 404 status code indicating a failed login', () => {
-        const err = `404 : Not Found`;
-        let expectedAction = {
-          type: 'LOGIN_FAIL',
-          err
-        };
+  describe('When Submit is Unsuccessful', () => {
+    it('Should get back a 404 status code indicating a failed login', () => {
+      const err = `404 : Not Found`;
+      let expectedAction = {
+        type: 'LOGIN_FAIL',
+        err
+      };
 
-        const action = actions.loginFail(err);
+      const action = actions.loginFail(err);
 
-        expect(action).toEqual(expectedAction);
-      });
-    });
-
-    describe('Reset Password', () => {
-      it('Should execute startResetPassword action', () => {
-        const data = {
-          loginEmail: 'newagent@mailinator.com',
-          loginPassword: 'newpassword'
-        };
-        let expectedAction = {
-          type: 'RESETPASSWORD_START',
-          data
-        };
-
-        const action = actions.startResetPassword(data);
-
-        expect(action).toEqual(expectedAction);
-      });
-      //
-      // it('Should execute resetPasswordSuccess action', () => {
-      //   const data = {
-      //     loginEmail: 'newagent@mailinator.com',
-      //     loginPassword: 'newpassword'
-      //   };
-      //   let expectedAction = {
-      //     type: 'RESETPASSWORD_SUCCESS',
-      //     data
-      //   };
-      //
-      //   const action = actions.resetPasswordSuccess(data);
-      //
-      //   expect(action).toEqual(expectedAction);
-      // });
-
-      it('Should execute resetPasswordFail action', () => {
-        const data = {
-          loginEmail: 'newagent@mailinator.com',
-          loginPassword: 'newpassword'
-        };
-        let expectedAction = {
-          type: 'RESETPASSWORD_FAIL',
-          data
-        };
-
-        const action = actions.resetPasswordFail(data);
-
-        expect(action).toEqual(expectedAction);
-      });
+      expect(action).toEqual(expectedAction);
     });
   });
 
@@ -278,7 +154,50 @@ describe('Session Actions', () => {
       });
       describe('No, Stay', () => {
       });
+    });
+  });
 
+  describe('Modals', () => {
+    it('Should show a modal', () => {
+      //Arrange
+      const modal = 'LOGOUT_MODAL';
+
+      let expectedAction = {
+        type: types.SHOW_MODAL,
+        modal
+      };
+
+      //Act
+      const action = actions.showModal(modal);
+      //Assert
+      expect(action).toEqual(expectedAction);
+    });
+    it('Should hide a modal', () => {
+      //Arrange
+      let expectedAction = {
+        type: types.HIDE_MODAL,
+      };
+
+      //Act
+      const action = actions.hideModal();
+      //Assert
+      expect(action).toEqual(expectedAction);
+    });
+  });
+
+  describe('Reset Password', () => {
+    it('Should execute startResetPassword action', () => {
+      const data = {
+        loginEmail: 'newagent@mailinator.com',
+      };
+      let expectedAction = {
+        type: 'RESETPASSWORD_START',
+        data
+      };
+
+      const action = actions.startResetPassword(data);
+
+      expect(action).toEqual(expectedAction);
     });
   });
 });

@@ -40,7 +40,7 @@ const sessionReducer = (store = {}, action) => {
     case types.HIDE_MODAL: {
       return Object.assign({}, store, { currentModal: null });
     }
-    case types.RESET_PASSWORD: {
+    case types.RESETPASSWORD_START: {
       return Object.assign({}, store, { email: action.message });
     }
     default:

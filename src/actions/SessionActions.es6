@@ -53,14 +53,6 @@ const actions = {
     type: types.RESETPASSWORD_START,
     data
   }),
-  resetPasswordSuccess: data => ({
-    type: types.RESETPASSWORD_SUCCESS,
-    data
-  }),
-  resetPasswordFail: data => ({
-    type: types.RESETPASSWORD_FAIL,
-    data
-  }),
   showModal: modal => ({
     type: types.SHOW_MODAL,
     modal
@@ -86,13 +78,12 @@ const thunks = {
       const postModel = loginRequest(dispatch, loginCredentials);
       dispatch(actions.startLogin(postModel.postModel));
       firePost(postModel, dispatch);
-
     };
   },
   startLogoutClick: () => {
     return dispatch => {
-      sStorage.removeItem({ key: 'user'});
-      sStorage.removeItem({ key: 'isUserLoggedIn'});
+      sStorage.removeItem({ key: 'user' });
+      sStorage.removeItem({ key: 'isUserLoggedIn' });
       dispatch(actions.logoutSuccess());
       dispatch(routeActions.changeRoute({ route: '/login' }));
     };

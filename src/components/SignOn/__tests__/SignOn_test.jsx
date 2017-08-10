@@ -86,7 +86,6 @@ stories.add('Sign On Page Elements', () => {
         output.find('[type="submit"]').simulate('click');
         output.find('[type="submit"]').simulate('click');
 
-        console.log(output.state());
         expect(output.find('.attention-animation').length).toEqual(1)
       });
     })

@@ -30,11 +30,6 @@ header {
   outline: none;
 }
 
-/*h2 {
-  font-size: 48px;
-  font-weight: bold;
-}*/
-
 /* Main container for each page */
 .body-wrapper {
   height: 90vh;
@@ -133,7 +128,3 @@ nav,
   height: 3px;
   background-color: var(--footer-line);
 }
-
-/*button.btn-primary {
-  background-color: var(--primary-color);
-}*/
