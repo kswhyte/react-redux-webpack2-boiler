@@ -10,11 +10,17 @@ import { shallow, mount } from 'enzyme';
 import expect from 'expect';
 
 const stories = storiesOf('ResetPassword', module);
-
+const props = {
+  resetPassword: () => {},
+  validationError: () => {},
+  validationMessage: 'message',
+  submitPasswordRecoveryEmail: () => {}
+}
 stories.add('ResetPassword Page Story', () => {
+
   const resetPasswordStory = (
     <StaticRouter context={{}}>
-      <ResetPassword />
+      <ResetPassword {...props} />
     </StaticRouter>
   );
 
@@ -43,7 +49,7 @@ stories.add('ResetPassword Page Story', () => {
       it('Should have one call-to-action "Reset Password" submit button', () => {
         let output = mount(resetPasswordStory);
         expect(output.find('button').length).toEqual(1);
-        expect(output.find('.primary').length).toEqual(1);
+        expect(output.find('[type="submit"]').length).toEqual(1);
       });
       it('Should have one link: "Back to Sign in"', () => {
         let output = mount(resetPasswordStory);
