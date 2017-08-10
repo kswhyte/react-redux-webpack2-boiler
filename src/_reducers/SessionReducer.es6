@@ -35,12 +35,13 @@ const sessionReducer = (store = {}, action) => {
       return Object.assign({}, store, newStore);
     }
     case types.SHOW_MODAL: {
-      let newStore = Object.assign({}, store, {currentModal : action.modal});
-      return newStore;
+      return Object.assign({}, store, { currentModal: action.modal });
     }
     case types.HIDE_MODAL: {
-      let newStore = Object.assign({}, store, {currentModal : null});
-      return newStore;
+      return Object.assign({}, store, { currentModal: null });
+    }
+    case types.RESET_PASSWORD: {
+      return Object.assign({}, store, { email: action.message });
     }
     default:
       return store;

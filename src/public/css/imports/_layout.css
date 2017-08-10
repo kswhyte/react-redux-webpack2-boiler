@@ -30,10 +30,10 @@ header {
   outline: none;
 }
 
-h2 {
+/*h2 {
   font-size: 48px;
   font-weight: bold;
-}
+}*/
 
 /* Main container for each page */
 .body-wrapper {
@@ -109,11 +109,6 @@ nav,
 }
 
 /* THREE-UI OVERRIDES */
-.hg-input.v2 {
-  border: 0px !important;
-  border-bottom: solid 1px var(--slate) !important;
-}
-
 .sm-spacer {
   margin-top: 30px;
 }
@@ -139,6 +134,6 @@ nav,
   background-color: var(--footer-line);
 }
 
-button.btn-primary {
+/*button.btn-primary {
   background-color: var(--primary-color);
-}
+}*/
