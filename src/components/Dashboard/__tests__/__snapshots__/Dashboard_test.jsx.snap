@@ -13,19 +13,35 @@ exports[`Dashboard page main error story 1`] = `
       Dashboard
     </h2>
     <hr />
-    <button
-      className="new-session-button primary dashboard-button"
-      onClick={[Function]}
-      tabIndex="1"
+    <div
+      className="sm-spacer"
     >
-      Begin New Session
-    </button>
-    <button
-      className="dashboard-button primary"
-      tabIndex="1"
+      <div
+        className="col-xs-4"
+      >
+        <button
+          className="new-session-button primary-btn"
+          onClick={[Function]}
+          tabIndex="1"
+        >
+          BEGIN NEW SESSION
+        </button>
+      </div>
+    </div>
+    <div
+      className="sm-spacer"
     >
-      Manage My Account
-    </button>
+      <div
+        className="col-xs-offset-1 col-xs-4"
+      >
+        <button
+          className="primary-btn"
+          tabIndex="1"
+        >
+          MANAGE MY ACCOUNT
+        </button>
+      </div>
+    </div>
     <div
       className="error-container"
     >
@@ -50,19 +66,35 @@ exports[`Dashboard page main story 1`] = `
       Dashboard
     </h2>
     <hr />
-    <button
-      className="new-session-button primary dashboard-button"
-      onClick={[Function]}
-      tabIndex="1"
+    <div
+      className="sm-spacer"
     >
-      Begin New Session
-    </button>
-    <button
-      className="dashboard-button primary"
-      tabIndex="1"
+      <div
+        className="col-xs-4"
+      >
+        <button
+          className="new-session-button primary-btn"
+          onClick={[Function]}
+          tabIndex="1"
+        >
+          BEGIN NEW SESSION
+        </button>
+      </div>
+    </div>
+    <div
+      className="sm-spacer"
     >
-      Manage My Account
-    </button>
+      <div
+        className="col-xs-offset-1 col-xs-4"
+      >
+        <button
+          className="primary-btn"
+          tabIndex="1"
+        >
+          MANAGE MY ACCOUNT
+        </button>
+      </div>
+    </div>
     <div
       className="error-container"
     />
@@ -83,19 +115,35 @@ exports[`Dashboard page timeout error story 1`] = `
       Dashboard
     </h2>
     <hr />
-    <button
-      className="new-session-button primary dashboard-button"
-      onClick={[Function]}
-      tabIndex="1"
+    <div
+      className="sm-spacer"
     >
-      Begin New Session
-    </button>
-    <button
-      className="dashboard-button primary"
-      tabIndex="1"
+      <div
+        className="col-xs-4"
+      >
+        <button
+          className="new-session-button primary-btn"
+          onClick={[Function]}
+          tabIndex="1"
+        >
+          BEGIN NEW SESSION
+        </button>
+      </div>
+    </div>
+    <div
+      className="sm-spacer"
     >
-      Manage My Account
-    </button>
+      <div
+        className="col-xs-offset-1 col-xs-4"
+      >
+        <button
+          className="primary-btn"
+          tabIndex="1"
+        >
+          MANAGE MY ACCOUNT
+        </button>
+      </div>
+    </div>
     <div
       className="error-container"
     >

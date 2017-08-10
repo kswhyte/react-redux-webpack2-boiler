@@ -44,7 +44,7 @@ exports[`Sign On Page Elements 1`] = `
           USER NAME (EMAIL)
         </label>
         <input
-          className="input-error form-group hg-input v2"
+          className="input-error form-group"
           id="loginEmail"
           onChange={[Function]}
           placeholder="Your Email Address"
@@ -62,7 +62,7 @@ exports[`Sign On Page Elements 1`] = `
           PASSWORD
         </label>
         <input
-          className="input-error form-group hg-input v2"
+          className="input-error form-group"
           id="loginPassword"
           label="Your Password"
           placeholder="Your Password"
@@ -78,13 +78,13 @@ exports[`Sign On Page Elements 1`] = `
         className="col-xs-offset-3 col-xs-6"
       >
         <button
-          className="primary"
+          className="primary-btn"
           onClick={[Function]}
         >
           SIGN ON
         </button>
         <div
-          className="row checkbox-row"
+          className="row sm-spacer"
         >
           <input
             checked=""

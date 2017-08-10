@@ -110,73 +110,45 @@ describe('Session Reducer', () => {
       validationMessage: action.data
     });
   });
+
   it('Should show a modal', () => {
-      //Arrange
-      let action = {
-            type: 'SHOW_MODAL',
-            modal: "LOGOUT_MODAL"
-          };
-      //Act
+    let action = {
+          type: 'SHOW_MODAL',
+          modal: "LOGOUT_MODAL"
+        };
+    expect(
+      sessionReducer([], {
+        type: types.SHOW_MODAL,
+        modal: 'LOGOUT_MODAL'
+      })
+    ).toEqual({
+      currentModal: 'LOGOUT_MODAL'
+    });
+  });
 
-      //Assert
-      expect(
-        sessionReducer([], {
-          type: types.SHOW_MODAL,
-          modal: 'LOGOUT_MODAL'
-        })
-      ).toEqual({
-        currentModal: 'LOGOUT_MODAL'
-      });
- });
-it('Should hide a modal', () => {
-      //Arrange
-      let action = {
-            type: 'HIDE_MODAL'
-          };
-      //Act
+  it('Should hide a modal', () => {
+    let action = {
+          type: 'HIDE_MODAL'
+        };
+    expect(
+      sessionReducer([], {
+        type: types.HIDE_MODAL
+      })
+    ).toEqual({
+      currentModal: null
+    });
+   });
 
-      //Assert
-      expect(
-        sessionReducer([], {
-          type: types.HIDE_MODAL
-        })
-      ).toEqual({
-        currentModal: null
-      });
- });
-// __________________________________
-
-//   it('should handle LOGIN_SUCCESS', () => {
-//     let action = {
-//       data: {
-//         loginEmail: 'newagent@mailinator.com',
-//         loginPassword: 'newpassword'
-//       }
-//     };
-//     let store = {
-//       user: {}
-//     };
-//     let newStore = Object.assign({}, store);
-//
-// console.log('1--------', newStore);
-//
-//     newStore.user = {}
-//     newStore.user.credentials = action.data;
-//     newStore.user.isActive = true;
-//
-// console.log('2--------', newStore);
-//
-//     expect(
-//       sessionReducer([], {
-//         type: types.LOGIN_SUCCESS
-//       })
-//     ).toEqual({
-//       newStore
-//     });
-//  });
-// __________________________________
-
-  // it('should handle LOGOUT_SUCCESS', () => {
-  //
-  // });
+  it('should handle RESET_PASSWORD', () => {
+    let action = {
+      message: 'Successful reset of password'
+    }
+    expect(
+      sessionReducer([], {
+        type: types.RESET_PASSWORD
+      })
+    ).toEqual({
+      validationMessage: action.message
+    });
+  });
 });
