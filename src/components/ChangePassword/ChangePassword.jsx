@@ -1,9 +1,11 @@
 import React from 'react';
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 import './change-password.css';
 
-const propTypes = {};
+const propTypes = {
+  changePassword: PropTypes.func
+};
 
 const checkPassword = () => {
   const loginChangePassword = escape(document.querySelector('#loginChangePassword').value);
@@ -16,7 +18,7 @@ const checkPassword = () => {
   }
 }
 
-const submitPasswordChange = () => {
+const submitPasswordChange = (submitCallback) => {
   const loginChangePassword = escape(document.querySelector('#loginChangePassword').value);
   const loginChangePasswordConfirm = escape(document.querySelector('#loginChangePasswordConfirm').value);
   if (loginChangePassword !== loginChangePasswordConfirm) {
@@ -24,6 +26,7 @@ const submitPasswordChange = () => {
   }
   if (loginChangePassword === loginChangePasswordConfirm) {
     console.log("Looks good 2");
+    submitCallback(loginChangePassword);
   }
 }
 

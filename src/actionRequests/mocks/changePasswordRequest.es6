@@ -8,7 +8,7 @@ const resetPasswordRequest = (dispatch, ...args) => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const postRoute = '/#fake';
   const postModel = {
-    email: 'john@doe.com'
+    password: 'password'
   };
 
   const requestEnd = () => {
@@ -28,7 +28,7 @@ const resetPasswordRequest = (dispatch, ...args) => {
 
     //use routes instead of window.location
     ///window.location.assign('/');
-    dispatch(routeActions.changeRoute({ route: '/resetpasswordconfirm' }));
+    dispatch(routeActions.changeRoute({ route: '/login' }));
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };

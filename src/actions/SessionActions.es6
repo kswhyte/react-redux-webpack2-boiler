@@ -1,3 +1,4 @@
+import changePasswordRequest from '../actionRequests/mocks/changePasswordRequest';
 import loginRequest from '../actionRequests/mocks/loginRequest';
 import startSessionRequest from '../actionRequests/mocks/startSessionRequest';
 import firePost from '../../tools/mocks/firePost';
@@ -61,6 +62,18 @@ const actions = {
     type: types.RESETPASSWORD_FAIL,
     data
   }),
+  startChangePassword: data => ({
+    type: types.CHANGEPASSWORD_START,
+    data
+  }),
+  changePasswordSuccess: data => ({
+    type: types.CHANGEPASSWORD_SUCCESS,
+    data
+  }),
+  changePasswordFail: data => ({
+    type: types.CHANGEPASSWORD_FAIL,
+    data
+  }),
   showModal: modal => ({
     type: types.SHOW_MODAL,
     modal
@@ -103,6 +116,13 @@ const thunks = {
       dispatch(actions.startResetPassword(postModel.postModel));
       firePost(postModel, dispatch);
     };
+  },
+  startChangePasswordClick: changePasswordFormData => {
+    return dispatch => {
+      const postModel = changePasswordRequest(dispatch, changePasswordFormData);
+      dispatch(actions.startChangePassword(postModel.postModel));
+      firePost(postModel, dispatch);
+    }
   }
 };
 
