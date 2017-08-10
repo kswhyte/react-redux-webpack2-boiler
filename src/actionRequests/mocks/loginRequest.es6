@@ -35,9 +35,13 @@ const loginRequest = dispatch => {
     dispatch(actions.loginSuccess(_res.body));
     dispatch(routeActions.changeRoute({ route: '/' }));
 
-    // FOR TESTING ERRORS
 
-    // dispatch(actions.loginFail({validationMessage: errors.GENERIC_LOGIN_FAILURE_MESSAGE}));
+
+
+     // FOR TESTING ERRORS
+
+     // dispatch(actions.loginFail({validationMessage: errors.GENERIC_LOGIN_FAILURE_MESSAGE}));
+
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };
