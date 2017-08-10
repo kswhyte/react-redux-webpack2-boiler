@@ -1,7 +1,8 @@
-import loginRequest from '../actionRequests/mocks/loginRequest';
-import startSessionRequest from '../actionRequests/mocks/startSessionRequest';
-import firePost from '../../tools/mocks/firePost';
-import resetPasswordRequest from '../actionRequests/mocks/resetPasswordRequest';
+import changePasswordRequest from '../actionRequests/changePasswordRequest';
+import loginRequest from '../actionRequests/loginRequest';
+import startSessionRequest from '../actionRequests/startSessionRequest';
+import firePost from '../../tools/firePost';
+import resetPasswordRequest from '../actionRequests/resetPasswordRequest';
 import routeActions from './routeActions';
 import * as types from '../constants/actionTypes';
 import sStorage from '../../tools/sessionStorage_helper';
