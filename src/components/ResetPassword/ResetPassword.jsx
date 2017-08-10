@@ -38,17 +38,10 @@ const ResetPassword = props => {
             props.validationError('The email entered is not recognized. Please enter a valid email address.');
             return false;
           }
-          // TODO: setup an action and reducer to send out an email to to user to handle reseting the users password via a unique link
-          // ...something like the following...
-          // const userData = {
-          //   userEmail
-          // };
-          // this.props.submitRecoveryEmail(userData);
-          {
-            /* TODO: for RESET-btn, onSubmit sends a dispatch to
-            1. update client credentials
-            2. reroute to PassWordConfirm component */
-          }
+          const userData = {
+            userEmail
+          };
+          props.submitPasswordRecoveryEmail(userData);
           props.resetPassword;
         }}
       >

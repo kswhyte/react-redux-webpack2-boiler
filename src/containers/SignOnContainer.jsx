@@ -22,6 +22,10 @@ let createHandlers = dispatch => {
     dispatch(sessionActions.startResetPasswordClick(data));
   };
 
+  let submitPasswordRecoveryEmail = email => {
+    dispatch(sessionActions.startResetPasswordClick(email));
+  };
+
   return {
     submitLogin,
     validationError,
@@ -71,7 +75,7 @@ class SignOnContainer extends Component {
     }
 
     if (this.props.signonType === 'resetpasswordconfirm') {
-      return <ResetPasswordConfirm />;
+      return <ResetPasswordConfirm submitPasswordRecoveryEmail={this.handlers.submitPasswordRecoveryEmail} />;
     }
   }
 }
