@@ -33,9 +33,6 @@ form {
     font-size: 14px;
     color: var(--light-grey);
   }
-  & .checkbox-row {
-    margin-top: 35px;
-  }
   & .checkbox {
     position: absolute;
     opacity: 0;

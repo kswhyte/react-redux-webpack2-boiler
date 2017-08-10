@@ -97,7 +97,7 @@ class SignOn extends Component {
           }}
         >
           <div className="row md-spacer">
-            <div className="col-sm-6 input-row">
+            <div className="col-sm-offset-1 col-sm-5 input-row">
               <label forHtml="loginEmail">USER NAME (EMAIL)</label>
               <input
                 id="loginEmail"
@@ -109,7 +109,7 @@ class SignOn extends Component {
                 required
               />
             </div>
-            <div className="col-sm-6 input-row">
+            <div className="col-sm-5 input-row">
               <label forHtml="loginPassword">PASSWORD</label>
               <input
                 id="loginPassword"
@@ -126,7 +126,7 @@ class SignOn extends Component {
               <button onClick={this.checkLoginAttempts} className="primary">
                 SIGN ON
               </button>
-              <div className="row checkbox-row">
+              <div className="row sm-spacer">
                 <input
                   className="checkbox"
                   checked={this.state.rememberMeValue === 'on' ? 'checked' : ''}
