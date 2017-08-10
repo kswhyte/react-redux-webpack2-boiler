@@ -124,6 +124,10 @@ class App extends Component {
                   path="/resetpasswordconfirm"
                   render={() => <SignOnContainer signonType="resetpasswordconfirm" />}
                 />
+                <Route
+                  path="/changepassword"
+                  render={() => <SignOnContainer signonType="changepassword" />}
+                />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
                 <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />

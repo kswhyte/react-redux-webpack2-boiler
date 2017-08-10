@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SignOn from '../components/SignOn';
 import ResetPassword from '../components/ResetPassword';
+import ChangePassword from '../components/ChangePassword';
 import ResetPasswordConfirm from '../components/ResetPasswordConfirm';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -73,6 +74,12 @@ class SignOnContainer extends Component {
           validationMessage={this.props.validationMessage}
           submitPasswordRecoveryEmail={this.handlers.submitPasswordRecoveryEmail}
         />
+      );
+    }
+
+    if (this.props.signonType === 'changepassword') {
+      return (
+        <ChangePassword />
       );
     }
 

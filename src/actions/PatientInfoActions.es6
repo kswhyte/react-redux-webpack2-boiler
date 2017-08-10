@@ -1,5 +1,5 @@
-import getPatientInfoRequest from '../actionRequests/patientInfoRequest';
-import fireGet from '../../tools/fireGet';
+import getPatientInfoRequest from '../actionRequests/mocks/patientInfoRequest';
+import fireGet from '../../tools/mocks/fireGet';
 import * as types from '../constants/actionTypes';
 
 const actions = {
