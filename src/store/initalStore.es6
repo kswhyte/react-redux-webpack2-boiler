@@ -10,6 +10,9 @@ export default {
     currentModal: null,
     showSpinner: false,
     startError: null,
-    sessionStarted: false,
+    sessionStarted: false
+  },
+  PatientInfo: {
+    generalInfo: {}
   }
 };

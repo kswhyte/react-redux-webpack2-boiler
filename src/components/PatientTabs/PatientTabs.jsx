@@ -11,15 +11,13 @@ import './patient-tabs.css';
 const PatientTabs = props => {
   PatientTabs.propTypes = {
     children: PropTypes.object,
-    patientInfo:PropTypes.object
-    
+    patientInfo: PropTypes.object
   };
 
   const check = () => {
     console.log(props);
   };
   check();
-
 
   return (
     <div className="patient-tabs-wrapper">
@@ -37,9 +35,17 @@ const PatientTabs = props => {
       <div className="tabs-line" />
       <div className="break-line" />
 
-      <Route exact path="/patientinfo/generalinfo" render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}  />
-      <Route exact path="/patientinfo/appointments" render={() => <PatientAppointments appointments={props.patientInfo.appointments} />}  />
-      <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={props.patientInfo.notes} />}  />
+      <Route
+        exact
+        path="/patientinfo/generalinfo"
+        render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
+      />
+      <Route
+        exact
+        path="/patientinfo/appointments"
+        render={() => <PatientAppointments appointments={props.patientInfo.appointments} />}
+      />
+      <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={props.patientInfo.notes} />} />
     </div>
   );
 };
