@@ -18,7 +18,6 @@ let createHandlers = dispatch => {
   let validationError = data => {
     dispatch(sessionActions.validationError(data));
   };
-
   let submitPasswordRecoveryEmail = email => {
     dispatch(sessionActions.startResetPasswordClick(email));
   };
@@ -84,7 +83,6 @@ class SignOnContainer extends Component {
 }
 
 const mapStateToProps = state => {
-console.log('-------------', state)
   //Select the specific state items you would like here
   const { validationMessage, email } = state.Session;
 
