@@ -23,10 +23,25 @@ let createHandlers = dispatch => {
     dispatch(sessionActions.startResetPasswordClick(email));
   };
 
+  let changePassword = function(data){
+    dispatch(sessionActions.startChangePasswordClick(data));
+  }
+
+  let mismatchPassword = () => {
+    dispatch(sessionActions.passwordMismatch());
+  }
+
+  let matchPassword = () => {
+    dispatch(sessionActions.passwordMatch());
+  }
+
   return {
     submitLogin,
     validationError,
-    submitPasswordRecoveryEmail
+    submitPasswordRecoveryEmail,
+    changePassword,
+    mismatchPassword,
+    matchPassword
     // other handlers
   };
 };
@@ -34,7 +49,8 @@ let createHandlers = dispatch => {
 const proptypes = {
   dispatch: PropTypes.func,
   signonType: PropTypes.string,
-  validationMessage: PropTypes.string
+  validationMessage: PropTypes.string,
+  passwordMismatch: PropTypes.bool
 };
 
 class SignOnContainer extends Component {
@@ -73,7 +89,12 @@ class SignOnContainer extends Component {
 
     if (this.props.signonType === 'changepassword') {
       return (
-        <ChangePassword />
+        <ChangePassword
+          changePassword={this.handlers.changePassword}
+          mismatchPassword={this.handlers.mismatchPassword}
+          matchPassword={this.handlers.matchPassword}
+          passwordMismatch={this.props.passwordMismatch}
+        />
       );
     }
 
@@ -86,11 +107,12 @@ class SignOnContainer extends Component {
 const mapStateToProps = state => {
 console.log('-------------', state)
   //Select the specific state items you would like here
-  const { validationMessage, email } = state.Session;
+  const { validationMessage, email, passwordMismatch } = state.Session;
 
   //return state items to be added as props to the container
   return {
     validationMessage,
+    passwordMismatch,
     email
   };
 };
