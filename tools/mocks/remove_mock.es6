@@ -5,34 +5,35 @@ var mock_patientInfo=require('./mock_functions/mock_patientInfo.es6');
 var mock_resetPasswordSubmission=require('./mock_functions/mock_resetpassword_password_submission.es6');
 
 
-var MOCK_STATE = "remove";
+var MOCK_STATE = 'remove';
 
-
-module.exports = function(){
-  console.log(chalk.green(
-        `------------------------------ \n
+module.exports = function() {
+  console.log(
+    chalk.green(
+      `------------------------------ \n
   Check \n
----------------------------- \n`));
+---------------------------- \n`
+    )
+  );
 
+  console.log(
+    chalk.magenta('------------------------------ \n' + '        removing mocks \n' + '---------------------------- \n')
+  );
 
-
-      console.log(chalk.magenta(
-'------------------------------ \n'
-+ '        removing mocks \n'
-+ '---------------------------- \n'));
-
-/* ------
+  /* ------
 Remove Mock for the Start Session feature
 ================================== */
-mock_session(MOCK_STATE);
+  mock_session(MOCK_STATE);
 
-/* ------
+  /* ------
 Remove Mock for the Login feature
 ================================== */
-mock_login(MOCK_STATE);
+  mock_login(MOCK_STATE);
 
-mock_patientInfo(MOCK_STATE);
+  mock_resetPasswordSubmission(MOCK_STATE);
 
-mock_resetPasswordSubmission(MOCK_STATE);
-
-}
+  /* ------
+Remove Mock for patient info
+================================== */
+  mock_patientInfo(MOCK_STATE);
+};
