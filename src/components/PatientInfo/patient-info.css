@@ -19,4 +19,12 @@
   & .dropdown-affiliate {
     padding-top: 28px !important;
   }
+  & .input-affiliate {
+    padding-top: 24px !important;
+  }
+  & button {
+    &.next-btn {
+      float: right;
+    }
+  }
 }

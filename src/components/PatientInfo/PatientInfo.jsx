@@ -63,7 +63,7 @@ class PatientInfo extends Component {
                   />
                 </div>
 
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-4 no-margin">
                   <label>PATIENT LAST NAME &#42;</label>
                   <input
                     className="form-group"
@@ -88,7 +88,7 @@ class PatientInfo extends Component {
                   </select>
                 </div>
 
-                <div className="col-sm-4 no-margin">
+                <div className="col-sm-3 no-margin">
                   <label>EMAIL ADDRESS &#42;</label>
                   <input
                     className="form-group"
@@ -177,7 +177,7 @@ class PatientInfo extends Component {
 
               {/* Row3 */}
               <div className="row sm-spacer">
-                <div className="col-sm-4 no-margin">
+                <div className="col-sm-5 no-margin">
                   <label>STREET &#42;</label>
                   <input
                     className="form-group"
@@ -187,7 +187,7 @@ class PatientInfo extends Component {
                   />
                 </div>
 
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-2 no-margin">
                   <label>CITY STATE ZIP &#42;</label>
                   <input
                     className="form-group"
@@ -197,7 +197,7 @@ class PatientInfo extends Component {
                     required
                   />
                 </div>
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-1 no-margin">
                   <label />
                   <select
                     className="select-dropdown dropdown-affiliate"
@@ -212,7 +212,7 @@ class PatientInfo extends Component {
                 <div className="col-sm-2 no-margin">
                   <label />
                   <input
-                    className="form-group"
+                    className="form-group input-affiliate"
                     type="text"
                     placeholder="Zip"
                     onChange={e => this.setState({ zipCode: e.target.value })}
@@ -222,8 +222,8 @@ class PatientInfo extends Component {
               </div>
 
               {/* Row4 */}
-              <div className="row sm-spacer no-margin">
-                <div className="col-sm-3">
+              <div className="row sm-spacer">
+                <div className="col-sm-5">
                   <label>PRIMARY INSURANCE CARRIER &#42;</label>
                   <select
                     className="select-dropdown"
@@ -236,7 +236,7 @@ class PatientInfo extends Component {
                   </select>
                 </div>
 
-                <div className="col-sm-1 no-margin">
+                <div className="col-sm-2 no-margin">
                   <label>PLAN TYPE &#42;</label>
                   <select
                     className="select-dropdown"
@@ -248,15 +248,15 @@ class PatientInfo extends Component {
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-3 no-margin">
                   <label>PLAN NO. &#42;</label>
                   <input placeholder="Plan Number" className="form-group" type="text" required />
                 </div>
               </div>
 
               {/* Row5 */}
-              <div className="row sm-spacer no-margin">
-                <div className="col-sm-3">
+              <div className="row sm-spacer">
+                <div className="col-sm-5">
                   <label>ALTERNATE INSURANCE CARRIER &#42;</label>
                   <select
                     className="select-dropdown"
@@ -269,7 +269,7 @@ class PatientInfo extends Component {
                   </select>
                 </div>
 
-                <div className="col-sm-1 no-margin">
+                <div className="col-sm-2 no-margin">
                   <label>PLAN TYPE &#42;</label>
                   <select
                     className="select-dropdown"
@@ -281,7 +281,7 @@ class PatientInfo extends Component {
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-3 no-margin">
                   <label>PLAN NO. &#42;</label>
                   <input
                     className="form-group"
@@ -295,7 +295,7 @@ class PatientInfo extends Component {
 
               {/* Row6 */}
               <div className="row sm-spacer">
-                <div className="col-sm-4">
+                <div className="col-sm-5">
                   <label>REFERRING PHYSICIAN &#42;</label>
                   <select
                     className="select-dropdown"
@@ -314,14 +314,14 @@ class PatientInfo extends Component {
               </div>
 
               {/* Buttons */}
-              <div className="row sm-spacer button-wrapper">
-                <div className="col-sm-6">
+              <div className="row sm-spacer">
+                <div className="col-sm-6 no-padding">
                   <button className="back-btn" tabIndex={1}>
                     BACK
                   </button>
                 </div>
 
-                <div className="col-sm-6">
+                <div className="col-sm-6 no-padding">
                   <button className="next-btn" type="submit" tabIndex={1}>
                     NEXT
                   </button>
