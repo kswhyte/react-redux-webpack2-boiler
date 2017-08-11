@@ -11,116 +11,399 @@ exports[`Patient Info Story 1`] = `
       className="general-info-form tab-pane active"
     >
       <form>
-        <div>
+        <div
+          className="row sm-spacer"
+        >
           <div
-            className="col-sm-3"
+            className="col-sm-3 no-margin"
           >
-            <div />
+            <label>
+              PATIENT FIRST NAME *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              placeholder="Patient First Name"
+              required={true}
+              type="text"
+              value="test"
+            />
           </div>
           <div
-            className="col-sm-4"
+            className="col-sm-4 no-margin"
           >
-            <div />
+            <label>
+              PATIENT LAST NAME *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              placeholder="Patient Last Name"
+              required={true}
+              type="text"
+              value=""
+            />
           </div>
           <div
-            className="col-sm-2"
+            className="col-sm-2 no-margin"
           >
-            <div />
+            <label>
+              GENDER *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+              required={true}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
           </div>
           <div
-            className="col-sm-3"
+            className="col-sm-3 no-margin"
           >
-            <div />
-          </div>
-        </div>
-        <div>
-          <div
-            className="col-sm-3"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-2"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-2"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-2"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-3"
-          >
-            <div />
-          </div>
-        </div>
-        <div>
-          <div
-            className="col-sm-4"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-3"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-2"
-          >
-            <div />
-          </div>
-          <div
-            className="col-sm-2"
-          >
-            <div />
+            <label>
+              EMAIL ADDRESS *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              placeholder="Email Address"
+              required={true}
+              type="text"
+              value=""
+            />
           </div>
         </div>
-        <div>
+        <div
+          className="row sm-spacer"
+        >
           <div
-            className="col-sm-4"
+            className="col-sm-3 no-margin"
           >
-            <div />
+            <label>
+              PATIENT DATE OF BIRTH *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
           </div>
           <div
-            className="col-sm-2"
+            className="col-sm-1 no-margin"
           >
-            <div />
+            <label />
+            <select
+              className="select-dropdown dropdown-affiliate"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
           </div>
           <div
-            className="col-sm-3"
+            className="col-sm-2 no-margin"
           >
-            <div />
+            <label />
+            <select
+              className="select-dropdown dropdown-affiliate"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-2 no-margin"
+          >
+            <label>
+              PHONE NUMBER *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              placeholder="Phone Number"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="col-sm-2 no-margin"
+          >
+            <label>
+              PHONE TYPE *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-2 no-margin"
+          >
+            <label>
+              CONTACT METHOD *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
           </div>
         </div>
-        <div>
+        <div
+          className="row sm-spacer"
+        >
           <div
-            className="col-sm-4"
+            className="col-sm-5 no-margin"
           >
-            <div />
+            <label>
+              STREET *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              required={true}
+              type="text"
+            />
           </div>
           <div
-            className="col-sm-2"
+            className="col-sm-2 no-margin"
           >
-            <div />
+            <label>
+              CITY STATE ZIP *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              placeholder="City"
+              required={true}
+              type="text"
+            />
           </div>
           <div
-            className="col-sm-3"
+            className="col-sm-1 no-margin"
           >
-            <div />
+            <label />
+            <select
+              className="select-dropdown dropdown-affiliate"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-2 no-margin"
+          >
+            <label />
+            <input
+              className="form-group input-affiliate"
+              onChange={[Function]}
+              placeholder="Zip"
+              required={true}
+              type="text"
+            />
           </div>
         </div>
-        <div>
+        <div
+          className="row sm-spacer"
+        >
           <div
-            className="col-sm-4"
+            className="col-sm-5"
           >
-            <div />
+            <label>
+              PRIMARY INSURANCE CARRIER *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+              required={true}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-2 no-margin"
+          >
+            <label>
+              PLAN TYPE *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-3 no-margin"
+          >
+            <label>
+              PLAN NO. *
+            </label>
+            <input
+              className="form-group"
+              placeholder="Plan Number"
+              required={true}
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="row sm-spacer"
+        >
+          <div
+            className="col-sm-5"
+          >
+            <label>
+              ALTERNATE INSURANCE CARRIER *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+              required={true}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-2 no-margin"
+          >
+            <label>
+              PLAN TYPE *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="ppo"
+              >
+                PPO
+              </option>
+            </select>
+          </div>
+          <div
+            className="col-sm-3 no-margin"
+          >
+            <label>
+              PLAN NO. *
+            </label>
+            <input
+              className="form-group"
+              onChange={[Function]}
+              placeholder="Plan Number"
+              required={true}
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="row sm-spacer"
+        >
+          <div
+            className="col-sm-5"
+          >
+            <label>
+              REFERRING PHYSICIAN *
+            </label>
+            <select
+              className="select-dropdown"
+              onChange={[Function]}
+            >
+              <option
+                selected={true}
+                value="select"
+              >
+                Select
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          className="row sm-spacer"
+        >
+          <div
+            className="break-line"
+          />
+        </div>
+        <div
+          className="row sm-spacer"
+        >
+          <div
+            className="col-sm-6 no-padding"
+          >
+            <button
+              className="back-btn"
+              tabIndex={1}
+            >
+              BACK
+            </button>
+          </div>
+          <div
+            className="col-sm-6 no-padding"
+          >
+            <button
+              className="next-btn"
+              tabIndex={1}
+              type="submit"
+            >
+              NEXT
+            </button>
           </div>
         </div>
       </form>

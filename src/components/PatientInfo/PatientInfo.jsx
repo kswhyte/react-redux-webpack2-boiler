@@ -309,8 +309,7 @@ class PatientInfo extends Component {
               </div>
 
               <div className="row sm-spacer">
-                <div className="footer-line" />
-                <div className="break-line footer-line" />
+                <div className="break-line" />
               </div>
 
               {/* Buttons */}
