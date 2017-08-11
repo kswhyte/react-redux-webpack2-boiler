@@ -6,7 +6,6 @@ import isEmail from '../../helpers/isEmail';
 import './reset-password.css';
 
 const propTypes = {
-  resetPassword: PropTypes.func,
   validationError: PropTypes.func,
   validationMessage: PropTypes.string,
   submitPasswordRecoveryEmail: PropTypes.func
@@ -44,7 +43,6 @@ const ResetPassword = props => {
             userEmail
           };
           props.submitPasswordRecoveryEmail(userData);
-          props.resetPassword;
         }}
       >
         <div className="row lg-spacer">

@@ -17,7 +17,7 @@ const resetPasswordRequest = (dispatch, ...args) => {
         message: 'Success. The recovery email has been sent.'
       }
     };
-    dispatch(actions.startResetPassword(_res.body));
+    dispatch(actions.resetPasswordSuccess(_res.body));
 
     /* // FOR TESTING ERRORS
       _res.err = {

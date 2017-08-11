@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SignOn from '../components/SignOn';
 import ResetPassword from '../components/ResetPassword';
+import ChangePassword from '../components/ChangePassword';
 import ResetPasswordConfirm from '../components/ResetPasswordConfirm';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -18,10 +19,6 @@ let createHandlers = dispatch => {
     dispatch(sessionActions.validationError(data));
   };
 
-  let resetPassword = data => {
-    dispatch(sessionActions.startResetPasswordClick(data));
-  };
-
   let submitPasswordRecoveryEmail = email => {
     dispatch(sessionActions.startResetPasswordClick(email));
   };
@@ -29,7 +26,6 @@ let createHandlers = dispatch => {
   return {
     submitLogin,
     validationError,
-    resetPassword,
     submitPasswordRecoveryEmail
     // other handlers
   };
@@ -68,11 +64,16 @@ class SignOnContainer extends Component {
     if (this.props.signonType === 'resetpassword') {
       return (
         <ResetPassword
-          resetPassword={this.handlers.resetPassword}
           validationError={this.handlers.validationError}
           validationMessage={this.props.validationMessage}
           submitPasswordRecoveryEmail={this.handlers.submitPasswordRecoveryEmail}
         />
+      );
+    }
+
+    if (this.props.signonType === 'changepassword') {
+      return (
+        <ChangePassword />
       );
     }
 
@@ -83,12 +84,14 @@ class SignOnContainer extends Component {
 }
 
 const mapStateToProps = state => {
+console.log('-------------', state)
   //Select the specific state items you would like here
-  const { validationMessage } = state.Session;
+  const { validationMessage, email } = state.Session;
 
   //return state items to be added as props to the container
   return {
-    validationMessage
+    validationMessage,
+    email
   };
 };
 

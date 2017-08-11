@@ -43,6 +43,21 @@ const sessionReducer = (store = {}, action) => {
     case types.RESET_PASSWORD: {
       return Object.assign({}, store, { email: action.message });
     }
+    case types.RESETPASSWORD_START: {
+      return store;
+    }
+    case types.RESETPASSWORD_SUCCESS: {
+      return Object.assign({}, store, { message: action.data.message });
+    }
+    case types.CHANGEPASSWORD_START : {
+      return store;
+    }
+    case types.CHANGEPASSWORD_SUCCESS: {
+      return Object.assign({}, store, {message: action.data.message});
+    }
+    case types.CHANGEPASSWORD_FAIL: {
+      return Object.assign({}, store, {validationMessage: action.data.message});
+    }
     default:
       return store;
   }
