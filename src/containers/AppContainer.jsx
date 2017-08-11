@@ -33,14 +33,10 @@ let createHandlers = function(dispatch) {
     dispatch(sessionActions.startLogoutClick());
   }
 
-  let changePassword = function(data){
-    dispatch(sessionActions.startChangePasswordClick(data));
-  }
   return {
     startSessionClick,
     toggleHeader,
-    logOutUser,
-    changePassword
+    logOutUser
     // other handlers
   };
 };
@@ -131,10 +127,7 @@ class App extends Component {
                 />
                 <Route
                   path="/changepassword"
-                  render={() =>
-                    <SignOnContainer
-                      signonType="changepassword"
-                      changePassword={this.handlers.changePassword} />}
+                  render={() => <SignOnContainer signonType="changepassword" />}
                 />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
