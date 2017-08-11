@@ -28,7 +28,7 @@ const resetPasswordRequest = (dispatch, ...args) => {
 
     //use routes instead of window.location
     ///window.location.assign('/');
-    dispatch(routeActions.changeRoute({ route: '/resetpasswordconfirm' }));
+    dispatch(routeActions.changeRoute({ route: '/login' }));
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };

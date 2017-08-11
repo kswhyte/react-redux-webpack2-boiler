@@ -36,6 +36,7 @@ let createHandlers = function(dispatch) {
   let changePassword = function(data) {
     dispatch(sessionActions.startChangePasswordClick(data));
   };
+
   return {
     startSessionClick,
     toggleHeader,

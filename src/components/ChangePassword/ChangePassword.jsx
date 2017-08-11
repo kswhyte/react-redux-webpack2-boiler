@@ -4,81 +4,83 @@ import { PropTypes } from 'prop-types';
 import './change-password.css';
 
 const propTypes = {
-  changePassword: PropTypes.func
+  changePassword: PropTypes.func,
+  mismatchPassword: PropTypes.func,
+  matchPassword: PropTypes.func,
+  passwordMismatch: PropTypes.bool
 };
 
-const checkPassword = () => {
+const checkPassword = (matchPasswordCb, mismatchPasswordCb) => {
   const loginChangePassword = escape(document.querySelector('#loginChangePassword').value);
   const loginChangePasswordConfirm = escape(document.querySelector('#loginChangePasswordConfirm').value);
   if (loginChangePassword !== loginChangePasswordConfirm) {
-    console.log("Ain't no gooood");
+    mismatchPasswordCb();
   }
   if (loginChangePassword === loginChangePasswordConfirm) {
-    console.log("Looks good");
+    matchPasswordCb();
   }
-}
+};
 
-const submitPasswordChange = (submitCallback) => {
+const submitPasswordChange = (submitCallback, mismatchPassword, matchPassword) => {
   const loginChangePassword = escape(document.querySelector('#loginChangePassword').value);
   const loginChangePasswordConfirm = escape(document.querySelector('#loginChangePasswordConfirm').value);
   if (loginChangePassword !== loginChangePasswordConfirm) {
-    console.log("Ain't no gooood 2");
+    mismatchPassword();
   }
   if (loginChangePassword === loginChangePasswordConfirm) {
-    console.log("Looks good 2");
+    matchPassword();
     submitCallback(loginChangePassword);
   }
-}
+};
 
-const ChangePassword = () => {
+const ChangePassword = props => {
   return (
     <div className="change-password-wrapper card">
-        <img src="images/pattern-dots.png" className="dots-pattern" />
-        <div className="row">
-          <h2>UPDATE PASSWORD</h2>
-          <div className="page-instructions col-xs-offset-4 col-xs-4">
-            <p>Please enter and confirm your new password below.</p>
+      <img src="images/pattern-dots.png" className="dots-pattern" />
+      <div className="row">
+        <h2>UPDATE PASSWORD</h2>
+        <div className="page-instructions col-xs-offset-4 col-xs-4">
+          <p>Please enter and confirm your new password below.</p>
+        </div>
+      </div>
+      <div className="alert-row">
+        {props.passwordMismatch && <h5>Passwords don&#39;t match</h5>}
+      </div>
+
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          submitPasswordChange(props.changePassword, props.mismatchPassword, props.matchPassword);
+        }}
+      >
+        <div className="row change-password-spacer">
+          <div className="col-sm-offset-1 col-sm-5 input-row">
+            <label forHtml="loginChangePassword">NEW PASSWORD</label>
+            <input id="loginChangePassword" type="password" placeholder="Your New Password" required />
+          </div>
+          <div className="col-sm-5 input-row">
+            <label forHtml="loginChangePasswordConfirm">CONFIRM PASSWORD</label>
+            <input
+              id="loginChangePasswordConfirm"
+              type="password"
+              placeholder="Confirm Password"
+              label="Confirm Password"
+              onBlur={() => {
+                checkPassword(props.matchPassword, props.mismatchPassword);
+              }}
+              required
+            />
           </div>
         </div>
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            submitPasswordChange();
-          }}
-        >
-          <div className="row change-password-spacer">
-            <div className="col-sm-offset-1 col-sm-5 input-row">
-              <label forHtml="loginChangePassword">NEW PASSWORD</label>
-              <input
-                id="loginChangePassword"
-                type="password"
-                placeholder="Your New Password"
-                required
-              />
-            </div>
-            <div className="col-sm-5 input-row">
-              <label forHtml="loginChangePasswordConfirm">CONFIRM PASSWORD</label>
-              <input
-                id="loginChangePasswordConfirm"
-                type="password"
-                placeholder="Confirm Password"
-                label="Confirm Password"
-                onBlur={checkPassword}
-                required
-              />
-            </div>
+        <div className="row change-password-spacer">
+          <div className="col-xs-offset-3 col-xs-6">
+            <button className="primary-btn">CHANGE PASSWORD</button>
           </div>
-          <div className="row change-password-spacer">
-            <div className="col-xs-offset-3 col-xs-6">
-              <button className="primary-btn">
-                CHANGE PASSWORD
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-  )
-}
+        </div>
+      </form>
+    </div>
+  );
+};
 
 ChangePassword.propTypes = propTypes;
 

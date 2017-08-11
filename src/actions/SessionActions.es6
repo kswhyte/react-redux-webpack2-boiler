@@ -74,6 +74,12 @@ const actions = {
     type: types.CHANGEPASSWORD_FAIL,
     data
   }),
+  passwordMismatch: () => ({
+    type: types.PASSWORD_MISMATCH
+  }),
+  passwordMatch: () => ({
+    type: types.PASSWORD_MATCH
+  }),
   showModal: modal => ({
     type: types.SHOW_MODAL,
     modal

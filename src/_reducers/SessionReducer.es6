@@ -55,6 +55,12 @@ const sessionReducer = (store = {}, action) => {
     case types.CHANGEPASSWORD_FAIL: {
       return Object.assign({}, store, {validationMessage: action.data.message});
     }
+    case types.PASSWORD_MISMATCH: {
+      return Object.assign({}, store, {passwordMismatch: true});
+    }
+    case types.PASSWORD_MATCH: {
+      return Object.assign({}, store, {passwordMismatch: false});
+    }
     default:
       return store;
   }
