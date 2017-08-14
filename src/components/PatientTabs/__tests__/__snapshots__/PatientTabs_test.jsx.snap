@@ -12,6 +12,7 @@ exports[`Story 1`] = `
     >
       <li
         className="general-info-tab active"
+        onClick={[Function]}
       >
         <a
           href="/patientinfo/generalinfo"
@@ -21,7 +22,8 @@ exports[`Story 1`] = `
         </a>
       </li>
       <li
-        className="appointments-tab"
+        className="appointments-tab "
+        onClick={[Function]}
       >
         <a
           href="/patientinfo/appointments"
@@ -31,7 +33,8 @@ exports[`Story 1`] = `
         </a>
       </li>
       <li
-        className="notes-tab"
+        className="notes-tab "
+        onClick={[Function]}
       >
         <a
           href="/patientinfo/notes"
