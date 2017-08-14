@@ -28,6 +28,24 @@ form {
     color: var(--light-teal);
     border-bottom: solid 1px var(--light-teal);
   }
+  & select {
+    &.select-dropdown {
+      width: 100%;
+      background: transparent;
+      font-family: Open Sans;
+      border: 0px;
+      border-bottom: solid 1px var(--slate);
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+      padding: 4px 0px;
+    }
+    &.dropdown-affiliate {
+      padding-top: 28px !important;
+    }
+  }
+  & .input-affiliate {
+    padding-top: 24px !important;
+  }
   & .checkbox-label {
     font-family: Open Sans;
     font-size: 14px;
