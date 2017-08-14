@@ -63,4 +63,9 @@ const mapStateToProps = store => {
   };
 };
 
+PatientTabsContainer.defaultProps = {
+  PatientInfo: {},
+  patientId: null
+}
+
 export default connect(mapStateToProps)(PatientTabsContainer);

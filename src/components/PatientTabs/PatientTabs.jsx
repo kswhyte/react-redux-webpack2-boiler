@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 
@@ -15,25 +15,52 @@ const PatientTabs = props => {
     submitPatientInfo:PropTypes.func
   };
 
-  const check = () => {
-    console.log(props);
-  };
-  check();
 
-  return (
-    <div className="patient-tabs-wrapper">
-      <div className="row sm-spacer">
-        <ul className="nav nav-tabs">
-          <li className="general-info-tab active">
-            <Link to="/patientinfo/generalinfo">General Info</Link>
-          </li>
-          <li className="appointments-tab">
-            <Link to="/patientinfo/appointments">PatientName Appointments</Link>
-          </li>
-          <li className="notes-tab">
-            <Link to="/patientinfo/notes">Notes</Link>
-          </li>
-        </ul>
+let tabs = {
+  general : 'GENERAL',
+  appointments : 'APPOINTMENTS',
+  notes :'NOTES'
+}
+
+export class PatientTabs extends Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+
+    this.state = {
+      currentTab : tabs.general
+    }
+
+    this.handleTabState = this.handleTabState.bind(this);
+  }
+
+  handleTabState(e) {
+    let className = e.currentTarget.className;
+    if(className.match(/general/)){
+      this.setState({currentTab: tabs.general})
+    } else if(className.match(/appointments/)){
+      this.setState({currentTab: tabs.appointments})
+    } else if(className.match(/notes/)) {
+      this.setState({currentTab: tabs.notes})
+    }
+  }
+
+  render(){
+    const props = this.props;
+    return (
+      <div className="patient-tabs-wrapper">
+        <div className="row sm-spacer">
+          <ul className="nav nav-tabs">
+            <li onClick={this.handleTabState} className={`general-info-tab ${this.state.currentTab === tabs.general ? 'active' : ''}`}>
+              <Link to="/patientinfo/generalinfo">General Info</Link>
+            </li>
+            <li onClick={this.handleTabState} className={`appointments-tab ${this.state.currentTab === tabs.appointments ? 'active' : ''}`}>
+              <Link to="/patientinfo/appointments">PatientName Appointments</Link>
+            </li>
+            <li onClick={this.handleTabState} className={`notes-tab ${this.state.currentTab === tabs.notes ? 'active' : ''}`}>
+              <Link to="/patientinfo/notes">Notes</Link>
+            </li>
+          </ul>
 
         <div className="tabs-line" />
         <div className="break-line" />

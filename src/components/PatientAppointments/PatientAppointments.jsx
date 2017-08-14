@@ -10,19 +10,27 @@ const PatientAppointments = props => {
     appointments: PropTypes.array.required
   };
 
-  const pastAppts = props.appointments.filter(appt => {
-    return Moment(appt.appointmentDateTime) < Moment();
-  });
+  const pastAppts = () => {
+    if(typeof props.appointments === "object"){
+      props.appointments.filter(appt => {
+        return Moment(appt.appointmentDateTime) < Moment();
+      });
+    }
+  };
 
-  const upcomingAppts = props.appointments.filter(appt => {
-    return Moment(appt.appointmentDateTime) > Moment();
-  });
+  const upcomingAppts = () => {
+    if(typeof props.appointments === "object"){
+      props.appointments.filter(appt => {
+        return Moment(appt.appointmentDateTime) > Moment();
+      });
+    }
+  }
 
   return (
     <div className="patient-appointments-wrapper">
       <div className="tab-content clearfix">
         <div className="patient-appointments-form tab-pane active">
-          {props.appointments.length === 0 &&
+          {typeof props.appointments === "object" && props.appointments.length === 0 &&
             <div className="page-instructions">
               <p>Patient has no appointment history</p>
             </div>}
