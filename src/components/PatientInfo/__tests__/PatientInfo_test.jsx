@@ -1,12 +1,9 @@
 import React from 'react';
-// import { storiesOf, action, linkTo } from '@kadira/storybook';
 import PatientInfo from '../PatientInfo';
-
-// import { specs, describe, it } from 'storybook-addon-specifications';
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
 
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import expect from 'expect';
 
 const stories = storiesOf('PatientInfo', module);
@@ -22,6 +19,37 @@ stories.add('Patient Info Story', () => {
       it('Should render the PatientInfo component without crashing', () => {
         let output = shallow(patientInfoStory);
         expect(output.find('.patient-info-wrapper').length).toEqual(1);
+      });
+
+      it('Should have 21 official input fields', () => {
+        let output = mount(patientInfoStory);
+        expect(output.find('input').length).toEqual(9);
+      });
+
+      it('Should have 15 official select dropdown fields', () => {
+        let output = mount(patientInfoStory);
+        expect(output.find('input').length).toEqual(9);
+      });
+
+      it('Should have 21 official input labels', () => {
+        let output = mount(patientInfoStory);
+        expect(output.find('label').length).toEqual(21);
+      });
+
+      it('Should have two call-to-action buttons', () => {
+        let output = mount(patientInfoStory);
+        expect(output.find('button').length).toEqual(2);
+      });
+
+      it('Should have two buttons: "BACK" and "NEXT"', () => {
+        let output = mount(patientInfoStory);
+        expect(output.find('.back-btn').length).toEqual(1);
+        expect(output.find('.next-btn').length).toEqual(1);
+      });
+
+      it('Should have a break-line div', () => {
+        let output = mount(patientInfoStory);
+        expect(output.find('.break-line').length).toEqual(1);
       });
     })
   );

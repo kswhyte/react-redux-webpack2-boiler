@@ -1,20 +1,30 @@
+@import "imports/_helpers.css";
+@import "imports/_layout.css";
+@import "imports/_form-elements.css";
+@import "imports/_typography.css";
+
 .patient-info-wrapper {
-  & hr {
-    width: 831px;
-    height: 2px;
-    object-fit: contain;
-    /*color: red;*/
+  & select {
+    &.select-dropdown {
+      width: 100%;
+      background: transparent;
+      font-family: Open Sans;
+      border: 0px;
+      border-bottom: solid 1px var(--slate);
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+      padding: 4px 0px;
+    }
   }
-
-  & .row {
-    margin-top: 30px;
+  & .dropdown-affiliate {
+    padding-top: 28px !important;
   }
-
-  & div:first-child form input,
-  & div:first-child form input:active {
-    background: transparent;
-    outline: 0;
-    border: 0;
-    border-bottom: solid 1px #a9b7c2;
+  & .input-affiliate {
+    padding-top: 24px !important;
+  }
+  & button {
+    &.next-btn {
+      float: right;
+    }
   }
 }

@@ -4,45 +4,49 @@ exports[`Story 1`] = `
 <div
   className="patient-tabs-wrapper"
 >
-  <ul
-    className="nav nav-tabs"
+  <div
+    className="row sm-spacer"
   >
-    <li
-      className="general-info-tab active"
+    <ul
+      className="nav nav-tabs"
     >
-      <a
-        href="/patientinfo/generalinfo"
-        onClick={[Function]}
+      <li
+        className="general-info-tab active"
       >
-        General Info
-      </a>
-    </li>
-    <li
-      className="appointments-tab"
-    >
-      <a
-        href="/patientinfo/appointments"
-        onClick={[Function]}
+        <a
+          href="/patientinfo/generalinfo"
+          onClick={[Function]}
+        >
+          General Info
+        </a>
+      </li>
+      <li
+        className="appointments-tab"
       >
-        PatientName Appointments
-      </a>
-    </li>
-    <li
-      className="notes-tab"
-    >
-      <a
-        href="/patientinfo/notes"
-        onClick={[Function]}
+        <a
+          href="/patientinfo/appointments"
+          onClick={[Function]}
+        >
+          PatientName Appointments
+        </a>
+      </li>
+      <li
+        className="notes-tab"
       >
-        Notes
-      </a>
-    </li>
-  </ul>
-  <div
-    className="tabs-line"
-  />
-  <div
-    className="break-line"
-  />
+        <a
+          href="/patientinfo/notes"
+          onClick={[Function]}
+        >
+          Notes
+        </a>
+      </li>
+    </ul>
+    <div
+      className="tabs-line"
+    />
+    <div
+      className="break-line"
+    />
+  </div>
 </div>
 `;

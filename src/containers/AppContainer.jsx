@@ -10,7 +10,7 @@ import NotFound from '../components/NotFound';
 import SignOnContainer from './SignOnContainer';
 import SearchPatientContainer from './SearchPatientContainer';
 import UserManagementContainer from './UserManagementContainer';
-import ConfirmPatientInfoContainer from './ConfirmPatientInfoContainer';
+import PatientTabsContainer from './PatientTabsContainer';
 import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 import headerActions from '../actions/HeaderActions';
@@ -29,14 +29,19 @@ let createHandlers = function(dispatch) {
     dispatch(headerActions.toggleHeader(data));
   };
 
-  let logOutUser = function(){
+  let logOutUser = function() {
     dispatch(sessionActions.startLogoutClick());
-  }
+  };
+
+  let changePassword = function(data) {
+    dispatch(sessionActions.startChangePasswordClick(data));
+  };
 
   return {
     startSessionClick,
     toggleHeader,
-    logOutUser
+    logOutUser,
+    changePassword
     // other handlers
   };
 };
@@ -62,14 +67,13 @@ class App extends Component {
     this.hideModal = this.hideModal.bind(this);
   }
 
-  logoutUserHandler(){
-        if(this.props.sessionStarted){
-          this.props.dispatch(sessionActions.showModal(modal_names.LOGOUT_MODAL));
-        } else {
-          this.props.dispatch(sessionActions.startLogoutClick());
-        }
+  logoutUserHandler() {
+    if (this.props.sessionStarted) {
+      this.props.dispatch(sessionActions.showModal(modal_names.LOGOUT_MODAL));
+    } else {
+      this.props.dispatch(sessionActions.startLogoutClick());
     }
-
+  }
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
@@ -97,10 +101,7 @@ class App extends Component {
     return (
       <Router history={createBrowserHistory}>
         <div className={this.userIsActive ? 'wrapper ' : 'wrapper signed-out'}>
-          <Header
-            headerSize={this.props.headerSize}
-            logout={this.logoutUserHandler}
-          />
+          <Header headerSize={this.props.headerSize} logout={this.logoutUserHandler} />
           <section className="body-wrapper">
             <Nav />
             <div className="router-wrapper">
@@ -127,11 +128,12 @@ class App extends Component {
                 />
                 <Route
                   path="/changepassword"
-                  render={() => <SignOnContainer signonType="changepassword" />}
+                  render={() =>
+                    <SignOnContainer signonType="changepassword" changePassword={this.handlers.changePassword} />}
                 />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
-                <Route path="/patientinfo" component={ConfirmPatientInfoContainer} />
+                <Route path="/patientinfo" component={PatientTabsContainer} />
                 <Route path="/searchandcalendar" component={SearchAndCalendarContainer} />
                 <Route path="/confirm" component={ConfirmContainer} />
                 <Route component={NotFound} />

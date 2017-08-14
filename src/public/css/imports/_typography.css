@@ -57,6 +57,7 @@ label {
   font-family: Open Sans;
   font-size: 10px;
   color: var(--label-black);
+  margin-bottom: 10px;
 }
 
 input::placeholder {

@@ -1,125 +1,339 @@
 /*eslint no-unused-vars: */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import HgRow from '@hg/three-ui/HgRow';
-import TextInput from '@hg/three-ui/HgInputsV2/TextInput';
-import SelectInput from '@hg/three-ui/HgInputsV2/SelectInput';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+// import isEmail from '../../helpers/isEmail';
 
 import './patient-info.css';
 
-const PatientInfo = props => {
-  PatientInfo.propTypes = {
-    children: PropTypes.object,
-    generalInfo: PropTypes.object.required
-  };
+const propTypes = {
+  children: PropTypes.object,
+  generalInfo: PropTypes.object.required
+};
 
-  return (
-    <div className="patient-info-wrapper">
-      <div className="tab-content clearfix">
-        <div className="general-info-form tab-pane active">
-          <form>
-            <HgRow>
-              <div className="col-sm-3">
-                <TextInput value={props.generalInfo.firstName} label="PATIENT FIRST NAME &#42;" placeholder="Patient First Name" />
+class PatientInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: '',
+      lastName: '',
+      gender: '',
+      emailAddress: '',
+      dobMonth: '',
+      dobDay: '',
+      dobYear: '',
+      phoneNumber: '',
+      phoneType: '',
+      contactMethod: '',
+      street: '',
+      city: '',
+      state: '',
+      zip: '',
+      insuranceCarrierPrimary: '',
+      planTypePrimary: '',
+      planNumberPrimary: '',
+      insuranceCarrierAlternate: '',
+      planTypeAlternate: '',
+      planNumberAlternate: '',
+      referringPhysician: ''
+    };
+  }
+
+  componentDidMount() {}
+
+  render() {
+    console.log('----state', this.state);
+    console.log('----props', this.props);
+    return (
+      <div className="patient-info-wrapper">
+        <div className="tab-content clearfix">
+          <div className="general-info-form tab-pane active">
+            <form>
+              {/* Row1 */}
+              <div className="row sm-spacer">
+                <div className="col-sm-3 no-margin">
+                  <label>PATIENT FIRST NAME &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    value={this.props.generalInfo.firstName ? this.props.generalInfo.firstName : this.state.firstName}
+                    placeholder="Patient First Name"
+                    onChange={e => this.setState({ firstName: e.target.value })}
+                    required
+                  />
+                </div>
+
+                <div className="col-sm-4 no-margin">
+                  <label>PATIENT LAST NAME &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    value={this.props.generalInfo.lastName ? this.props.generalInfo.lastName : this.state.lastName}
+                    placeholder="Patient Last Name"
+                    onChange={e => this.setState({ lastName: e.target.value })}
+                    required
+                  />
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label>GENDER &#42;</label>
+                  <select
+                    className="select-dropdown"
+                    onChange={e => this.setState({ gender: e.target.value })}
+                    required
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-3 no-margin">
+                  <label>EMAIL ADDRESS &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    value={
+                      this.props.generalInfo.emailAddress
+                        ? this.props.generalInfo.emailAddress
+                        : this.state.emailAddress
+                    }
+                    placeholder="Email Address"
+                    onChange={e => this.setState({ emailAddress: e.target.value })}
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="col-sm-4">
-                <TextInput value={props.generalInfo.lastName} label="PATIENT LAST NAME &#42;" placeholder="Patient Last Name" />
+              {/* Row2 */}
+              <div className="row sm-spacer">
+                <div className="col-sm-3 no-margin">
+                  <label>PATIENT DATE OF BIRTH &#42;</label>
+                  <select className="select-dropdown" onChange={e => this.setState({ dobMonth: e.target.value })}>
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-1 no-margin">
+                  <label />
+                  <select
+                    className="select-dropdown dropdown-affiliate"
+                    onChange={e => this.setState({ dobDay: e.target.value })}
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label />
+                  <select
+                    className="select-dropdown dropdown-affiliate"
+                    onChange={e => this.setState({ dobYear: e.target.value })}
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label>PHONE NUMBER &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    value={
+                      this.props.generalInfo.homePhoneNumber
+                        ? this.props.generalInfo.homePhoneNumber
+                        : this.state.phoneNumber
+                    }
+                    placeholder="Phone Number"
+                    onChange={e => this.setState({ phoneNumber: e.target.value })}
+                    required
+                  />
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label>PHONE TYPE &#42;</label>
+                  <select className="select-dropdown" onChange={e => this.setState({ phoneType: e.target.value })}>
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label>CONTACT METHOD &#42;</label>
+                  <select className="select-dropdown" onChange={e => this.setState({ contactMethod: e.target.value })}>
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
               </div>
 
-              <div className="col-sm-2">
-                <SelectInput
-                  label="GENDER &#42;"
-                  required
-                  options={[{ id: 0, text: 'Male' }, { id: 1, text: 'Female' }]}
-                />
+              {/* Row3 */}
+              <div className="row sm-spacer">
+                <div className="col-sm-5 no-margin">
+                  <label>STREET &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    onChange={e => this.setState({ street: e.target.value })}
+                    required
+                  />
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label>CITY STATE ZIP &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    placeholder="City"
+                    onChange={e => this.setState({ city: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="col-sm-1 no-margin">
+                  <label />
+                  <select
+                    className="select-dropdown dropdown-affiliate"
+                    onChange={e => this.setState({ state: e.target.value })}
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label />
+                  <input
+                    className="form-group input-affiliate"
+                    type="text"
+                    placeholder="Zip"
+                    onChange={e => this.setState({ zipCode: e.target.value })}
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="col-sm-3">
-                <TextInput value={props.generalInfo.emailAddress} label="EMAIL ADDRESS &#42;" placeholder="Email Adress" />
-              </div>
-            </HgRow>
+              {/* Row4 */}
+              <div className="row sm-spacer">
+                <div className="col-sm-5">
+                  <label>PRIMARY INSURANCE CARRIER &#42;</label>
+                  <select
+                    className="select-dropdown"
+                    onChange={e => this.setState({ insuranceCarrierPrimary: e.target.value })}
+                    required
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
 
-            <HgRow>
-              <div className="col-sm-3">
-                <SelectInput value={props.generalInfo.dob} label="PATIENT DATE OF BIRTH &#42;"  />
-              </div>
+                <div className="col-sm-2 no-margin">
+                  <label>PLAN TYPE &#42;</label>
+                  <select
+                    className="select-dropdown"
+                    onChange={e => this.setState({ planTypePrimary: e.target.value })}
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
 
-              <div className="col-sm-2">
-                <SelectInput label="PATIENT DATE OF BIRTH &#42;"  />
-              </div>
-
-              <div className="col-sm-2">
-                <SelectInput label="PATIENT DATE OF BIRTH &#42;"  />
-              </div>
-
-              <div className="col-sm-2">
-                <TextInput value={props.generalInfo.homePhoneNumber} label="PHONE NUMBER &#42;" placeholder="Phone Number" />
-              </div>
-
-              <div className="col-sm-3">
-                <SelectInput label="CONTACT METHOD &#42;"  />
-              </div>
-            </HgRow>
-
-            <HgRow>
-              <div className="col-sm-4">
-                <TextInput label="STREET &#42;"  />
-              </div>
-
-              <div className="col-sm-3">
-                <TextInput label="CITY STATE ZIP &#42;"  />
+                <div className="col-sm-3 no-margin">
+                  <label>PLAN NO. &#42;</label>
+                  <input placeholder="Plan Number" className="form-group" type="text" required />
+                </div>
               </div>
 
-              <div className="col-sm-2">
-                <SelectInput label="CITY STATE ZIP &#42;"  />
+              {/* Row5 */}
+              <div className="row sm-spacer">
+                <div className="col-sm-5">
+                  <label>ALTERNATE INSURANCE CARRIER &#42;</label>
+                  <select
+                    className="select-dropdown"
+                    onChange={e => this.setState({ insuranceCarrierAlternate: e.target.value })}
+                    required
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-2 no-margin">
+                  <label>PLAN TYPE &#42;</label>
+                  <select
+                    className="select-dropdown"
+                    onChange={e => this.setState({ planTypeAlternate: e.target.value })}
+                  >
+                    <option value="ppo" selected>
+                      PPO
+                    </option>
+                  </select>
+                </div>
+
+                <div className="col-sm-3 no-margin">
+                  <label>PLAN NO. &#42;</label>
+                  <input
+                    className="form-group"
+                    type="text"
+                    placeholder="Plan Number"
+                    onChange={e => this.setState({ planTypeAlternate: e.target.value })}
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="col-sm-2">
-                <TextInput label="CITY STATE ZIP &#42;" placeholder="Zip"  />
-              </div>
-            </HgRow>
-
-            <HgRow>
-              <div className="col-sm-4">
-                <SelectInput label="PRIMARY INSURANCE CARRIER &#42;"  />
-              </div>
-
-              <div className="col-sm-2">
-                <SelectInput label="PLAN TYPE &#42;"  />
-              </div>
-
-              <div className="col-sm-3">
-                <TextInput label="PLAN NO. &#42;" placeholder="Plan Number"  />
-              </div>
-            </HgRow>
-
-            <HgRow>
-              <div className="col-sm-4">
-                <SelectInput label="ALTERNATIVE INSURANCE CARRIER &#42;"  />
+              {/* Row6 */}
+              <div className="row sm-spacer">
+                <div className="col-sm-5">
+                  <label>REFERRING PHYSICIAN &#42;</label>
+                  <select
+                    className="select-dropdown"
+                    onChange={e => this.setState({ referringPhysician: e.target.value })}
+                  >
+                    <option value="select" selected>
+                      Select
+                    </option>
+                  </select>
+                </div>
               </div>
 
-              <div className="col-sm-2">
-                <SelectInput label="PLAN TYPE &#42;"  />
+              <div className="row sm-spacer">
+                <div className="break-line" />
               </div>
 
-              <div className="col-sm-3">
-                <TextInput label="PLAN NO. &#42;" placeholder="Plan Number"  />
-              </div>
-            </HgRow>
+              {/* Buttons */}
+              <div className="row sm-spacer">
+                <div className="col-sm-6 no-padding">
+                  <button className="back-btn" tabIndex={1}>
+                    BACK
+                  </button>
+                </div>
 
-            <HgRow>
-              <div className="col-sm-4">
-                <SelectInput label="REFERRING PHYSICIAN &#42;"  />
+                <div className="col-sm-6 no-padding">
+                  <button className="next-btn" type="submit" tabIndex={1}>
+                    NEXT
+                  </button>
+                </div>
               </div>
-            </HgRow>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
+
+PatientInfo.propTypes = propTypes;
 
 export default PatientInfo;
