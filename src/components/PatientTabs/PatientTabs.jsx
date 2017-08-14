@@ -35,8 +35,6 @@ export class PatientTabs extends Component {
   handleTabState(e) {
     let className = e.currentTarget.className;
     let match = className.match(/appointment/);
-    console.log(match);
-    console.log('class anme : ', className);
       if(className.match(/general/)){
         this.setState({currentTab: tabs.general})
       } else if(className.match(/appointments/)){
