@@ -11,7 +11,8 @@ import './patient-tabs.css';
 const PatientTabs = props => {
   PatientTabs.propTypes = {
     children: PropTypes.object,
-    patientInfo: PropTypes.object
+    patientInfo: PropTypes.object,
+    submitPatientInfo:PropTypes.func
   };
 
   const check = () => {
@@ -40,7 +41,7 @@ const PatientTabs = props => {
         <Route
           exact
           path="/patientinfo/generalinfo"
-          render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
+          render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} submitPatientInfo={props.submitPatientInfo} />}
         />
         <Route
           exact
