@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
 
@@ -8,48 +8,85 @@ import PatientNotes from '../PatientNotes';
 
 import './patient-tabs.css';
 
-const PatientTabs = props => {
-  PatientTabs.propTypes = {
-    children: PropTypes.object,
-    patientInfo: PropTypes.object
-  };
+const propTypes = {
+  children: PropTypes.object,
+  patientInfo: PropTypes.object
+};
 
-  return (
-    <div className="patient-tabs-wrapper">
-      <div className="row sm-spacer">
-        <ul className="nav nav-tabs">
-          <li className="general-info-tab active">
-            <Link to="/patientinfo/generalinfo">General Info</Link>
-          </li>
-          <li className="appointments-tab">
-            <Link to="/patientinfo/appointments">PatientName Appointments</Link>
-          </li>
-          <li className="notes-tab">
-            <Link to="/patientinfo/notes">Notes</Link>
-          </li>
-        </ul>
 
-        <div className="tabs-line" />
-        <div className="break-line" />
-        <Route
-        exact
-        path="/patientinfo"
-        render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
-      />
-        <Route
+let tabs = {
+  general : 'GENERAL',
+  appointments : 'APPOINTMENTS',
+  notes :'NOTES'
+}
+
+export class PatientTabs extends Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+
+    this.state = {
+      currentTab : tabs.general
+    }
+
+    this.handleTabState = this.handleTabState.bind(this);
+  }
+
+  handleTabState(e) {
+    let className = e.currentTarget.className;
+    let match = className.match(/appointment/);
+    console.log(match);
+    console.log('class anme : ', className);
+      if(className.match(/general/)){
+        this.setState({currentTab: tabs.general})
+      } else if(className.match(/appointments/)){
+        this.setState({currentTab: tabs.appointments})
+      } else if(className.match(/notes/)) {
+        this.setState({currentTab: tabs.notes})
+      }
+  }
+
+  render(){
+    const props = this.props;
+    return (
+      <div className="patient-tabs-wrapper">
+        <div className="row sm-spacer">
+          <ul className="nav nav-tabs">
+            <li onClick={this.handleTabState} className={`general-info-tab ${this.state.currentTab === tabs.general ? 'active' : ''}`}>
+              <Link to="/patientinfo/generalinfo">General Info</Link>
+            </li>
+            <li onClick={this.handleTabState} className={`appointments-tab ${this.state.currentTab === tabs.appointments ? 'active' : ''}`}>
+              <Link to="/patientinfo/appointments">PatientName Appointments</Link>
+            </li>
+            <li onClick={this.handleTabState} className={`notes-tab ${this.state.currentTab === tabs.notes ? 'active' : ''}`}>
+              <Link to="/patientinfo/notes">Notes</Link>
+            </li>
+          </ul>
+
+          <div className="tabs-line" />
+          <div className="break-line" />
+          <Route
           exact
-          path="/patientinfo/generalinfo"
+          path="/patientinfo"
           render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
         />
-        <Route
-          exact
-          path="/patientinfo/appointments"
-          render={() => <PatientAppointments appointments={props.patientInfo.appointments} />}
-        />
-        <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={props.patientInfo.notes} />} />
+          <Route
+            exact
+            path="/patientinfo/generalinfo"
+            render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
+          />
+          <Route
+            exact
+            path="/patientinfo/appointments"
+            render={() => <PatientAppointments appointments={props.patientInfo.appointments} />}
+          />
+          <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={props.patientInfo.notes} />} />
+        </div>
       </div>
-    </div>
-  );
-};
+    )
+  }
+}
+
+PatientTabs.propTypes = propTypes;
 
 export default PatientTabs;
