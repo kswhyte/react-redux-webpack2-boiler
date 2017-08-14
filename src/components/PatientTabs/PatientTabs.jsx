@@ -34,14 +34,13 @@ export class PatientTabs extends Component {
 
   handleTabState(e) {
     let className = e.currentTarget.className;
-    let match = className.match(/appointment/);
-      if(className.match(/general/)){
-        this.setState({currentTab: tabs.general})
-      } else if(className.match(/appointments/)){
-        this.setState({currentTab: tabs.appointments})
-      } else if(className.match(/notes/)) {
-        this.setState({currentTab: tabs.notes})
-      }
+    if(className.match(/general/)){
+      this.setState({currentTab: tabs.general})
+    } else if(className.match(/appointments/)){
+      this.setState({currentTab: tabs.appointments})
+    } else if(className.match(/notes/)) {
+      this.setState({currentTab: tabs.notes})
+    }
   }
 
   render(){
