@@ -155,7 +155,7 @@ mapOptions(options){
               <div className="row xs-spacer">
                 <div className="col-sm-2 no-margin padding-10">
                   <label>PATIENT DATE OF BIRTH &#42;</label>
-                  <select className="select-dropdown" onChange={e => this.setState({ dobMonth: e.target.value })}>
+                  <select className="select-dropdown form-control" onChange={e => this.setState({ dobMonth: e.target.value })}>
                     <option value="select" selected>
                       Select
                     </option>
@@ -165,7 +165,7 @@ mapOptions(options){
                 <div className="col-sm-1 no-margin padding-10">
                   <label />
                   <select
-                    className="select-dropdown dropdown-affiliate"
+                    className="select-dropdown dropdown-affiliate form-control"
                     onChange={e => this.setState({ dobDay: e.target.value })}
 
                     value={
@@ -179,7 +179,7 @@ mapOptions(options){
                 <div className="col-sm-1 no-margin padding-10">
                   <label />
                   <select
-                    className="select-dropdown dropdown-affiliate"
+                    className="select-dropdown dropdown-affiliate form-control"
                     onChange={e => this.setState({ dobYear: e.target.value })}
 
                     value={
@@ -206,7 +206,7 @@ mapOptions(options){
 
                 <div className="col-sm-2 no-margin padding-10">
                   <label>PHONE TYPE &#42;</label>
-                  <select className="select-dropdown" onChange={e => this.setState({ phoneType: e.target.value })}
+                  <select className="select-dropdown form-control" onChange={e => this.setState({ phoneType: e.target.value })}
                      value={
                        this.state.phoneType
                     }>
@@ -217,7 +217,7 @@ mapOptions(options){
 
                 <div className="col-sm-3 no-margin padding-10">
                   <label>CONTACT METHOD &#42;</label>
-                  <select className="select-dropdown" onChange={e => this.setState({ contactMethod: e.target.value })}
+                  <select className="select-dropdown form-control" onChange={e => this.setState({ contactMethod: e.target.value })}
                     value={
                       this.state.contactMethod}>
                     <option value="select" selected>
@@ -256,7 +256,7 @@ mapOptions(options){
                 <div className="col-sm-1 no-margin padding-10">
                   <label />
                   <select
-                    className="select-dropdown dropdown-affiliate"
+                    className="select-dropdown dropdown-affiliate form-control"
                     onChange={e => this.setState({ stateCode: e.target.value })}
                     value={
                       this.state.stateCode}
@@ -285,7 +285,7 @@ mapOptions(options){
                 <div className="col-sm-4">
                   <label>PRIMARY INSURANCE CARRIER &#42;</label>
                   <select
-                    className="select-dropdown"
+                    className="select-dropdown form-control"
                     onChange={e => this.setState({ insuranceCarrier: e.target.value })}
                       value={
                       this.state.insuranceCarrier}
@@ -300,7 +300,7 @@ mapOptions(options){
                 <div className="col-sm-2 no-margin padding-10">
                   <label>PLAN TYPE &#42;</label>
                   <select
-                    className="select-dropdown"
+                    className="select-dropdown form-control"
                     onChange={e => this.setState({ planType: e.target.value })}
                   >
                     <option value="select" selected>
@@ -323,10 +323,10 @@ mapOptions(options){
 
               {/* Row5 */}
               <div className="row sm-spacer">
-                <div className="col-sm-5">
+                <div className="col-sm-4">
                   <label>ALTERNATE INSURANCE CARRIER</label>
                   <select
-                    className="select-dropdown"
+                    className="select-dropdown form-control"
                     onChange={e => this.setState({ insuranceCarrierAlternate: e.target.value })}
 
                   >
@@ -338,7 +338,7 @@ mapOptions(options){
                 <div className="col-sm-2 no-margin padding-10">
                   <label>PLAN TYPE &#42;</label>
                   <select
-                    className="select-dropdown"
+                    className="select-dropdown form-control"
                     onChange={e => this.setState({ planTypeAlternate: e.target.value })}
                   >
                     <option value="ppo" selected>
