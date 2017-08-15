@@ -9,10 +9,10 @@ import PatientNotes from '../PatientNotes';
 import './patient-tabs.css';
 
 const propTypes = {
-  children: PropTypes.object,
-  patientInfo: PropTypes.object
-};
-
+    children: PropTypes.object,
+    PatientInfo: PropTypes.object,
+    submitPatientInfo:PropTypes.func
+  };
 
 let tabs = {
   general : 'GENERAL',
@@ -44,7 +44,7 @@ export class PatientTabs extends Component {
   }
 
   render(){
-    const props = this.props;
+    console.log('-------=-=-=-=- this. props ', this.props)
     return (
       <div className="patient-tabs-wrapper">
         <div className="row sm-spacer">
@@ -63,21 +63,21 @@ export class PatientTabs extends Component {
           <div className="tabs-line" />
           <div className="break-line" />
           <Route
-          exact
-          path="/patientinfo"
-          render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
-        />
+            exact
+            path="/patientinfo"
+            render={() => <PatientInfo generalInfo={this.props.PatientInfo.generalInfo} submitPatientInfo={this.props.submitPatientInfo} />}
+          />
           <Route
             exact
             path="/patientinfo/generalinfo"
-            render={() => <PatientInfo generalInfo={props.patientInfo.generalInfo} />}
+            render={() => <PatientInfo generalInfo={this.props.PatientInfo.generalInfo} submitPatientInfo={this.props.submitPatientInfo} />}
           />
           <Route
             exact
             path="/patientinfo/appointments"
-            render={() => <PatientAppointments appointments={props.patientInfo.appointments} />}
+            render={() => <PatientAppointments appointments={this.props.PatientInfo.appointments} />}
           />
-          <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={props.patientInfo.notes} />} />
+          <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={this.props.PatientInfo.notes} />} />
         </div>
       </div>
     )

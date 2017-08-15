@@ -150,7 +150,7 @@ stories.add('With Just Future Appointments', () => {
   specs(() =>
     describe('Show a successful alert', () => {
       it('Should show Only future page', () => {
-        let output = mount(patientAppointmentsStory);
+        let output = mount(<PatientAppointments {...propsFutureAppts} />);
         expect(output.find('td').length).toEqual(18);
       });
     })

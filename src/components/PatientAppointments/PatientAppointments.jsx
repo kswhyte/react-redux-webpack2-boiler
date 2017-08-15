@@ -7,7 +7,7 @@ import './patient-appointments.css';
 const PatientAppointments = props => {
   PatientAppointments.propTypes = {
     children: PropTypes.object,
-    appointments: PropTypes.array.required
+    appointments: PropTypes.arrayOf(PropTypes.object),
   };
 
   const pastAppts = () => {
@@ -35,14 +35,16 @@ const PatientAppointments = props => {
               <p>Patient has no appointment history</p>
             </div>}
           <table className="appt-tables header-table">
-            <thead>
+            <tbody>
+            <tr>
               <th>Date</th>
               <th>Time</th>
               <th>Provider Name</th>
               <th>Phone</th>
               <th>Scheduler</th>
               <th>Actions</th>
-            </thead>
+            </tr>
+            </tbody>
           </table>
           {upcomingAppts.length > 0 && <UpcomingAppointments upcomingAppts={upcomingAppts} />}
           {pastAppts.length > 0 && <PastAppointments pastAppts={pastAppts} />}
@@ -87,12 +89,12 @@ const UpcomingAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <thead>
+      <tbody>
+        <tr>
         <th colSpan={6} className="upcoming-appt-head">
           Upcoming Appointments
         </th>
-      </thead>
-      <tbody>
+        </tr>
         {props.upcomingAppts.map(appt => {
           return (
             <tr key={appt.appointmentID} >

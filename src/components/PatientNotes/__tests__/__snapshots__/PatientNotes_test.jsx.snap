@@ -20,7 +20,7 @@ exports[`Story 1`] = `
       <table
         className="notes-tables header-table"
       >
-        <thead>
+        <tr>
           <th>
             Date
           </th>
@@ -33,7 +33,7 @@ exports[`Story 1`] = `
           <th>
             Actions
           </th>
-        </thead>
+        </tr>
         <tbody />
       </table>
     </div>
