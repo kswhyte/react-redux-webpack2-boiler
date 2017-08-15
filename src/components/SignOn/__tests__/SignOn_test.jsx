@@ -8,7 +8,10 @@ import { shallow, mount } from 'enzyme';
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 import { StaticRouter } from 'react-router';
 
-import localStorage from 'mock-local-storage'
+global.window = {};
+const localStorage = require('mock-local-storage')
+window.localStorage = global.localStorage;
+
 
 const stories = storiesOf('SignOn', module);
 
@@ -19,14 +22,6 @@ stories.add('Sign On Page Elements', () => {
     validationMessage: 'Please enter a valid email'
   };
 
-  const signOnStory = (
-    <StaticRouter {...props} context={{}}>
-      <SignOn {...props} />
-    </StaticRouter>
-  );
-
-  global.window = {}
-  window.localStorage = global.localStorage
 
   const jest = jest || null;
   if(jest){
@@ -36,6 +31,14 @@ stories.add('Sign On Page Elements', () => {
       removeItem: function(){}
     };
   }
+
+  const signOnStory = (
+    <StaticRouter {...props} context={{}}>
+      <SignOn {...props} />
+    </StaticRouter>
+  );
+
+
 
   specs(() =>
     describe('SignOn Page elements and content', () => {
