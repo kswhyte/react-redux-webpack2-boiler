@@ -1,7 +1,7 @@
 import React from 'react';
 // import { storiesOf, action, linkTo } from '@kadira/storybook';
 import PatientAppointments from '../PatientAppointments';
-
+import Moment from 'moment';
 // import { specs, describe, it } from 'storybook-addon-specifications';
 
 import { storiesOf, describe, it, specs } from '../../../../.storybook/facade';
@@ -11,39 +11,46 @@ import expect from 'expect';
 
 const stories = storiesOf('PatientAppointments', module);
 
+
+//Only run for jest
+if (!window.localStorage) {
+  Date.now = jest.fn(() => 1487076708000);
+}
+
+
 stories.add('With Appointments', () => {
 
 
   const props = {
     appointments: [{
       appointmentID: "12345",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
+      appointmentDateTime: Moment().add(7,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },
     {
       appointmentID: "12346",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
+      appointmentDateTime: Moment().add(8,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },
     {
       appointmentID: "12347",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
+      appointmentDateTime: Moment().add(9,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },{
       appointmentID: "12348",
-      appointmentDateTime: "2017-07-03T15:38:54-06:00",
+      appointmentDateTime: Moment().subtract(7,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },{
       appointmentID: "12349",
-      appointmentDateTime: "2017-07-03T15:38:54-06:00",
+      appointmentDateTime: Moment().subtract(6,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
@@ -73,13 +80,13 @@ stories.add('With only Past Appointments', () => {
   const propsNoAppts = {
     appointments: [{
       appointmentID: "12348",
-      appointmentDateTime: "2017-07-03T15:38:54-06:00",
+      appointmentDateTime: Moment().subtract(6,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },{
       appointmentID: "12349",
-      appointmentDateTime: "2017-07-03T15:38:54-06:00",
+      appointmentDateTime: Moment().subtract(7,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
@@ -124,21 +131,21 @@ stories.add('With Just Future Appointments', () => {
   const propsFutureAppts = {
     appointments: [{
       appointmentID: "12345",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
+      appointmentDateTime: Moment().add(7,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },
     {
       appointmentID: "12346",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
+      appointmentDateTime: Moment().add(8,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"
     },
     {
       appointmentID: "12347",
-      appointmentDateTime: "2017-09-03T15:38:54-06:00",
+      appointmentDateTime: Moment().add(9,'d').format(),
       providerName: "Dr Name Name",
       agentName: "Name",
       officePhone: "123-456-7891"

@@ -8,7 +8,8 @@ import { shallow, mount } from 'enzyme';
 import expect, { createSpy, spyOn, isSpy } from 'expect';
 import { StaticRouter } from 'react-router';
 
-import localStorage from 'mock-local-storage'
+
+
 
 const stories = storiesOf('SignOn', module);
 
@@ -19,23 +20,27 @@ stories.add('Sign On Page Elements', () => {
     validationMessage: 'Please enter a valid email'
   };
 
-  const signOnStory = (
-    <StaticRouter {...props} context={{}}>
-      <SignOn {...props} />
-    </StaticRouter>
-  );
 
-  global.window = {}
-  window.localStorage = global.localStorage
-
-  const jest = jest || null;
-  if(jest){
+  //the purpose of this check is to see if it's jest or storybook running the test
+  //if it's jest, this creates a localstorage for headless tests
+  if(!window.localStorage){
+    global.window = {};
+    const localStorage = require('mock-local-storage');
+    window.localStorage = global.localStorage;
     window.sessionStorage = {
       setItem: function(){},
       getItem: function(){},
       removeItem: function(){}
     };
   }
+
+  const signOnStory = (
+    <StaticRouter {...props} context={{}}>
+      <SignOn {...props} />
+    </StaticRouter>
+  );
+
+
 
   specs(() =>
     describe('SignOn Page elements and content', () => {
@@ -86,7 +91,6 @@ stories.add('Sign On Page Elements', () => {
         output.find('[type="submit"]').simulate('click');
         output.find('[type="submit"]').simulate('click');
 
-        console.log(output.state());
         expect(output.find('.attention-animation').length).toEqual(1)
       });
     })
