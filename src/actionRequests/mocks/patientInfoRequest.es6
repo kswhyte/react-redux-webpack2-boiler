@@ -1,7 +1,6 @@
 import actions from '../../actions/PatientInfoActions';
 import { URI } from '../../../tools/app_config';
 
-//const patientsearchRequest = (dispatch, ...args) => {
 const getPatientInfoRequest = (dispatch, ...args) => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const getRoute = '/#fake';
@@ -14,13 +13,17 @@ const getPatientInfoRequest = (dispatch, ...args) => {
           firstName: 'Saminathan',
           middleName: '',
           lastName: 'venkat',
-          dob: '1980-02-02T00:00:00',
-          address1: '4444 Leetsdale Dr. | Glendale',
+          dob: '1980-03-02T00:00:00',
+          dobMonth:'March',
+          dobDay:'02',
+          dobYear:'1980',
+          street: '4444 Leetsdale Dr. | Glendale',
           address2: '',
           city: 'Denver',
           stateCode: 'CO',
           zipCode: '80246',
-          homePhoneNumber: '7204012488',
+          phoneNumber: '7204012488',
+          phoneType:'1',
           mobilePhone: '7204012488',
           emailAddress: 'saminathan.v@happiestminds.com',
           gender: 'M',
@@ -32,9 +35,12 @@ const getPatientInfoRequest = (dispatch, ...args) => {
           modifiedDate: '2017-06-15T00:00:00',
           createdBy: 'SaminathanV',
           modifiedBy: 'SaminathanV',
-          futureAppointments: null,
-          pastAppointments: null,
-          insuranceCarrierCode: ''
+          insuranceCarrier: 'cigna',
+          planType:'planType',
+          planNumber:'1234',
+          insuranceCarrierAlternate: '',
+          planTypeAlternate:'',
+          planNumberAlternate:''
         },
         appointments: [
           {
@@ -95,4 +101,19 @@ const getPatientInfoRequest = (dispatch, ...args) => {
   return { hostedUrlPath, getRoute, requestEnd };
 };
 
-export default getPatientInfoRequest;
+
+const savePatientInfoRequest = (dispatch,patientInfo) => {
+  const hostedUrlPath = URI.baseUISVC_URI;
+  const postRoute = '/#fake';
+  const requestEnd = () => {
+    
+    dispatch(actions.savePatientInfoSuccess(patientInfo));
+  };
+
+  return { hostedUrlPath, postRoute, requestEnd, patientInfo };
+};
+
+
+
+
+export {getPatientInfoRequest,savePatientInfoRequest};

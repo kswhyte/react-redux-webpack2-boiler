@@ -42,6 +42,7 @@ header {
   padding-top: 18px;
   box-shadow: 0 2px 92px 0 rgba(0, 0, 0, 0.16);
   background-color: var(--white);
+  overflow: auto;
 }
 
 .card {
