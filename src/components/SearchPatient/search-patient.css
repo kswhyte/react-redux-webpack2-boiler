@@ -1,7 +1,16 @@
 @import "imports/_helpers.css";
+@import "imports/_layout.css";
+@import "imports/_form-elements.css";
 
 .line {
   width: 830px;
   border: solid 2px #cad2da;
   border: solid 2px var(--cloudy-blue);
+}
+
+.search-patient-block {
+    & button {
+        width: 191px;
+        margin-left: 20px;
+    }
 }
