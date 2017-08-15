@@ -32,7 +32,7 @@
     "start": "npm-run-all check-node-modules lint build-core-css webpack webpack-dev-server",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "clean-dist": "npm run remove-dist && mkdir dist",
-    "prebuild": "npm-run-all clean-dist build-core-css-prod",
+    "prebuild": "npm-run-all clean-dist build-core-css-prod test-jenkins lint",
     "build": "babel-node tools/buildScripts/build_prod.es6"
   },
   "author": "Wesley Duff",
