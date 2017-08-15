@@ -55,11 +55,11 @@ const ChangePassword = props => {
       >
         <div className="row change-password-spacer">
           <div className="col-sm-offset-1 col-sm-5 input-row">
-            <label forHtml="loginChangePassword">NEW PASSWORD</label>
+            <label htmlFor="loginChangePassword">NEW PASSWORD</label>
             <input id="loginChangePassword" type="password" placeholder="Your New Password" required />
           </div>
           <div className="col-sm-5 input-row">
-            <label forHtml="loginChangePasswordConfirm">CONFIRM PASSWORD</label>
+            <label htmlFor="loginChangePasswordConfirm">CONFIRM PASSWORD</label>
             <input
               id="loginChangePasswordConfirm"
               type="password"

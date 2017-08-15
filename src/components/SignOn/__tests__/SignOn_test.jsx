@@ -21,7 +21,8 @@ stories.add('Sign On Page Elements', () => {
   };
 
 
-  // const jest = jest || null;
+  //the purpose of this check is to see if it's jest or storybook running the test
+  //if it's jest, this creates a localstorage for headless tests
   if(!window.localStorage){
     global.window = {};
     const localStorage = require('mock-local-storage');
@@ -90,7 +91,6 @@ stories.add('Sign On Page Elements', () => {
         output.find('[type="submit"]').simulate('click');
         output.find('[type="submit"]').simulate('click');
 
-        console.log(output.state());
         expect(output.find('.attention-animation').length).toEqual(1)
       });
     })

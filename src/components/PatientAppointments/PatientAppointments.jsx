@@ -10,21 +10,23 @@ const PatientAppointments = props => {
     appointments: PropTypes.arrayOf(PropTypes.object),
   };
 
-  const pastAppts = () => {
-    if(typeof props.appointments === "object"){
-      props.appointments.filter(appt => {
-        return Moment(appt.appointmentDateTime) < Moment();
-      });
-    }
-  };
+  // Why was the typeof check added?
+  // const pastAppts = () => {
+  //   if(typeof props.appointments === "object"){
+  //     props.appointments.filter(appt => {
+  //       return Moment(appt.appointmentDateTime) < Moment();
+  //     });
+  //   }
+  // };
 
-  const upcomingAppts = () => {
-    if(typeof props.appointments === "object"){
-      props.appointments.filter(appt => {
-        return Moment(appt.appointmentDateTime) > Moment();
-      });
-    }
-  }
+
+  const pastAppts = props.appointments.filter(appt => {
+    return Moment(appt.appointmentDateTime) < Moment();
+  });
+
+  const upcomingAppts = props.appointments.filter(appt => {
+    return Moment(appt.appointmentDateTime) > Moment();
+  });
 
   return (
     <div className="patient-appointments-wrapper">
@@ -56,14 +58,16 @@ const PatientAppointments = props => {
 
 const PastAppointments = props => {
   PastAppointments.propTypes = {
-    pastAppts: PropTypes.array.required
+    pastAppts: PropTypes.array
   };
   return (
     <table className="appt-tables">
       <thead>
-        <th colSpan={6} className="past-appt-head">
-          Past Appointments
-        </th>
+        <tr>
+          <th colSpan={6} className="past-appt-head">
+            Past Appointments
+          </th>
+        </tr>
       </thead>
       <tbody>
         {props.pastAppts.map(appt => {
@@ -85,15 +89,15 @@ const PastAppointments = props => {
 
 const UpcomingAppointments = props => {
   UpcomingAppointments.propTypes = {
-    upcomingAppts: PropTypes.array.required
+    upcomingAppts: PropTypes.array
   };
   return (
     <table className="appt-tables">
       <tbody>
         <tr>
-        <th colSpan={6} className="upcoming-appt-head">
-          Upcoming Appointments
-        </th>
+          <th colSpan={6} className="upcoming-appt-head">
+            Upcoming Appointments
+          </th>
         </tr>
         {props.upcomingAppts.map(appt => {
           return (
