@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 //import Moment from 'moment';
  //import isEmail from '../../helpers/isEmail';
- import {days,months,years} from '../../helpers/dateOptions';
+ import {days,years} from '../../helpers/dateOptions';
  import states from '../../helpers/states';
  import gender from '../../helpers/genderOptions';
  import phoneType from '../../helpers/phoneTypeOptions';
@@ -12,20 +12,50 @@ import './patient-info.css';
 
 const propTypes = {
   children: PropTypes.object,
-  generalInfo: PropTypes.object.required,
-  submitPatientInfo:PropTypes.func.required
+  generalInfo: PropTypes.object,
+  submitPatientInfo:PropTypes.func
 };
 
 
 class PatientInfo extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       patientId:'',
-      firstName: props.generalInfo.firstName? props.generalInfo.firstName: '',
-      lastName: props.generalInfo.lastName? props.generalInfo.lastName: '',
-      gender: props.generalInfo.gender? props.generalInfo.gender: '',
+      firstName: '',
+      lastName: '',
+      gender: '',
+      emailAddress: '',
+      dobMonth: '',
+      dobDay: '',
+      dobYear: '',
+      phoneNumber: '',
+      phoneType: '',
+      contactMethod: '',
+      street: '',
+      city: '',
+      stateCode: '',
+      zipCode: '',
+      insuranceCarrier: '',
+      planType: '',
+      planNumber: '',
+      insuranceCarrierAlternate: '',
+      planTypeAlternate: '',
+      planNumberAlternate: '',
+      referringPhysician: '',
+      status:''
+    };
+
+    this.mapOptions = this.mapOptions.bind(this);
+  }
+
+  componentWillUpdate() {
+    this.setState({
+      patientId:'',
+      firstName: this.props.generalInfo.firstName? this.props.generalInfo.firstName: '',
+      lastName: this.props.generalInfo.lastName? this.props.generalInfo.lastName: '',
+      gender: this.props.generalInfo.gender? this.props.generalInfo.gender: '',
       emailAddress: this.props.generalInfo.emailAddress? this.props.generalInfo.emailAddress: '',
       dobMonth: this.props.generalInfo.dobMonth? this.props.generalInfo.dobMonth: '',
       dobDay: this.props.generalInfo.dobDay? this.props.generalInfo.dobDay: '',
@@ -45,11 +75,8 @@ class PatientInfo extends Component {
       planNumberAlternate: '',
       referringPhysician: '',
       status:this.props.generalInfo.status?this.props.generalInfo.status:''
-    };
-        this.mapOptions = this.mapOptions.bind(this);
+    });
   }
-
-
   componentDidMount() {}
 
 
@@ -62,23 +89,21 @@ mapOptions(options){
     }
 
   render() {
-    console.log('----state', this.state);
-    console.log('----props', this.props);
     return (
       <div className="patient-info-wrapper">
         <div className="tab-content clearfix">
           <div className="general-info-form tab-pane active">
-          
+
             <form onSubmit={e=>{
               e.preventDefault();
               this.props.submitPatientInfo(this.state);
               this.setState({status:'success'})
             }
             }>
-             
+
               {/* Row1 */}
-              <div className="row sm-spacer">
-                <div className="col-sm-3 no-margin">
+              <div className="row xs-spacer">
+                <div className="col-sm-3 no-margin padding-10">
                   <label>PATIENT FIRST NAME &#42;</label>
                   <input
                     className="form-group"
@@ -89,8 +114,7 @@ mapOptions(options){
                     required
                   />
                 </div>
-
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-3 no-margin padding-10">
                   <label>PATIENT LAST NAME &#42;</label>
                   <input
                     className="form-group"
@@ -102,19 +126,17 @@ mapOptions(options){
                   />
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-2 no-margin padding-10">
                   <label>GENDER &#42;</label>
                   <select
-                    className="select-dropdown"
-                 value={this.state.gender}
+                    className="select-dropdown form-control"
                     onChange={e => this.setState({ gender: e.target.value })}
                    required
                   >
                   {this.mapOptions(gender)}
                   </select>
                 </div>
-
-                <div className="col-sm-4 no-margin">
+                <div className="col-sm-4 no-margin padding-10">
                   <label>EMAIL ADDRESS &#42;</label>
                   <input
                     className="form-group"
@@ -130,37 +152,36 @@ mapOptions(options){
               </div>
 
               {/* Row2 */}
-              <div className="row sm-spacer">
-                <div className="col-sm-3 no-margin">
-                  <label>MONTH &#42;</label>
-                  <select className="select-dropdown" onChange={e => this.setState({ dobMonth: e.target.value })}
-                    value={
-                      this.state.dobMonth
-                    }>
-                    {this.mapOptions(months)}
+              <div className="row xs-spacer">
+                <div className="col-sm-2 no-margin padding-10">
+                  <label>PATIENT DATE OF BIRTH &#42;</label>
+                  <select className="select-dropdown" onChange={e => this.setState({ dobMonth: e.target.value })}>
+                    <option value="select" selected>
+                      Select
+                    </option>
                   </select>
                 </div>
 
-                <div className="col-sm-1 no-margin">
+                <div className="col-sm-1 no-margin padding-10">
                   <label />
                   <select
                     className="select-dropdown dropdown-affiliate"
                     onChange={e => this.setState({ dobDay: e.target.value })}
-                  
+
                     value={
                        this.state.dobDay
                     }>
-                    
+
                    {this.mapOptions(days)}
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-1 no-margin padding-10">
                   <label />
                   <select
                     className="select-dropdown dropdown-affiliate"
                     onChange={e => this.setState({ dobYear: e.target.value })}
-                  
+
                     value={
                        this.state.dobYear
                     }>
@@ -168,7 +189,7 @@ mapOptions(options){
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-3 no-margin padding-10">
                   <label>PHONE NUMBER &#42;</label>
                   <input
                     className="form-group"
@@ -183,7 +204,7 @@ mapOptions(options){
                   />
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-2 no-margin padding-10">
                   <label>PHONE TYPE &#42;</label>
                   <select className="select-dropdown" onChange={e => this.setState({ phoneType: e.target.value })}
                      value={
@@ -194,7 +215,7 @@ mapOptions(options){
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-3 no-margin padding-10">
                   <label>CONTACT METHOD &#42;</label>
                   <select className="select-dropdown" onChange={e => this.setState({ contactMethod: e.target.value })}
                     value={
@@ -207,8 +228,8 @@ mapOptions(options){
               </div>
 
               {/* Row3 */}
-              <div className="row sm-spacer">
-                <div className="col-sm-4 no-margin">
+              <div className="row xs-spacer">
+                <div className="col-sm-4 no-margin padding-10">
                   <label>STREET &#42;</label>
                   <input
                     className="form-group"
@@ -219,8 +240,7 @@ mapOptions(options){
                       this.state.street}
                      />
                 </div>
-
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-2 no-margin padding-10">
                   <label>CITY STATE ZIP &#42;</label>
                   <input
                     className="form-group"
@@ -230,10 +250,10 @@ mapOptions(options){
                     required
                     value={
                       this.state.city}
-                    
+
                   />
                 </div>
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-1 no-margin padding-10">
                   <label />
                   <select
                     className="select-dropdown dropdown-affiliate"
@@ -245,12 +265,12 @@ mapOptions(options){
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-2 no-margin padding-10">
                   <label />
                   <input
                     className="form-group input-affiliate"
                     type="text"
-                    pattern="[0-9]{5}" 
+                    pattern="[0-9]{5}"
                     placeholder="Zip"
                     onChange={e => this.setState({ zipCode: e.target.value })}
                     value={
@@ -259,10 +279,10 @@ mapOptions(options){
                     /* onInvalid="setCustomValidity('Please fill out Zip Code correclty')"*/
                   />
                 </div>
-        </div>
+              </div>
               {/* Row4 */}
-              <div className="row sm-spacer">
-                <div className="col-sm-5">
+              <div className="row xs-spacer">
+                <div className="col-sm-4">
                   <label>PRIMARY INSURANCE CARRIER &#42;</label>
                   <select
                     className="select-dropdown"
@@ -277,7 +297,7 @@ mapOptions(options){
                   </select>
                 </div>
 
-                <div className="col-sm-2 no-margin">
+                <div className="col-sm-2 no-margin padding-10">
                   <label>PLAN TYPE &#42;</label>
                   <select
                     className="select-dropdown"
@@ -289,11 +309,11 @@ mapOptions(options){
                   </select>
                 </div>
 
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-3 no-margin padding-10">
                   <label>PLAN NO. &#42;</label>
-                  <input 
-                  placeholder="Plan Number" 
-                  type="text" 
+                  <input
+                  placeholder="Plan Number"
+                  type="text"
                   className="form-group"
                   onChange={e => this.setState({ planNumber: e.target.value })}
                   value={this.state.planNumber}
@@ -308,16 +328,15 @@ mapOptions(options){
                   <select
                     className="select-dropdown"
                     onChange={e => this.setState({ insuranceCarrierAlternate: e.target.value })}
-                    
+
                   >
                     <option value="select" selected>
                       Select
                     </option>
                   </select>
                 </div>
-
-                <div className="col-sm-2 no-margin">
-                  <label>PLAN TYPE</label>
+                <div className="col-sm-2 no-margin padding-10">
+                  <label>PLAN TYPE &#42;</label>
                   <select
                     className="select-dropdown"
                     onChange={e => this.setState({ planTypeAlternate: e.target.value })}
@@ -327,9 +346,8 @@ mapOptions(options){
                     </option>
                   </select>
                 </div>
-
-                <div className="col-sm-3 no-margin">
-                  <label>PLAN NO</label>
+                <div className="col-sm-3 no-margin padding-10">
+                  <label>PLAN NO. &#42;</label>
                   <input
                     className="form-group"
                     type="text"
@@ -341,8 +359,8 @@ mapOptions(options){
               </div>
 
               {/* Row6 */}
-              <div className="row sm-spacer">
-                <div className="col-sm-5">
+              <div className="row xs-spacer">
+                <div className="col-sm-4">
                   <label>REFERRING PHYSICIAN &#42;</label>
                   <select
                     className="select-dropdown"
@@ -353,30 +371,43 @@ mapOptions(options){
                     </option>
                   </select>
                 </div>
-            <div className="row sm-spacer">
-                <div className="col-sm-5">
-            <div>
-               {this.state.status==='success' &&
-              <div className="alerts">
-            <div className={`alert alert-success`} role="alert">
-            Patient Details Saved Successfully!<a onClick={()=>{this.setState({status:''}) }} className="close" aria-label="close">&times;</a>
-            </div>
-        </div>
-               }
-            </div>
-            </div>
-            </div>
-            <div className="row sm-spacer">
-              <div className="col-xs-offset-3 col-xs-6">
-                <button className="primary">SAVE</button>
-            </div>
-            </div>
-              <div className="row sm-spacer">
-                <div className="break-line" />
               </div>
-            
-              {/* Buttons */}
-               </div>
+              <div className="row sm-spacer">
+                <div className="col-sm-5">
+                  <div>
+                    {this.state.status==='success' &&
+                        <div className="alerts">
+                          <div className={`alert alert-success`} role="alert">
+                              Patient Details Saved Successfully!<a onClick={()=>{this.setState({status:''}) }} className="close" aria-label="close">&times;</a>
+                          </div>
+                        </div>
+                    }
+                  </div>
+                </div>
+              </div>
+              <div className="row sm-spacer">
+                <div className="col-xs-offset-3 col-xs-6">
+                  <button onClick={this.props.submitPatientInfo} className="primary">SAVE</button>
+                </div>
+              </div>
+              <div className="row sm-spacer">
+                <div className="break-line"></div>
+              </div>
+
+            {/* Buttons */}
+              <div className="row xs-spacer sm-spacer">
+                <div className="col-sm-6 no-padding">
+                  <button className="back-btn" tabIndex={1}>
+                    BACK
+                  </button>
+                </div>
+
+                <div className="col-sm-6 no-padding">
+                  <button className="next-btn" type="submit" tabIndex={1}>
+                    NEXT
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </div>

@@ -10,7 +10,7 @@ import './patient-tabs.css';
 
 const propTypes = {
     children: PropTypes.object,
-    patientInfo: PropTypes.object,
+    PatientInfo: PropTypes.object,
     submitPatientInfo:PropTypes.func
   };
 
@@ -44,6 +44,7 @@ export class PatientTabs extends Component {
   }
 
   render(){
+    console.log('-------=-=-=-=- this. props ', this.props)
     return (
       <div className="patient-tabs-wrapper">
         <div className="row sm-spacer">
@@ -61,18 +62,22 @@ export class PatientTabs extends Component {
 
           <div className="tabs-line" />
           <div className="break-line" />
-         
+          <Route
+            exact
+            path="/patientinfo"
+            render={() => <PatientInfo generalInfo={this.props.PatientInfo.generalInfo} submitPatientInfo={this.props.submitPatientInfo} />}
+          />
           <Route
             exact
             path="/patientinfo/generalinfo"
-            render={() => <PatientInfo generalInfo={this.props.patientInfo.generalInfo} submitPatientInfo={this.props.submitPatientInfo} />}
+            render={() => <PatientInfo generalInfo={this.props.PatientInfo.generalInfo} submitPatientInfo={this.props.submitPatientInfo} />}
           />
           <Route
             exact
             path="/patientinfo/appointments"
-            render={() => <PatientAppointments appointments={this.props.patientInfo.appointments} />}
+            render={() => <PatientAppointments appointments={this.props.PatientInfo.appointments} />}
           />
-          <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={this.props.patientInfo.notes} />} />
+          <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={this.props.PatientInfo.notes} />} />
         </div>
       </div>
     )

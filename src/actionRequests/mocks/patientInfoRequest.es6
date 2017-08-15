@@ -1,11 +1,10 @@
 import actions from '../../actions/PatientInfoActions';
 import { URI } from '../../../tools/app_config';
 
-const getPatientInfoRequest = (dispatch, ...args) => {
+const getPatientInfoRequest = (dispatch) => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const getRoute = '/#fake';
   const requestEnd = () => {
-    console.log('---- args : ', args);
     const _res = {
       body: {
         generalInfo: {
@@ -106,7 +105,7 @@ const savePatientInfoRequest = (dispatch,patientInfo) => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const postRoute = '/#fake';
   const requestEnd = () => {
-    
+
     dispatch(actions.savePatientInfoSuccess(patientInfo));
   };
 

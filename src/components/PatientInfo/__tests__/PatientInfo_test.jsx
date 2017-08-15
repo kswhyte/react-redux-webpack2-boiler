@@ -38,7 +38,7 @@ stories.add('Patient Info Story', () => {
 
       it('Should have two call-to-action buttons', () => {
         let output = mount(patientInfoStory);
-        expect(output.find('button').length).toEqual(2);
+        expect(output.find('button').length).toEqual(3);
       });
 
       it('Should have two buttons: "BACK" and "NEXT"', () => {

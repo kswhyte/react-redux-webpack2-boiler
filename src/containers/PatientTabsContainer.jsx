@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 
 let createHandlers = function(dispatch) {
   let getPatientInfo = function(node, data) {
-    dispatch(patientInfoActions.getPatientInfo(data));
+    dispatch(patientInfoActions.getPatientInfoClick(data));
   };
 
 let submitPatientInfo = data => {
@@ -39,13 +39,14 @@ class PatientTabsContainer extends Component {
   componentDidMount() {
     //TODO:PatientId need to be passed here, query param??
     this.handlers.getPatientInfo(this.props.patientId);
-    
+
   }
 
   render() {
+    console.log('this.props', this.props)
     return (
       <div className="confirm-patient-info-wrapper">
-        <PatientTabs patientInfo={this.props.PatientInfo.patientInfo} submitPatientInfo={this.handlers.submitPatientInfo} />
+        <PatientTabs PatientInfo={this.props.PatientInfo} submitPatientInfo={this.handlers.submitPatientInfo} />
       </div>
     );
   }
@@ -53,7 +54,6 @@ class PatientTabsContainer extends Component {
 
 PatientTabsContainer.propTypes = proptypes;
 const mapStateToProps = store => {
-  //Select the specific state items you would like here
 
   const { PatientInfo } = store;
 

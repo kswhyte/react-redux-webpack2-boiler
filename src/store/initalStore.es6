@@ -13,6 +13,8 @@ export default {
     sessionStarted: false
   },
   PatientInfo: {
-    generalInfo: {}
+    generalInfo: {},
+    appointments: {},
+    notes: []
   }
 };
