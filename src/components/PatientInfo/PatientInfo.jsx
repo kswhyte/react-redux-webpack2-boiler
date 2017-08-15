@@ -20,7 +20,7 @@ const propTypes = {
 class PatientInfo extends Component {
   constructor(props) {
     super(props);
-
+    this.dataHasLoadedForTheFirstTime = false;
     this.state = {
       patientId:'',
       firstName: '',
@@ -51,33 +51,35 @@ class PatientInfo extends Component {
   }
 
   componentWillUpdate() {
-    this.setState({
-      patientId:'',
-      firstName: this.props.generalInfo.firstName? this.props.generalInfo.firstName: '',
-      lastName: this.props.generalInfo.lastName? this.props.generalInfo.lastName: '',
-      gender: this.props.generalInfo.gender? this.props.generalInfo.gender: '',
-      emailAddress: this.props.generalInfo.emailAddress? this.props.generalInfo.emailAddress: '',
-      dobMonth: this.props.generalInfo.dobMonth? this.props.generalInfo.dobMonth: '',
-      dobDay: this.props.generalInfo.dobDay? this.props.generalInfo.dobDay: '',
-      dobYear: this.props.generalInfo.dobYear? this.props.generalInfo.dobYear: '',
-      phoneNumber: this.props.generalInfo.phoneNumber? this.props.generalInfo.phoneNumber: '',
-      phoneType: this.props.generalInfo.phoneType? this.props.generalInfo.phoneType: '',
-      contactMethod: this.props.generalInfo.contactMethod? this.props.generalInfo.contactMethod: '',
-      street: this.props.generalInfo.street? this.props.generalInfo.street: '',
-      city: this.props.generalInfo.city? this.props.generalInfo.city: '',
-      stateCode: this.props.generalInfo.stateCode? this.props.generalInfo.stateCode: '',
-      zipCode: this.props.generalInfo.zipCode? this.props.generalInfo.zipCode: '',
-      insuranceCarrier: this.props.generalInfo.insuranceCarrier? this.props.generalInfo.insuranceCarrier: '',
-      planType: this.props.generalInfo.planType? this.props.generalInfo.planType: '',
-      planNumber: this.props.generalInfo.planNumber? this.props.generalInfo.planNumber: '',
-      insuranceCarrierAlternate: '',
-      planTypeAlternate: '',
-      planNumberAlternate: '',
-      referringPhysician: '',
-      status:this.props.generalInfo.status?this.props.generalInfo.status:''
-    });
+    if(!this.dataHasLoadedForTheFirstTime){
+      this.setState({
+        patientId:'',
+        firstName: this.props.generalInfo.firstName? this.props.generalInfo.firstName: '',
+        lastName: this.props.generalInfo.lastName? this.props.generalInfo.lastName: '',
+        gender: this.props.generalInfo.gender? this.props.generalInfo.gender: '',
+        emailAddress: this.props.generalInfo.emailAddress? this.props.generalInfo.emailAddress: '',
+        dobMonth: this.props.generalInfo.dobMonth? this.props.generalInfo.dobMonth: '',
+        dobDay: this.props.generalInfo.dobDay? this.props.generalInfo.dobDay: '',
+        dobYear: this.props.generalInfo.dobYear? this.props.generalInfo.dobYear: '',
+        phoneNumber: this.props.generalInfo.phoneNumber? this.props.generalInfo.phoneNumber: '',
+        phoneType: this.props.generalInfo.phoneType? this.props.generalInfo.phoneType: '',
+        contactMethod: this.props.generalInfo.contactMethod? this.props.generalInfo.contactMethod: '',
+        street: this.props.generalInfo.street? this.props.generalInfo.street: '',
+        city: this.props.generalInfo.city? this.props.generalInfo.city: '',
+        stateCode: this.props.generalInfo.stateCode? this.props.generalInfo.stateCode: '',
+        zipCode: this.props.generalInfo.zipCode? this.props.generalInfo.zipCode: '',
+        insuranceCarrier: this.props.generalInfo.insuranceCarrier? this.props.generalInfo.insuranceCarrier: '',
+        planType: this.props.generalInfo.planType? this.props.generalInfo.planType: '',
+        planNumber: this.props.generalInfo.planNumber? this.props.generalInfo.planNumber: '',
+        insuranceCarrierAlternate: '',
+        planTypeAlternate: '',
+        planNumberAlternate: '',
+        referringPhysician: '',
+        status:this.props.generalInfo.status?this.props.generalInfo.status:''
+      });
+      this.dataHasLoadedForTheFirstTime = true;
+    }
   }
-  componentDidMount() {}
 
 
 mapOptions(options){
@@ -282,7 +284,7 @@ mapOptions(options){
               </div>
               {/* Row4 */}
               <div className="row xs-spacer">
-                <div className="col-sm-4">
+                <div className="col-sm-4 padding-10">
                   <label>PRIMARY INSURANCE CARRIER &#42;</label>
                   <select
                     className="select-dropdown form-control"
@@ -323,7 +325,7 @@ mapOptions(options){
 
               {/* Row5 */}
               <div className="row sm-spacer">
-                <div className="col-sm-4">
+                <div className="col-sm-4 padding-10">
                   <label>ALTERNATE INSURANCE CARRIER</label>
                   <select
                     className="select-dropdown form-control"
@@ -360,7 +362,7 @@ mapOptions(options){
 
               {/* Row6 */}
               <div className="row xs-spacer">
-                <div className="col-sm-4">
+                <div className="col-sm-4 padding-10">
                   <label>REFERRING PHYSICIAN &#42;</label>
                   <select
                     className="select-dropdown"
@@ -385,11 +387,7 @@ mapOptions(options){
                   </div>
                 </div>
               </div>
-              <div className="row sm-spacer">
-                <div className="col-xs-offset-3 col-xs-6">
-                  <button onClick={this.props.submitPatientInfo} className="primary">SAVE</button>
-                </div>
-              </div>
+
               <div className="row sm-spacer">
                 <div className="break-line"></div>
               </div>
@@ -403,7 +401,7 @@ mapOptions(options){
                 </div>
 
                 <div className="col-sm-6 no-padding">
-                  <button className="next-btn" type="submit" tabIndex={1}>
+                  <button onClick={this.props.submitPatientInfo} className="next-btn" type="submit" tabIndex={1}>
                     NEXT
                   </button>
                 </div>
