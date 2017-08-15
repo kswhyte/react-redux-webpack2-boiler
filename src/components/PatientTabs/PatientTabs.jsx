@@ -44,7 +44,6 @@ export class PatientTabs extends Component {
   }
 
   render(){
-    console.log('-------=-=-=-=- this. props ', this.props)
     return (
       <div className="patient-tabs-wrapper">
         <div className="row sm-spacer">

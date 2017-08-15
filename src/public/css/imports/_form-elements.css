@@ -28,9 +28,12 @@ form {
     color: var(--light-teal);
     border-bottom: solid 1px var(--light-teal);
   }
+
   & select {
     &.select-dropdown {
       width: 100%;
+      box-shadow: none;
+      margin-top:-9px;
       background: transparent;
       font-family: Open Sans;
       border: 0px;
@@ -41,6 +44,7 @@ form {
     }
     &.dropdown-affiliate {
       padding-top: 28px !important;
+      margin-top:0;
     }
     &.form-control {
       background-image: image-set(url('~/images/dropdown_triangles/enabled-dark/triangle_drk.svg'));

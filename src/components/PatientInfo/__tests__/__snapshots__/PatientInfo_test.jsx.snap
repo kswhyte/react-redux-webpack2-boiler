@@ -97,7 +97,7 @@ exports[`Patient Info Story 1`] = `
               PATIENT DATE OF BIRTH *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
             >
               <option
@@ -113,7 +113,7 @@ exports[`Patient Info Story 1`] = `
           >
             <label />
             <select
-              className="select-dropdown dropdown-affiliate"
+              className="select-dropdown dropdown-affiliate form-control"
               onChange={[Function]}
               value=""
             >
@@ -310,7 +310,7 @@ exports[`Patient Info Story 1`] = `
           >
             <label />
             <select
-              className="select-dropdown dropdown-affiliate"
+              className="select-dropdown dropdown-affiliate form-control"
               onChange={[Function]}
               value=""
             >
@@ -987,7 +987,7 @@ exports[`Patient Info Story 1`] = `
               PHONE TYPE *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
               value=""
             >
@@ -1012,7 +1012,7 @@ exports[`Patient Info Story 1`] = `
               CONTACT METHOD *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
               value=""
             >
@@ -1062,7 +1062,7 @@ exports[`Patient Info Story 1`] = `
           >
             <label />
             <select
-              className="select-dropdown dropdown-affiliate"
+              className="select-dropdown dropdown-affiliate form-control"
               onChange={[Function]}
               value=""
             >
@@ -1423,13 +1423,13 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-4"
+            className="col-sm-4 padding-10"
           >
             <label>
               PRIMARY INSURANCE CARRIER *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
               value=""
             >
@@ -1449,7 +1449,7 @@ exports[`Patient Info Story 1`] = `
               PLAN TYPE *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
             >
               <option
@@ -1480,13 +1480,13 @@ exports[`Patient Info Story 1`] = `
           className="row sm-spacer"
         >
           <div
-            className="col-sm-5"
+            className="col-sm-4 padding-10"
           >
             <label>
               ALTERNATE INSURANCE CARRIER
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
             >
               <option
@@ -1504,7 +1504,7 @@ exports[`Patient Info Story 1`] = `
               PLAN TYPE *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
             >
               <option
@@ -1534,7 +1534,7 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-4"
+            className="col-sm-4 padding-10"
           >
             <label>
               REFERRING PHYSICIAN *
@@ -1565,20 +1565,6 @@ exports[`Patient Info Story 1`] = `
           className="row sm-spacer"
         >
           <div
-            className="col-xs-offset-3 col-xs-6"
-          >
-            <button
-              className="primary"
-              onClick={undefined}
-            >
-              SAVE
-            </button>
-          </div>
-        </div>
-        <div
-          className="row sm-spacer"
-        >
-          <div
             className="break-line"
           />
         </div>
@@ -1600,6 +1586,7 @@ exports[`Patient Info Story 1`] = `
           >
             <button
               className="next-btn"
+              onClick={undefined}
               tabIndex={1}
               type="submit"
             >
