@@ -3,6 +3,7 @@ import SignOn from '../components/SignOn';
 import ResetPassword from '../components/ResetPassword';
 import ChangePassword from '../components/ChangePassword';
 import ResetPasswordConfirm from '../components/ResetPasswordConfirm';
+import ChangePasswordConfirm from '../components/ChangePasswordConfirm';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import sStorage from '../../tools/sessionStorage_helper';
@@ -99,6 +100,10 @@ class SignOnContainer extends Component {
 
     if (this.props.signonType === 'resetpasswordconfirm') {
       return <ResetPasswordConfirm />;
+    }
+
+    if (this.props.signonType === 'changepasswordconfirm') {
+      return <ChangePasswordConfirm />;
     }
   }
 }

@@ -28,6 +28,30 @@ form {
     color: var(--light-teal);
     border-bottom: solid 1px var(--light-teal);
   }
+  & select {
+    &.select-dropdown {
+      width: 100%;
+      background: transparent;
+      font-family: Open Sans;
+      border: 0px;
+      border-bottom: solid 1px var(--slate);
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+      padding: 4px 0px;
+    }
+    &.dropdown-affiliate {
+      padding-top: 28px !important;
+    }
+    &.form-control {
+      background-image: image-set(url('~/images/dropdown_triangles/enabled-dark/triangle_drk.svg'));
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+  & .input-affiliate {
+    padding-top: 24px !important;
+  }
   & .checkbox-label {
     font-family: Open Sans;
     font-size: 14px;

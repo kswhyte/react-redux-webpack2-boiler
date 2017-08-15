@@ -26,12 +26,12 @@ const PatientNotes = props => {
             )
           }
           <table className="notes-tables header-table">
-            <thead>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Title</th>
-              <th>Actions</th>
-            </thead>
+          <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Title</th>
+          <th>Actions</th>
+          </tr>
       <tbody>
       {
         props.notes.map(note => {
