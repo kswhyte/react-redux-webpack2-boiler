@@ -131,6 +131,10 @@ class App extends Component {
                   render={() =>
                     <SignOnContainer signonType="changepassword" changePassword={this.handlers.changePassword} />}
                 />
+                <Route
+                  path="/changepasswordconfirm"
+                  render={() => <SignOnContainer signonType="changepasswordconfirm" />}
+                />
                 <Route path="/patientsearch" component={SearchPatientContainer} />
                 <Route path="/users" component={UserManagementContainer} />
                 <Route path="/patientinfo" component={PatientTabsContainer} />
