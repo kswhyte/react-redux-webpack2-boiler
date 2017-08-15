@@ -76,7 +76,7 @@ class PatientInfo extends Component {
                 <div className="col-sm-2 no-margin padding-10">
                   <label>GENDER &#42;</label>
                   <select
-                    className="select-dropdown"
+                    className="select-dropdown form-control"
                     onChange={e => this.setState({ gender: e.target.value })}
                     required
                   >
@@ -306,12 +306,12 @@ class PatientInfo extends Component {
                 </div>
               </div>
 
-              <div className="row xs-spacer">
+              <div className="row sm-spacer">
                 <div className="break-line" />
               </div>
 
               {/* Buttons */}
-              <div className="row xs-spacer">
+              <div className="row xs-spacer sm-spacer">
                 <div className="col-sm-6 no-padding">
                   <button className="back-btn" tabIndex={1}>
                     BACK

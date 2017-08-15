@@ -42,6 +42,12 @@ form {
     &.dropdown-affiliate {
       padding-top: 28px !important;
     }
+    &.form-control {
+      background-image: image-set(url('~/images/dropdown_triangles/enabled-dark/triangle_drk.svg'));
+      background-position: 100% 50%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
   }
   & .input-affiliate {
     padding-top: 24px !important;
