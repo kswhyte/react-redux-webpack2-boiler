@@ -1,7 +1,10 @@
+import searchPatientRequest from '../actionRequests/mocks/searchPatientRequest';
+import getPatientInfoRequest from '../actionRequests/mocks/patientInfoRequest';
 import fireGet from '../../tools/mocks/fireGet';
-import {getPatientInfoRequest,savePatientInfoRequest} from '../actionRequests/mocks/patientInfoRequest';
 import firePost from '../../tools/mocks/firePost';
 import * as types from '../constants/actionTypes';
+
+let savePatientInfoRequest = () => {return};
 
 const actions = {
 
@@ -30,13 +33,20 @@ const thunks = {
   },
 
   savePatientInfo:(data)=>{
- return dispatch => {
+    return dispatch => {
       //TODO:Implementation pending
       const request=savePatientInfoRequest(dispatch,data);
     //  dispatch(actions.patientSearch(postModel));
       firePost(request, dispatch);
     };
+  },
 
+  searchPatient: () => {
+    return dispatch => {
+      const model = {};
+      const request = searchPatientRequest(dispatch, model);
+      firePost(request, dispatch);
+    }
   }
 
 };

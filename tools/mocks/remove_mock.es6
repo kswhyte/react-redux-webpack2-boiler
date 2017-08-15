@@ -3,7 +3,7 @@ var mock_session = require('./mock_functions/mock_session_start.es6');
 var mock_login = require('./mock_functions/mock_login.es6');
 var mock_patientInfo=require('./mock_functions/mock_patientInfo.es6');
 var mock_resetPasswordSubmission=require('./mock_functions/mock_resetpassword_password_submission.es6');
-
+var mock_patientSearch=require('./mock_functions/mock_search_patient.es6');
 
 var MOCK_STATE = 'remove';
 
@@ -36,4 +36,6 @@ Remove Mock for the Login feature
 Remove Mock for patient info
 ================================== */
   mock_patientInfo(MOCK_STATE);
+
+  mock_patientSearch(MOCK_STATE);
 };
