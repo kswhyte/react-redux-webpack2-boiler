@@ -1,4 +1,3 @@
-
 const months = [
   { id: 'January', text: 'January' },
   { id: 'Febrauary', text: 'Febrauary' },
@@ -27,4 +26,4 @@ const MAX_DAYS = 31;
 for (let ii = 1; ii <= MAX_DAYS; ii++) {
   days.push({ id: ii, text: ii });
 }
-export {days,years,months}
+export { days, years, months };

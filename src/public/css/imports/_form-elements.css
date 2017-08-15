@@ -33,18 +33,22 @@ form {
     &.select-dropdown {
       width: 100%;
       box-shadow: none;
-      margin-top:-9px;
+      margin: -8px 0;
       background: transparent;
       font-family: Open Sans;
       border: 0px;
       border-bottom: solid 1px var(--slate);
       -webkit-appearance: none;
       -webkit-border-radius: 0px;
-      padding: 4px 0px;
+      /*padding: px 0px;*/
+      /*padding: 4px 0px;*/
+    }
+    &.select-dropdown:after {
+      outline: none;
     }
     &.dropdown-affiliate {
-      padding-top: 28px !important;
-      margin-top:0;
+      padding: 4px 0 !important;
+      margin: 2px 0;
     }
     &.form-control {
       background-image: image-set(url('~/images/dropdown_triangles/enabled-dark/triangle_drk.svg'));
@@ -54,7 +58,7 @@ form {
     }
   }
   & .input-affiliate {
-    padding-top: 24px !important;
+    margin: 2px 0;
   }
   & .checkbox-label {
     font-family: Open Sans;
