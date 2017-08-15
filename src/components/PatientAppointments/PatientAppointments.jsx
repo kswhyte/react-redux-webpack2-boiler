@@ -19,14 +19,19 @@ const PatientAppointments = props => {
   //   }
   // };
 
+  let pastAppts = [];
+  let upcomingAppts = [];
 
-  const pastAppts = props.appointments.filter(appt => {
-    return Moment(appt.appointmentDateTime) < Moment();
-  });
+  if (props.appointments.length) {
+    pastAppts = props.appointments.filter(appt => {
+      return Moment(appt.appointmentDateTime) < Moment();
+    });
 
-  const upcomingAppts = props.appointments.filter(appt => {
-    return Moment(appt.appointmentDateTime) > Moment();
-  });
+    upcomingAppts = props.appointments.filter(appt => {
+      return Moment(appt.appointmentDateTime) > Moment();
+    });
+  }
+
 
   return (
     <div className="patient-appointments-wrapper">
@@ -63,7 +68,7 @@ const PastAppointments = props => {
   return (
     <table className="appt-tables">
       <thead>
-        <tr>
+        <tr className="no-line">
           <th colSpan={6} className="past-appt-head">
             Past Appointments
           </th>
@@ -93,12 +98,14 @@ const UpcomingAppointments = props => {
   };
   return (
     <table className="appt-tables">
-      <tbody>
-        <tr>
+      <thead>
+        <tr className="no-line">
           <th colSpan={6} className="upcoming-appt-head">
             Upcoming Appointments
           </th>
         </tr>
+      </thead>
+      <tbody>
         {props.upcomingAppts.map(appt => {
           return (
             <tr key={appt.appointmentID} >

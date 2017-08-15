@@ -20,9 +20,10 @@
     }
     & .header-table th {
         border-bottom: solid 3px var(--light-grey);
+        width: 16.666%;
     }
     & .appt-tables th {
-        padding: 0px 20px 5px;
+        padding: 0px 0px 15px;
         font-family: Open Sans;
         font-size: 12px;
         font-weight: bold;
@@ -38,7 +39,7 @@
         padding: 20px 10px 20px;
         empty-cells: show;
     }
-    & .appt-tables tr {
+    & .appt-tables tr:not(.no-line) {
         border-bottom: solid 2px var(--light-grey);
     }
 
@@ -57,6 +58,14 @@
         text-align: center;
         cursor: pointer;
         border-radius: 0px;
+        width: 100px;
+        height: 30px;
+    }
+
+    & td > button:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        border: 1px solid var(--primary-color);
     }
 
 }

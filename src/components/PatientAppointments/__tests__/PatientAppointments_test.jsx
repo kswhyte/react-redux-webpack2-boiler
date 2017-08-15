@@ -11,7 +11,12 @@ import expect from 'expect';
 
 const stories = storiesOf('PatientAppointments', module);
 
-Date.now = jest.fn(() => 1487076708000);
+
+//Only run for jest
+if (!window.localStorage) {
+  Date.now = jest.fn(() => 1487076708000);
+}
+
 
 stories.add('With Appointments', () => {
 

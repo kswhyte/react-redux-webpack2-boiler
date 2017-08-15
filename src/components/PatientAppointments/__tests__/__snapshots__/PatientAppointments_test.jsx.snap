@@ -39,8 +39,10 @@ exports[`With Appointments 1`] = `
       <table
         className="appt-tables"
       >
-        <tbody>
-          <tr>
+        <thead>
+          <tr
+            className="no-line"
+          >
             <th
               className="upcoming-appt-head"
               colSpan={6}
@@ -48,6 +50,8 @@ exports[`With Appointments 1`] = `
               Upcoming Appointments
             </th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>
               February 21, 2017
@@ -120,7 +124,9 @@ exports[`With Appointments 1`] = `
         className="appt-tables"
       >
         <thead>
-          <tr>
+          <tr
+            className="no-line"
+          >
             <th
               className="past-appt-head"
               colSpan={6}
@@ -212,8 +218,10 @@ exports[`With Just Future Appointments 1`] = `
       <table
         className="appt-tables"
       >
-        <tbody>
-          <tr>
+        <thead>
+          <tr
+            className="no-line"
+          >
             <th
               className="upcoming-appt-head"
               colSpan={6}
@@ -221,6 +229,8 @@ exports[`With Just Future Appointments 1`] = `
               Upcoming Appointments
             </th>
           </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>
               February 21, 2017
@@ -382,7 +392,9 @@ exports[`With only Past Appointments 1`] = `
         className="appt-tables"
       >
         <thead>
-          <tr>
+          <tr
+            className="no-line"
+          >
             <th
               className="past-appt-head"
               colSpan={6}
