@@ -7,10 +7,4 @@
   & .patient-notfound-msg {
     margin-top: 10px;
   }
-  /*& .new-patient-icon {
-    background-image: image-set(
-      url('~/images/new-patient-icon/-e-new_patient_icon.png') 1x,
-      url('~/images/new-patient-icon/-e-new_patient_icon@2x.png') 2x)
-    );
-  }*/
 }

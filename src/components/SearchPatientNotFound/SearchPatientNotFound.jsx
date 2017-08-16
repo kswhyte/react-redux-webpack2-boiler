@@ -24,10 +24,7 @@ const SearchPatientNotFound = () => {
             <h3 className="patient-notfound-msg">This patient is not found in hg smartaccess.</h3>
           </div>
           <div className="col-xs-4 no-margin">
-            <div className="new-patient-icon" />
             <button className="primary-btn" type="submit">
-              {/* <i className="fa fa-plus-circle" aria-hidden="true" />
-              <i className="fa fa-user" aria-hidden="true" /> */}
               Enter New Patient
             </button>
           </div>

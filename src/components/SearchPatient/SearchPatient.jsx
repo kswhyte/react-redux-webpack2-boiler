@@ -9,8 +9,6 @@ const SearchPatient = () => {
     <div className="search-patient-block">
       <h2>Patient Information</h2>
       <hr className="line" />
-
-      <SearchPatientNotFound />
     </div>
   );
 };
