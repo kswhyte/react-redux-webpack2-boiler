@@ -17,10 +17,10 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-3 no-margin padding-10"
+            className="col-sm-3 no-margin"
           >
             <label>
-              PATIENT FIRST NAME *
+              FIRST NAME *
             </label>
             <input
               className="form-group"
@@ -32,10 +32,10 @@ exports[`Patient Info Story 1`] = `
             />
           </div>
           <div
-            className="col-sm-3 no-margin padding-10"
+            className="col-sm-3 no-margin"
           >
             <label>
-              PATIENT LAST NAME *
+              LAST NAME *
             </label>
             <input
               className="form-group"
@@ -47,7 +47,7 @@ exports[`Patient Info Story 1`] = `
             />
           </div>
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label>
               GENDER *
@@ -72,7 +72,7 @@ exports[`Patient Info Story 1`] = `
             </select>
           </div>
           <div
-            className="col-sm-4 no-margin padding-10"
+            className="col-sm-4 no-margin"
           >
             <label>
               EMAIL ADDRESS *
@@ -91,25 +91,91 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label>
-              PATIENT DATE OF BIRTH *
+              DATE OF BIRTH *
             </label>
             <select
               className="select-dropdown form-control"
               onChange={[Function]}
             >
               <option
-                selected={true}
-                value="select"
+                label="January"
+                value="January"
               >
-                Select
+                January
+              </option>
+              <option
+                label="Febrauary"
+                value="Febrauary"
+              >
+                Febrauary
+              </option>
+              <option
+                label="March"
+                value="March"
+              >
+                March
+              </option>
+              <option
+                label="April"
+                value="April"
+              >
+                April
+              </option>
+              <option
+                label="May"
+                value="May"
+              >
+                May
+              </option>
+              <option
+                label="June"
+                value="June"
+              >
+                June
+              </option>
+              <option
+                label="July"
+                value="July"
+              >
+                July
+              </option>
+              <option
+                label="August"
+                value="August"
+              >
+                August
+              </option>
+              <option
+                label="September"
+                value="September"
+              >
+                September
+              </option>
+              <option
+                label="October"
+                value="October"
+              >
+                October
+              </option>
+              <option
+                label="November"
+                value="November"
+              >
+                November
+              </option>
+              <option
+                label="December"
+                value="December"
+              >
+                December
               </option>
             </select>
           </div>
           <div
-            className="col-sm-1 no-margin padding-10"
+            className="col-sm-1 no-margin"
           >
             <label />
             <select
@@ -306,7 +372,7 @@ exports[`Patient Info Story 1`] = `
             </select>
           </div>
           <div
-            className="col-sm-1 no-margin padding-10"
+            className="col-sm-1 no-margin"
           >
             <label />
             <select
@@ -965,7 +1031,7 @@ exports[`Patient Info Story 1`] = `
             </select>
           </div>
           <div
-            className="col-sm-3 no-margin padding-10"
+            className="col-sm-3 no-margin"
           >
             <label>
               PHONE NUMBER *
@@ -981,7 +1047,7 @@ exports[`Patient Info Story 1`] = `
             />
           </div>
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label>
               PHONE TYPE *
@@ -1006,7 +1072,7 @@ exports[`Patient Info Story 1`] = `
             </select>
           </div>
           <div
-            className="col-sm-3 no-margin padding-10"
+            className="col-sm-3 no-margin"
           >
             <label>
               CONTACT METHOD *
@@ -1017,10 +1083,14 @@ exports[`Patient Info Story 1`] = `
               value=""
             >
               <option
-                selected={true}
-                value="select"
+                value="sms"
               >
                 SMS
+              </option>
+              <option
+                value="email"
+              >
+                EMAIL
               </option>
             </select>
           </div>
@@ -1029,7 +1099,7 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-4 no-margin padding-10"
+            className="col-sm-4 no-margin"
           >
             <label>
               STREET *
@@ -1043,7 +1113,7 @@ exports[`Patient Info Story 1`] = `
             />
           </div>
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label>
               CITY STATE ZIP *
@@ -1058,7 +1128,7 @@ exports[`Patient Info Story 1`] = `
             />
           </div>
           <div
-            className="col-sm-1 no-margin padding-10"
+            className="col-sm-1 no-margin"
           >
             <label />
             <select
@@ -1067,345 +1137,345 @@ exports[`Patient Info Story 1`] = `
               value=""
             >
               <option
-                label="Select"
+                label="Sel"
                 value=""
               >
-                Select
+                Sel
               </option>
               <option
-                label="Alabama"
-                value="AL"
+                label="AL"
+                value="Alabama"
               >
-                Alabama
+                AL
               </option>
               <option
-                label="Alaska"
-                value="AK"
+                label="AK"
+                value="Alaska"
               >
-                Alaska
+                AK
               </option>
               <option
-                label="Arizona"
-                value="AZ"
+                label="AZ"
+                value="Arizona"
               >
-                Arizona
+                AZ
               </option>
               <option
-                label="Arkansas"
-                value="AR"
+                label="AR"
+                value="Arkansas"
               >
-                Arkansas
+                AR
               </option>
               <option
-                label="California"
-                value="CA"
+                label="CA"
+                value="California"
               >
-                California
+                CA
               </option>
               <option
-                label="Colorado"
-                value="CO"
+                label="CO"
+                value="Colorado"
               >
-                Colorado
+                CO
               </option>
               <option
-                label="Connecticut"
-                value="CT"
+                label="CT"
+                value="Connecticut"
               >
-                Connecticut
+                CT
               </option>
               <option
-                label="Delaware"
-                value="DE"
+                label="DE"
+                value="Delaware"
               >
-                Delaware
+                DE
               </option>
               <option
-                label="District Of Columbia"
-                value="DC"
+                label="DC"
+                value="District Of Columbia"
               >
-                District Of Columbia
+                DC
               </option>
               <option
-                label="Florida"
-                value="FL"
+                label="FL"
+                value="Florida"
               >
-                Florida
+                FL
               </option>
               <option
-                label="Georgia"
-                value="GA"
+                label="GA"
+                value="Georgia"
               >
-                Georgia
+                GA
               </option>
               <option
-                label="Guam"
-                value="GU"
+                label="GU"
+                value="Guam"
               >
-                Guam
+                GU
               </option>
               <option
-                label="Hawaii"
-                value="HI"
+                label="HI"
+                value="Hawaii"
               >
-                Hawaii
+                HI
               </option>
               <option
-                label="Idaho"
-                value="ID"
+                label="ID"
+                value="Idaho"
               >
-                Idaho
+                ID
               </option>
               <option
-                label="Illinois"
-                value="IL"
+                label="IL"
+                value="Illinois"
               >
-                Illinois
+                IL
               </option>
               <option
-                label="Indiana"
-                value="IN"
+                label="IN"
+                value="Indiana"
               >
-                Indiana
+                IN
               </option>
               <option
-                label="Iowa"
-                value="IA"
+                label="IA"
+                value="Iowa"
               >
-                Iowa
+                IA
               </option>
               <option
-                label="Kansas"
-                value="KS"
+                label="KS"
+                value="Kansas"
               >
-                Kansas
+                KS
               </option>
               <option
-                label="Kentucky"
-                value="KY"
+                label="KY"
+                value="Kentucky"
               >
-                Kentucky
+                KY
               </option>
               <option
-                label="Louisiana"
-                value="LA"
+                label="LA"
+                value="Louisiana"
               >
-                Louisiana
+                LA
               </option>
               <option
-                label="Maine"
-                value="ME"
+                label="ME"
+                value="Maine"
               >
-                Maine
+                ME
               </option>
               <option
-                label="Maryland"
-                value="MD"
+                label="MD"
+                value="Maryland"
               >
-                Maryland
+                MD
               </option>
               <option
-                label="Massachusetts"
-                value="MA"
+                label="MA"
+                value="Massachusetts"
               >
-                Massachusetts
+                MA
               </option>
               <option
-                label="Michigan"
-                value="MI"
+                label="MI"
+                value="Michigan"
               >
-                Michigan
+                MI
               </option>
               <option
-                label="Minnesota"
-                value="MN"
+                label="MN"
+                value="Minnesota"
               >
-                Minnesota
+                MN
               </option>
               <option
-                label="Mississippi"
-                value="MS"
+                label="MS"
+                value="Mississippi"
               >
-                Mississippi
+                MS
               </option>
               <option
-                label="Missouri"
-                value="MO"
+                label="MO"
+                value="Missouri"
               >
-                Missouri
+                MO
               </option>
               <option
-                label="Montana"
-                value="MT"
+                label="MT"
+                value="Montana"
               >
-                Montana
+                MT
               </option>
               <option
-                label="Nebraska"
-                value="NE"
+                label="NE"
+                value="Nebraska"
               >
-                Nebraska
+                NE
               </option>
               <option
-                label="Nevada"
-                value="NV"
+                label="NV"
+                value="Nevada"
               >
-                Nevada
+                NV
               </option>
               <option
-                label="New Hampshire"
-                value="NH"
+                label="NH"
+                value="New Hampshire"
               >
-                New Hampshire
+                NH
               </option>
               <option
-                label="New Jersey"
-                value="NJ"
+                label="NJ"
+                value="New Jersey"
               >
-                New Jersey
+                NJ
               </option>
               <option
-                label="New Mexico"
-                value="NM"
+                label="NM"
+                value="New Mexico"
               >
-                New Mexico
+                NM
               </option>
               <option
-                label="New York"
-                value="NY"
+                label="NY"
+                value="New York"
               >
-                New York
+                NY
               </option>
               <option
-                label="North Carolina"
-                value="NC"
+                label="NC"
+                value="North Carolina"
               >
-                North Carolina
+                NC
               </option>
               <option
-                label="North Dakota"
-                value="ND"
+                label="ND"
+                value="North Dakota"
               >
-                North Dakota
+                ND
               </option>
               <option
-                label="Ohio"
-                value="OH"
+                label="OH"
+                value="Ohio"
               >
-                Ohio
+                OH
               </option>
               <option
-                label="Oklahoma"
-                value="OK"
+                label="OK"
+                value="Oklahoma"
               >
-                Oklahoma
+                OK
               </option>
               <option
-                label="Oregon"
-                value="OR"
+                label="OR"
+                value="Oregon"
               >
-                Oregon
+                OR
               </option>
               <option
-                label="Palau"
-                value="PW"
+                label="PW"
+                value="Palau"
               >
-                Palau
+                PW
               </option>
               <option
-                label="Pennsylvania"
-                value="PA"
+                label="PA"
+                value="Pennsylvania"
               >
-                Pennsylvania
+                PA
               </option>
               <option
-                label="Puerto Rico"
-                value="PR"
+                label="PR"
+                value="Puerto Rico"
               >
-                Puerto Rico
+                PR
               </option>
               <option
-                label="Rhode Island"
-                value="RI"
+                label="RI"
+                value="Rhode Island"
               >
-                Rhode Island
+                RI
               </option>
               <option
-                label="South Carolina"
-                value="SC"
+                label="SC"
+                value="South Carolina"
               >
-                South Carolina
+                SC
               </option>
               <option
-                label="South Dakota"
-                value="SD"
+                label="SD"
+                value="South Dakota"
               >
-                South Dakota
+                SD
               </option>
               <option
-                label="Tennessee"
-                value="TN"
+                label="TN"
+                value="Tennessee"
               >
-                Tennessee
+                TN
               </option>
               <option
-                label="Texas"
-                value="TX"
+                label="TX"
+                value="Texas"
               >
-                Texas
+                TX
               </option>
               <option
-                label="Utah"
-                value="UT"
+                label="UT"
+                value="Utah"
               >
-                Utah
+                UT
               </option>
               <option
-                label="Vermont"
-                value="VT"
+                label="VT"
+                value="Vermont"
               >
-                Vermont
+                VT
               </option>
               <option
-                label="Virgin Islands"
-                value="VI"
+                label="VI"
+                value="Virgin Islands"
               >
-                Virgin Islands
+                VI
               </option>
               <option
-                label="Virginia"
-                value="VA"
+                label="VA"
+                value="Virginia"
               >
-                Virginia
+                VA
               </option>
               <option
-                label="Washington"
-                value="WA"
+                label="WA"
+                value="Washington"
               >
-                Washington
+                WA
               </option>
               <option
-                label="West Virginia"
-                value="WV"
+                label="WV"
+                value="West Virginia"
               >
-                West Virginia
+                WV
               </option>
               <option
-                label="Wisconsin"
-                value="WI"
+                label="WI"
+                value="Wisconsin"
               >
-                Wisconsin
+                WI
               </option>
               <option
-                label="Wyoming"
-                value="WY"
+                label="WY"
+                value="Wyoming"
               >
-                Wyoming
+                WY
               </option>
             </select>
           </div>
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label />
             <input
@@ -1423,7 +1493,7 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-4 padding-10"
+            className="col-sm-4"
           >
             <label>
               PRIMARY INSURANCE CARRIER *
@@ -1434,16 +1504,20 @@ exports[`Patient Info Story 1`] = `
               value=""
             >
               <option
-                selected={true}
-                value="select"
+                value="default1"
               >
-                default
+                default1
+              </option>
+              <option
+                value="default2"
+              >
+                default2
               </option>
               required
             </select>
           </div>
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label>
               PLAN TYPE *
@@ -1453,15 +1527,19 @@ exports[`Patient Info Story 1`] = `
               onChange={[Function]}
             >
               <option
-                selected={true}
-                value="select"
+                value="a"
               >
-                dflt
+                A
+              </option>
+              <option
+                value="b"
+              >
+                B
               </option>
             </select>
           </div>
           <div
-            className="col-sm-3 no-margin padding-10"
+            className="col-sm-3 no-margin"
           >
             <label>
               PLAN NO. *
@@ -1472,7 +1550,7 @@ exports[`Patient Info Story 1`] = `
               placeholder="Plan Number"
               required={true}
               type="text"
-              value=""
+              value="PlanY"
             />
           </div>
         </div>
@@ -1480,7 +1558,7 @@ exports[`Patient Info Story 1`] = `
           className="row sm-spacer"
         >
           <div
-            className="col-sm-4 padding-10"
+            className="col-sm-4"
           >
             <label>
               ALTERNATE INSURANCE CARRIER
@@ -1490,15 +1568,19 @@ exports[`Patient Info Story 1`] = `
               onChange={[Function]}
             >
               <option
-                selected={true}
-                value="select"
+                value="default1"
               >
-                Select
+                default1
+              </option>
+              <option
+                value="default2"
+              >
+                default2
               </option>
             </select>
           </div>
           <div
-            className="col-sm-2 no-margin padding-10"
+            className="col-sm-2 no-margin"
           >
             <label>
               PLAN TYPE *
@@ -1508,15 +1590,19 @@ exports[`Patient Info Story 1`] = `
               onChange={[Function]}
             >
               <option
-                selected={true}
                 value="ppo"
               >
                 PPO
               </option>
+              <option
+                value="ppo2"
+              >
+                PPO2
+              </option>
             </select>
           </div>
           <div
-            className="col-sm-3 no-margin padding-10"
+            className="col-sm-3 no-margin"
           >
             <label>
               PLAN NO. *
@@ -1526,7 +1612,7 @@ exports[`Patient Info Story 1`] = `
               onChange={[Function]}
               placeholder="Plan Number"
               type="text"
-              value=""
+              value="PlanX"
             />
           </div>
         </div>
@@ -1534,20 +1620,24 @@ exports[`Patient Info Story 1`] = `
           className="row xs-spacer"
         >
           <div
-            className="col-sm-4 padding-10"
+            className="col-sm-4"
           >
             <label>
               REFERRING PHYSICIAN *
             </label>
             <select
-              className="select-dropdown"
+              className="select-dropdown form-control"
               onChange={[Function]}
             >
               <option
-                selected={true}
-                value="select"
+                value="Physician1"
               >
-                Select
+                Physician1
+              </option>
+              <option
+                value="Physician2"
+              >
+                Physician2
               </option>
             </select>
           </div>
@@ -1586,7 +1676,6 @@ exports[`Patient Info Story 1`] = `
           >
             <button
               className="next-btn"
-              onClick={undefined}
               tabIndex={1}
               type="submit"
             >

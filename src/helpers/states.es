@@ -1,172 +1,226 @@
-export default[
-		{
-			text: 'Select',
-			id: ''
-		},
-    {
-        text: 'Alabama',
-        id: 'AL'
-    }, {
-        text: 'Alaska',
-        id: 'AK'
-    }, {
-        text: 'Arizona',
-        id: 'AZ'
-    }, {
-        text: 'Arkansas',
-        id: 'AR'
-    }, {
-        text: 'California',
-        id: 'CA'
-    }, {
-        text: 'Colorado',
-        id: 'CO'
-    }, {
-        text: 'Connecticut',
-        id: 'CT'
-    }, {
-        text: 'Delaware',
-        id: 'DE'
-    }, {
-        text: 'District Of Columbia',
-        id: 'DC'
-    }, {
-        text: 'Florida',
-        id: 'FL'
-    }, {
-        text: 'Georgia',
-        id: 'GA'
-    }, {
-        text: 'Guam',
-        id: 'GU'
-    }, {
-        text: 'Hawaii',
-        id: 'HI'
-    }, {
-        text: 'Idaho',
-        id: 'ID'
-    }, {
-        text: 'Illinois',
-        id: 'IL'
-    }, {
-        text: 'Indiana',
-        id: 'IN'
-    }, {
-        text: 'Iowa',
-        id: 'IA'
-    }, {
-        text: 'Kansas',
-        id: 'KS'
-    }, {
-        text: 'Kentucky',
-        id: 'KY'
-    }, {
-        text: 'Louisiana',
-        id: 'LA'
-    }, {
-        text: 'Maine',
-        id: 'ME'
-    }, {
-        text: 'Maryland',
-        id: 'MD'
-    }, {
-        text: 'Massachusetts',
-        id: 'MA'
-    }, {
-        text: 'Michigan',
-        id: 'MI'
-    }, {
-        text: 'Minnesota',
-        id: 'MN'
-    }, {
-        text: 'Mississippi',
-        id: 'MS'
-    }, {
-        text: 'Missouri',
-        id: 'MO'
-    }, {
-        text: 'Montana',
-        id: 'MT'
-    }, {
-        text: 'Nebraska',
-        id: 'NE'
-    }, {
-        text: 'Nevada',
-        id: 'NV'
-    }, {
-        text: 'New Hampshire',
-        id: 'NH'
-    }, {
-        text: 'New Jersey',
-        id: 'NJ'
-    }, {
-        text: 'New Mexico',
-        id: 'NM'
-    }, {
-        text: 'New York',
-        id: 'NY'
-    }, {
-        text: 'North Carolina',
-        id: 'NC'
-    }, {
-        text: 'North Dakota',
-        id: 'ND'
-    }, {
-        text: 'Ohio',
-        id: 'OH'
-    }, {
-        text: 'Oklahoma',
-        id: 'OK'
-    }, {
-        text: 'Oregon',
-        id: 'OR'
-    }, {
-        text: 'Palau',
-        id: 'PW'
-    }, {
-        text: 'Pennsylvania',
-        id: 'PA'
-    }, {
-        text: 'Puerto Rico',
-        id: 'PR'
-    }, {
-        text: 'Rhode Island',
-        id: 'RI'
-    }, {
-        text: 'South Carolina',
-        id: 'SC'
-    }, {
-        text: 'South Dakota',
-        id: 'SD'
-    }, {
-        text: 'Tennessee',
-        id: 'TN'
-    }, {
-        text: 'Texas',
-        id: 'TX'
-    }, {
-        text: 'Utah',
-        id: 'UT'
-    }, {
-        text: 'Vermont',
-        id: 'VT'
-    }, {
-        text: 'Virgin Islands',
-        id: 'VI'
-    }, {
-        text: 'Virginia',
-        id: 'VA'
-    }, {
-        text: 'Washington',
-        id: 'WA'
-    }, {
-        text: 'West Virginia',
-        id: 'WV'
-    }, {
-        text: 'Wisconsin',
-        id: 'WI'
-    }, {
-        text: 'Wyoming',
-        id: 'WY'
-    }
+export default [
+  {
+    text: 'Sel',
+    id: ''
+  },
+  {
+    id: 'Alabama',
+    text: 'AL'
+  },
+  {
+    id: 'Alaska',
+    text: 'AK'
+  },
+  {
+    id: 'Arizona',
+    text: 'AZ'
+  },
+  {
+    id: 'Arkansas',
+    text: 'AR'
+  },
+  {
+    id: 'California',
+    text: 'CA'
+  },
+  {
+    id: 'Colorado',
+    text: 'CO'
+  },
+  {
+    id: 'Connecticut',
+    text: 'CT'
+  },
+  {
+    id: 'Delaware',
+    text: 'DE'
+  },
+  {
+    id: 'District Of Columbia',
+    text: 'DC'
+  },
+  {
+    id: 'Florida',
+    text: 'FL'
+  },
+  {
+    id: 'Georgia',
+    text: 'GA'
+  },
+  {
+    id: 'Guam',
+    text: 'GU'
+  },
+  {
+    id: 'Hawaii',
+    text: 'HI'
+  },
+  {
+    id: 'Idaho',
+    text: 'ID'
+  },
+  {
+    id: 'Illinois',
+    text: 'IL'
+  },
+  {
+    id: 'Indiana',
+    text: 'IN'
+  },
+  {
+    id: 'Iowa',
+    text: 'IA'
+  },
+  {
+    id: 'Kansas',
+    text: 'KS'
+  },
+  {
+    id: 'Kentucky',
+    text: 'KY'
+  },
+  {
+    id: 'Louisiana',
+    text: 'LA'
+  },
+  {
+    id: 'Maine',
+    text: 'ME'
+  },
+  {
+    id: 'Maryland',
+    text: 'MD'
+  },
+  {
+    id: 'Massachusetts',
+    text: 'MA'
+  },
+  {
+    id: 'Michigan',
+    text: 'MI'
+  },
+  {
+    id: 'Minnesota',
+    text: 'MN'
+  },
+  {
+    id: 'Mississippi',
+    text: 'MS'
+  },
+  {
+    id: 'Missouri',
+    text: 'MO'
+  },
+  {
+    id: 'Montana',
+    text: 'MT'
+  },
+  {
+    id: 'Nebraska',
+    text: 'NE'
+  },
+  {
+    id: 'Nevada',
+    text: 'NV'
+  },
+  {
+    id: 'New Hampshire',
+    text: 'NH'
+  },
+  {
+    id: 'New Jersey',
+    text: 'NJ'
+  },
+  {
+    id: 'New Mexico',
+    text: 'NM'
+  },
+  {
+    id: 'New York',
+    text: 'NY'
+  },
+  {
+    id: 'North Carolina',
+    text: 'NC'
+  },
+  {
+    id: 'North Dakota',
+    text: 'ND'
+  },
+  {
+    id: 'Ohio',
+    text: 'OH'
+  },
+  {
+    id: 'Oklahoma',
+    text: 'OK'
+  },
+  {
+    id: 'Oregon',
+    text: 'OR'
+  },
+  {
+    id: 'Palau',
+    text: 'PW'
+  },
+  {
+    id: 'Pennsylvania',
+    text: 'PA'
+  },
+  {
+    id: 'Puerto Rico',
+    text: 'PR'
+  },
+  {
+    id: 'Rhode Island',
+    text: 'RI'
+  },
+  {
+    id: 'South Carolina',
+    text: 'SC'
+  },
+  {
+    id: 'South Dakota',
+    text: 'SD'
+  },
+  {
+    id: 'Tennessee',
+    text: 'TN'
+  },
+  {
+    id: 'Texas',
+    text: 'TX'
+  },
+  {
+    id: 'Utah',
+    text: 'UT'
+  },
+  {
+    id: 'Vermont',
+    text: 'VT'
+  },
+  {
+    id: 'Virgin Islands',
+    text: 'VI'
+  },
+  {
+    id: 'Virginia',
+    text: 'VA'
+  },
+  {
+    id: 'Washington',
+    text: 'WA'
+  },
+  {
+    id: 'West Virginia',
+    text: 'WV'
+  },
+  {
+    id: 'Wisconsin',
+    text: 'WI'
+  },
+  {
+    id: 'Wyoming',
+    text: 'WY'
+  }
 ];

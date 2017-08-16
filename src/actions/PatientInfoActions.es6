@@ -1,5 +1,5 @@
-import fireGet from '../../tools/mocks/fireGet';
 import {getPatientInfoRequest,savePatientInfoRequest} from '../actionRequests/mocks/patientInfoRequest';
+import fireGet from '../../tools/mocks/fireGet';
 import firePost from '../../tools/mocks/firePost';
 import * as types from '../constants/actionTypes';
 

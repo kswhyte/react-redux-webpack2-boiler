@@ -15,10 +15,10 @@ let patientInfoActionsSelector = fs.readFileSync(patientInfoActions_filePath, {e
 let patientInfoImport, fireGetImport;
 
 if(toggle === "add"){
-   patientInfoImport = "import getPatientInfoRequest from '../actionRequests/mocks/patientInfoRequest';";
+   patientInfoImport = "import {getPatientInfoRequest,savePatientInfoRequest} from '../actionRequests/mocks/patientInfoRequest';";
    fireGetImport = "import fireGet from '../../tools/mocks/fireGet';"
 } else if(toggle === "remove"){
-   patientInfoImport = "import getPatientInfoRequest from '../actionRequests/patientInfoRequest';";
+   patientInfoImport = "import {getPatientInfoRequest,savePatientInfoRequest} from '../actionRequests/patientInfoRequest';";
    fireGetImport = "import fireGet from '../../tools/fireGet';"
 } else {
   throw Error("add or remove | these are the only two options. ");
@@ -33,7 +33,7 @@ console.log(chalk.blue('---------------------------------'));
 let patientInfoActionsParts = patientInfoActionsSelector.split('\n');
 
 let patientInfoActionsPart_filter = patientInfoActionsParts.filter(function filterOutDataThatNeedsHardcoding(line){
-    let regexStartSession = /(import getPatientInfoRequest|import fireGet)/g;
+    let regexStartSession = /(import {getPatientInfoRequest|import fireGet)/g;
     if(line.match(regexStartSession)){
         return false;
     } else {
