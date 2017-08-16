@@ -24,12 +24,12 @@ stories.add('Search Patient Story', () => {
         expect(output.find('.search-patient-notfound-wrapper').length).toEqual(1);
       });
 
-      it('Should have a header element that says "This Patient is not found in hg smartaccess"', () => {
+      xit('Should have a header element that says "This Patient is not found in hg smartaccess"', () => {
         let output = mount(searchPatientNotFoundStory);
         expect(output.find('h3').text()).toContain('This Patient is not found in hg smartaccess.');
       });
 
-      it('Should have one call-to-action Create New Patient button', () => {
+      xit('Should have one call-to-action Create New Patient button', () => {
         let output = mount(searchPatientNotFoundStory);
         expect(output.find('button').length).toEqual(1);
       });
