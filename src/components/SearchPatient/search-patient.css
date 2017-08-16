@@ -8,9 +8,20 @@
   border: solid 2px var(--cloudy-blue);
 }
 
+.sm-line {
+    width: 830px;
+    border: solid 1px #cad2da;
+    border: solid 1px var(--cloudy-blue);
+}
+
 .search-patient-block {
     & button {
-        width: 191px;
+        width: 170px;
         margin-left: 20px;
+        margin-right: 30px;
+    }
+
+    & input {
+        margin-top: 3px;
     }
 }

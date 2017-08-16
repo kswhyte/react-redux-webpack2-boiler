@@ -20,8 +20,9 @@ const actions = {
     type: types.SAVE_PATIENT_INFO_SUCCESS,
     data
   }),
-  searchPatientClick: () => ({
-    type: types.SEARCH_PATIENT_CLICK
+  searchPatientClick: data => ({
+    type: types.SEARCH_PATIENT_CLICK,
+    data
   }),
   searchPatientSuccess: data => ({
     type: types.SEARCH_PATIENT_SUCCESS,
@@ -52,9 +53,9 @@ const thunks = {
     };
   },
 
-  searchPatient: () => {
+  searchPatient: (data) => {
     return dispatch => {
-      dispatch(actions.searchPatientClick());
+      dispatch(actions.searchPatientClick(data));
       const model = {};
       const request = searchPatientRequest(dispatch, model);
       firePost(request, dispatch);
