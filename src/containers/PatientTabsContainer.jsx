@@ -33,17 +33,15 @@ class PatientTabsContainer extends Component {
   }
 
   componentWillMount() {
-    // this.props.init();
+    this.handlers.getPatientInfo(this.props.patientId);
   }
 
   componentDidMount() {
-    //TODO:PatientId need to be passed here, query param??
-    this.handlers.getPatientInfo(this.props.patientId);
+    //this.handlers.getPatientInfo(this.props.patientId);
 
   }
 
   render() {
-    console.log('this.props', this.props)
     return (
       <div className="confirm-patient-info-wrapper">
         <PatientTabs PatientInfo={this.props.PatientInfo} submitPatientInfo={this.handlers.submitPatientInfo} />

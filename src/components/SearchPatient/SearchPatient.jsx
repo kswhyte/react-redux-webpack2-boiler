@@ -1,7 +1,5 @@
 import React from 'react';
 
-import SearchPatientNotFound from '../SearchPatientNotFound';
-
 import './search-patient.css';
 
 const SearchPatient = () => {

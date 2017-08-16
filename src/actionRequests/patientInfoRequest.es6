@@ -1,11 +1,10 @@
 import actions from '../actions/PatientInfoActions';
 import { URI } from '../../tools/app_config';
 
-const getPatientInfoRequest = (dispatch, ...args) => {
+const getPatientInfoRequest = (dispatch) => {
     const hostedUrlPath = URI.baseUISVC_URI;
     const getRoute = '/#fake';
     const requestEnd = () => {
-      console.log('---- args : ', args)
       const _res = {
           body:{
               "patientId":"1f47af8b-ec5c-4b53-b734-22a30eff3519",

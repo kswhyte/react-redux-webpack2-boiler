@@ -4,7 +4,6 @@ import * as types from '../constants/actionTypes';
 const patientInfoReducer = (store = {}, action) => {
   switch (action.type) {
     case types.GET_PATIENT_INFO_SUCCESS: {
-      console.log('------------- action data ', action.data)
      return Object.assign({}, store, {generalInfo: action.data.generalInfo, appointments: action.data.appointments, notes: action.data.notes});
     }
     case types.SAVE_PATIENT_INFO_SUCCESS: {
