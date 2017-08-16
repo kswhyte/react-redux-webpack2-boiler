@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types';
 import Moment from 'moment';
 
 import { months, days, years } from '../../helpers/dateOptions';
+import isZipCode from '../../helpers/isZipCode';
+import isPhone from '../../helpers/isPhone';
 
 import './search-patient.css';
 
@@ -15,9 +17,14 @@ const searchFormSubmit = (validCallback) => {
     const phone = escape(document.querySelector('#phone').value);
     const zipCode = escape(document.querySelector('#zipCode').value);
     const birthDate = Moment(`${birthMonth}-${birthDay}-${birthYear}`).format();
-    console.log("Birth Date??", birthDate);
-    const postData = { firstName, lastName, birthDate, phone, zipCode };
-    validCallback(postData);
+    if ((isZipCode(zipCode) || !zipCode) && (isPhone(phone) || !phone)) {
+        const postData = { firstName, lastName, birthDate, phone, zipCode };
+        validCallback(postData);
+    } else {
+        console.log("isZipCode", isZipCode(zipCode));
+        console.log("isPhone", isPhone(phone));
+    }
+
 }
 
 const propTypes = {
@@ -48,11 +55,11 @@ const SearchPatient = props => {
                 <div className="row" >
                     <div className="col-sm-5">
                         <label htmlFor="firstName">First Name &#42;</label>
-                        <input type="text" id="firstName" required />
+                        <input type="text" id="firstName" placeholder="First Name" required />
                     </div>
                     <div className="col-sm-5">
                         <label htmlFor="lastName">Last Name &#42;</label>
-                        <input type="text" id="lastName" required />
+                        <input type="text" id="lastName" placeholder="Last Name" required />
                     </div>
                 </div>
                 <div className="row sm-spacer">
@@ -90,11 +97,11 @@ const SearchPatient = props => {
                     </div>
                     <div className="col-sm-3 no-margin">
                         <label htmlFor="phone">Phone</label>
-                        <input type="text" id="phone" />
+                        <input type="text" id="phone" placeholder="(xxx) xxx-xxxx" />
                     </div>
                     <div className="col-sm-2 no-margin">
                         <label htmlFor="zipCode">Zip Code</label>
-                        <input type="text" id="zipCode" />
+                        <input type="text" id="zipCode" placeholder="Zip Code" />
                     </div>
                     <div className="col-sm-3 no-margin">
                         <button>FIND PATIENT RECORD</button>

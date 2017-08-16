@@ -21,7 +21,7 @@
         margin-right: 30px;
     }
 
-    & input {
+    & .second-row input {
         margin-top: 3px;
     }
 }
