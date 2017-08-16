@@ -15,6 +15,7 @@ import SearchAndCalendarContainer from './SearchAndCalendarContainer';
 import ConfirmContainer from './ConfirmContainer';
 import headerActions from '../actions/HeaderActions';
 import sessionActions from '../actions/SessionActions';
+import routeActions from '../actions/RouteActions';
 import sStorage from '../../tools/sessionStorage_helper';
 import createBrowserHistory from '../../tools/history';
 import ModalConductor from './ModalConductor';
@@ -54,6 +55,7 @@ const proptypes = {
   sessionStarted: PropTypes.bool,
   currentModal: PropTypes.string
 };
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -86,7 +88,12 @@ class App extends Component {
       }
     });
   }
-  componentWillMount() {}
+
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.user.isActive) {
+      nextProps.dispatch(routeActions.changeRoute({ route: '/' }));
+    }
+  }
 
   hideModal() {
     this.props.dispatch(sessionActions.hideModal());
