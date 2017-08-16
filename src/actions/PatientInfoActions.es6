@@ -31,6 +31,10 @@ const actions = {
   searchPatientFail: err => ({
     type: types.SEARCH_PATIENT_FAIL,
     err
+  }),
+  searchValidationError: err => ({
+    type: types.SEARCH_VALIDATION_ERROR,
+    err
   })
 };
 

@@ -8,7 +8,7 @@ import isPhone from '../../helpers/isPhone';
 
 import './search-patient.css';
 
-const searchFormSubmit = (validCallback) => {
+const searchFormSubmit = (validCallback, errorCallback) => {
     const firstName = escape(document.querySelector('#firstName').value);
     const lastName = escape(document.querySelector('#lastName').value);
     const birthMonth = escape(document.querySelector('#birthMonth').value);
@@ -20,15 +20,18 @@ const searchFormSubmit = (validCallback) => {
     if ((isZipCode(zipCode) || !zipCode) && (isPhone(phone) || !phone)) {
         const postData = { firstName, lastName, birthDate, phone, zipCode };
         validCallback(postData);
-    } else {
-        console.log("isZipCode", isZipCode(zipCode));
-        console.log("isPhone", isPhone(phone));
+    } else if (!isPhone(phone)) {
+        errorCallback("PHONE")
+    } else if (!isZipCode(zipCode)) {
+        errorCallback("ZIP")
     }
 
 }
 
 const propTypes = {
     submitSearch: PropTypes.func,
+    validationError: PropTypes.string,
+    showError: PropTypes.func
 }
 
 const mapOptions = (options) => {
@@ -49,7 +52,7 @@ const SearchPatient = props => {
             <form
                 onSubmit={e => {
                   e.preventDefault();
-                  searchFormSubmit(props.submitSearch);
+                  searchFormSubmit(props.submitSearch, props.showError);
                 }}
             >
                 <div className="row" >
@@ -98,10 +101,20 @@ const SearchPatient = props => {
                     <div className="col-sm-3 no-margin">
                         <label htmlFor="phone">Phone</label>
                         <input type="text" id="phone" placeholder="(xxx) xxx-xxxx" />
+                        {
+                            (props.validationError === 'PHONE') && (
+                                <h5>Invalid Phone</h5>
+                            )
+                        }
                     </div>
                     <div className="col-sm-2 no-margin">
                         <label htmlFor="zipCode">Zip Code</label>
                         <input type="text" id="zipCode" placeholder="Zip Code" />
+                        {
+                            (props.validationError === 'ZIP') && (
+                                <h5>Invalid Zip Code</h5>
+                            )
+                        }
                     </div>
                     <div className="col-sm-3 no-margin">
                         <button>FIND PATIENT RECORD</button>

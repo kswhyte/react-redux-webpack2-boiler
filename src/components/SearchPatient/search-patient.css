@@ -24,4 +24,9 @@
     & .second-row input {
         margin-top: 3px;
     }
+    & h5 {
+        margin-top: 5px;
+        color: var(--form-error-color);
+        font-size: 12px;
+    }
 }
