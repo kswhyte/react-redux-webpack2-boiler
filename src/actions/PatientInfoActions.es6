@@ -22,10 +22,8 @@ const actions = {
 const thunks = {
   getPatientInfoClick: (patientId) => {
     return dispatch => {
-      //TODO:Implementation pending
       const request=getPatientInfoRequest(dispatch,patientId);
-    //  dispatch(actions.patientSearch(postModel));
-      fireGet(request, dispatch);
+      fireGet(request);
     };
   },
 
