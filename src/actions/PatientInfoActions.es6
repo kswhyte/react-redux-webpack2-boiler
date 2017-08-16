@@ -19,6 +19,17 @@ const actions = {
   savePatientInfoSuccess: data => ({
     type: types.SAVE_PATIENT_INFO_SUCCESS,
     data
+  }),
+  searchPatientClick: () => ({
+    type: types.SEARCH_PATIENT_CLICK
+  }),
+  searchPatientSuccess: data => ({
+    type: types.SEARCH_PATIENT_SUCCESS,
+    data
+  }),
+  searchPatientFail: err => ({
+    type: types.SEARCH_PATIENT_FAIL,
+    err
   })
 };
 
@@ -43,6 +54,7 @@ const thunks = {
 
   searchPatient: () => {
     return dispatch => {
+      dispatch(actions.searchPatientClick());
       const model = {};
       const request = searchPatientRequest(dispatch, model);
       firePost(request, dispatch);

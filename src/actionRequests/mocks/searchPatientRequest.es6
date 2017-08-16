@@ -1,18 +1,11 @@
 /*eslint no-unused-vars: */
 
-import actions from '../actions/SessionActions';
-import { URI } from '../../tools/app_config';
+import actions from '../../actions/PatientInfoActions';
+import { URI } from '../../../tools/app_config';
 
-const searchPatientRequest = (dispatch, ...args) => {
+const searchPatientRequest = (dispatch, postModel) => {
   const hostedUrlPath = URI.baseUISVC_URI;
   const postRoute = '/#fake';
-  const postModel = {
-    firstName: 'Danny',
-    lastName: 'Robinson',
-    dateOfBirth: '08/05/1989',
-    phone: '720-771-7277',
-    zipCode: '80202'
-  };
 
   const requestEnd = () => {
     const _res = {
@@ -31,3 +24,5 @@ const searchPatientRequest = (dispatch, ...args) => {
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };
 };
+
+export default searchPatientRequest;
