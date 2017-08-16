@@ -1,0 +1,16 @@
+@import "imports/_helpers.css";
+@import "imports/_layout.css";
+@import "imports/_form-elements.css";
+@import "imports/_typography.css";
+
+.search-patient-notfound-wrapper {
+  & .patient-notfound-msg {
+    margin-top: 10px;
+  }
+  /*& .new-patient-icon {
+    background-image: image-set(
+      url('~/images/new-patient-icon/-e-new_patient_icon.png') 1x,
+      url('~/images/new-patient-icon/-e-new_patient_icon@2x.png') 2x)
+    );
+  }*/
+}

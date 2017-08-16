@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SearchPatientNotFound from '../SearchPatientNotFound';
+
 import './search-patient.css';
 
 const SearchPatient = () => {
@@ -7,6 +9,8 @@ const SearchPatient = () => {
     <div className="search-patient-block">
       <h2>Patient Information</h2>
       <hr className="line" />
+
+      <SearchPatientNotFound />
     </div>
   );
 };
