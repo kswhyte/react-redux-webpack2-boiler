@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
+import React, { Component } from "react";
+import { PropTypes } from "prop-types";
 //import Moment from 'moment';
 //import isEmail from '../../helpers/isEmail';
-import { months, days, years } from '../../helpers/dateOptions';
-import states from '../../helpers/states';
-import gender from '../../helpers/genderOptions';
-import phoneType from '../../helpers/phoneTypeOptions';
+import { months, days, years } from "../../helpers/dateOptions";
+import states from "../../helpers/states";
+import gender from "../../helpers/genderOptions";
+import phoneType from "../../helpers/phoneTypeOptions";
 
-import './patient-info.css';
+import "./patient-info.css";
 
 const propTypes = {
-  children: PropTypes.object,
   generalInfo: PropTypes.object,
   submitPatientInfo: PropTypes.func
 };
@@ -19,64 +18,99 @@ class PatientInfo extends Component {
   constructor(props) {
     super(props);
     this.dataHasLoadedForTheFirstTime = false;
+    console.log("--- construcotr called", this.props);
     this.state = {
-      patientId: '',
-      firstName: '',
-      lastName: '',
-      gender: '',
-      emailAddress: '',
-      dobMonth: '',
-      dobDay: '',
-      dobYear: '',
-      phoneNumber: '',
-      phoneType: '',
-      contactMethod: '',
-      street: '',
-      city: '',
-      stateCode: '',
-      zipCode: '',
-      insuranceCarrier: '',
-      planType: '',
-      planNumber: '',
-      insuranceCarrierAlternate: '',
-      planTypeAlternate: '',
-      planNumberAlternate: '',
-      referringPhysician: '',
-      status: ''
+      patientId: "",
+      firstName: this.props.generalInfo.firstName
+        ? this.props.generalInfo.firstName
+        : "",
+      lastName: this.props.generalInfo.lastName
+        ? this.props.generalInfo.lastName
+        : "",
+      gender: this.props.generalInfo.gender
+        ? this.props.generalInfo.gender
+        : "",
+      emailAddress: this.props.generalInfo.emailAddress
+        ? this.props.generalInfo.emailAddress
+        : "",
+      dobMonth: this.props.generalInfo.dobMonth
+        ? this.props.generalInfo.dobMonth
+        : "",
+      dobDay: this.props.generalInfo.dobDay
+        ? this.props.generalInfo.dobDay
+        : "",
+      dobYear: this.props.generalInfo.dobYear
+        ? this.props.generalInfo.dobYear
+        : "",
+      phoneNumber: this.props.generalInfo.phoneNumber
+        ? this.props.generalInfo.phoneNumber
+        : "",
+      phoneType: this.props.generalInfo.phoneType
+        ? this.props.generalInfo.phoneType
+        : "",
+      contactMethod: this.props.generalInfo.contactMethod
+        ? this.props.generalInfo.contactMethod
+        : "",
+      street: this.props.generalInfo.street
+        ? this.props.generalInfo.street
+        : "",
+      city: this.props.generalInfo.city ? this.props.generalInfo.city : "",
+      stateCode: this.props.generalInfo.stateCode
+        ? this.props.generalInfo.stateCode
+        : "",
+      zipCode: this.props.generalInfo.zipCode
+        ? this.props.generalInfo.zipCode
+        : "",
+      insuranceCarrier: this.props.generalInfo.insuranceCarrier
+        ? this.props.generalInfo.insuranceCarrier
+        : "",
+      planType: this.props.generalInfo.planType
+        ? this.props.generalInfo.planType
+        : "",
+      planNumber: this.props.generalInfo.planNumber
+        ? this.props.generalInfo.planNumber
+        : "",
+      insuranceCarrierAlternate: "",
+      planTypeAlternate: "",
+      planNumberAlternate: "",
+      referringPhysician: "",
+      status: this.props.generalInfo.status ? this.props.generalInfo.status : ""
     };
 
     this.mapOptions = this.mapOptions.bind(this);
   }
-
-  componentWillUpdate() {
-    if (!this.dataHasLoadedForTheFirstTime) {
-      this.setState({
-        patientId: '',
-        firstName: this.props.generalInfo.firstName ? this.props.generalInfo.firstName : '',
-        lastName: this.props.generalInfo.lastName ? this.props.generalInfo.lastName : '',
-        gender: this.props.generalInfo.gender ? this.props.generalInfo.gender : '',
-        emailAddress: this.props.generalInfo.emailAddress ? this.props.generalInfo.emailAddress : '',
-        dobMonth: this.props.generalInfo.dobMonth ? this.props.generalInfo.dobMonth : '',
-        dobDay: this.props.generalInfo.dobDay ? this.props.generalInfo.dobDay : '',
-        dobYear: this.props.generalInfo.dobYear ? this.props.generalInfo.dobYear : '',
-        phoneNumber: this.props.generalInfo.phoneNumber ? this.props.generalInfo.phoneNumber : '',
-        phoneType: this.props.generalInfo.phoneType ? this.props.generalInfo.phoneType : '',
-        contactMethod: this.props.generalInfo.contactMethod ? this.props.generalInfo.contactMethod : '',
-        street: this.props.generalInfo.street ? this.props.generalInfo.street : '',
-        city: this.props.generalInfo.city ? this.props.generalInfo.city : '',
-        stateCode: this.props.generalInfo.stateCode ? this.props.generalInfo.stateCode : '',
-        zipCode: this.props.generalInfo.zipCode ? this.props.generalInfo.zipCode : '',
-        insuranceCarrier: this.props.generalInfo.insuranceCarrier ? this.props.generalInfo.insuranceCarrier : '',
-        planType: this.props.generalInfo.planType ? this.props.generalInfo.planType : '',
-        planNumber: this.props.generalInfo.planNumber ? this.props.generalInfo.planNumber : '',
-        insuranceCarrierAlternate: '',
-        planTypeAlternate: '',
-        planNumberAlternate: '',
-        referringPhysician: '',
-        status: this.props.generalInfo.status ? this.props.generalInfo.status : ''
-      });
-      this.dataHasLoadedForTheFirstTime = true;
+  componentWillReceiveProps(nextProps) {
+    console.log("--- next props", nextProps);
+    if (nextProps === this.props) {
+      return false;
     }
+    this.setState({
+      patientId: "",
+      firstName: nextProps.generalInfo.firstName,
+      lastName: nextProps.generalInfo.lastName,
+      gender: nextProps.generalInfo.gender,
+      emailAddress: nextProps.generalInfo.emailAddress,
+
+      dobMonth: nextProps.generalInfo.dobMonth,
+      dobDay: nextProps.generalInfo.dobDay,
+      dobYear: nextProps.generalInfo.dobYear,
+      phoneNumber: nextProps.generalInfo.phoneNumber,
+      phoneType: nextProps.generalInfo.phoneType,
+      contactMethod: nextProps.generalInfo.contactMethod,
+
+      street: nextProps.generalInfo.street,
+      city: nextProps.generalInfo.city,
+      stateCode: nextProps.generalInfo.stateCode,
+      zipCode: nextProps.generalInfo.zipCode,
+      insuranceCarrier: nextProps.generalInfo.insuranceCarrier,
+      planType: nextProps.generalInfo.planType,
+      planNumber: nextProps.generalInfo.planNumber,
+      insuranceCarrierAlternate: "",
+      planTypeAlternate: "",
+      planNumberAlternate: "",
+      referringPhysician: "",
+      status: nextProps.generalInfo.status
+    });
   }
 
   mapOptions(options) {
@@ -97,9 +131,8 @@ class PatientInfo extends Component {
             <form
               onSubmit={e => {
                 e.preventDefault();
-                console.log('-----state-----==-=-=-=-==--', this.state);
                 this.props.submitPatientInfo(this.state);
-                this.setState({ status: 'success' });
+                this.setState({ status: "success" });
               }}
             >
               {/* Row1 */}
@@ -145,7 +178,8 @@ class PatientInfo extends Component {
                     type="email"
                     value={this.state.emailAddress}
                     placeholder="Email Address"
-                    onChange={e => this.setState({ emailAddress: e.target.value })}
+                    onChange={e =>
+                      this.setState({ emailAddress: e.target.value })}
                     required
                   />
                 </div>
@@ -195,7 +229,8 @@ class PatientInfo extends Component {
                     value={this.state.phoneNumber}
                     pattern="[0-9]{10}"
                     placeholder="Phone Number"
-                    onChange={e => this.setState({ phoneNumber: e.target.value })}
+                    onChange={e =>
+                      this.setState({ phoneNumber: e.target.value })}
                     required
                   />
                 </div>
@@ -215,7 +250,8 @@ class PatientInfo extends Component {
                   <label>CONTACT METHOD &#42;</label>
                   <select
                     className="select-dropdown form-control"
-                    onChange={e => this.setState({ contactMethod: e.target.value })}
+                    onChange={e =>
+                      this.setState({ contactMethod: e.target.value })}
                     value={this.state.contactMethod}
                   >
                     <option value="sms">SMS</option>
@@ -278,7 +314,8 @@ class PatientInfo extends Component {
                   <label>PRIMARY INSURANCE CARRIER &#42;</label>
                   <select
                     className="select-dropdown form-control"
-                    onChange={e => this.setState({ insuranceCarrier: e.target.value })}
+                    onChange={e =>
+                      this.setState({ insuranceCarrier: e.target.value })}
                     value={this.state.insuranceCarrier}
                   >
                     <option value="default1">default1</option>
@@ -304,8 +341,11 @@ class PatientInfo extends Component {
                     placeholder="Plan Number"
                     type="text"
                     className="form-group"
-                    onChange={e => this.setState({ planNumber: e.target.value })}
-                    value={this.state.planNumber ? this.state.planNumber : 'PlanY'}
+                    onChange={e =>
+                      this.setState({ planNumber: e.target.value })}
+                    value={
+                      this.state.planNumber ? this.state.planNumber : "PlanY"
+                    }
                     required
                   />
                 </div>
@@ -317,7 +357,10 @@ class PatientInfo extends Component {
                   <label>ALTERNATE INSURANCE CARRIER</label>
                   <select
                     className="select-dropdown form-control"
-                    onChange={e => this.setState({ insuranceCarrierAlternate: e.target.value })}
+                    onChange={e =>
+                      this.setState({
+                        insuranceCarrierAlternate: e.target.value
+                      })}
                   >
                     <option value="default1">default1</option>
                     <option value="default2">default2</option>
@@ -327,7 +370,8 @@ class PatientInfo extends Component {
                   <label>PLAN TYPE &#42;</label>
                   <select
                     className="select-dropdown form-control"
-                    onChange={e => this.setState({ planTypeAlternate: e.target.value })}
+                    onChange={e =>
+                      this.setState({ planTypeAlternate: e.target.value })}
                   >
                     <option value="ppo">PPO</option>
                     <option value="ppo2">PPO2</option>
@@ -339,8 +383,13 @@ class PatientInfo extends Component {
                     className="form-group"
                     type="text"
                     placeholder="Plan Number"
-                    onChange={e => this.setState({ planNumberAlternate: e.target.value })}
-                    value={this.state.planNumberAlternate ? this.state.planNumberAlternate : 'PlanX'}
+                    onChange={e =>
+                      this.setState({ planNumberAlternate: e.target.value })}
+                    value={
+                      this.state.planNumberAlternate
+                        ? this.state.planNumberAlternate
+                        : "PlanX"
+                    }
                   />
                 </div>
               </div>
@@ -363,12 +412,12 @@ class PatientInfo extends Component {
               <div className="row sm-spacer">
                 <div className="col-sm-5">
                   <div>
-                    {this.state.status === 'success' &&
+                    {this.state.status === "success" &&
                       <div className="alerts">
                         <div className={`alert alert-success`} role="alert">
                           Patient Details Saved Successfully!<a
                             onClick={() => {
-                              this.setState({ status: '' });
+                              this.setState({ status: "" });
                             }}
                             className="close"
                             aria-label="close"
@@ -408,5 +457,10 @@ class PatientInfo extends Component {
 }
 
 PatientInfo.propTypes = propTypes;
+
+PatientInfo.defaultProps = {
+  generalInfo: {},
+  submitPatientInfo: () => {}
+};
 
 export default PatientInfo;

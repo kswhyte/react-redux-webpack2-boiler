@@ -13,12 +13,14 @@ import expect from 'expect';
 
 const context = {};
 
+const logout = () => {console.log("Log Out!")};
+
 const stories = storiesOf('Header', module);
 
 stories.add('Story', () => {
   const headerStory = (
     <StaticRouter context={context} >
-        <Header/>
+        <Header logout={logout} />
     </StaticRouter>);
 
   specs(() => describe('Show a successful alert', () => {
