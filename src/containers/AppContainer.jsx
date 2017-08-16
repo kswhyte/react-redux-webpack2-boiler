@@ -90,8 +90,8 @@ class App extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.user.isActive) {
-      nextProps.dispatch(routeActions.changeRoute({ route: '/' }));
+    if (!nextProps.user.isActive && window.location.pathname.match(/(\/resetpassword|\/resetpasswordconfirm|\/changepassword|\/changepasswordconfirm)/) === null) {
+      nextProps.dispatch(routeActions.changeRoute({ route: '/login' }));
     }
   }
 
