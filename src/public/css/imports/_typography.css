@@ -92,10 +92,11 @@ a:any-link {
   &.btn-link {
     color: var(--white);
     text-transform: uppercase;
+    min-width:275px;
+    padding: 14px 20px;
   }
   &.btn-link:hover {
     width: 276px;
-    height: 40px;
     background: var(--primary-color);
     color: var(--white);
     border: 1px solid #df907a;
