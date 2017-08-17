@@ -13,7 +13,7 @@ const searchPatientRequest = (dispatch, postModel) => {
           patientId: 1,
           firstName: 'Julialemon',
           lastName: 'Sugerhillgang',
-          dateOfBirth: 'Feb 27, 1000',
+          dateOfBirth: 'Feb 27, 1900',
           phone: '720-771-7277',
           zipCode: '80202',
           modified: 'Jun 16, 2017'
@@ -21,7 +21,7 @@ const searchPatientRequest = (dispatch, postModel) => {
           patientId: 2,
           firstName: 'Julialemon',
           lastName: 'Sugarhillgang',
-          dateOfBirth: 'Feb 27, 1000',
+          dateOfBirth: 'Feb 27, 1900',
           phone: '720-771-7277',
           zipCode: '80202',
           modified: 'Jun 16, 2017'

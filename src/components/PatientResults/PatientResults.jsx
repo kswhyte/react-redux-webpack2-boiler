@@ -29,7 +29,7 @@ const PatientResults = (props) => {
               return (
                 <tr key={person.patientId} >
                   <td>{person.firstName} {person.lastName}</td>
-                  <td>{Moment(person.dateOfBirth).format('MMMM Do YYYY')}</td>
+                  <td>{Moment(person.dateOfBirth).format('MMMM Do, YYYY')}</td>
                   <td>{person.phone}</td>
                   <td>{person.zipCode}</td>
                   <td>{person.modified}</td>

@@ -20,10 +20,13 @@
     }
 
     & .patient-table td:first-child {
-        width: 25%;
+        width: 20%;
+    }
+    & .patient-table td:nth-child(2) {
+        width: 15%;
     }
     & .patient-table td:not(first-child) {
-        width: 12%;
+        width: 10%;
     }
     & .patient-table td:last-child {
         width: 20%;

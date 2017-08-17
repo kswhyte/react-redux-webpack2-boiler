@@ -26,7 +26,8 @@ const propTypes = {
   dispatch: PropTypes.func,
   showResults: PropTypes.bool,
   noResults: PropTypes.bool,
-  validationError: PropTypes.bool
+  validationError: PropTypes.bool,
+  patientSearchResults: PropTypes.array
 };
 
 class SearchPatientContainer extends Component {
