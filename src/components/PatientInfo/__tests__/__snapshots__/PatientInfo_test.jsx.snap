@@ -28,7 +28,7 @@ exports[`Patient Info Story 1`] = `
               placeholder="Patient First Name"
               required={true}
               type="text"
-              value=""
+              value="test"
             />
           </div>
           <div

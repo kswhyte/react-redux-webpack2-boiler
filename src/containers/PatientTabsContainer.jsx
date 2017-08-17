@@ -10,7 +10,7 @@ let createHandlers = function(dispatch) {
   };
 
 let submitPatientInfo = data => {
-    dispatch(patientInfoActions.savePatientInfo(data));
+    dispatch(patientInfoActions.searchPatientClick(data));
   };
 
   return {
