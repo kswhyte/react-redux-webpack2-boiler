@@ -26,7 +26,8 @@ const propTypes = {
   dispatch: PropTypes.func,
   showResults: PropTypes.bool,
   noResults: PropTypes.bool,
-  validationError: PropTypes.bool
+  validationError: PropTypes.bool,
+  patientSearchResults: PropTypes.array
 };
 
 class SearchPatientContainer extends Component {
@@ -41,17 +42,24 @@ class SearchPatientContainer extends Component {
 
   render() {
     return (
-      <div className="search-patient-container">
-        <SearchPatient
-          submitSearch={this.handlers.searchPatient}
-          validationError={this.props.validationError}
-          showError={this.handlers.showError}
-        />
-        <h3 className="sub-header">Available Patient Records</h3>
-        {this.props.showResults && <PatientResults />}
-        {this.props.noResults && <SearchPatientNotFound />}
-      </div>
-    );
+        <div className="search-patient-container">
+            <SearchPatient
+              submitSearch={this.handlers.searchPatient}
+              validationError={this.props.validationError}
+              showError={this.handlers.showError}
+            />
+            <h3 className="sub-header">Available Patient Records</h3>
+            {(!this.props.showResults && !this.props.noResults) && (
+              <hr className="line" />
+            )}
+            {(this.props.showResults) && (
+              <PatientResults patientSearchResults={this.props.patientSearchResults} />
+            )}
+            {(this.props.noResults) && (
+              <SearchPatientNotFound />
+            )}
+        </div>
+      );
   }
 }
 
@@ -59,13 +67,14 @@ SearchPatientContainer.propTypes = propTypes;
 
 const mapStateToProps = state => {
   //Select the specific state items you would like here
-  const { showResults, noResults, validationError } = state.PatientInfo;
+  const { showResults, noResults, validationError, patientSearchResults } = state.PatientInfo;
 
   //return state items to be added as props to the container
   return {
     showResults,
     noResults,
-    validationError
+    validationError,
+    patientSearchResults
   };
 };
 

@@ -1,11 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Story 1`] = `
+exports[`PatientResults 1`] = `
 <div
-  className="patient-results-wrapper"
+  className="patient-results-wrapper sm-spacer"
 >
-  <h1>
-    Patient Results
-  </h1>
+  <h3>
+    Available Patient Records
+  </h3>
+  <hr
+    className="sm-line"
+  />
+  <table
+    className="patient-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Full Name
+        </th>
+        <th>
+          Date of Birth
+        </th>
+        <th>
+          Phone
+        </th>
+        <th>
+          Zip
+        </th>
+        <th>
+          Modified
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Julialemon
+           
+          Sugerhillgang
+        </td>
+        <td>
+          February 27th, 1900
+        </td>
+        <td>
+          720-771-7277
+        </td>
+        <td>
+          80202
+        </td>
+        <td>
+          Jun 16, 2017
+        </td>
+        <td>
+          <button>
+            VIEW THIS RECORD
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Julialemon
+           
+          Sugarhillgang
+        </td>
+        <td>
+          February 27th, 1900
+        </td>
+        <td>
+          720-771-7277
+        </td>
+        <td>
+          80202
+        </td>
+        <td>
+          Jun 16, 2017
+        </td>
+        <td>
+          <button>
+            VIEW THIS RECORD
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

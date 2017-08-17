@@ -78,29 +78,39 @@ const SearchPatient = props => {
               {mapOptions(days)}
             </select>
           </div>
-
           <div className="col-sm-1 no-margin">
             <label />
-            <select id="birthYear" className="select-dropdown dropdown-affiliate form-control" required>
+            <select
+              id="birthYear"
+              className="select-dropdown dropdown-affiliate form-control"
+              required
+            >
               {mapOptions(years)}
             </select>
           </div>
           <div className="col-sm-3 no-margin">
-            <label htmlFor="phone">Phone</label>
-            <input type="text" id="phone" placeholder="(xxx) xxx-xxxx" />
-            {props.validationError === 'PHONE' && <div className="error-title">Invalid Phone</div>}
+              <label htmlFor="phone">PHONE</label>
+              <input type="tel" id="phone" placeholder="(xxx) xxx-xxxx" />
+              {
+                  (props.validationError === 'PHONE') && (
+                      <div className="error-title">Invalid Phone</div>
+                  )
+              }
           </div>
           <div className="col-sm-2 no-margin">
-            <label htmlFor="zipCode">Zip Code</label>
-            <input type="text" id="zipCode" placeholder="Zip Code" />
-            {props.validationError === 'ZIP' && <h5>Invalid Zip Code</h5>}
+              <label htmlFor="zipCode">ZIP CODE</label>
+              <input type="text" id="zipCode" placeholder="Zip Code" />
+              {
+                  (props.validationError === 'ZIP') && (
+                      <h5>Invalid Zip Code</h5>
+                  )
+              }
           </div>
           <div className="col-sm-3 no-margin">
-            <button>FIND PATIENT RECORD</button>
+              <button>FIND PATIENT RECORD</button>
           </div>
         </div>
       </form>
-      <hr className="line" />
     </div>
   );
 };

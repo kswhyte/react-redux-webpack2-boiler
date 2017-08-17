@@ -997,12 +997,12 @@ exports[`Search Patient Story 1`] = `
         <label
           htmlFor="phone"
         >
-          Phone
+          PHONE
         </label>
         <input
           id="phone"
           placeholder="(xxx) xxx-xxxx"
-          type="text"
+          type="tel"
         />
       </div>
       <div
@@ -1011,7 +1011,7 @@ exports[`Search Patient Story 1`] = `
         <label
           htmlFor="zipCode"
         >
-          Zip Code
+          ZIP CODE
         </label>
         <input
           id="zipCode"
@@ -1028,8 +1028,5 @@ exports[`Search Patient Story 1`] = `
       </div>
     </div>
   </form>
-  <hr
-    className="line"
-  />
 </div>
 `;
