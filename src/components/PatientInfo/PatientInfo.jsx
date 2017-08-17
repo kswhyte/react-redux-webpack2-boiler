@@ -382,25 +382,6 @@ class PatientInfo extends Component {
                   </div>
                 </div>
               </div>
-
-              <div className="row sm-spacer">
-                <div className="break-line" />
-              </div>
-
-              {/* Buttons */}
-              <div className="row xs-spacer sm-spacer">
-                <div className="col-sm-6 no-padding">
-                  <button className="back-btn" tabIndex={1}>
-                    BACK
-                  </button>
-                </div>
-
-                <div className="col-sm-6 no-padding">
-                  <button className="next-btn" type="submit" tabIndex={1}>
-                    NEXT
-                  </button>
-                </div>
-              </div>
             </form>
           </div>
         </div>

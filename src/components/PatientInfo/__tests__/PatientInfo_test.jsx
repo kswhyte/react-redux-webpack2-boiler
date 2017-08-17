@@ -36,21 +36,6 @@ stories.add('Patient Info Story', () => {
         expect(output.find('label').length).toEqual(21);
       });
 
-      it('Should have two call-to-action buttons', () => {
-        let output = mount(patientInfoStory);
-        expect(output.find('button').length).toEqual(2);
-      });
-
-      it('Should have two buttons: "BACK" and "NEXT"', () => {
-        let output = mount(patientInfoStory);
-        expect(output.find('.back-btn').length).toEqual(1);
-        expect(output.find('.next-btn').length).toEqual(1);
-      });
-
-      it('Should have a break-line div', () => {
-        let output = mount(patientInfoStory);
-        expect(output.find('.break-line').length).toEqual(1);
-      });
     })
   );
   return patientInfoStory;

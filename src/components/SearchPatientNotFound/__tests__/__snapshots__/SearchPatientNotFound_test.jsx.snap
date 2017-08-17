@@ -23,7 +23,7 @@ exports[`Search Patient Story 1`] = `
         className="col-xs-4 no-margin"
       >
         <button
-          className="primary-btn"
+          className="primary-btn long"
           type="submit"
         >
           Enter New Patient

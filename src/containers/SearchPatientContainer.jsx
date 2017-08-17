@@ -47,6 +47,7 @@ class SearchPatientContainer extends Component {
           validationError={this.props.validationError}
           showError={this.handlers.showError}
         />
+        <h3 className="sub-header">Available Patient Records</h3>
         {this.props.showResults && <PatientResults />}
         {this.props.noResults && <SearchPatientNotFound />}
       </div>

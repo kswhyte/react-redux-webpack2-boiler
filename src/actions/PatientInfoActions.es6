@@ -1,11 +1,8 @@
 import searchPatientRequest from '../actionRequests/mocks/searchPatientRequest';
-import getPatientInfoRequest from '../actionRequests/mocks/patientInfoRequest';
+import {getPatientInfoRequest,savePatientInfoRequest} from '../actionRequests/mocks/patientInfoRequest';
 import fireGet from '../../tools/mocks/fireGet';
 import firePost from '../../tools/mocks/firePost';
 import * as types from '../constants/actionTypes';
-
-let savePatientInfoRequest = () => {return};
-
 const actions = {
 
    getPatientInfo: data => ({
