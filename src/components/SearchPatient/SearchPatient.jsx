@@ -57,11 +57,11 @@ const SearchPatient = props => {
             >
                 <div className="row" >
                     <div className="col-sm-5">
-                        <label htmlFor="firstName">First Name &#42;</label>
+                        <label htmlFor="firstName">FIRST NAME &#42;</label>
                         <input type="text" id="firstName" placeholder="First Name" required />
                     </div>
                     <div className="col-sm-5">
-                        <label htmlFor="lastName">Last Name &#42;</label>
+                        <label htmlFor="lastName">LAST NAME &#42;</label>
                         <input type="text" id="lastName" placeholder="Last Name" required />
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const SearchPatient = props => {
                       </select>
                     </div>
                     <div className="col-sm-3 no-margin">
-                        <label htmlFor="phone">Phone</label>
+                        <label htmlFor="phone">PHONE</label>
                         <input type="text" id="phone" placeholder="(xxx) xxx-xxxx" />
                         {
                             (props.validationError === 'PHONE') && (
@@ -108,7 +108,7 @@ const SearchPatient = props => {
                         }
                     </div>
                     <div className="col-sm-2 no-margin">
-                        <label htmlFor="zipCode">Zip Code</label>
+                        <label htmlFor="zipCode">ZIP CODE</label>
                         <input type="text" id="zipCode" placeholder="Zip Code" />
                         {
                             (props.validationError === 'ZIP') && (

@@ -2,34 +2,38 @@
 
 .patient-results-wrapper {
 
-    & .appt-tables {
+    & h3 {
+        color: var(--light-grey);
+    }
+
+    & .patient-table {
         margin-top: 20px;
         width: 100%;
     }
 
-    & .appt-tables th {
+    & .patient-table th {
         padding: 0px 10px 10px;
         font-family: Open Sans;
         font-size: 12px;
         font-weight: bold;
     }
 
-    & .appt-tables td:first-child {
+    & .patient-table td:first-child {
         width: 25%;
     }
-    & .appt-tables td:not(first-child) {
+    & .patient-table td:not(first-child) {
         width: 12%;
     }
-    & .appt-tables td:last-child {
+    & .patient-table td:last-child {
         width: 20%;
     }
-    & .appt-tables td {
+    & .patient-table td {
         font-family: Open Sans;
         font-size: 12px;
         padding: 13px 10px 13px;
         empty-cells: show;
     }
-    & .appt-tables tr:not(.no-line) {
+    & .patient-table tr:not(.no-line) {
         border-bottom: solid 2px var(--light-grey);
     }
 
