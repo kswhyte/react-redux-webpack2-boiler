@@ -4,9 +4,9 @@ exports[`Search Patient Story 1`] = `
 <div
   className="search-patient-block"
 >
-  <h3>
+  <h2>
     Patient Information
-  </h3>
+  </h2>
   <hr
     className="sm-line"
   />
@@ -22,7 +22,7 @@ exports[`Search Patient Story 1`] = `
         <label
           htmlFor="firstName"
         >
-          FIRST NAME *
+          First Name *
         </label>
         <input
           id="firstName"
@@ -37,7 +37,7 @@ exports[`Search Patient Story 1`] = `
         <label
           htmlFor="lastName"
         >
-          LAST NAME *
+          Last Name *
         </label>
         <input
           id="lastName"
@@ -1002,7 +1002,7 @@ exports[`Search Patient Story 1`] = `
         <input
           id="phone"
           placeholder="(xxx) xxx-xxxx"
-          type="text"
+          type="tel"
         />
       </div>
       <div

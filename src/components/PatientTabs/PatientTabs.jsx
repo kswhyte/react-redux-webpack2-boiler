@@ -78,6 +78,26 @@ export class PatientTabs extends Component {
           />
           <Route exact path="/patientinfo/notes" render={() => <PatientNotes notes={this.props.PatientInfo.notes} />} />
         </div>
+
+        <div className="row sm-spacer">
+          <div className="break-line" />
+        </div>
+
+
+         {/* Buttons */}
+         <div className="row xs-spacer sm-spacer">
+          <div className="col-sm-6 no-padding">
+            <button className="back-btn primary-btn long" tabIndex={1}>
+              BACK
+            </button>
+          </div>
+
+          <div className="col-sm-6 no-padding">
+            <button className="next-btn primary-btn long" type="submit" tabIndex={1}>
+              NEXT
+            </button>
+          </div>
+       </div>
       </div>
     )
   }

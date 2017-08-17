@@ -27,13 +27,13 @@ const searchPatientRequest = (dispatch, postModel) => {
           modified: 'Jun 16, 2017'
       }]
     };
-    dispatch(actions.searchPatientSuccess(_res.body));
+   // dispatch(actions.searchPatientSuccess(_res.body));
 
     // FOR TESTING ERRORS
-    // _res.err = {
+     _res.err = {
 
-    // };
-    // dispatch(actions.searchPatientFail(_res.err));
+     };
+    dispatch(actions.searchPatientFail(_res.err));
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };
