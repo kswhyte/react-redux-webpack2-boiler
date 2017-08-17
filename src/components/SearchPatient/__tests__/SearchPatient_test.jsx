@@ -22,6 +22,18 @@ stories.add('Search Patient Story', () => {
             let output = shallow(searchPatientStory);
             expect(output.find('.search-patient-block').length).toEqual(1);
         });
+        it('Should have a header element that says "Patient Information"', () => {
+            let output = shallow(searchPatientStory);
+            expect(output.find('h2').text()).toContain('Patient Information');
+        });
+        it('Should have four input fields', () => {
+            let output = shallow(searchPatientStory);
+            expect(output.find('input').length).toEqual(4);
+        });
+        it('Should have 2 select fields', () => {
+            let output = shallow(searchPatientStory);
+            expect(output.find('select').length).toEqual(3);
+        });
     }));
     return searchPatientStory;
 });
