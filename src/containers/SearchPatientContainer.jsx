@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchPatient from '../components/SearchPatient';
+import SearchPatientNotFound from '../components/SearchPatientNotFound';
 import PatientResults from '../components/PatientResults';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -7,14 +8,13 @@ import { PropTypes } from 'prop-types';
 import patientInfoActions from '../actions/PatientInfoActions';
 
 let createHandlers = function(dispatch) {
-
   let searchPatient = data => {
     dispatch(patientInfoActions.searchPatient(data));
   };
 
   let showError = err => {
-    dispatch(patientInfoActions.searchValidationError(err))
-  }
+    dispatch(patientInfoActions.searchValidationError(err));
+  };
 
   return {
     searchPatient,
@@ -41,20 +41,16 @@ class SearchPatientContainer extends Component {
 
   render() {
     return (
-        <div className="search-patient-container">
-            <SearchPatient
-              submitSearch={this.handlers.searchPatient}
-              validationError={this.props.validationError}
-              showError={this.handlers.showError}
-            />
-            {(this.props.showResults) && (
-              <PatientResults />
-            )}
-            {(this.props.noResults) && (
-              <h1>No Results</h1>
-            )}
-        </div>
-      );
+      <div className="search-patient-container">
+        <SearchPatient
+          submitSearch={this.handlers.searchPatient}
+          validationError={this.props.validationError}
+          showError={this.handlers.showError}
+        />
+        {this.props.showResults && <PatientResults />}
+        {this.props.noResults && <SearchPatientNotFound />}
+      </div>
+    );
   }
 }
 
