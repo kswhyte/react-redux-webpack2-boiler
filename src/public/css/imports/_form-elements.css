@@ -48,7 +48,7 @@ form {
     }
     &.dropdown-affiliate {
       padding: 4px 0 !important;
-      margin: 2px 0;
+      margin: 0;
     }
     &.form-control {
       background-image: image-set(url('~/images/dropdown_triangles/enabled-dark/triangle_drk.svg'));

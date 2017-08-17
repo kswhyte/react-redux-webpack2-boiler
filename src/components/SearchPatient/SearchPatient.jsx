@@ -103,7 +103,7 @@ const SearchPatient = props => {
                         <input type="text" id="phone" placeholder="(xxx) xxx-xxxx" />
                         {
                             (props.validationError === 'PHONE') && (
-                                <h5>Invalid Phone</h5>
+                                <div className="error-title">Invalid Phone</div>
                             )
                         }
                     </div>
