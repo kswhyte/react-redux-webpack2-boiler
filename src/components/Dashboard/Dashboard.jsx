@@ -17,14 +17,14 @@ export const Dashboard = props => {
 
         <div className="sm-spacer">
           <div className="col-xs-4">
-            <button className="new-session-button primary-btn" tabIndex="1" onClick={props.startSessionClick}>
+            <button className="new-session-button primary-btn long" tabIndex="1" onClick={props.startSessionClick}>
               BEGIN NEW SESSION
             </button>
           </div>
         </div>
         <div className="sm-spacer">
           <div className="col-xs-offset-1 col-xs-4">
-            <button className="primary-btn" tabIndex="1">
+            <button className="primary-btn long" tabIndex="1">
               MANAGE MY ACCOUNT
             </button>
           </div>

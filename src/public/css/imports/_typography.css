@@ -44,9 +44,19 @@ h1 {
 
 h2 {
   font-family: "Arial Bold", sans-serif;
-  /*font-size: 24px;*/
   font-size: 48px;
   font-weight: bold;
+}
+
+h3 {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 600;
+
+  &.sub-header {
+    border-bottom: solid 2px var(--pale-grey);
+    padding-bottom: 10px;
+  }
 }
 
 h5 {
@@ -82,10 +92,11 @@ a:any-link {
   &.btn-link {
     color: var(--white);
     text-transform: uppercase;
+    min-width:275px;
+    padding: 14px 20px;
   }
   &.btn-link:hover {
     width: 276px;
-    height: 40px;
     background: var(--primary-color);
     color: var(--white);
     border: 1px solid #df907a;
@@ -105,8 +116,6 @@ a:any-link {
 
 button,
 .primary-btn {
-  width: 276px;
-  height: 40px;
   background: var(--primary-color);
   color: var(--white);
   border: 1px solid #df907a;
@@ -121,4 +130,8 @@ button,
   text-align: center;
   cursor: pointer;
   border-radius: 3px;
+
+  &.long {
+    min-width: 276px;
+  }
 }
