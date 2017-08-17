@@ -47,6 +47,9 @@ class SearchPatientContainer extends Component {
               validationError={this.props.validationError}
               showError={this.handlers.showError}
             />
+            {(!this.props.showResults && !this.props.noResults) && (
+              <hr className="line" />
+            )}
             {(this.props.showResults) && (
               <PatientResults />
             )}

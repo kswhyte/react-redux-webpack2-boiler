@@ -8,19 +8,25 @@
     }
 
     & .appt-tables th {
-        padding: 0px 0px 15px;
+        padding: 0px 10px 10px;
         font-family: Open Sans;
         font-size: 12px;
         font-weight: bold;
     }
 
-    & .appt-tables td {
-        width: 16.666%;
+    & .appt-tables td:first-child {
+        width: 25%;
+    }
+    & .appt-tables td:not(first-child) {
+        width: 12%;
+    }
+    & .appt-tables td:last-child {
+        width: 20%;
     }
     & .appt-tables td {
         font-family: Open Sans;
         font-size: 12px;
-        padding: 20px 10px 20px;
+        padding: 13px 10px 13px;
         empty-cells: show;
     }
     & .appt-tables tr:not(.no-line) {
@@ -34,7 +40,7 @@
         position: relative;
         display: inline-block;
         box-sizing: border-box;
-        padding: 6px 20px;
+        padding: 6px 10px;
         font-family: 'Open Sans';
         font-size: 10px;
         line-height: 1;

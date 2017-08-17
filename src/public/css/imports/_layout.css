@@ -109,6 +109,20 @@ nav,
   width: 830px;
 }
 
+/* Horizontal rules */
+
+.line {
+  width: 830px;
+  border: solid 2px #cad2da;
+  border: solid 2px var(--cloudy-blue);
+}
+
+.sm-line {
+    width: 830px;
+    border: solid 1px #cad2da;
+    border: solid 1px var(--cloudy-blue);
+}
+
 /* THREE-UI OVERRIDES */
 .xs-spacer {
   margin-top: 15px;

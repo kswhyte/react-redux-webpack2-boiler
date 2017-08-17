@@ -8,16 +8,16 @@ const propTypes = {};
 
 const tempPeeps = [{
     patientId: 1,
-    firstName: 'Bro',
-    lastName: 'Beans',
+    firstName: 'Julialemon',
+    lastName: 'Sugerhillgang',
     dateOfBirth: 'Feb 27, 1000',
     phone: '720-771-7277',
     zipCode: '80202',
     modified: 'Jun 16, 2017'
 },{
     patientId: 2,
-    firstName: 'Bro2',
-    lastName: 'Beans',
+    firstName: 'Julialemon',
+    lastName: 'Sugarhillgang',
     dateOfBirth: 'Feb 27, 1000',
     phone: '720-771-7277',
     zipCode: '80202',
@@ -26,8 +26,9 @@ const tempPeeps = [{
 
 const PatientResults = () => {
   return (
-    <div className="patient-results-wrapper">
+    <div className="patient-results-wrapper sm-spacer">
         <h3>Available Patient Records</h3>
+        <hr className="sm-line" />
         <table className="appt-tables">
           <thead>
             <tr>

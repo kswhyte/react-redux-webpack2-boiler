@@ -47,7 +47,7 @@ const mapOptions = (options) => {
 const SearchPatient = props => {
     return (
         <div className="search-patient-block">
-            <h2>Patient Information</h2>
+            <h3>Patient Information</h3>
             <hr className="sm-line" />
             <form
                 onSubmit={e => {
@@ -121,7 +121,6 @@ const SearchPatient = props => {
                     </div>
                 </div>
             </form>
-            <hr className="line" />
         </div>
     );
 };
