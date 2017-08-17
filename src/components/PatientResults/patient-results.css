@@ -16,6 +16,7 @@
         font-family: Open Sans;
         font-size: 12px;
         font-weight: bold;
+        border-bottom: solid 2px var(--light-grey);
     }
 
     & .patient-table td:first-child {
@@ -34,7 +35,7 @@
         empty-cells: show;
     }
     & .patient-table tr:not(.no-line) {
-        border-bottom: solid 2px var(--light-grey);
+        border-bottom: solid 1px var(--light-grey);
     }
 
     & td > button {

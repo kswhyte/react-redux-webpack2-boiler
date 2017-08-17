@@ -51,7 +51,7 @@ class SearchPatientContainer extends Component {
               <hr className="line" />
             )}
             {(this.props.showResults) && (
-              <PatientResults />
+              <PatientResults patientSearchResults={this.props.patientSearchResults} />
             )}
             {(this.props.noResults) && (
               <h1>No Results</h1>
@@ -65,13 +65,14 @@ SearchPatientContainer.propTypes = propTypes;
 
 const mapStateToProps = state => {
   //Select the specific state items you would like here
-  const { showResults, noResults, validationError } = state.PatientInfo;
+  const { showResults, noResults, validationError, patientSearchResults } = state.PatientInfo;
 
   //return state items to be added as props to the container
   return {
     showResults,
     noResults,
-    validationError
+    validationError,
+    patientSearchResults
   };
 };
 

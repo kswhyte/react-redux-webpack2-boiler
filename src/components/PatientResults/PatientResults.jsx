@@ -1,30 +1,14 @@
 import React from 'react';
-// import { PropTypes } from 'prop-types';
-// import Moment from 'moment';
+import { PropTypes } from 'prop-types';
+import Moment from 'moment';
 
 import './patient-results.css';
 
-const propTypes = {};
+const propTypes = {
+    patientSearchResults: PropTypes.array
+};
 
-const tempPeeps = [{
-    patientId: 1,
-    firstName: 'Julialemon',
-    lastName: 'Sugerhillgang',
-    dateOfBirth: 'Feb 27, 1000',
-    phone: '720-771-7277',
-    zipCode: '80202',
-    modified: 'Jun 16, 2017'
-},{
-    patientId: 2,
-    firstName: 'Julialemon',
-    lastName: 'Sugarhillgang',
-    dateOfBirth: 'Feb 27, 1000',
-    phone: '720-771-7277',
-    zipCode: '80202',
-    modified: 'Jun 16, 2017'
-}]
-
-const PatientResults = () => {
+const PatientResults = (props) => {
   return (
     <div className="patient-results-wrapper sm-spacer">
         <h3>Available Patient Records</h3>
@@ -41,11 +25,11 @@ const PatientResults = () => {
             </tr>
           </thead>
           <tbody>
-            {tempPeeps.map(person => {
+            {props.patientSearchResults.map(person => {
               return (
                 <tr key={person.patientId} >
                   <td>{person.firstName} {person.lastName}</td>
-                  <td>{person.dateOfBirth}</td>
+                  <td>{Moment(person.dateOfBirth).format('MMMM Do YYYY')}</td>
                   <td>{person.phone}</td>
                   <td>{person.zipCode}</td>
                   <td>{person.modified}</td>

@@ -9,9 +9,23 @@ const searchPatientRequest = (dispatch, postModel) => {
 
   const requestEnd = () => {
     const _res = {
-      body: {
-        //Sami to fill in?
-      }
+      body: [{
+          patientId: 1,
+          firstName: 'Julialemon',
+          lastName: 'Sugerhillgang',
+          dateOfBirth: 'Feb 27, 1000',
+          phone: '720-771-7277',
+          zipCode: '80202',
+          modified: 'Jun 16, 2017'
+      },{
+          patientId: 2,
+          firstName: 'Julialemon',
+          lastName: 'Sugarhillgang',
+          dateOfBirth: 'Feb 27, 1000',
+          phone: '720-771-7277',
+          zipCode: '80202',
+          modified: 'Jun 16, 2017'
+      }]
     };
     dispatch(actions.searchPatientSuccess(_res.body));
 
