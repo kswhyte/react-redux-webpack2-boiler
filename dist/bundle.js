@@ -48079,6 +48079,7 @@ var SearchPatientContainer = function (_Component) {
           validationError: this.props.validationError,
           showError: this.handlers.showError
         }),
+        _react2.default.createElement('hr', { className: 'line' }),
         _react2.default.createElement(
           'h3',
           { className: 'sub-header' },
