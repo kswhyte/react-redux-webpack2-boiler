@@ -11,13 +11,18 @@ const patientInfoReducer = (store = {}, action) => {
       return {...store,patientInfo:{...store.patientInfo,generalInfo:savedPatient}};
     }
     case types.SEARCH_PATIENT_SUCCESS: {
-      return {...store, showResults: true, noResults: false, validationError: null };
+      return {...store, showResults: true, noResults: false, validationError: null, patientSearchResults: action.data };
     }
     case types.SEARCH_PATIENT_FAIL: {
       return {...store, showResults: false, noResults: true, validationError: null};
     }
     case types.SEARCH_VALIDATION_ERROR: {
       return {...store, validationError: action.err}
+    }
+    case types.ENTER_NEW_PATIENT: {
+      let newStore = Object.assign({}, store);
+      newStore.generalInfo = action.data;
+      return newStore;
     }
     default:
       return store;

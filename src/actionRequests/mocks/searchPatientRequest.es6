@@ -9,17 +9,31 @@ const searchPatientRequest = (dispatch, postModel) => {
 
   const requestEnd = () => {
     const _res = {
-      body: {
-        //Sami to fill in?
-      }
+      body: [{
+          patientId: 1,
+          firstName: 'Julialemon',
+          lastName: 'Sugerhillgang',
+          dateOfBirth: 'Feb 27, 1900',
+          phone: '720-771-7277',
+          zipCode: '80202',
+          modified: 'Jun 16, 2017'
+      },{
+          patientId: 2,
+          firstName: 'Julialemon',
+          lastName: 'Sugarhillgang',
+          dateOfBirth: 'Feb 27, 1900',
+          phone: '720-771-7277',
+          zipCode: '80202',
+          modified: 'Jun 16, 2017'
+      }]
     };
-    dispatch(actions.searchPatientSuccess(_res.body));
+   // dispatch(actions.searchPatientSuccess(_res.body));
 
     // FOR TESTING ERRORS
-    // _res.err = {
+     _res.err = {
 
-    // };
-    // dispatch(actions.searchPatientFail(_res.err));
+     };
+    dispatch(actions.searchPatientFail(_res.err));
   };
 
   return { hostedUrlPath, postRoute, requestEnd, postModel };

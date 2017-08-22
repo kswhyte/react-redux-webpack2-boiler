@@ -2,22 +2,15 @@
 @import "imports/_layout.css";
 @import "imports/_form-elements.css";
 
-.line {
-  width: 830px;
-  border: solid 2px #cad2da;
-  border: solid 2px var(--cloudy-blue);
-}
-
-.sm-line {
-    width: 830px;
-    border: solid 1px #cad2da;
-    border: solid 1px var(--cloudy-blue);
-}
-
 .search-patient-block {
+    margin-top: 20px;
     & .error-title {
         margin-top: 5px;
         color: var(--form-error-color);
         font-size: 12px;
+    }
+    & button {
+        margin-left: 20px;
+        margin-right: 30px;
     }
 }

@@ -1,0 +1,10 @@
+@import "imports/_helpers.css";
+@import "imports/_layout.css";
+@import "imports/_form-elements.css";
+@import "imports/_typography.css";
+
+.search-patient-notfound-wrapper {
+  & .patient-notfound-msg {
+    margin-top: 10px;
+  }
+}

@@ -107,6 +107,21 @@ nav,
 .router-wrapper:not(.signed-out) {
   margin: 0 auto;
   width: 830px;
+  padding-bottom: 20px;
+}
+
+/* Horizontal rules */
+
+.line {
+  width: 830px;
+  border: solid 2px #cad2da;
+  border: solid 2px var(--cloudy-blue);
+}
+
+.sm-line {
+    width: 830px;
+    border: solid 1px #cad2da;
+    border: solid 1px var(--cloudy-blue);
 }
 
 /* THREE-UI OVERRIDES */
@@ -115,7 +130,7 @@ nav,
 }
 
 .sm-spacer {
-  margin-top: 30px;
+  margin-top: 42px;
 }
 
 .md-spacer {

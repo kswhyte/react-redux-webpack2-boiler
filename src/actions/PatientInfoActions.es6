@@ -3,7 +3,6 @@ import {getPatientInfoRequest,savePatientInfoRequest} from '../actionRequests/mo
 import fireGet from '../../tools/mocks/fireGet';
 import firePost from '../../tools/mocks/firePost';
 import * as types from '../constants/actionTypes';
-
 const actions = {
 
    getPatientInfo: data => ({
@@ -33,14 +32,20 @@ const actions = {
   searchValidationError: err => ({
     type: types.SEARCH_VALIDATION_ERROR,
     err
+  }),
+  enterNewPatient: data => ({
+    type: types.ENTER_NEW_PATIENT,
+    data
   })
 };
 
 const thunks = {
   getPatientInfoClick: (patientId) => {
     return dispatch => {
-      const request=getPatientInfoRequest(dispatch,patientId);
-      fireGet(request);
+      if(patientId !== null){
+        const request=getPatientInfoRequest(dispatch,patientId);
+        fireGet(request);
+      }
     };
   },
 

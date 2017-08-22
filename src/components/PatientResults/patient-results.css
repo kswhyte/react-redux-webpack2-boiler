@@ -1,0 +1,68 @@
+@import "imports/_helpers.css";
+
+.patient-results-wrapper {
+
+    & h3 {
+        color: var(--light-grey);
+    }
+
+    & .patient-table {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    & .patient-table th {
+        padding: 0px 10px 10px;
+        font-family: Open Sans;
+        font-size: 12px;
+        font-weight: bold;
+        border-bottom: solid 2px var(--light-grey);
+    }
+
+    & .patient-table td:first-child {
+        width: 20%;
+    }
+    & .patient-table td:nth-child(2) {
+        width: 15%;
+    }
+    & .patient-table td:not(first-child) {
+        width: 10%;
+    }
+    & .patient-table td:last-child {
+        width: 20%;
+    }
+    & .patient-table td {
+        font-family: Open Sans;
+        font-size: 12px;
+        padding: 13px 10px 13px;
+        empty-cells: show;
+    }
+    & .patient-table tr:not(.no-line) {
+        border-bottom: solid 1px var(--light-grey);
+    }
+
+    & td > button {
+        background: var(--white);
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 6px 10px;
+        font-family: 'Open Sans';
+        font-size: 10px;
+        line-height: 1;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0px;
+        width: 130px;
+        height: 30px;
+    }
+
+    & td > button:hover {
+        background: var(--primary-color);
+        color: var(--white);
+        border: 1px solid var(--primary-color);
+    }
+}

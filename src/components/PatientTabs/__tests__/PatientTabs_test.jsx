@@ -26,6 +26,18 @@ stories.add('Story', () => {
         let output = mount(patientTabsStory);
         expect(output.find('.patient-tabs-wrapper').length).toEqual(1);
       });
+
+      it('Should have two buttons: "BACK" and "NEXT"', () => {
+        let output = mount(patientTabsStory);
+        expect(output.find('.back-btn').length).toEqual(1);
+        expect(output.find('.next-btn').length).toEqual(1);
+      });
+
+      it('Should have two call-to-action buttons', () => {
+        let output = mount(patientTabsStory);
+        expect(output.find('button').length).toEqual(2);
+      });
+
     })
   );
   return patientTabsStory;

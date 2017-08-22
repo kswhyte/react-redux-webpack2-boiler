@@ -4,4 +4,10 @@
 @import "imports/_typography.css";
 
 .navigation-wrapper {
+
+  & a:any-link {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-right:15px;
+  }
 }

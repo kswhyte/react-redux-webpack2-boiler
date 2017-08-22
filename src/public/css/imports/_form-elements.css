@@ -114,4 +114,15 @@ form {
       transform: rotate(45deg);
     }
   }
+
+  & .row {
+    margin-top:42px;
+  }
+}
+
+button {
+  height: 36px !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
 }

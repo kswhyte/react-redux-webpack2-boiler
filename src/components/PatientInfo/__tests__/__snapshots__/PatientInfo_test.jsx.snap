@@ -1651,38 +1651,6 @@ exports[`Patient Info Story 1`] = `
             <div />
           </div>
         </div>
-        <div
-          className="row sm-spacer"
-        >
-          <div
-            className="break-line"
-          />
-        </div>
-        <div
-          className="row xs-spacer sm-spacer"
-        >
-          <div
-            className="col-sm-6 no-padding"
-          >
-            <button
-              className="back-btn"
-              tabIndex={1}
-            >
-              BACK
-            </button>
-          </div>
-          <div
-            className="col-sm-6 no-padding"
-          >
-            <button
-              className="next-btn"
-              tabIndex={1}
-              type="submit"
-            >
-              NEXT
-            </button>
-          </div>
-        </div>
       </form>
     </div>
   </div>
