@@ -42,9 +42,6 @@ const actions = {
 const thunks = {
   getPatientInfoClick: (patientId) => {
     return dispatch => {
-      console.log(`======
-      ${patientId}
-      =====`)
       if(patientId !== null){
         const request=getPatientInfoRequest(dispatch,patientId);
         fireGet(request);
