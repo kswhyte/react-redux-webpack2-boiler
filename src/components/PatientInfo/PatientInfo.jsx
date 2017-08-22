@@ -114,7 +114,7 @@ class PatientInfo extends Component {
                     required
                   />
                 </div>
-                <div className="col-sm-3 no-margin">
+                <div className="col-sm-4 no-margin">
                   <label>LAST NAME &#42;</label>
                   <input
                     className="form-group"
@@ -137,7 +137,7 @@ class PatientInfo extends Component {
                     {this.mapOptions(gender)}
                   </select>
                 </div>
-                <div className="col-sm-4 no-margin">
+                <div className="col-sm-3 no-margin">
                   <label>EMAIL ADDRESS &#42;</label>
                   <input
                     className="form-group"
