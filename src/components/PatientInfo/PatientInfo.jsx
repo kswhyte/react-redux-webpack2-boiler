@@ -102,7 +102,7 @@ class PatientInfo extends Component {
               }}
             >
               {/* Row1 */}
-              <div className="row xs-spacer">
+              <div className="row">
                 <div className="col-sm-3 no-margin">
                   <label>FIRST NAME &#42;</label>
                   <input
@@ -151,7 +151,7 @@ class PatientInfo extends Component {
               </div>
 
               {/* Row2 */}
-              <div className="row xs-spacer">
+              <div className="row">
                 <div className="col-sm-2 no-margin">
                   <label>DATE OF BIRTH &#42;</label>
                   <select
@@ -224,7 +224,7 @@ class PatientInfo extends Component {
               </div>
 
               {/* Row3 */}
-              <div className="row xs-spacer">
+              <div className="row">
                 <div className="col-sm-4 no-margin">
                   <label>STREET &#42;</label>
                   <input
@@ -272,7 +272,7 @@ class PatientInfo extends Component {
                 </div>
               </div>
               {/* Row4 */}
-              <div className="row xs-spacer">
+              <div className="row">
                 <div className="col-sm-4">
                   <label>PRIMARY INSURANCE CARRIER &#42;</label>
                   <select
@@ -311,7 +311,7 @@ class PatientInfo extends Component {
               </div>
 
               {/* Row5 */}
-              <div className="row sm-spacer">
+              <div className="row">
                 <div className="col-sm-4">
                   <label>ALTERNATE INSURANCE CARRIER</label>
                   <select
@@ -348,7 +348,7 @@ class PatientInfo extends Component {
               </div>
 
               {/* Row6 */}
-              <div className="row xs-spacer">
+              <div className="row">
                 <div className="col-sm-4">
                   <label>REFERRING PHYSICIAN &#42;</label>
                   <select
@@ -362,7 +362,7 @@ class PatientInfo extends Component {
                   </select>
                 </div>
               </div>
-              <div className="row sm-spacer">
+              <div className="row">
                 <div className="col-sm-5">
                   <div>
                     {this.state.status === 'success' &&
