@@ -9,6 +9,10 @@
       float: right;
     }
   }
+
+  & .input-affiliate {
+    margin-top: -1px;
+  }
   /*
   & row {
     margin: 0 -5px;

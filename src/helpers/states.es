@@ -1,6 +1,6 @@
 export default [
   {
-    text: 'Sel',
+    text: 'ST',
     id: ''
   },
   {

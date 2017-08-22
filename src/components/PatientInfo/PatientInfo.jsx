@@ -258,7 +258,7 @@ class PatientInfo extends Component {
                 </div>
 
                 <div className="col-sm-2 no-margin">
-                  <label />
+                  <label >&nbsp; </label>
                   <input
                     className="form-group input-affiliate"
                     type="text"
