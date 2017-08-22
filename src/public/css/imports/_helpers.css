@@ -28,6 +28,7 @@
   --form-error-color: var(--dull-orange);
   --future-green: #5ec23b;
   --check-circle-icon: #74e5d1;
+  --form-before-dirty: #5a5b5c;
 }
 
 :root {

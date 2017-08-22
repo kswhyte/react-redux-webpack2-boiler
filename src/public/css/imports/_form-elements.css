@@ -1,6 +1,5 @@
 ::-webkit-input-placeholder {
-  font-style: italic;
-  font-size: 1.1em !important;
+  font-size:12px;
 }
 
 .validation-error {
@@ -23,17 +22,21 @@ form {
     font-family: Open Sans;
     border: 0px;
     border-bottom: solid 1px var(--slate);
+    color: var(--form-before-dirty);
+    font-size: 12px;
   }
   & input:focus {
-    color: var(--light-teal);
-    border-bottom: solid 1px var(--light-teal);
+    font-style: italic;
+    color: var(--form-before-dirty)
   }
 
   & select {
+    color: var(--form-before-dirty);
+
     &.select-dropdown {
       width: 100%;
       box-shadow: none;
-      margin: -8px 0;
+      margin: -14px 0;
       background: transparent;
       font-family: Open Sans;
       border: 0px;
@@ -48,7 +51,7 @@ form {
     }
     &.dropdown-affiliate {
       padding: 4px 0 !important;
-      margin: 0;
+      margin-top: -6px;
     }
     &.form-control {
       background-image: image-set(url('~/images/dropdown_triangles/enabled-dark/triangle_drk.svg'));
