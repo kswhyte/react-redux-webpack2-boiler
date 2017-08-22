@@ -16,9 +16,14 @@ let createHandlers = function(dispatch) {
     dispatch(patientInfoActions.searchValidationError(err));
   };
 
+  let enterNewPatient = data => {
+    dispatch(patientInfoActions.enterNewPatient(data));
+  }
+
   return {
     searchPatient,
-    showError
+    showError,
+    enterNewPatient
   };
 };
 
@@ -57,7 +62,7 @@ class SearchPatientContainer extends Component {
               <PatientResults patientSearchResults={this.props.patientSearchResults} />
             )}
             {(this.props.noResults) && (
-              <SearchPatientNotFound />
+              <SearchPatientNotFound enterNewPatient={this.handlers.enterNewPatient} />
             )}
         </div>
       );

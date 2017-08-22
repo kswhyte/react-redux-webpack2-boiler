@@ -5,8 +5,8 @@ import patientInfoActions from '../actions/PatientInfoActions';
 import { PropTypes } from 'prop-types';
 
 let createHandlers = function(dispatch) {
-  let getPatientInfo = function(node, data) {
-    dispatch(patientInfoActions.getPatientInfoClick(data));
+  let getPatientInfo = function(patientDataId = null) {
+    dispatch(patientInfoActions.getPatientInfoClick(patientDataId));
   };
 
 let submitPatientInfo = data => {

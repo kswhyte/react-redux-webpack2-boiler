@@ -11,8 +11,6 @@ const propTypes = {
 const PatientResults = (props) => {
   return (
     <div className="patient-results-wrapper sm-spacer">
-        <h3>Available Patient Records</h3>
-        <hr className="sm-line" />
         <table className="patient-table">
           <thead>
             <tr>

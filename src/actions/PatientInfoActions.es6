@@ -32,14 +32,23 @@ const actions = {
   searchValidationError: err => ({
     type: types.SEARCH_VALIDATION_ERROR,
     err
+  }),
+  enterNewPatient: data => ({
+    type: types.ENTER_NEW_PATIENT,
+    data
   })
 };
 
 const thunks = {
   getPatientInfoClick: (patientId) => {
     return dispatch => {
-      const request=getPatientInfoRequest(dispatch,patientId);
-      fireGet(request);
+      console.log(`======
+      ${patientId}
+      =====`)
+      if(patientId !== null){
+        const request=getPatientInfoRequest(dispatch,patientId);
+        fireGet(request);
+      }
     };
   },
 
