@@ -14,7 +14,7 @@ exports[`Patient Info Story 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="row xs-spacer"
+          className="row"
         >
           <div
             className="col-sm-3 no-margin"
@@ -32,7 +32,7 @@ exports[`Patient Info Story 1`] = `
             />
           </div>
           <div
-            className="col-sm-3 no-margin"
+            className="col-sm-4 no-margin"
           >
             <label>
               LAST NAME *
@@ -72,7 +72,7 @@ exports[`Patient Info Story 1`] = `
             </select>
           </div>
           <div
-            className="col-sm-4 no-margin"
+            className="col-sm-3 no-margin"
           >
             <label>
               EMAIL ADDRESS *
@@ -88,7 +88,7 @@ exports[`Patient Info Story 1`] = `
           </div>
         </div>
         <div
-          className="row xs-spacer"
+          className="row"
         >
           <div
             className="col-sm-2 no-margin"
@@ -1096,7 +1096,7 @@ exports[`Patient Info Story 1`] = `
           </div>
         </div>
         <div
-          className="row xs-spacer"
+          className="row"
         >
           <div
             className="col-sm-4 no-margin"
@@ -1137,10 +1137,10 @@ exports[`Patient Info Story 1`] = `
               value=""
             >
               <option
-                label="Sel"
+                label="ST"
                 value=""
               >
-                Sel
+                ST
               </option>
               <option
                 label="AL"
@@ -1477,7 +1477,9 @@ exports[`Patient Info Story 1`] = `
           <div
             className="col-sm-2 no-margin"
           >
-            <label />
+            <label>
+                
+            </label>
             <input
               className="form-group input-affiliate"
               onChange={[Function]}
@@ -1490,7 +1492,7 @@ exports[`Patient Info Story 1`] = `
           </div>
         </div>
         <div
-          className="row xs-spacer"
+          className="row"
         >
           <div
             className="col-sm-4"
@@ -1555,7 +1557,7 @@ exports[`Patient Info Story 1`] = `
           </div>
         </div>
         <div
-          className="row sm-spacer"
+          className="row"
         >
           <div
             className="col-sm-4"
@@ -1617,7 +1619,7 @@ exports[`Patient Info Story 1`] = `
           </div>
         </div>
         <div
-          className="row xs-spacer"
+          className="row"
         >
           <div
             className="col-sm-4"
@@ -1643,7 +1645,7 @@ exports[`Patient Info Story 1`] = `
           </div>
         </div>
         <div
-          className="row sm-spacer"
+          className="row"
         >
           <div
             className="col-sm-5"

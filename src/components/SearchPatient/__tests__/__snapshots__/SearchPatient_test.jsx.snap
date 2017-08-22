@@ -4,9 +4,9 @@ exports[`Search Patient Story 1`] = `
 <div
   className="search-patient-block"
 >
-  <h2>
+  <h3>
     Patient Information
-  </h2>
+  </h3>
   <hr
     className="sm-line"
   />
@@ -992,7 +992,7 @@ exports[`Search Patient Story 1`] = `
         </select>
       </div>
       <div
-        className="col-sm-3 no-margin"
+        className="col-sm-2 no-margin"
       >
         <label
           htmlFor="phone"
@@ -1020,9 +1020,11 @@ exports[`Search Patient Story 1`] = `
         />
       </div>
       <div
-        className="col-sm-3 no-margin"
+        className="col-sm-4 no-margin"
       >
-        <button>
+        <button
+          className="primary-btn long"
+        >
           FIND PATIENT RECORD
         </button>
       </div>

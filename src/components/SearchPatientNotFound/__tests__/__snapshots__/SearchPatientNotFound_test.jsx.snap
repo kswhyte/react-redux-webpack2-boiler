@@ -13,11 +13,11 @@ exports[`Search Patient Story 1`] = `
       <div
         className="col-xs-8 no-margin"
       >
-        <h3
+        <h4
           className="patient-notfound-msg"
         >
           This patient is not found in hg smartaccess.
-        </h3>
+        </h4>
       </div>
       <div
         className="col-xs-4 no-margin"

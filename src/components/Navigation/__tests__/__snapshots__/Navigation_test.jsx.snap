@@ -4,9 +4,6 @@ exports[`Story 1`] = `
 <nav
   className="navigation-wrapper"
 >
-  <h1>
-    Navigation
-  </h1>
   <a
     href="/login"
     onClick={[Function]}

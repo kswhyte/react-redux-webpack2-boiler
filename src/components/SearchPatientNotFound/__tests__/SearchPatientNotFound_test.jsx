@@ -23,7 +23,7 @@ stories.add('Search Patient Story', () => {
 
       it('Should have a header element that says "This patient is not found in hg smartaccess"', () => {
         let output = mount(searchPatientNotFoundStory);
-        expect(output.find('h3').text()).toContain('This patient is not found in hg smartaccess.');
+        expect(output.find('h4').text()).toContain('This patient is not found in hg smartaccess.');
       });
 
       it('Should have one call-to-action Create New Patient button', () => {

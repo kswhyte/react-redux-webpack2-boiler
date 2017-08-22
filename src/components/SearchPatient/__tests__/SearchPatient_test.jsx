@@ -24,7 +24,7 @@ stories.add('Search Patient Story', () => {
         });
         it('Should have a header element that says "Patient Information"', () => {
             let output = shallow(searchPatientStory);
-            expect(output.find('h2').text()).toContain('Patient Information');
+            expect(output.find('h3').text()).toContain('Patient Information');
         });
         it('Should have four input fields', () => {
             let output = shallow(searchPatientStory);
