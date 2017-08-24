@@ -1,7 +1,7 @@
 {
-  "name": "accounts-ui-v2",
+  "name": "react-redux-webpack2-boiler",
   "version": "2.0.0",
-  "description": "AccountsUI 2",
+  "description": "React Redux Webpack2 Boiler",
   "main": "app.js",
   "scripts": {
     "build_environment_babel": "babel  ./tools/buildScripts --out-dir  ./tools/dist",
@@ -35,7 +35,7 @@
     "prebuild": "npm-run-all clean-dist build-core-css-prod test-jenkins lint",
     "build": "babel-node tools/buildScripts/build_prod.es6"
   },
-  "author": "Wesley Duff",
+  "author": "Kinan Whyte",
   "license": "ISC",
   "devDependencies": {
     "@storybook/react": "3.1.9",
@@ -133,9 +133,7 @@
   },
   "jest": {
     "rootDir": "src/",
-    "setupFiles": [
-      "../.storybook/__conf__/config.js"
-    ],
+    "setupFiles": ["../.storybook/__conf__/config.js"],
     "automock": false,
     "notify": true,
     "setupTestFrameworkScriptFile": "../node_modules/jest-enzyme/lib/index.js",
@@ -146,16 +144,7 @@
       "src/_reducers/*.{es6, js,jsx}",
       "src/actions/*.{es6, js,jsx}"
     ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "jsx",
-      "node",
-      "es",
-      "es6",
-      "less",
-      "css"
-    ],
+    "moduleFileExtensions": ["js", "json", "jsx", "node", "es", "es6", "less", "css"],
     "unmockedModulePathPatterns": [
       "react",
       "redux",
@@ -168,9 +157,7 @@
       "^@hg/three-ui": "<rootDir>/components/HgStub/HgStub.jsx",
       "\\.(css|less|png|jpg)$": "<rootDir>/components/HgStub/HgStub.jsx"
     },
-    "testPathIgnorePatterns": [
-      "spec.jsx"
-    ],
+    "testPathIgnorePatterns": ["spec.jsx"],
     "transform": {
       ".es6$": "../node_modules/babel-jest",
       ".es$": "../node_modules/babel-jest",
@@ -180,6 +167,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.healthgrades.com:blue-falcon/accounts-ui-v2.git"
+    "url": "https://github.com/kswhyte/react-redux-webpack2-boiler.git"
   }
 }
