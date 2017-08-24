@@ -1,4 +1,4 @@
-::-webkit-input-placeholder {
+/*::-webkit-input-placeholder {
   font-size:12px;
 }
 
@@ -46,8 +46,6 @@ form {
       border-bottom: solid 1px var(--slate);
       -webkit-appearance: none;
       -webkit-border-radius: 0px;
-      /*padding: px 0px;*/
-      /*padding: 4px 0px;*/
     }
     &.select-dropdown:after {
       outline: none;
@@ -131,4 +129,4 @@ button {
   font-size: 12px !important;
   font-weight: bold !important;
   text-transform: uppercase;
-}
+}*/

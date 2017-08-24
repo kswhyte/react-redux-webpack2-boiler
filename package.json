@@ -1,7 +1,7 @@
 {
-  "name": "smartaccess_v2",
+  "name": "accounts-ui-v2",
   "version": "2.0.0",
-  "description": "Smart Access Version 2",
+  "description": "AccountsUI 2",
   "main": "app.js",
   "scripts": {
     "build_environment_babel": "babel  ./tools/buildScripts --out-dir  ./tools/dist",
@@ -30,7 +30,7 @@
     "lint": "esw webpack.config.* src tools/buildScripts --ext .es6,.js,.jsx --color",
     "prestart": "babel-node tools/buildScripts/startMessage",
     "start": "npm-run-all lint build-core-css webpack webpack-dev-server",
-    "remove-dist": "node_modules/.bin/rimraf ./dist",
+    "remove-dist": "rimraf ./dist",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist build-core-css-prod test-jenkins lint",
     "build": "babel-node tools/buildScripts/build_prod.es6"
@@ -177,5 +177,9 @@
       ".jsx$": "../node_modules/babel-jest",
       ".js$": "../node_modules/babel-jest"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.healthgrades.com:blue-falcon/accounts-ui-v2.git"
   }
 }
