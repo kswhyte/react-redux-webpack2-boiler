@@ -10,7 +10,7 @@ const Body = props => {
 
   return (
     <div className="app-wrapper">
-      <h1>Accounts-UI-V2</h1>
+      <h1>React-Redux-Webpack2 BoilerPlate</h1>
       {props.children}
     </div>
   );
