@@ -1,2 +1,2 @@
-#Smart Access
+# HG Accounts UI
 - version v2
